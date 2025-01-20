@@ -2,7 +2,6 @@ package com.estadisticas.estadisticas_app.Modelos;
 
 import java.time.LocalDate;
 import java.util.List;
-
 import jakarta.persistence.*;
 
 @Entity
@@ -12,7 +11,7 @@ public class Consulta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_consulta", updatable = false)
-    private Long id;
+    private Long idConsulta;
 
     // Relación n:1 con Usuario
     @ManyToOne
@@ -37,10 +36,11 @@ public class Consulta {
     @Column(name = "fecha_consulta", nullable = false)
     private LocalDate fechaConsulta;
 
+    // Constructores
     public Consulta() {}
 
-    public Consulta(Long id, Usuario usuario, List<Indicador> indicadores, String parametros, LocalDate fechaConsulta) {
-        this.id = id;
+    public Consulta(Long idConsulta, Usuario usuario, List<Indicador> indicadores, String parametros, LocalDate fechaConsulta) {
+        this.idConsulta = idConsulta;
         this.usuario = usuario;
         this.indicadores = indicadores;
         this.parametros = parametros;
@@ -48,12 +48,12 @@ public class Consulta {
     }
 
     // Getters y Setters
-    public Long getId() {
-        return id;
+    public Long getIdConsulta() {
+        return idConsulta;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdConsulta(Long idConsulta) {
+        this.idConsulta = idConsulta;
     }
 
     public Usuario getUsuario() {
@@ -90,7 +90,7 @@ public class Consulta {
 
     @Override
     public String toString() {
-        return "Consulta [id=" + id + ", usuario=" + usuario + ", indicadores=" + indicadores + ", parametros="
+        return "Consulta [idConsulta=" + idConsulta + ", usuario=" + usuario + ", indicadores=" + indicadores + ", parametros="
                 + parametros + ", fechaConsulta=" + fechaConsulta + "]";
     }
 }

@@ -10,10 +10,10 @@ public class Indicador {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_indicador", updatable = false)
-    private Long id;
+    private Long idIndicador;
 
     @Column(name = "nombre_indicador", nullable = false)
-    private String nombre;
+    private String nombreIndicador;
 
     @Column(name = "unidad_medida")
     private String unidadMedida;
@@ -22,35 +22,36 @@ public class Indicador {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_dataset", nullable = false)
     private Dataset dataset;
-    
+
     // Relación n:m con Consultas
     @ManyToMany(mappedBy = "indicadores", fetch = FetchType.LAZY)
     private List<Consulta> consultas;
 
+    // Constructores
     public Indicador() {}
 
-    public Indicador(Long id, String nombre, String unidadMedida, Dataset dataset) {
-        this.id = id;
-        this.nombre = nombre;
+    public Indicador(Long idIndicador, String nombreIndicador, String unidadMedida, Dataset dataset) {
+        this.idIndicador = idIndicador;
+        this.nombreIndicador = nombreIndicador;
         this.unidadMedida = unidadMedida;
         this.dataset = dataset;
     }
 
     // Getters y Setters
-    public Long getId() {
-        return id;
+    public Long getIdIndicador() {
+        return idIndicador;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdIndicador(Long idIndicador) {
+        this.idIndicador = idIndicador;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreIndicador() {
+        return nombreIndicador;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreIndicador(String nombreIndicador) {
+        this.nombreIndicador = nombreIndicador;
     }
 
     public String getUnidadMedida() {
@@ -69,8 +70,16 @@ public class Indicador {
         this.dataset = dataset;
     }
 
+    public List<Consulta> getConsultas() {
+        return consultas;
+    }
+
+    public void setConsultas(List<Consulta> consultas) {
+        this.consultas = consultas;
+    }
+
     @Override
     public String toString() {
-        return "Indicador [id=" + id + ", nombre=" + nombre + ", unidadMedida=" + unidadMedida + "]";
+        return "Indicador [idIndicador=" + idIndicador + ", nombreIndicador=" + nombreIndicador + ", unidadMedida=" + unidadMedida + "]";
     }
 }
