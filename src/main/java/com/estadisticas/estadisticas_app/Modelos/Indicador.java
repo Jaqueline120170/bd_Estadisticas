@@ -1,13 +1,7 @@
 package com.estadisticas.estadisticas_app.Modelos;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import java.util.List;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "indicadores", schema = "gestion")
@@ -25,9 +19,13 @@ public class Indicador {
     private String unidadMedida;
 
     // Relación n:1 con Dataset
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_dataset", nullable = false)
     private Dataset dataset;
+    
+    // Relación n:m con Consultas
+    @ManyToMany(mappedBy = "indicadores", fetch = FetchType.LAZY)
+    private List<Consulta> consultas;
 
     public Indicador() {}
 
@@ -38,43 +36,41 @@ public class Indicador {
         this.dataset = dataset;
     }
 
-	public Long getId() {
-		return id;
-	}
+    // Getters y Setters
+    public Long getId() {
+        return id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public String getNombre() {
-		return nombre;
-	}
+    public String getNombre() {
+        return nombre;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public String getUnidadMedida() {
-		return unidadMedida;
-	}
+    public String getUnidadMedida() {
+        return unidadMedida;
+    }
 
-	public void setUnidadMedida(String unidadMedida) {
-		this.unidadMedida = unidadMedida;
-	}
+    public void setUnidadMedida(String unidadMedida) {
+        this.unidadMedida = unidadMedida;
+    }
 
-	public Dataset getDataset() {
-		return dataset;
-	}
+    public Dataset getDataset() {
+        return dataset;
+    }
 
-	public void setDataset(Dataset dataset) {
-		this.dataset = dataset;
-	}
+    public void setDataset(Dataset dataset) {
+        this.dataset = dataset;
+    }
 
-	@Override
-	public String toString() {
-		return "Indicador [id=" + id + ", nombre=" + nombre + ", unidadMedida=" + unidadMedida + ", dataset=" + dataset
-				+ "]";
-	}
-    
-    
+    @Override
+    public String toString() {
+        return "Indicador [id=" + id + ", nombre=" + nombre + ", unidadMedida=" + unidadMedida + "]";
+    }
 }

@@ -1,17 +1,9 @@
 package com.estadisticas.estadisticas_app.Modelos;
 
+import java.time.LocalDate;
 import java.util.List;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "consultas", schema = "gestion")
@@ -22,6 +14,7 @@ public class Consulta {
     @Column(name = "id_consulta", updatable = false)
     private Long id;
 
+    // Relación n:1 con Usuario
     @ManyToOne
     @JoinColumn(name = "id_usuario", nullable = false)
     private Usuario usuario;
@@ -36,15 +29,17 @@ public class Consulta {
     )
     private List<Indicador> indicadores;
 
-    @Column(name = "parametros_consulta")
+    // Parámetros adicionales para la consulta
+    @Column(name = "parametros_consulta", nullable = true)
     private String parametros;
 
-    @Column(name = "fecha_consulta")
-    private String fechaConsulta;
+    // Fecha en la que se realizó la consulta
+    @Column(name = "fecha_consulta", nullable = false)
+    private LocalDate fechaConsulta;
 
     public Consulta() {}
 
-    public Consulta(Long id, Usuario usuario, List<Indicador> indicadores, String parametros, String fechaConsulta) {
+    public Consulta(Long id, Usuario usuario, List<Indicador> indicadores, String parametros, LocalDate fechaConsulta) {
         this.id = id;
         this.usuario = usuario;
         this.indicadores = indicadores;
@@ -52,52 +47,51 @@ public class Consulta {
         this.fechaConsulta = fechaConsulta;
     }
 
-	public Long getId() {
-		return id;
-	}
+    // Getters y Setters
+    public Long getId() {
+        return id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public Usuario getUsuario() {
-		return usuario;
-	}
+    public Usuario getUsuario() {
+        return usuario;
+    }
 
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
-	}
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 
-	public List<Indicador> getIndicadores() {
-		return indicadores;
-	}
+    public List<Indicador> getIndicadores() {
+        return indicadores;
+    }
 
-	public void setIndicadores(List<Indicador> indicadores) {
-		this.indicadores = indicadores;
-	}
+    public void setIndicadores(List<Indicador> indicadores) {
+        this.indicadores = indicadores;
+    }
 
-	public String getParametros() {
-		return parametros;
-	}
+    public String getParametros() {
+        return parametros;
+    }
 
-	public void setParametros(String parametros) {
-		this.parametros = parametros;
-	}
+    public void setParametros(String parametros) {
+        this.parametros = parametros;
+    }
 
-	public String getFechaConsulta() {
-		return fechaConsulta;
-	}
+    public LocalDate getFechaConsulta() {
+        return fechaConsulta;
+    }
 
-	public void setFechaConsulta(String fechaConsulta) {
-		this.fechaConsulta = fechaConsulta;
-	}
+    public void setFechaConsulta(LocalDate fechaConsulta) {
+        this.fechaConsulta = fechaConsulta;
+    }
 
-	@Override
-	public String toString() {
-		return "Consulta [id=" + id + ", usuario=" + usuario + ", indicadores=" + indicadores + ", parametros="
-				+ parametros + ", fechaConsulta=" + fechaConsulta + "]";
-	}
-
-    
-    
+    @Override
+    public String toString() {
+        return "Consulta [id=" + id + ", usuario=" + usuario + ", indicadores=" + indicadores + ", parametros="
+                + parametros + ", fechaConsulta=" + fechaConsulta + "]";
+    }
 }
+
