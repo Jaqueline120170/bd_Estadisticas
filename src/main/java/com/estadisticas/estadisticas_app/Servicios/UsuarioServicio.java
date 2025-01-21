@@ -1,11 +1,10 @@
 package com.estadisticas.estadisticas_app.Servicios;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.estadisticas.estadisticas_app.Dtos.RegistroUsuarioDto;
-import com.estadisticas.estadisticas_app.Dtos.UsuarioDto;
 import com.estadisticas.estadisticas_app.Modelos.Usuario;
 import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepository;
 
@@ -14,8 +13,9 @@ public class UsuarioServicio {
 
 	@Autowired
 	private UsuarioRepository usuarioRepository; // Inyectamos el repositorio para gestionar las operaciones con la base de datos
+	@Autowired
+	private PasswordEncoder passwordEncoder; // Inyectamos el PasswordEncoder para encriptar y comparar contraseñas
 
-	
 	/**
 	 * Método para verificar si un usuario con un email específico ya está registrado.
 	 * @param emailUsuario el email del usuario a verificar
@@ -43,7 +43,8 @@ public class UsuarioServicio {
         usuario.setNombreUsuario(usuarioDto.getNombreUsuario());
         usuario.setEmailUsuario(usuarioDto.getEmailUsuario());
         usuario.setTelefonoUsuario(usuarioDto.getTelefonoUsuario());
-	    usuario.setPasswordUsuario(usuarioDto.getPasswordUsuario());
+        // Encriptar la contraseña antes de guardarla en la base de datos
+	    usuario.setPasswordUsuario(passwordEncoder.encode(usuarioDto.getPasswordUsuario()));
 	    // Asignar un rol por defecto ("usuario")
 	    usuario.setRolUsuario("usuario");
 	    // Guardar la foto (si está presente)

@@ -9,11 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.estadisticas.estadisticas_app.Dtos.RegistroUsuarioDto;
-import com.estadisticas.estadisticas_app.Dtos.UsuarioDto;
-import com.estadisticas.estadisticas_app.Modelos.Usuario;
 import com.estadisticas.estadisticas_app.Servicios.UsuarioServicio;
-
-
 
 @RestController
 @RequestMapping("/api/usuarios")
@@ -21,7 +17,6 @@ public class UsuarioControlador {
 
     @Autowired
     private UsuarioServicio usuarioServicio;
-
 
     /**
      * Endpoint para registrar un nuevo usuario.
