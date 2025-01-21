@@ -5,77 +5,152 @@ import java.time.LocalDateTime;
 public class UsuarioDto {
 
     private Long id;
-    private String nombre;
-    private String correo;
-    private String rol;
-    private String telefono;
-    private byte [] foto; // Cambiado a String si solo almacenamos la URL
+    private String nombreUsuario;
+    private String emailUsuario;
+    private String rolUsuario;
+    private String telefonoUsuario;
+    private byte [] fotoUsuario; // Cambiado a String si solo almacenamos la URL
+    private String passwordUsuario;
     private boolean verificado;
     private LocalDateTime fechaInicioSuscripcion;
     private EstadoSuscripcion estadoSuscripcion; // Usamos un Enum para el estado de suscripción
     private LocalDateTime fechaFinSuscripcion;
+    
+    
+
 	public Long getId() {
 		return id;
 	}
+
+
+
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getNombre() {
-		return nombre;
+
+
+
+	public String getNombreUsuario() {
+		return nombreUsuario;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+
+
+
+	public void setNombreUsuario(String nombreUsuario) {
+		this.nombreUsuario = nombreUsuario;
 	}
-	public String getCorreo() {
-		return correo;
+
+
+
+	public String getEmailUsuario() {
+		return emailUsuario;
 	}
-	public void setCorreo(String correo) {
-		this.correo = correo;
+
+
+
+	public void setEmailUsuario(String emailUsuario) {
+		this.emailUsuario = emailUsuario;
 	}
-	public String getRol() {
-		return rol;
+
+
+
+	public String getRolUsuario() {
+		return rolUsuario;
 	}
-	public void setRol(String rol) {
-		this.rol = rol;
+
+
+
+	public void setRolUsuario(String rolUsuario) {
+		this.rolUsuario = rolUsuario;
 	}
-	public String getTelefono() {
-		return telefono;
+
+
+
+	public String getTelefonoUsuario() {
+		return telefonoUsuario;
 	}
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
+
+
+
+	public void setTelefonoUsuario(String telefonoUsuario) {
+		this.telefonoUsuario = telefonoUsuario;
 	}
-	public byte[] getFoto() {
-		return foto;
+
+
+
+	public byte[] getFotoUsuario() {
+		return fotoUsuario;
 	}
-	public void setFoto(byte[] foto) {
-		this.foto = foto;
+
+
+
+	public void setFotoUsuario(byte[] fotoUsuario) {
+		this.fotoUsuario = fotoUsuario;
 	}
+
+
+
+	public String getPasswordUsuario() {
+		return passwordUsuario;
+	}
+
+
+
+	public void setPasswordUsuario(String passwordUsuario) {
+		this.passwordUsuario = passwordUsuario;
+	}
+
+
+
 	public boolean isVerificado() {
 		return verificado;
 	}
+
+
+
 	public void setVerificado(boolean verificado) {
 		this.verificado = verificado;
 	}
+
+
+
 	public LocalDateTime getFechaInicioSuscripcion() {
 		return fechaInicioSuscripcion;
 	}
+
+
+
 	public void setFechaInicioSuscripcion(LocalDateTime fechaInicioSuscripcion) {
 		this.fechaInicioSuscripcion = fechaInicioSuscripcion;
 	}
+
+
+
 	public EstadoSuscripcion getEstadoSuscripcion() {
 		return estadoSuscripcion;
 	}
+
+
+
 	public void setEstadoSuscripcion(EstadoSuscripcion estadoSuscripcion) {
 		this.estadoSuscripcion = estadoSuscripcion;
 	}
+
+
+
 	public LocalDateTime getFechaFinSuscripcion() {
 		return fechaFinSuscripcion;
 	}
+
+
+
 	public void setFechaFinSuscripcion(LocalDateTime fechaFinSuscripcion) {
 		this.fechaFinSuscripcion = fechaFinSuscripcion;
 	}
- 
-	 // Enum para manejar los estados de suscripción
+
+
+
+	// Enum para manejar los estados de suscripción
     public enum EstadoSuscripcion {
         ACTIVA,
         CADUCADA,

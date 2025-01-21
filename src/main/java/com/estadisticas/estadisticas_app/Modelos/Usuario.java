@@ -22,7 +22,7 @@ public class Usuario {
     @Column(name = "telefono_usuario", nullable = true)
     private String telefonoUsuario;
 
-    @Column(name = "rol_usuario", nullable = false)
+    @Column(name = "rol_usuario")
     private String rolUsuario;
 
     @Column(name = "foto_usuario", columnDefinition = "bytea", nullable = true)
@@ -84,6 +84,8 @@ public class Usuario {
 	}
 
     
+
+	
 
 	public Long getIdUsuario() {
 		return idUsuario;

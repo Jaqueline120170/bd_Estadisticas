@@ -3,23 +3,21 @@ package com.estadisticas.estadisticas_app.Dtos;
 public class RegistroUsuarioDto {
 	
 	private String nombreUsuario;
-    private String correoUsuario;
+    private String emailUsuario;
     private String passwordUsuario;
     private String telefonoUsuario;
     private byte[] fotoUsuario;
-    
-    
 	public String getNombreUsuario() {
 		return nombreUsuario;
 	}
 	public void setNombreUsuario(String nombreUsuario) {
 		this.nombreUsuario = nombreUsuario;
 	}
-	public String getCorreoUsuario() {
-		return correoUsuario;
+	public String getEmailUsuario() {
+		return emailUsuario;
 	}
-	public void setCorreoUsuario(String correoUsuario) {
-		this.correoUsuario = correoUsuario;
+	public void setEmailUsuario(String emailUsuario) {
+		this.emailUsuario = emailUsuario;
 	}
 	public String getPasswordUsuario() {
 		return passwordUsuario;
@@ -39,6 +37,6 @@ public class RegistroUsuarioDto {
 	public void setFotoUsuario(byte[] fotoUsuario) {
 		this.fotoUsuario = fotoUsuario;
 	}
-
+    
     
 }
