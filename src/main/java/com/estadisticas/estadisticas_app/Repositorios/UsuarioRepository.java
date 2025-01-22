@@ -11,15 +11,29 @@ import com.estadisticas.estadisticas_app.Modelos.Usuario;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
     
-    Optional<Usuario> findByNombreUsuario(String nombreUsuario); // Buscar por nombre de usuario
-    List<Usuario> findByRolUsuario(String rolUsuario); // Buscar usuarios por rol
+    /**
+     * Busca un usuario por su nombre de usuario.
+     * 
+     * @param nombreUsuario el nombre del usuario.
+     * @return el usuario encontrado con ese nombre.
+     */
+    Optional<Usuario> findByNombreUsuario(String nombreUsuario);
+
+    /**
+     * Busca usuarios por rol.
+     * 
+     * @param rolUsuario el rol de los usuarios ("admin", "usuario", "premium").
+     * @return una lista de usuarios con ese rol.
+     */
+    List<Usuario> findByRolUsuario(String rolUsuario);
+
     /**
      * Busca un usuario por su email.
      * 
      * @param emailUsuario el email del usuario.
-     * @return el usuario encontrado con ese email.
+     * @return un Optional con el usuario encontrado.
      */
-    Usuario findByEmailUsuario(String emailUsuario);
+    Optional<Usuario> findByEmailUsuario(String emailUsuario);
 
     /**
      * Verifica si un usuario con el email dado ya existe en la base de datos.
@@ -28,6 +42,16 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
      * @return true si el usuario con ese email existe, false en caso contrario.
      */
     boolean existsByEmailUsuario(String emailUsuario);
+
+    /**
+     * Busca todos los usuarios con el rol "premium".
+     * 
+     * @return una lista de usuarios con el rol "premium".
+     */
+    List<Usuario> findByRolUsuarioIgnoreCase(String rolUsuario);
+    
+    Usuario findByVerificacionToken(String verificacionToken);
+    
 
 }
 

@@ -32,7 +32,7 @@ public class Usuario {
     private String passwordUsuario;
 
     @Column(name = "verificado")
-    private boolean verificado = false;
+    private boolean verificado;
 
     @Column(name = "verificacion_token")
     private String verificacionToken;

@@ -3,9 +3,11 @@ package com.estadisticas.estadisticas_app.Controladores;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.estadisticas.estadisticas_app.Dtos.RegistroUsuarioDto;
@@ -48,5 +50,16 @@ public class UsuarioControlador {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error interno del servidor.");
         }
     }
-
+    // Endpoint para activar el usuario usando el token enviado por correo
+    @GetMapping("/activar")
+    public String activarCuenta(@RequestParam String token) {
+        try {
+            // Llamamos al servicio para activar el usuario
+            usuarioServicio.activarUsuario(token);
+            return "Cuenta activada exitosamente. Ahora puedes iniciar sesión.";
+        } catch (Exception e) {
+            return "Hubo un error al activar la cuenta: " + e.getMessage();
+        }
+    }
+    
 }
