@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.estadisticas.estadisticas_app.Dtos.LoginUsuarioDto;
 import com.estadisticas.estadisticas_app.Dtos.RegistroUsuarioDto;
+import com.estadisticas.estadisticas_app.Modelos.Usuario;
 import com.estadisticas.estadisticas_app.Servicios.UsuarioServicio;
 
 @RestController
@@ -59,6 +61,18 @@ public class UsuarioControlador {
             return "Cuenta activada exitosamente. Ahora puedes iniciar sesión.";
         } catch (Exception e) {
             return "Hubo un error al activar la cuenta: " + e.getMessage();
+        }
+    }
+    
+    @PostMapping("/login")
+    public ResponseEntity<?> iniciarSesion(@RequestBody LoginUsuarioDto loginDto) {
+        try {
+            Usuario usuario = usuarioServicio.login(loginDto);
+
+            // Opcional: Devuelve solo la información necesaria, como nombre y rol
+            return ResponseEntity.ok("Inicio de sesión exitoso. Bienvenido, " + usuario.getNombreUsuario());
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
     

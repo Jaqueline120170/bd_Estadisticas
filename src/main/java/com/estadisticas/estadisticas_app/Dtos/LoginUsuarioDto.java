@@ -1,3 +1,4 @@
+
 package com.estadisticas.estadisticas_app.Dtos;
 
 /**
@@ -9,12 +10,11 @@ public class LoginUsuarioDto {
 
    
     /** Email del usuario para la autenticación. */
-    private String email;
+    private String emailUsuario;
     
     /** Contraseña para autenticar al usuario. */
-    private String password;
+    private String passwordUsuario;
     
-   
     // ============================
     // Getters y Setters
     // ============================
@@ -25,36 +25,24 @@ public class LoginUsuarioDto {
      *
      * @return El email del usuario.
      */
-    public String getEmail() {
-        return email;
-    }
+    
+	public String getEmailUsuario() {
+		return emailUsuario;
+	}
 
-    /**
-     * Establece el email del usuario.
-     *
-     * @param email El email del usuario.
-     */
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	public void setEmailUsuario(String emailUsuario) {
+		this.emailUsuario = emailUsuario;
+	}
 
-    /**
-     * Obtiene la contraseña del usuario.
-     *
-     * @return La contraseña del usuario.
-     */
-    public String getPassword() {
-        return password;
-    }
+	public String getPasswordUsuario() {
+		return passwordUsuario;
+	}
 
-    /**
-     * Establece la contraseña del usuario.
-     *
-     * @param password La contraseña del usuario.
-     */
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
+	public void setPasswordUsuario(String passwordUsuario) {
+		this.passwordUsuario = passwordUsuario;
+	}
+    
+   
+   
     
 }
