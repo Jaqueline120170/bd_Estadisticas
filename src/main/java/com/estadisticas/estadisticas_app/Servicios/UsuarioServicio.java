@@ -50,6 +50,7 @@ public class UsuarioServicio {
 
             // Verificar si el email ya está registrado
             if (emailExistsUsuario(usuarioDto.getEmailUsuario())) {
+            	logger.warn("El email ya está registrado: {}", usuarioDto.getEmailUsuario());
                 throw new IllegalArgumentException("El email ya está registrado.");
             }
 
@@ -134,25 +135,6 @@ public class UsuarioServicio {
         }
 
         return usuario; // Retornar el usuario autenticado si pasa todas las validaciones
-    }
-
-    /**
-     * Eliminar un usuario por ID.
-     * @param usuarioId ID del usuario a eliminar
-     */
-    public void eliminarUsuario(Long usuarioId) {
-        if (!usuarioRepository.existsById(usuarioId)) {
-            throw new IllegalArgumentException("Usuario no encontrado con el ID: " + usuarioId);
-        }
-        usuarioRepository.deleteById(usuarioId);
-    }
-
-    /**
-     * Listar todos los usuarios registrados en el sistema.
-     * @return lista de usuarios
-     */
-    public List<Usuario> listarTodosLosUsuarios() {
-        return usuarioRepository.findAll();
     }
 
     /**

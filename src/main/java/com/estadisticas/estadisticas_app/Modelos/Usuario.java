@@ -60,7 +60,6 @@ public class Usuario {
     public Usuario() {}
 
     
-
     public Usuario(Long idUsuario, String nombreUsuario, String emailUsuario, String telefonoUsuario, String rolUsuario,
 			byte[] fotoUsuario, String passwordUsuario, boolean verificado, String verificacionToken,
 			LocalDateTime tokenExpiracion, String tipoSuscripcion, LocalDateTime fechaInicioSuscripcion,
@@ -84,9 +83,6 @@ public class Usuario {
 	}
 
     
-
-	
-
 	public Long getIdUsuario() {
 		return idUsuario;
 	}
