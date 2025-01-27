@@ -134,7 +134,7 @@ public class UsuarioServicio {
         // Generar un nuevo token de verificación
         String nuevoToken = generarTokenDeVerificacion();
         usuario.setVerificacionToken(nuevoToken);
-        usuario.setTokenExpiracion(LocalDateTime.now().plusMinutes(5)); // Nuevo tiempo de expiración
+        usuario.setTokenExpiracion(LocalDateTime.now().plusMinutes(tokenExpirationMinutes));
 
         // Guardar el usuario con el nuevo token
         usuarioRepository.save(usuario);
