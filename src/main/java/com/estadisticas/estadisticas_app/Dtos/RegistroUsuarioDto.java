@@ -7,6 +7,7 @@ public class RegistroUsuarioDto {
     private String passwordUsuario;
     private String telefonoUsuario;
     private byte[] fotoUsuario;
+    
 	public String getNombreUsuario() {
 		return nombreUsuario;
 	}

@@ -63,6 +63,15 @@ public class UsuarioControlador {
             return "Hubo un error al activar la cuenta: " + e.getMessage();
         }
     }
+    @PostMapping("/reenviar-enlace-activacion")
+    public ResponseEntity<String> reenviarEnlaceActivacion(@RequestParam("email") String emailUsuario) {
+        try {
+            usuarioServicio.reenviarEnlaceActivacion(emailUsuario);
+            return ResponseEntity.ok("Se ha enviado un nuevo enlace de activación a tu correo.");
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
     
     @PostMapping("/login")
     public ResponseEntity<?> iniciarSesion(@RequestBody LoginUsuarioDto loginDto) {

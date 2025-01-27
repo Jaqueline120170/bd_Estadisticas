@@ -1,5 +1,6 @@
 package com.estadisticas.estadisticas_app.Servicios;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import java.util.UUID;
@@ -7,6 +8,7 @@ import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +28,8 @@ public class UsuarioServicio {
     private PasswordEncoder passwordEncoder; // Inyectamos el PasswordEncoder
     @Autowired
     private EmailServicio emailServicio; // Inyectamos el servicio de email
+    @Value("${token.expiration.minutes}")
+    private int tokenExpirationMinutes; // Configurable desde application.properties
 
     /**
      * Método para verificar si un usuario con un email específico ya está registrado.
@@ -66,6 +70,8 @@ public class UsuarioServicio {
             // Generar un token de verificación y asignarlo al usuario
             String token = generarTokenDeVerificacion();
             usuario.setVerificacionToken(token);
+            usuario.setTokenExpiracion(LocalDateTime.now().plusMinutes(tokenExpirationMinutes));
+
 
             // Guardar la foto si está presente
             if (usuarioDto.getFotoUsuario() != null) {
@@ -89,24 +95,56 @@ public class UsuarioServicio {
     }
 
     /**
-     * Activar usuario mediante token de verificación.
+     * Método para Activar usuario mediante token de verificación.
      * @param token el token de verificación enviado por email
      */
-    public void activarUsuario(String token) {
-        // Buscar usuario con el token proporcionado
+    public boolean activarUsuario(String token) {
         Usuario usuario = usuarioRepository.findByVerificacionToken(token);
 
         if (usuario == null) {
             throw new IllegalArgumentException("Token de verificación no válido.");
         }
+        // Verificar si el token ha expirado
+        if (usuario.getTokenExpiracion().isBefore(LocalDateTime.now())) {
+            throw new IllegalArgumentException("El token de verificación ha expirado.Solicita un nuevo enlace de activación.");
+        }
 
-        // Activar cuenta del usuario
         usuario.setVerificado(true);
-        usuario.setVerificacionToken(null); // Limpiar el token
+        usuario.setVerificacionToken(null);
+        usuario.setTokenExpiracion(null);
+
         usuarioRepository.save(usuario);
+
+        return true;
     }
     /**
-     * Loggin Usuario
+     *Método para el Reenvio de enlace de verificacion al usuario, genera nuevo token de verificacion.
+     * @param token el token de verificación enviado por email
+     */
+    public void reenviarEnlaceActivacion(String emailUsuario) {
+        // Buscar el usuario por email, y si no existe, lanzar excepción
+        Usuario usuario = usuarioRepository.findByEmailUsuario(emailUsuario)
+                .orElseThrow(() -> new IllegalArgumentException("No se encontró un usuario con ese email."));
+
+        // Verificar si el usuario ya está verificado
+        if (usuario.isVerificado()) {
+            throw new IllegalArgumentException("La cuenta ya está activada.");
+        }
+
+        // Generar un nuevo token de verificación
+        String nuevoToken = generarTokenDeVerificacion();
+        usuario.setVerificacionToken(nuevoToken);
+        usuario.setTokenExpiracion(LocalDateTime.now().plusMinutes(5)); // Nuevo tiempo de expiración
+
+        // Guardar el usuario con el nuevo token
+        usuarioRepository.save(usuario);
+
+        // Enviar el nuevo correo de verificación
+        emailServicio.enviarCorreoVerificacion(usuario.getEmailUsuario(), nuevoToken);
+    }
+
+    /**
+     * Método para Loggin Usuario
      * @param loginDto DTO con emailUsuario y passwordUsuario
      * @return Usuario autenticado
      */
@@ -138,7 +176,7 @@ public class UsuarioServicio {
     }
 
     /**
-     * Generar un token de verificación único.
+     * Método que Genera un token de verificación único.
      * @return token único generado
      */
     public String generarTokenDeVerificacion() {
