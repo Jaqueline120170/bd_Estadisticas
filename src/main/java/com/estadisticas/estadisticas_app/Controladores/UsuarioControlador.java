@@ -1,5 +1,7 @@
 package com.estadisticas.estadisticas_app.Controladores;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -63,6 +65,7 @@ public class UsuarioControlador {
             return "Hubo un error al activar la cuenta: " + e.getMessage();
         }
     }
+    // Endpoint para reenviar enlace de activacion de cuenta
     @PostMapping("/reenviar-enlace-activacion")
     public ResponseEntity<String> reenviarEnlaceActivacion(@RequestParam("email") String emailUsuario) {
         try {
@@ -72,7 +75,7 @@ public class UsuarioControlador {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
-    
+    // Endpoint para loggin
     @PostMapping("/login")
     public ResponseEntity<?> iniciarSesion(@RequestBody LoginUsuarioDto loginDto) {
         try {
@@ -81,6 +84,37 @@ public class UsuarioControlador {
             // Opcional: Devuelve solo la información necesaria, como nombre y rol
             return ResponseEntity.ok("Inicio de sesión exitoso. Bienvenido, " + usuario.getNombreUsuario());
         } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+    /**
+     * Endpoint para solicitar el restablecimiento de la contraseña
+     * @param emailUsuario el email del usuario que solicita el restablecimiento
+     * @return ResponseEntity con un mensaje de éxito o error
+     */
+    @PostMapping("/solicitar-restablecimiento-contraseña")
+    public ResponseEntity<String> solicitarRestablecimientoContraseña(@RequestParam String emailUsuario) {
+        try {
+            // Llamamos al servicio para solicitar el restablecimiento de contraseña
+            usuarioServicio.solicitarRestablecimientoContraseña(emailUsuario);
+
+            return ResponseEntity.ok("Se ha enviado un enlace para restablecer tu contraseña al correo.");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+ // Endpoint para restablecer la contraseña
+    @PostMapping("/restablecer-contrasena")
+    public ResponseEntity<String> restablecerContrasena(@RequestBody Map<String, String> request) {
+        try {
+            String token = request.get("token"); // Obtenemos el token del cuerpo de la solicitud
+            String nuevaContraseña = request.get("nuevaContraseña"); // Obtenemos la nueva contraseña
+
+            // Llamamos al servicio para restablecer la contraseña
+            usuarioServicio.restablecerContraseña(token, nuevaContraseña);
+
+            return ResponseEntity.ok("Contraseña restablecida con éxito.");
+        } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }

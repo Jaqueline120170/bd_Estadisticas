@@ -1,6 +1,7 @@
 package com.estadisticas.estadisticas_app.Modelos;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.List;
 import jakarta.persistence.*;
 
@@ -51,6 +52,12 @@ public class Usuario {
 
     @Column(name = "estado_suscripcion")
     private String estadoSuscripcion = "INACTIVA";
+    
+    @Column(name = "reset_token")
+    private String resetToken;
+
+    @Column(name = "reset_token_expiracion")
+    private LocalDateTime resetTokenExpiracion;
 
     @OneToMany(mappedBy = "usuario", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Consulta> consultas;
@@ -59,11 +66,12 @@ public class Usuario {
     // Constructores
     public Usuario() {}
 
-    
-    public Usuario(Long idUsuario, String nombreUsuario, String emailUsuario, String telefonoUsuario, String rolUsuario,
+
+	public Usuario(Long idUsuario, String nombreUsuario, String emailUsuario, String telefonoUsuario, String rolUsuario,
 			byte[] fotoUsuario, String passwordUsuario, boolean verificado, String verificacionToken,
 			LocalDateTime tokenExpiracion, String tipoSuscripcion, LocalDateTime fechaInicioSuscripcion,
-			LocalDateTime fechaFinSuscripcion, String estadoSuscripcion, List<Consulta> consultas) {
+			LocalDateTime fechaFinSuscripcion, String estadoSuscripcion, String resetToken,
+			LocalDateTime resetTokenExpiracion, List<Consulta> consultas) {
 		super();
 		this.idUsuario = idUsuario;
 		this.nombreUsuario = nombreUsuario;
@@ -79,14 +87,15 @@ public class Usuario {
 		this.fechaInicioSuscripcion = fechaInicioSuscripcion;
 		this.fechaFinSuscripcion = fechaFinSuscripcion;
 		this.estadoSuscripcion = estadoSuscripcion;
+		this.resetToken = resetToken;
+		this.resetTokenExpiracion = resetTokenExpiracion;
 		this.consultas = consultas;
 	}
 
-    
+
 	public Long getIdUsuario() {
 		return idUsuario;
 	}
-
 
 
 	public void setIdUsuario(Long idUsuario) {
@@ -94,11 +103,9 @@ public class Usuario {
 	}
 
 
-
 	public String getNombreUsuario() {
 		return nombreUsuario;
 	}
-
 
 
 	public void setNombreUsuario(String nombreUsuario) {
@@ -106,11 +113,9 @@ public class Usuario {
 	}
 
 
-
 	public String getEmailUsuario() {
 		return emailUsuario;
 	}
-
 
 
 	public void setEmailUsuario(String emailUsuario) {
@@ -118,11 +123,9 @@ public class Usuario {
 	}
 
 
-
 	public String getTelefonoUsuario() {
 		return telefonoUsuario;
 	}
-
 
 
 	public void setTelefonoUsuario(String telefonoUsuario) {
@@ -130,11 +133,9 @@ public class Usuario {
 	}
 
 
-
 	public String getRolUsuario() {
 		return rolUsuario;
 	}
-
 
 
 	public void setRolUsuario(String rolUsuario) {
@@ -142,11 +143,9 @@ public class Usuario {
 	}
 
 
-
 	public byte[] getFotoUsuario() {
 		return fotoUsuario;
 	}
-
 
 
 	public void setFotoUsuario(byte[] fotoUsuario) {
@@ -154,11 +153,9 @@ public class Usuario {
 	}
 
 
-
 	public String getPasswordUsuario() {
 		return passwordUsuario;
 	}
-
 
 
 	public void setPasswordUsuario(String passwordUsuario) {
@@ -166,11 +163,9 @@ public class Usuario {
 	}
 
 
-
 	public boolean isVerificado() {
 		return verificado;
 	}
-
 
 
 	public void setVerificado(boolean verificado) {
@@ -178,11 +173,9 @@ public class Usuario {
 	}
 
 
-
 	public String getVerificacionToken() {
 		return verificacionToken;
 	}
-
 
 
 	public void setVerificacionToken(String verificacionToken) {
@@ -190,11 +183,9 @@ public class Usuario {
 	}
 
 
-
 	public LocalDateTime getTokenExpiracion() {
 		return tokenExpiracion;
 	}
-
 
 
 	public void setTokenExpiracion(LocalDateTime tokenExpiracion) {
@@ -202,11 +193,9 @@ public class Usuario {
 	}
 
 
-
 	public String getTipoSuscripcion() {
 		return tipoSuscripcion;
 	}
-
 
 
 	public void setTipoSuscripcion(String tipoSuscripcion) {
@@ -214,11 +203,9 @@ public class Usuario {
 	}
 
 
-
 	public LocalDateTime getFechaInicioSuscripcion() {
 		return fechaInicioSuscripcion;
 	}
-
 
 
 	public void setFechaInicioSuscripcion(LocalDateTime fechaInicioSuscripcion) {
@@ -226,11 +213,9 @@ public class Usuario {
 	}
 
 
-
 	public LocalDateTime getFechaFinSuscripcion() {
 		return fechaFinSuscripcion;
 	}
-
 
 
 	public void setFechaFinSuscripcion(LocalDateTime fechaFinSuscripcion) {
@@ -238,11 +223,9 @@ public class Usuario {
 	}
 
 
-
 	public String getEstadoSuscripcion() {
 		return estadoSuscripcion;
 	}
-
 
 
 	public void setEstadoSuscripcion(String estadoSuscripcion) {
@@ -250,11 +233,29 @@ public class Usuario {
 	}
 
 
+	public String getResetToken() {
+		return resetToken;
+	}
+
+
+	public void setResetToken(String resetToken) {
+		this.resetToken = resetToken;
+	}
+
+
+	public LocalDateTime getResetTokenExpiracion() {
+		return resetTokenExpiracion;
+	}
+
+
+	public void setResetTokenExpiracion(LocalDateTime resetTokenExpiracion) {
+		this.resetTokenExpiracion = resetTokenExpiracion;
+	}
+
 
 	public List<Consulta> getConsultas() {
 		return consultas;
 	}
-
 
 
 	public void setConsultas(List<Consulta> consultas) {
@@ -262,10 +263,19 @@ public class Usuario {
 	}
 
 
-
 	@Override
-    public String toString() {
-        return "Usuario [idUsuario=" + idUsuario + ", nombreUsuario=" + nombreUsuario + ", emailUsuario=" + emailUsuario
-                + ", telefonoUsuario=" + telefonoUsuario + ", rolUsuario=" + rolUsuario + "]";
-    }
+	public String toString() {
+		return "Usuario [idUsuario=" + idUsuario + ", nombreUsuario=" + nombreUsuario + ", emailUsuario=" + emailUsuario
+				+ ", telefonoUsuario=" + telefonoUsuario + ", rolUsuario=" + rolUsuario + ", fotoUsuario="
+				+ Arrays.toString(fotoUsuario) + ", passwordUsuario=" + passwordUsuario + ", verificado=" + verificado
+				+ ", verificacionToken=" + verificacionToken + ", tokenExpiracion=" + tokenExpiracion
+				+ ", tipoSuscripcion=" + tipoSuscripcion + ", fechaInicioSuscripcion=" + fechaInicioSuscripcion
+				+ ", fechaFinSuscripcion=" + fechaFinSuscripcion + ", estadoSuscripcion=" + estadoSuscripcion
+				+ ", resetToken=" + resetToken + ", resetTokenExpiracion=" + resetTokenExpiracion + ", consultas="
+				+ consultas + "]";
+	}
+    
+    
+    
+    
 }

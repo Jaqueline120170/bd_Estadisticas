@@ -51,7 +51,8 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
     List<Usuario> findByRolUsuarioIgnoreCase(String rolUsuario);
     
     Usuario findByVerificacionToken(String verificacionToken);
-    
+
+    Optional<Usuario> findByResetToken(String resetToken); 
   
 }
 

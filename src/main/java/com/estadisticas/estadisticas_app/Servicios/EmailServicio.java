@@ -31,6 +31,28 @@ public class EmailServicio {
             throw new RuntimeException("Error al enviar correo de verificación: " + e.getMessage());
         }
     }
+ // Método para enviar correo con enlace de restablecimiento de contraseña
+ // Método para enviar el correo de restablecimiento de contraseña
+    public void enviarCorreoRestablecerContraseña(String emailUsuario, String resetToken) {
+        String enlaceRestablecer = "http://localhost:8081/api/usuarios/restablecer-contraseña?token=" + resetToken;
+
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setFrom("osteologia2@gmail.com");
+        message.setTo(emailUsuario);
+        message.setSubject("Restablece tu Contraseña");
+        message.setText("Haz clic en el siguiente enlace para restablecer tu contraseña: " + enlaceRestablecer);
+
+        try {
+            mailSender.send(message);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Error al enviar correo de restablecimiento de contraseña: " + e.getMessage());
+        }
+    }
+    
+    /**
+     * Método privado para enviar correos con soporte HTML (opcional)
+     */
     private void enviarEmail(String destinatario, String asunto, String cuerpo) {
         MimeMessage mensaje = mailSender.createMimeMessage();
 

@@ -2,7 +2,7 @@ package com.estadisticas.estadisticas_app.Servicios;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
+import java.util.Optional;
 import java.util.UUID;
 
 import org.slf4j.Logger;
@@ -141,6 +141,57 @@ public class UsuarioServicio {
 
         // Enviar el nuevo correo de verificación
         emailServicio.enviarCorreoVerificacion(usuario.getEmailUsuario(), nuevoToken);
+    }
+    /**
+     * Método para solicitar el restablecimiento de la contraseña.
+     * Genera un token de restablecimiento, lo asigna al usuario y envía un correo con el enlace para restablecerla.
+     * @param emailUsuario el email del usuario que solicita el restablecimiento
+     */
+    public void solicitarRestablecimientoContraseña(String emailUsuario) {
+        // Buscar al usuario por el email proporcionado
+        Usuario usuario = usuarioRepository.findByEmailUsuario(emailUsuario)
+                .orElseThrow(() -> new IllegalArgumentException("No se encontró un usuario con ese email."));
+
+        // Generar un token de restablecimiento único
+        String resetToken = UUID.randomUUID().toString();
+        usuario.setResetToken(resetToken);
+        usuario.setResetTokenExpiracion(LocalDateTime.now().plusMinutes(tokenExpirationMinutes));  // Token válido por 30 minutos
+
+        // Guardar el usuario con el nuevo token
+        usuarioRepository.save(usuario);
+
+        // Enviar el correo con el enlace de restablecimiento de la contraseña
+        emailServicio.enviarCorreoRestablecerContraseña(usuario.getEmailUsuario(), resetToken);
+    }
+    /**
+     * Restablecer la contraseña del usuario usando el token de restablecimiento.
+     * @param token Token de restablecimiento
+     * @param nuevaPassword Nueva contraseña que el usuario desea establecer
+     */
+    public void restablecerContraseña(String token, String nuevaContraseña) {
+        // Buscar al usuario por el token de restablecimiento
+        Optional<Usuario> usuarioOptional = usuarioRepository.findByResetToken(token);
+
+        // Verificar si el usuario con ese token existe
+        if (usuarioOptional.isPresent()) {
+            // Obtener el usuario del Optional
+            Usuario usuario = usuarioOptional.get();
+
+            // Verificar si el token ha expirado
+            if (usuario.getResetTokenExpiracion().isBefore(LocalDateTime.now())) {
+                throw new IllegalArgumentException("El token de restablecimiento ha expirado.");
+            }
+
+            // Cambiar la contraseña del usuario
+            usuario.setPasswordUsuario(passwordEncoder.encode(nuevaContraseña)); // Asegúrate de encriptar la nueva contraseña
+            usuario.setResetToken(null); // Limpiar el resetToken
+            usuario.setResetTokenExpiracion(null); // Limpiar el tiempo de expiración del resetToken
+
+            // Guardar el usuario con la nueva contraseña
+            usuarioRepository.save(usuario);
+        } else {
+            throw new IllegalArgumentException("Token de restablecimiento inválido.");
+        }
     }
 
     /**
