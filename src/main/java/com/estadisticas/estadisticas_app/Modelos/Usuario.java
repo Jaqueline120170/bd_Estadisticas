@@ -26,9 +26,6 @@ public class Usuario {
     @Column(name = "rol_usuario")
     private String rolUsuario;
 
-    @Column(name = "foto_usuario", columnDefinition = "bytea", nullable = true)
-    private byte[] fotoUsuario;
-
     @Column(name = "password_usuario", nullable = false)
     private String passwordUsuario;
 
@@ -68,7 +65,7 @@ public class Usuario {
 
 
 	public Usuario(Long idUsuario, String nombreUsuario, String emailUsuario, String telefonoUsuario, String rolUsuario,
-			byte[] fotoUsuario, String passwordUsuario, boolean verificado, String verificacionToken,
+			String passwordUsuario, boolean verificado, String verificacionToken,
 			LocalDateTime tokenExpiracion, String tipoSuscripcion, LocalDateTime fechaInicioSuscripcion,
 			LocalDateTime fechaFinSuscripcion, String estadoSuscripcion, String resetToken,
 			LocalDateTime resetTokenExpiracion, List<Consulta> consultas) {
@@ -78,7 +75,6 @@ public class Usuario {
 		this.emailUsuario = emailUsuario;
 		this.telefonoUsuario = telefonoUsuario;
 		this.rolUsuario = rolUsuario;
-		this.fotoUsuario = fotoUsuario;
 		this.passwordUsuario = passwordUsuario;
 		this.verificado = verificado;
 		this.verificacionToken = verificacionToken;
@@ -141,17 +137,6 @@ public class Usuario {
 	public void setRolUsuario(String rolUsuario) {
 		this.rolUsuario = rolUsuario;
 	}
-
-
-	public byte[] getFotoUsuario() {
-		return fotoUsuario;
-	}
-
-
-	public void setFotoUsuario(byte[] fotoUsuario) {
-		this.fotoUsuario = fotoUsuario;
-	}
-
 
 	public String getPasswordUsuario() {
 		return passwordUsuario;
@@ -267,7 +252,7 @@ public class Usuario {
 	public String toString() {
 		return "Usuario [idUsuario=" + idUsuario + ", nombreUsuario=" + nombreUsuario + ", emailUsuario=" + emailUsuario
 				+ ", telefonoUsuario=" + telefonoUsuario + ", rolUsuario=" + rolUsuario + ", fotoUsuario="
-				+ Arrays.toString(fotoUsuario) + ", passwordUsuario=" + passwordUsuario + ", verificado=" + verificado
+				+  ", passwordUsuario=" + passwordUsuario + ", verificado=" + verificado
 				+ ", verificacionToken=" + verificacionToken + ", tokenExpiracion=" + tokenExpiracion
 				+ ", tipoSuscripcion=" + tipoSuscripcion + ", fechaInicioSuscripcion=" + fechaInicioSuscripcion
 				+ ", fechaFinSuscripcion=" + fechaFinSuscripcion + ", estadoSuscripcion=" + estadoSuscripcion
