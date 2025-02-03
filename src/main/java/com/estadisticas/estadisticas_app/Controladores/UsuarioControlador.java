@@ -80,6 +80,8 @@ public class UsuarioControlador {
     public ResponseEntity<?> iniciarSesion(@RequestBody LoginUsuarioDto loginDto) {
         try {
             Usuario usuario = usuarioServicio.login(loginDto);
+         // Devolver un token JWT (por ejemplo)
+            String token = "jwt_token"; // Aquí deberías generar el token JWT
 
             // Opcional: Devuelve solo la información necesaria, como nombre y rol
             return ResponseEntity.ok("Inicio de sesión exitoso. Bienvenido, " + usuario.getNombreUsuario());
@@ -92,7 +94,7 @@ public class UsuarioControlador {
      * @param emailUsuario el email del usuario que solicita el restablecimiento
      * @return ResponseEntity con un mensaje de éxito o error
      */
-    @PostMapping("/solicitar-restablecimiento-contraseña")
+    @PostMapping("/solicitar-restablecimiento-contrasena")
     public ResponseEntity<String> solicitarRestablecimientoContraseña(@RequestParam String emailUsuario) {
         try {
             // Llamamos al servicio para solicitar el restablecimiento de contraseña

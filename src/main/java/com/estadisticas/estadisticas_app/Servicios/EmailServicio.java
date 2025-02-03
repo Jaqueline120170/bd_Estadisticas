@@ -14,7 +14,9 @@ public class EmailServicio {
 
     @Autowired
     private JavaMailSender mailSender;
-
+    
+    //Método para enviar un correo de verificación de cuenta y poder activarla para
+    //poder loggearse posteriormente
     public void enviarCorreoVerificacion(String emailUsuario, String token) {
     	String enlaceVerificacion = "http://localhost:8081/api/usuarios/activar?token=" + token;
 
