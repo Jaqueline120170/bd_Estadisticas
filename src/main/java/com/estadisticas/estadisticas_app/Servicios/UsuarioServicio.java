@@ -73,6 +73,11 @@ public class UsuarioServicio {
             usuario.setTokenExpiracion(LocalDateTime.now().plusMinutes(tokenExpirationMinutes));
 
 
+            // Guardar la foto si está presente
+            if (usuarioDto.getFotoUsuario() != null) {
+                usuario.setFotoUsuario(usuarioDto.getFotoUsuario());
+            }
+
             // Guardar el nuevo usuario en la base de datos
             usuarioRepository.save(usuario);
             

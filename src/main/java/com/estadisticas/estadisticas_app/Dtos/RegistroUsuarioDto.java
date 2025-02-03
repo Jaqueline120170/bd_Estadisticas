@@ -6,7 +6,7 @@ public class RegistroUsuarioDto {
     private String emailUsuario;
     private String passwordUsuario;
     private String telefonoUsuario;
-   
+    private byte[] fotoUsuario;
     
 	public String getNombreUsuario() {
 		return nombreUsuario;
@@ -32,6 +32,12 @@ public class RegistroUsuarioDto {
 	public void setTelefonoUsuario(String telefonoUsuario) {
 		this.telefonoUsuario = telefonoUsuario;
 	}
-	
+	public byte[] getFotoUsuario() {
+		return fotoUsuario;
+	}
+	public void setFotoUsuario(byte[] fotoUsuario) {
+		this.fotoUsuario = fotoUsuario;
+	}
+    
     
 }
