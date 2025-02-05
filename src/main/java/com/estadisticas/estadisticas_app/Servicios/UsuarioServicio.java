@@ -72,8 +72,6 @@ public class UsuarioServicio {
             usuario.setVerificacionToken(token);
             usuario.setTokenExpiracion(LocalDateTime.now().plusMinutes(tokenExpirationMinutes));
 
-
-
             // Guardar el nuevo usuario en la base de datos
             usuarioRepository.save(usuario);
             
