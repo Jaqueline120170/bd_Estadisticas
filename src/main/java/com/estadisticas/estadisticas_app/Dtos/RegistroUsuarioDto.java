@@ -4,9 +4,10 @@ public class RegistroUsuarioDto {
 	
 	private String nombreUsuario;
     private String emailUsuario;
-    private String passwordUsuario;
     private String telefonoUsuario;
-    private byte[] fotoUsuario;
+    private String passwordUsuario;
+   
+   
     
 	public String getNombreUsuario() {
 		return nombreUsuario;
@@ -20,24 +21,19 @@ public class RegistroUsuarioDto {
 	public void setEmailUsuario(String emailUsuario) {
 		this.emailUsuario = emailUsuario;
 	}
-	public String getPasswordUsuario() {
-		return passwordUsuario;
-	}
-	public void setPasswordUsuario(String passwordUsuario) {
-		this.passwordUsuario = passwordUsuario;
-	}
 	public String getTelefonoUsuario() {
 		return telefonoUsuario;
 	}
 	public void setTelefonoUsuario(String telefonoUsuario) {
 		this.telefonoUsuario = telefonoUsuario;
 	}
-	public byte[] getFotoUsuario() {
-		return fotoUsuario;
+	public String getPasswordUsuario() {
+		return passwordUsuario;
 	}
-	public void setFotoUsuario(byte[] fotoUsuario) {
-		this.fotoUsuario = fotoUsuario;
+	public void setPasswordUsuario(String passwordUsuario) {
+		this.passwordUsuario = passwordUsuario;
 	}
-    
+	
+	
     
 }
