@@ -18,7 +18,8 @@ public class EmailServicio {
     //Método para enviar un correo de verificación de cuenta y poder activarla para
     //poder loggearse posteriormente
     public void enviarCorreoVerificacion(String emailUsuario, String token) {
-    	String enlaceVerificacion = "http://localhost:8081/api/usuarios/activar?token=" + token;
+    	String enlaceVerificacion = "http://localhost:4200/activar?token=" + token;
+
 
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom("osteologia2@gmail.com");

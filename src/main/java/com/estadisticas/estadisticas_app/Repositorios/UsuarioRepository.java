@@ -53,7 +53,8 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
     Usuario findByVerificacionToken(String verificacionToken);
 
     Optional<Usuario> findByResetToken(String resetToken); 
-  
+    
+   
 }
 
 

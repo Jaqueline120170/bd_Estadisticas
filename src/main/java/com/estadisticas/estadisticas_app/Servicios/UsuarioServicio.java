@@ -100,11 +100,14 @@ public class UsuarioServicio {
         }
         // Verificar si el token ha expirado
         if (usuario.getTokenExpiracion().isBefore(LocalDateTime.now())) {
+        	 System.out.println("Fecha de expiración del token: " + usuario.getTokenExpiracion());
+        	 System.out.println("Fecha actual: " + LocalDateTime.now());
             throw new IllegalArgumentException("El token de verificación ha expirado.Solicita un nuevo enlace de activación.");
         }
 
         usuario.setVerificado(true);
         usuario.setVerificacionToken(null);
+        System.out.println("Token después de eliminación: " + usuario.getVerificacionToken());
         usuario.setTokenExpiracion(null);
 
         usuarioRepository.save(usuario);

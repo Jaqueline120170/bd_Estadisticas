@@ -1,5 +1,6 @@
 package com.estadisticas.estadisticas_app.Controladores;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,15 +59,17 @@ public class UsuarioControlador {
     }
     // Endpoint para activar el usuario usando el token enviado por correo
     @GetMapping("/activar")
-    public String activarCuenta(@RequestParam String token) {
+    public ResponseEntity<String> activarCuenta(@RequestParam String token) {
         try {
-            // Llamamos al servicio para activar el usuario
             usuarioServicio.activarUsuario(token);
-            return "Cuenta activada exitosamente. Ahora puedes iniciar sesión.";
+            return ResponseEntity.ok("Cuenta activada exitosamente. Ahora puedes iniciar sesión.");
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error al activar la cuenta: " + e.getMessage());
         } catch (Exception e) {
-            return "Hubo un error al activar la cuenta: " + e.getMessage();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Hubo un error al activar la cuenta: " + e.getMessage());
         }
     }
+
     // Endpoint para reenviar enlace de activacion de cuenta
     @PostMapping("/reenviar-enlace-activacion")
     public ResponseEntity<String> reenviarEnlaceActivacion(@RequestParam("email") String emailUsuario) {
