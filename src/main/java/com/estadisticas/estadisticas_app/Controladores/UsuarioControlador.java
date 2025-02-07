@@ -1,5 +1,6 @@
 package com.estadisticas.estadisticas_app.Controladores;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,33 +41,57 @@ public class UsuarioControlador {
      *         </ul>
      */
     @PostMapping("/registro")
-    public ResponseEntity<String> registroUsuario(@RequestBody RegistroUsuarioDto usuarioDto) {
+    public ResponseEntity<Map<String, String>> registroUsuario(@RequestBody RegistroUsuarioDto usuarioDto) {
         try {
             if (usuarioDto.getEmailUsuario() == null || usuarioDto.getEmailUsuario().isEmpty()) {
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El email es obligatorio.");
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(Collections.singletonMap("error", "El email es obligatorio."));
             }
 
             if (usuarioServicio.emailExistsUsuario(usuarioDto.getEmailUsuario())) {
-                return ResponseEntity.status(HttpStatus.CONFLICT).body("El email ya está registrado.");
+                return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body(Collections.singletonMap("error", "El email ya está registrado."));
             }
 
             usuarioServicio.registroUsuario(usuarioDto);
-            return ResponseEntity.status(HttpStatus.CREATED).body("Usuario registrado exitosamente.");
+            return ResponseEntity.status(HttpStatus.CREATED)
+                .body(Collections.singletonMap("message", "Usuario registrado exitosamente."));
         } catch (Exception e) {
             e.printStackTrace();
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error interno del servidor.");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(Collections.singletonMap("error", "Error interno del servidor."));
         }
     }
     // Endpoint para activar el usuario usando el token enviado por correo
     @GetMapping("/activar")
-    public ResponseEntity<String> activarCuenta(@RequestParam String token) {
+    public ResponseEntity<Map<String, String>> activarCuenta(@RequestParam String token) {
+    	  System.out.println("Token recibido en el backend: " + token);
+        System.out.println("Token recibido para activación: " + token);  // Log del token recibido
+
         try {
+            // Llama a la lógica del servicio para activar el usuario con el token
             usuarioServicio.activarUsuario(token);
-            return ResponseEntity.ok("Cuenta activada exitosamente. Ahora puedes iniciar sesión.");
+            
+            // Prepara la respuesta en formato Map (se convertirá a JSON automáticamente)
+            Map<String, String> response = new HashMap<>();
+            response.put("message", "Cuenta activada exitosamente. Ahora puedes iniciar sesión.");
+            
+            // Devuelve la respuesta en formato JSON con el código HTTP 200 (OK)
+            return ResponseEntity.ok(response);
+            
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error al activar la cuenta: " + e.getMessage());
+            // Si hay un error de activación, devuelve un mensaje con código HTTP 400 (Bad Request)
+            System.out.println("Error al activar cuenta: " + e.getMessage());  // Log del error
+            Map<String, String> response = new HashMap<>();
+            response.put("error", "Error al activar la cuenta: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+            
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Hubo un error al activar la cuenta: " + e.getMessage());
+            // Si ocurre un error general, devuelve un mensaje con código HTTP 500 (Internal Server Error)
+            System.out.println("Error general: " + e.getMessage());  // Log de error general
+            Map<String, String> response = new HashMap<>();
+            response.put("error", "Hubo un error al activar la cuenta: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
     }
 
