@@ -62,43 +62,41 @@ public class UsuarioControlador {
                 .body(Collections.singletonMap("error", "Error interno del servidor."));
         }
     }
- // Endpoint para activar el usuario usando el token enviado por correo
+    /**
+     * Activa la cuenta de un usuario utilizando un token de verificación enviado por correo.
+     * 
+     * @param token Token único de activación
+     * @return ResponseEntity con un mensaje de éxito o error en formato JSON
+     */
     @GetMapping("/activar")
     public ResponseEntity<Map<String, String>> activarCuenta(@RequestParam String token) {
         System.out.println("Token recibido para activación: " + token);  // Log del token recibido
 
+        Map<String, String> response = new HashMap<>();
+
         try {
-            // Llama a la lógica del servicio para activar el usuario con el token
+            // Intenta activar la cuenta con el token proporcionado
             boolean activado = usuarioServicio.activarUsuario(token);
-            
+
             if (activado) {
-                // Prepara la respuesta en formato Map (se convertirá a JSON automáticamente)
-                Map<String, String> response = new HashMap<>();
                 response.put("message", "Cuenta activada exitosamente. Ahora puedes iniciar sesión.");
-                
-                // Devuelve la respuesta en formato JSON con el código HTTP 200 (OK)
-                return ResponseEntity.ok(response);
+                return ResponseEntity.ok(response);  // Respuesta HTTP 200 (OK)
             } else {
-                // Si por alguna razón la activación no fue exitosa, devuelve un error 400
-                Map<String, String> response = new HashMap<>();
                 response.put("error", "Hubo un problema al activar la cuenta.");
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);  // Respuesta HTTP 400 (Bad Request)
             }
         } catch (IllegalArgumentException e) {
-            // Si hay un error de activación, devuelve un mensaje con código HTTP 400 (Bad Request)
-            System.out.println("Error al activar cuenta: " + e.getMessage());  // Log del error
-            Map<String, String> response = new HashMap<>();
+            // Captura errores específicos de validación (ej. token inválido o expirado)
+            System.err.println("Error al activar cuenta: " + e.getMessage()); // Log de error
             response.put("error", "Error al activar la cuenta: " + e.getMessage());
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);  // Respuesta HTTP 400 (Bad Request)
         } catch (Exception e) {
-            // Si ocurre un error general, devuelve un mensaje con código HTTP 500 (Internal Server Error)
-            System.out.println("Error general: " + e.getMessage());  // Log de error general
-            Map<String, String> response = new HashMap<>();
-            response.put("error", "Hubo un error al activar la cuenta: " + e.getMessage());
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+            // Captura cualquier otro error inesperado
+            System.err.println("Error general: " + e.getMessage()); // Log de error general
+            response.put("error", "Hubo un error al activar la cuenta. Inténtalo más tarde.");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);  // Respuesta HTTP 500 (Internal Server Error)
         }
     }
-
 
     // Endpoint para reenviar enlace de activacion de cuenta
     @PostMapping("/reenviar-enlace-activacion")

@@ -18,6 +18,8 @@ import com.estadisticas.estadisticas_app.Modelos.Usuario;
 import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepository;
 import com.estadisticas.estadisticas_app.Utils.ValidacionesUtil;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class UsuarioServicio {
 	
@@ -89,51 +91,42 @@ public class UsuarioServicio {
     }
 
     /**
-     * Método para Activar usuario mediante token de verificación.
-     * @param token el token de verificación enviado por email
+     * Método para activar un usuario mediante un token de verificación.
+     * @param token El token de verificación enviado por email.
+     * @return true si la activación fue exitosa, false en caso contrario.
+     * @throws IllegalArgumentException Si el token es inválido, ha expirado o no se encuentra en la base de datos.
      */
     public boolean activarUsuario(String token) {
-        // Limpiar el token recibido para evitar problemas con espacios en blanco.
-        String tokenLimpiado = token.trim();
+        // Verificar que el token no es nulo o vacío
+        if (token == null || token.trim().isEmpty()) {
+            throw new IllegalArgumentException("El token de activación no puede ser vacío.");
+        }
 
-        // Buscar el usuario por su token de verificación.
-        Usuario usuario = usuarioRepository.findByVerificacionToken(tokenLimpiado);
+        // Buscar en la base de datos un usuario con el token de verificación
+        Usuario usuario = usuarioRepository.findByVerificacionToken(token);
 
-        // Verificar si el usuario con el token no fue encontrado.
+        // Si no se encuentra un usuario con el token proporcionado, lanzar una excepción
         if (usuario == null) {
-            System.out.println("No se encontró ningún usuario con el token: " + token);
             throw new IllegalArgumentException("Token de verificación no válido.");
         }
-        
-        System.out.println("Fecha de expiración del token: " + usuario.getTokenExpiracion());
-        System.out.println("Fecha actual: " + LocalDateTime.now());
-        // Verificar si el token ha expirado.
+
+        // Verificar si el token ha expirado comparando la fecha de expiración con la fecha actual
         if (usuario.getTokenExpiracion().isBefore(LocalDateTime.now())) {
-            System.out.println("Fecha de expiración del token: " + usuario.getTokenExpiracion());
-            System.out.println("Fecha actual: " + LocalDateTime.now());
-            throw new IllegalArgumentException("El token de verificación ha expirado. Solicita un nuevo enlace de activación.");
+            throw new IllegalArgumentException("El token ha expirado.");
         }
 
-        // Si el token es válido y no ha expirado, activar al usuario.
+        // Si todo es válido, marcar al usuario como verificado
         usuario.setVerificado(true);
 
-        // Limpiar el token de verificación y la fecha de expiración después de la activación.
-        usuario.setVerificacionToken(null);
-        usuario.setTokenExpiracion(null);
-
-        // Log para confirmar que el token ha sido eliminado correctamente.
-        System.out.println("Token después de eliminación: " + usuario.getVerificacionToken());
-
-        // Guardar los cambios en la base de datos.
+        // Guardar el estado actualizado del usuario en la base de datos
         usuarioRepository.save(usuario);
 
-        // Devolver true indicando que la activación fue exitosa.
-        return true;
+        return true; // Indicar que la activación fue exitosa
     }
 
     /**
      *Método para el Reenvio de enlace de verificacion al usuario, genera nuevo token de verificacion en caso de
-     *que el token enviado al principio, haya expirado (5 minutos) @Value("${token.expiration.minutes}")
+     *que el token enviado al principio, haya expirado (15 minutos) @Value("${token.expiration.minutes}")
     private int tokenExpirationMinutes; // Configurable desde application.properties.
      * @param token el token de verificación enviado por email
      */
