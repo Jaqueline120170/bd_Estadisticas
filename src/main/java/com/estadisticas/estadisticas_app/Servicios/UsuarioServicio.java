@@ -117,6 +117,8 @@ public class UsuarioServicio {
 
         // Si todo es válido, marcar al usuario como verificado
         usuario.setVerificado(true);
+        //usuario.setTokenExpiracion(null);
+        //usuario.setVerificacionToken(null);
 
         // Guardar el estado actualizado del usuario en la base de datos
         usuarioRepository.save(usuario);
@@ -173,7 +175,7 @@ public class UsuarioServicio {
         emailServicio.enviarCorreoRestablecerContraseña(usuario.getEmailUsuario(), resetToken);
     }
     /**
-     * Restablecer la contraseña del usuario usando el token de restablecimiento.
+     * Metod para Restablecer la contraseña del usuario usando el token de restablecimiento.
      * @param token Token de restablecimiento
      * @param nuevaPassword Nueva contraseña que el usuario desea establecer
      */

@@ -25,7 +25,7 @@ public class EmailServicio {
         message.setFrom("osteologia2@gmail.com");
         message.setTo(emailUsuario);
         message.setSubject("Verificación de Correo");
-        message.setText("Por favor, verifica tu correo haciendo clic en el siguiente enlace: " + enlaceVerificacion);
+        message.setText("Por favor, verifica tu cuenta haciendo clic en el siguiente enlace: " + enlaceVerificacion);
         
         try {
             mailSender.send(message);

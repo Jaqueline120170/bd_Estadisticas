@@ -1,5 +1,6 @@
 package com.estadisticas.estadisticas_app.Controladores;
 
+import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.estadisticas.estadisticas_app.Dtos.LoginUsuarioDto;
 import com.estadisticas.estadisticas_app.Dtos.RegistroUsuarioDto;
 import com.estadisticas.estadisticas_app.Modelos.Usuario;
+import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepository;
 import com.estadisticas.estadisticas_app.Servicios.UsuarioServicio;
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -27,6 +29,8 @@ public class UsuarioControlador {
 
     @Autowired
     private UsuarioServicio usuarioServicio;
+    @Autowired
+    private UsuarioRepository usuarioRepository; // Inyectamos el repositorio
 
     /**
      * Endpoint para registrar un nuevo usuario.
@@ -70,31 +74,42 @@ public class UsuarioControlador {
      */
     @GetMapping("/activar")
     public ResponseEntity<Map<String, String>> activarCuenta(@RequestParam String token) {
-        System.out.println("Token recibido para activación: " + token);  // Log del token recibido
-
         Map<String, String> response = new HashMap<>();
 
         try {
-            // Intenta activar la cuenta con el token proporcionado
-            boolean activado = usuarioServicio.activarUsuario(token);
+            if (token == null || token.trim().isEmpty()) {
+                response.put("error", "Token inválido.");
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+            }
 
+            Usuario usuario = usuarioRepository.findByVerificacionToken(token);
+            if (usuario == null) {
+                response.put("error", "Token de verificación no válido.");
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+            }
+
+            if (usuario.getTokenExpiracion().isBefore(LocalDateTime.now())) {
+                response.put("error", "El token ha expirado. Puedes solicitar uno nuevo.");
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+            }
+
+            if (usuario.isVerificado()) {
+                response.put("message", "La cuenta ya está activada.");
+                return ResponseEntity.ok(response);
+            }
+
+            boolean activado = usuarioServicio.activarUsuario(token);
             if (activado) {
                 response.put("message", "Cuenta activada exitosamente. Ahora puedes iniciar sesión.");
-                return ResponseEntity.ok(response);  // Respuesta HTTP 200 (OK)
+                return ResponseEntity.ok(response);
             } else {
                 response.put("error", "Hubo un problema al activar la cuenta.");
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);  // Respuesta HTTP 400 (Bad Request)
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
             }
-        } catch (IllegalArgumentException e) {
-            // Captura errores específicos de validación (ej. token inválido o expirado)
-            System.err.println("Error al activar cuenta: " + e.getMessage()); // Log de error
-            response.put("error", "Error al activar la cuenta: " + e.getMessage());
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);  // Respuesta HTTP 400 (Bad Request)
+
         } catch (Exception e) {
-            // Captura cualquier otro error inesperado
-            System.err.println("Error general: " + e.getMessage()); // Log de error general
             response.put("error", "Hubo un error al activar la cuenta. Inténtalo más tarde.");
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);  // Respuesta HTTP 500 (Internal Server Error)
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
     }
 
