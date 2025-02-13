@@ -211,30 +211,28 @@ public class UsuarioServicio {
      * @return Usuario autenticado
      */
     public Usuario login(LoginUsuarioDto loginDto) {
-        // Validar que el email no esté vacío y tenga un formato correcto
+        // Validaciones
         ValidacionesUtil.validarNoVacio(loginDto.getEmailUsuario(), "emailUsuario");
         ValidacionesUtil.validarEmail(loginDto.getEmailUsuario());
-
-        // Validar que la contraseña no esté vacía y cumpla con las reglas mínimas
         ValidacionesUtil.validarNoVacio(loginDto.getPasswordUsuario(), "passwordUsuario");
         ValidacionesUtil.validarPassword(loginDto.getPasswordUsuario());
 
-        // Buscar el usuario por email
+        // Buscar usuario por email
         Usuario usuario = usuarioRepository
             .findByEmailUsuario(loginDto.getEmailUsuario())
             .orElseThrow(() -> new IllegalArgumentException("Usuario no encontrado con ese email."));
-
-        // Verificar si la contraseña proporcionada coincide con la almacenada
-        if (!passwordEncoder.matches(loginDto.getPasswordUsuario(), usuario.getPasswordUsuario())) {
-            throw new IllegalArgumentException("Contraseña incorrecta.");
-        }
 
         // Verificar si la cuenta ha sido activada mediante verificación de email
         if (!usuario.isVerificado()) {
             throw new IllegalStateException("La cuenta no ha sido verificada. Por favor revisa tu email.");
         }
 
-        return usuario; // Retornar el usuario autenticado si pasa todas las validaciones
+        // Verificar la contraseña
+        if (!passwordEncoder.matches(loginDto.getPasswordUsuario(), usuario.getPasswordUsuario())) {
+            throw new IllegalArgumentException("Contraseña incorrecta.");
+        }
+
+        return usuario; // Si pasa todo, retorna el usuario autenticado
     }
 
     /**

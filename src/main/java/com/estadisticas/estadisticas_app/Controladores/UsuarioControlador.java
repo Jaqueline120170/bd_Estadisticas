@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -128,15 +129,25 @@ public class UsuarioControlador {
     public ResponseEntity<?> iniciarSesion(@RequestBody LoginUsuarioDto loginDto) {
         try {
             Usuario usuario = usuarioServicio.login(loginDto);
-         // Devolver un token JWT (por ejemplo)
-            String token = "jwt_token"; // Aquí deberías generar el token JWT
 
-            // Opcional: Devuelve solo la información necesaria, como nombre y rol
-            return ResponseEntity.ok("Inicio de sesión exitoso. Bienvenido, " + usuario.getNombreUsuario());
+            // Generar token de sesión (aquí podrías implementar JWT si quisieras)
+            String token = UUID.randomUUID().toString(); // Simulación de token
+
+            // Devolver datos esenciales para el frontend
+            Map<String, Object> response = new HashMap<>();
+            response.put("message", "Inicio de sesión exitoso.");
+            response.put("nombre", usuario.getNombreUsuario());
+            response.put("rol", usuario.getRolUsuario());  // Puede ser "ADMIN" o "USUARIO"
+            response.put("token", token);
+
+            return ResponseEntity.ok(response);
+        } catch (IllegalStateException e) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Map.of("error", e.getMessage()));
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", e.getMessage()));
         }
     }
+
     /**
      * Endpoint para solicitar el restablecimiento de la contraseña
      * @param emailUsuario el email del usuario que solicita el restablecimiento
