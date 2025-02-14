@@ -2,6 +2,7 @@ package com.estadisticas.estadisticas_app.Dtos;
 
 public class RegistroUsuarioDto {
 	
+	private Long id;
 	private String nombreUsuario;
     private String emailUsuario;
     private String telefonoUsuario;
@@ -9,7 +10,18 @@ public class RegistroUsuarioDto {
    
    
     
-	public String getNombreUsuario() {
+    public Long getId() {
+		return id;
+	}
+
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+    public String getNombreUsuario() {
 		return nombreUsuario;
 	}
 	public void setNombreUsuario(String nombreUsuario) {

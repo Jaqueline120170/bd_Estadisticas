@@ -1,5 +1,7 @@
 package com.estadisticas.estadisticas_app.Servicios;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -14,28 +16,26 @@ public class EmailServicio {
 
     @Autowired
     private JavaMailSender mailSender;
+    private static final Logger logger = LoggerFactory.getLogger(UsuarioServicio.class);
     
  // Método para enviar un correo de verificación de cuenta y activarla para loggearse posteriormente
-    public void enviarCorreoVerificacion(String emailUsuario, String token) {
-        // Enlace debe apuntar al backend, NO a Angular
-        String enlaceVerificacion = "http://localhost:8081/api/usuarios/activar?token=" + token;
+    public void enviarCorreoVerificacion(String emailUsuario, String token, Long idUsuario) {
+        String enlaceVerificacion = "http://localhost:8081/api/usuarios/activar?id=" + idUsuario + "&token=" + token;
 
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom("osteologia2@gmail.com");
         message.setTo(emailUsuario);
         message.setSubject("Verificación de Correo");
-        message.setText("Por favor, verifica tu cuenta haciendo clic en el siguiente enlace: " + enlaceVerificacion);
+        message.setText("Por favor, verifica tu correo haciendo clic en el siguiente enlace: " + enlaceVerificacion);
 
         try {
             mailSender.send(message);
         } catch (Exception e) {
-            e.printStackTrace();
             throw new RuntimeException("Error al enviar correo de verificación: " + e.getMessage());
         }
     }
 
  // Método para enviar correo con enlace de restablecimiento de contraseña
- // Método para enviar el correo de restablecimiento de contraseña
     public void enviarCorreoRestablecerContraseña(String emailUsuario, String resetToken) {
         String enlaceRestablecer = "http://localhost:8081/api/usuarios/restablecer-contraseña?token=" + resetToken;
 

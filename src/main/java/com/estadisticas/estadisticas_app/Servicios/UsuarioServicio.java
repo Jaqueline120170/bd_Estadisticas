@@ -80,7 +80,8 @@ public class UsuarioServicio {
             logger.info("Usuario registrado con éxito: {}", usuarioDto.getEmailUsuario());
 
             // Enviar correo de verificación
-            emailServicio.enviarCorreoVerificacion(usuarioDto.getEmailUsuario(), token);
+            emailServicio.enviarCorreoVerificacion(usuario.getEmailUsuario(), token, usuario.getIdUsuario());
+
 
         } catch (Exception e) {
         	logger.error("Error al registrar el usuario: {}", e.getMessage(), e);  // El 'e' aquí es la excepción completa
@@ -97,26 +98,24 @@ public class UsuarioServicio {
      * @throws IllegalArgumentException Si el token es inválido o ha expirado.
      */
     @Transactional
-    public boolean activarUsuario(String token) {
-        if (token == null || token.trim().isEmpty()) {
-            logger.warn("Intento de activación con token vacío.");
-            throw new IllegalArgumentException("El token de activación no puede ser vacío.");
+    public boolean activarUsuario(String token, Long idUsuario) {
+        logger.info("Intentando activar usuario con token: " + token);
+
+        Usuario usuario = usuarioRepository.findById(idUsuario)
+                .orElseThrow(() -> new IllegalArgumentException("Usuario no encontrado"));
+
+        if (usuario.isVerificado()) {
+            logger.info("El usuario " + usuario.getEmailUsuario() + " ya está activado.");
+            return false; // Indica que ya estaba activado
         }
 
-        Usuario usuario = usuarioRepository.findByVerificacionToken(token);
-
-        if (usuario == null) {
-            logger.warn("Intento de activación con token inválido: " + token);
+        if (!token.equals(usuario.getVerificacionToken())) {
+            logger.warn("Token incorrecto para el usuario: " + usuario.getEmailUsuario());
             throw new IllegalArgumentException("Token de verificación no válido.");
         }
 
-        if (usuario.isVerificado()) {
-            logger.info("El usuario con email " + usuario.getEmailUsuario() + " ya estaba activado.");
-            return false; // Ya estaba activado
-        }
-
         if (usuario.getTokenExpiracion().isBefore(LocalDateTime.now())) {
-            logger.warn("El token ha expirado para el usuario: " + usuario.getEmailUsuario());
+            logger.warn("Token expirado para el usuario: " + usuario.getEmailUsuario());
             throw new IllegalArgumentException("El token ha expirado.");
         }
 
@@ -128,6 +127,7 @@ public class UsuarioServicio {
         logger.info("Cuenta activada con éxito para el usuario: " + usuario.getEmailUsuario());
         return true;
     }
+
     /**
      *Método para el Reenvio de enlace de verificacion al usuario, genera nuevo token de verificacion en caso de
      *que el token enviado al principio, haya expirado (15 minutos) @Value("${token.expiration.minutes}")
@@ -153,7 +153,7 @@ public class UsuarioServicio {
         usuarioRepository.save(usuario);
 
         // Enviar el nuevo correo de verificación
-        emailServicio.enviarCorreoVerificacion(usuario.getEmailUsuario(), nuevoToken);
+        emailServicio.enviarCorreoVerificacion(usuario.getEmailUsuario(), nuevoToken, usuario.getIdUsuario());
     }
     /**
      * Método para solicitar el restablecimiento de la contraseña.

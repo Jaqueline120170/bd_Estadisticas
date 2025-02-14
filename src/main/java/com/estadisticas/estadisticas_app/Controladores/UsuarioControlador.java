@@ -79,12 +79,14 @@ public class UsuarioControlador {
      * @return ResponseEntity con un mensaje de éxito o error en formato JSON
      */
     @GetMapping("/activar")
-    public void activarCuenta(@RequestParam("token") String token, HttpServletResponse response) throws IOException {
+    public void activarCuenta(@RequestParam("id") Long idUsuario, @RequestParam("token") String token, HttpServletResponse response) throws IOException {
+        logger.info("Solicitud de activación recibida para usuario ID: " + idUsuario);
+
         try {
-            boolean activado = usuarioServicio.activarUsuario(token);
+            boolean activado = usuarioServicio.activarUsuario(token, idUsuario);
             
             if (activado) {
-                logger.info("Redirigiendo a login tras activación exitosa.");
+                logger.info("Cuenta activada correctamente. Redirigiendo a login.");
                 response.sendRedirect("http://localhost:4200/login?mensaje=activacion_exitosa");
             } else {
                 logger.info("Cuenta ya estaba activada. Redirigiendo a login.");
@@ -95,6 +97,7 @@ public class UsuarioControlador {
             response.sendRedirect("http://localhost:4200/error-activacion?error=" + e.getMessage());
         }
     }
+
     // Endpoint para reenviar enlace de activacion de cuenta
     @PostMapping("/reenviar-enlace-activacion")
     public ResponseEntity<String> reenviarEnlaceActivacion(@RequestParam("email") String emailUsuario) {
