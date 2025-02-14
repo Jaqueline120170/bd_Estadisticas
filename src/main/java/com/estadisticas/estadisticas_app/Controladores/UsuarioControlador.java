@@ -1,10 +1,12 @@
 package com.estadisticas.estadisticas_app.Controladores;
 
-import java.time.LocalDateTime;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,6 +25,8 @@ import com.estadisticas.estadisticas_app.Modelos.Usuario;
 import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepository;
 import com.estadisticas.estadisticas_app.Servicios.UsuarioServicio;
 
+import jakarta.servlet.http.HttpServletResponse;
+
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/usuarios")
@@ -32,6 +36,7 @@ public class UsuarioControlador {
     private UsuarioServicio usuarioServicio;
     @Autowired
     private UsuarioRepository usuarioRepository; // Inyectamos el repositorio
+    private static final Logger logger = LoggerFactory.getLogger(UsuarioServicio.class);
 
     /**
      * Endpoint para registrar un nuevo usuario.
@@ -74,46 +79,22 @@ public class UsuarioControlador {
      * @return ResponseEntity con un mensaje de éxito o error en formato JSON
      */
     @GetMapping("/activar")
-    public ResponseEntity<Map<String, String>> activarCuenta(@RequestParam String token) {
-        Map<String, String> response = new HashMap<>();
-
+    public void activarCuenta(@RequestParam("token") String token, HttpServletResponse response) throws IOException {
         try {
-            if (token == null || token.trim().isEmpty()) {
-                response.put("error", "Token inválido.");
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
-            }
-
-            Usuario usuario = usuarioRepository.findByVerificacionToken(token);
-            if (usuario == null) {
-                response.put("error", "Token de verificación no válido.");
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
-            }
-
-            if (usuario.getTokenExpiracion().isBefore(LocalDateTime.now())) {
-                response.put("error", "El token ha expirado. Puedes solicitar uno nuevo.");
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
-            }
-
-            if (usuario.isVerificado()) {
-                response.put("message", "La cuenta ya está activada.");
-                return ResponseEntity.ok(response);
-            }
-
             boolean activado = usuarioServicio.activarUsuario(token);
+            
             if (activado) {
-                response.put("message", "Cuenta activada exitosamente. Ahora puedes iniciar sesión.");
-                return ResponseEntity.ok(response);
+                logger.info("Redirigiendo a login tras activación exitosa.");
+                response.sendRedirect("http://localhost:4200/login?mensaje=activacion_exitosa");
             } else {
-                response.put("error", "Hubo un problema al activar la cuenta.");
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+                logger.info("Cuenta ya estaba activada. Redirigiendo a login.");
+                response.sendRedirect("http://localhost:4200/login?mensaje=ya_activada");
             }
-
-        } catch (Exception e) {
-            response.put("error", "Hubo un error al activar la cuenta. Inténtalo más tarde.");
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        } catch (IllegalArgumentException e) {
+            logger.error("Error al activar cuenta: " + e.getMessage());
+            response.sendRedirect("http://localhost:4200/error-activacion?error=" + e.getMessage());
         }
     }
-
     // Endpoint para reenviar enlace de activacion de cuenta
     @PostMapping("/reenviar-enlace-activacion")
     public ResponseEntity<String> reenviarEnlaceActivacion(@RequestParam("email") String emailUsuario) {

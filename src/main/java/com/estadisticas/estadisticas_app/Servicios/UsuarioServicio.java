@@ -94,38 +94,40 @@ public class UsuarioServicio {
      * Método para activar un usuario mediante un token de verificación.
      * @param token El token de verificación enviado por email.
      * @return true si la activación fue exitosa, false en caso contrario.
-     * @throws IllegalArgumentException Si el token es inválido, ha expirado o no se encuentra en la base de datos.
+     * @throws IllegalArgumentException Si el token es inválido o ha expirado.
      */
+    @Transactional
     public boolean activarUsuario(String token) {
-        // Verificar que el token no es nulo o vacío
         if (token == null || token.trim().isEmpty()) {
+            logger.warn("Intento de activación con token vacío.");
             throw new IllegalArgumentException("El token de activación no puede ser vacío.");
         }
 
-        // Buscar en la base de datos un usuario con el token de verificación
         Usuario usuario = usuarioRepository.findByVerificacionToken(token);
 
-        // Si no se encuentra un usuario con el token proporcionado, lanzar una excepción
         if (usuario == null) {
+            logger.warn("Intento de activación con token inválido: " + token);
             throw new IllegalArgumentException("Token de verificación no válido.");
         }
 
-        // Verificar si el token ha expirado comparando la fecha de expiración con la fecha actual
+        if (usuario.isVerificado()) {
+            logger.info("El usuario con email " + usuario.getEmailUsuario() + " ya estaba activado.");
+            return false; // Ya estaba activado
+        }
+
         if (usuario.getTokenExpiracion().isBefore(LocalDateTime.now())) {
+            logger.warn("El token ha expirado para el usuario: " + usuario.getEmailUsuario());
             throw new IllegalArgumentException("El token ha expirado.");
         }
 
-        // Si todo es válido, marcar al usuario como verificado
         usuario.setVerificado(true);
-        //usuario.setTokenExpiracion(null);
-        //usuario.setVerificacionToken(null);
-
-        // Guardar el estado actualizado del usuario en la base de datos
+        usuario.setTokenExpiracion(null);
+        usuario.setVerificacionToken(null);
         usuarioRepository.save(usuario);
 
-        return true; // Indicar que la activación fue exitosa
+        logger.info("Cuenta activada con éxito para el usuario: " + usuario.getEmailUsuario());
+        return true;
     }
-
     /**
      *Método para el Reenvio de enlace de verificacion al usuario, genera nuevo token de verificacion en caso de
      *que el token enviado al principio, haya expirado (15 minutos) @Value("${token.expiration.minutes}")
