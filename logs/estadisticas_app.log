@@ -559,3 +559,54 @@
 2025-02-14 14:28:26 - Intentando activar usuario con token: 0726fbe2-275c-414f-adef-8bbeb068c2e2
 2025-02-14 14:28:26 - Cuenta activada con éxito para el usuario: jahqeline@live.com.mx
 2025-02-14 14:28:26 - Cuenta activada correctamente. Redirigiendo a login.
+2025-02-15 11:33:17 - Starting EstadisticasAppApplication using Java 21.0.2 with PID 6940 (C:\Users\Usuario\DWS\target\classes started by Usuario in C:\Users\Usuario\DWS)
+2025-02-15 11:33:17 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-15 11:33:17 - No active profile set, falling back to 1 default profile: "default"
+2025-02-15 11:33:18 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-15 11:33:18 - Finished Spring Data repository scanning in 116 ms. Found 1 JPA repository interface.
+2025-02-15 11:33:19 - Tomcat initialized with port 8081 (http)
+2025-02-15 11:33:19 - Starting service [Tomcat]
+2025-02-15 11:33:19 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-02-15 11:33:19 - Initializing Spring embedded WebApplicationContext
+2025-02-15 11:33:19 - Root WebApplicationContext: initialization completed in 2779 ms
+2025-02-15 11:33:20 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-15 11:33:20 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-15 11:33:20 - HHH000026: Second-level cache disabled
+2025-02-15 11:33:21 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-15 11:33:21 - HikariPool-1 - Starting...
+2025-02-15 11:33:21 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@601d295
+2025-02-15 11:33:21 - HikariPool-1 - Start completed.
+2025-02-15 11:33:21 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-15 11:33:23 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-15 11:33:23 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-15 11:33:24 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-15 11:33:25 - Tomcat started on port 8081 (http) with context path '/'
+2025-02-15 11:33:25 - Started EstadisticasAppApplication in 8.977 seconds (process running for 9.775)
+2025-02-15 11:34:36 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-15 11:34:36 - Initializing Servlet 'dispatcherServlet'
+2025-02-15 11:34:36 - Completed initialization in 3 ms
+2025-02-15 11:34:37 - Usuario registrado con éxito: jahqeline@live.com.mx
+2025-02-15 11:36:01 - Solicitud de activación recibida para usuario ID: 17
+2025-02-15 11:36:01 - Intentando activar usuario con token: 5ddd4abb-5647-4489-a483-17b96db6a21b
+2025-02-15 11:36:01 - Cuenta activada con éxito para el usuario: jahqeline@live.com.mx
+2025-02-15 11:36:01 - Cuenta activada correctamente. Redirigiendo a login.
+2025-02-15 11:36:17 - Solicitud de activación recibida para usuario ID: 17
+2025-02-15 11:36:17 - Intentando activar usuario con token: 5ddd4abb-5647-4489-a483-17b96db6a21b
+2025-02-15 11:36:17 - El usuario jahqeline@live.com.mx ya está activado.
+2025-02-15 11:36:17 - Cuenta ya estaba activada. Redirigiendo a login.
+2025-02-15 11:36:57 - Usuario registrado con éxito: jahqeline@live.com.mx
+2025-02-15 11:37:32 - Solicitud de activación recibida para usuario ID: 18
+2025-02-15 11:37:32 - Intentando activar usuario con token: 80c9df87-740d-4800-b3fb-1efedc1f9338
+2025-02-15 11:37:32 - Token expirado para el usuario: jahqeline@live.com.mx
+2025-02-15 11:37:32 - Error al activar cuenta: El token ha expirado.
+2025-02-15 11:38:16 - Solicitud de activación recibida para usuario ID: 18
+2025-02-15 11:38:16 - Intentando activar usuario con token: 4b6103f5-ca64-4ddc-be9e-16881c9e12eb
+2025-02-15 11:38:16 - Cuenta activada con éxito para el usuario: jahqeline@live.com.mx
+2025-02-15 11:38:16 - Cuenta activada correctamente. Redirigiendo a login.
