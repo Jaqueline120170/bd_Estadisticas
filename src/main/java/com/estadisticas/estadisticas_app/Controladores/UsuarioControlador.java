@@ -138,14 +138,17 @@ public class UsuarioControlador {
      * @return ResponseEntity con un mensaje de éxito o error
      */
     @PostMapping("/solicitar-restablecimiento-contrasena")
-    public ResponseEntity<String> solicitarRestablecimientoContraseña(@RequestParam String emailUsuario) {
+    public ResponseEntity<Map<String, String>> solicitarRestablecimientoContraseña(@RequestParam String emailUsuario) {
+        System.out.println("Solicitud recibida para el correo: " + emailUsuario); // 🔴 Imprime el email recibido
+        Map<String, String> response = new HashMap<>();
         try {
-            // Llamamos al servicio para solicitar el restablecimiento de contraseña
             usuarioServicio.solicitarRestablecimientoContraseña(emailUsuario);
-
-            return ResponseEntity.ok("Se ha enviado un enlace para restablecer tu contraseña al correo.");
+            response.put("mensaje", "Se ha enviado un enlace para restablecer tu contraseña al correo.");
+            return ResponseEntity.ok(response);
         } catch (Exception e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
+            System.err.println("Error al solicitar restablecimiento: " + e.getMessage()); // 🔴 Ver error exacto en el backend
+            response.put("error", e.getMessage());
+            return ResponseEntity.badRequest().body(response);
         }
     }
  // Endpoint para restablecer la contraseña
