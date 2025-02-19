@@ -37,7 +37,7 @@ public class EmailServicio {
 
  // Método para enviar correo con enlace de restablecimiento de contraseña
     public void enviarCorreoRestablecerContraseña(String emailUsuario, String resetToken) {
-        String enlaceRestablecer = "http://localhost:8081/api/usuarios/restablecer-contraseña?token=" + resetToken;
+    	String enlaceRestablecer = "http://localhost:4200/restablecer-contrasena/" + resetToken;
 
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom("osteologia2@gmail.com");

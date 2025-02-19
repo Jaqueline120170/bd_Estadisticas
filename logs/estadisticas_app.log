@@ -260,3 +260,42 @@
 2025-02-19 12:40:38 - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2025-02-19 12:40:38 - Initializing Servlet 'dispatcherServlet'
 2025-02-19 12:40:38 - Completed initialization in 1 ms
+2025-02-19 14:01:30 - Starting EstadisticasAppApplication using Java 23 with PID 1144 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-02-19 14:01:30 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-19 14:01:30 - No active profile set, falling back to 1 default profile: "default"
+2025-02-19 14:01:31 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-19 14:01:31 - Finished Spring Data repository scanning in 71 ms. Found 1 JPA repository interface.
+2025-02-19 14:01:32 - Tomcat initialized with port 8081 (http)
+2025-02-19 14:01:32 - Arrancando servicio [Tomcat]
+2025-02-19 14:01:32 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-02-19 14:01:32 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-02-19 14:01:32 - Initializing Spring embedded WebApplicationContext
+2025-02-19 14:01:32 - Root WebApplicationContext: initialization completed in 2016 ms
+2025-02-19 14:01:32 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-19 14:01:32 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-19 14:01:32 - HHH000026: Second-level cache disabled
+2025-02-19 14:01:33 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-19 14:01:33 - HikariPool-1 - Starting...
+2025-02-19 14:01:33 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@520a95ff
+2025-02-19 14:01:33 - HikariPool-1 - Start completed.
+2025-02-19 14:01:33 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-19 14:01:35 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-19 14:01:35 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-19 14:01:36 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-19 14:01:36 - Tomcat started on port 8081 (http) with context path '/'
+2025-02-19 14:01:36 - Started EstadisticasAppApplication in 7.248 seconds (process running for 7.763)
+2025-02-19 14:01:55 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-19 14:01:55 - Initializing Servlet 'dispatcherServlet'
+2025-02-19 14:01:55 - Completed initialization in 2 ms
+2025-02-19 14:01:56 - Usuario registrado con éxito: osteologia2@gmail.com
+2025-02-19 14:02:14 - Solicitud de activación recibida para usuario ID: 48
+2025-02-19 14:02:14 - Intentando activar usuario con token: 87d30679-0ba5-4d63-9656-79799da69852
+2025-02-19 14:02:14 - Cuenta activada con éxito para el usuario: osteologia2@gmail.com
+2025-02-19 14:02:14 - Cuenta activada correctamente. Redirigiendo a login.
