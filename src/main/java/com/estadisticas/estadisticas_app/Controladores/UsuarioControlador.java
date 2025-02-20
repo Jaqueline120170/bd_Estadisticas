@@ -13,7 +13,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -137,7 +139,7 @@ public class UsuarioControlador {
      * @return ResponseEntity con un mensaje de éxito o error en formato JSON
      */
     @PostMapping("/restablecer-contrasena")
-    public ResponseEntity<String> restablecerContrasena(@RequestBody Map<String, String> request) {
+    public ResponseEntity<Map<String, String>> restablecerContrasena(@RequestBody Map<String, String> request) {
         String token = request.get("token"); // Obtenemos el token del cuerpo de la solicitud
         String nuevaContraseña = request.get("nuevaContraseña"); // Obtenemos la nueva contraseña
 
@@ -145,11 +147,11 @@ public class UsuarioControlador {
             // Llamamos al servicio para restablecer la contraseña
             usuarioServicio.restablecerContraseña(token, nuevaContraseña);
 
-            // Retornar mensaje de éxito
-            return ResponseEntity.ok("Contraseña restablecida con éxito.");
+            // Retornar mensaje de éxito como JSON
+            return ResponseEntity.ok(Map.of("mensaje", "Contraseña restablecida con éxito."));
         } catch (IllegalArgumentException e) {
-            // Retornar mensaje de error si el token es inválido o ha expirado
-            return ResponseEntity.badRequest().body(e.getMessage());
+            // Retornar mensaje de error como JSON
+            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
         }
     }
 
@@ -174,6 +176,25 @@ public class UsuarioControlador {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Map.of("error", e.getMessage()));
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", e.getMessage()));
+        }
+    }
+    @PutMapping("/actualizar-rol-premier")
+    public ResponseEntity<?> actualizarRolAPremier(@RequestBody Map<String, String> request) {
+        try {
+            String email = request.get("email");
+            usuarioServicio.actualizarRolAPremier(email);
+            return ResponseEntity.ok(Map.of("message", "Rol actualizado a premier"));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", e.getMessage()));
+        }
+    }
+    @PostMapping("/{id}/suscripcion-premium")
+    public ResponseEntity<?> activarSuscripcionPremium(@PathVariable Long id) {
+        try {
+            usuarioServicio.activarSuscripcionPremium(id);
+            return ResponseEntity.ok("El usuario ahora es premium.");
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
 

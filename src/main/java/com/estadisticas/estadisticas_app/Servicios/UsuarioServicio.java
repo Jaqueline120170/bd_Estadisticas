@@ -68,7 +68,7 @@ public class UsuarioServicio {
             // Encriptar la contraseña antes de guardarla en la base de datos
             usuario.setPasswordUsuario(passwordEncoder.encode(usuarioDto.getPasswordUsuario()));
             // Asignar un rol por defecto ("usuario")
-            usuario.setRolUsuario("usuario");
+            usuario.setRolUsuario("USUARIO");
             // Generar un token de verificación y asignarlo al usuario
             String token = generarTokenDeVerificacion();
             usuario.setVerificacionToken(token);
@@ -236,6 +236,16 @@ public class UsuarioServicio {
 
         return usuario; // Si pasa todo, retorna el usuario autenticado
     }
+ // En UsuarioServicio.java
+    public void actualizarRolAPremier(String email) {
+        Usuario usuario = usuarioRepository
+            .findByEmailUsuario(email)
+            .orElseThrow(() -> new IllegalArgumentException("Usuario no encontrado"));
+
+        usuario.setRolUsuario("premier");
+        usuarioRepository.save(usuario);
+    }
+
 
     /**
      * Método que Genera un token de verificación único.
@@ -244,4 +254,9 @@ public class UsuarioServicio {
     public String generarTokenDeVerificacion() {
         return UUID.randomUUID().toString();
     }
+
+	public void activarSuscripcionPremium(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
 }
