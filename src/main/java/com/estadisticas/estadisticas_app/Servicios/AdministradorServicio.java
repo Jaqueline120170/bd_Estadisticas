@@ -24,10 +24,13 @@ public class AdministradorServicio {
         return usuarioRepository.findById(id)
             .map(usuario -> {
                 usuario.setNombreUsuario(usuarioActualizado.getNombreUsuario());
-                usuario.setEmailUsuario(usuarioActualizado.getEmailUsuario());
                 usuario.setTelefonoUsuario(usuarioActualizado.getTelefonoUsuario());
                 usuario.setRolUsuario(usuarioActualizado.getRolUsuario());
                 usuario.setVerificado(usuarioActualizado.isVerificado());
+                usuario.setTipoSuscripcion(usuarioActualizado.getTipoSuscripcion());
+                usuario.setEstadoSuscripcion(usuarioActualizado.getEstadoSuscripcion());
+                usuario.setFechaInicioSuscripcion(usuarioActualizado.getFechaInicioSuscripcion());
+                usuario.setFechaFinSuscripcion(usuarioActualizado.getFechaInicioSuscripcion());
                 return usuarioRepository.save(usuario);
             })
             .orElseThrow(() -> new IllegalArgumentException("Usuario no encontrado con ID: " + id));

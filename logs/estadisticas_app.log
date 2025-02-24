@@ -1,22 +1,22 @@
-2025-02-21 08:27:15 - Starting EstadisticasAppApplication using Java 23 with PID 5800 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
-2025-02-21 08:27:15 - Running with Spring Boot v3.4.1, Spring v6.2.1
-2025-02-21 08:27:15 - No active profile set, falling back to 1 default profile: "default"
-2025-02-21 08:27:16 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-02-21 08:27:16 - Finished Spring Data repository scanning in 73 ms. Found 1 JPA repository interface.
-2025-02-21 08:27:17 - Tomcat initialized with port 8081 (http)
-2025-02-21 08:27:17 - Arrancando servicio [Tomcat]
-2025-02-21 08:27:17 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
-2025-02-21 08:27:17 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
-2025-02-21 08:27:17 - Initializing Spring embedded WebApplicationContext
-2025-02-21 08:27:17 - Root WebApplicationContext: initialization completed in 2103 ms
-2025-02-21 08:27:18 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-02-21 08:27:18 - HHH000412: Hibernate ORM core version 6.6.4.Final
-2025-02-21 08:27:18 - HHH000026: Second-level cache disabled
-2025-02-21 08:27:18 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-02-21 08:27:18 - HikariPool-1 - Starting...
-2025-02-21 08:27:19 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@43a7203e
-2025-02-21 08:27:19 - HikariPool-1 - Start completed.
-2025-02-21 08:27:19 - HHH10001005: Database info:
+2025-02-24 09:27:45 - Starting EstadisticasAppApplication using Java 23 with PID 9796 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-02-24 09:27:45 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-24 09:27:45 - No active profile set, falling back to 1 default profile: "default"
+2025-02-24 09:27:46 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-24 09:27:46 - Finished Spring Data repository scanning in 79 ms. Found 1 JPA repository interface.
+2025-02-24 09:27:47 - Tomcat initialized with port 8081 (http)
+2025-02-24 09:27:47 - Arrancando servicio [Tomcat]
+2025-02-24 09:27:47 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-02-24 09:27:47 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-02-24 09:27:47 - Initializing Spring embedded WebApplicationContext
+2025-02-24 09:27:47 - Root WebApplicationContext: initialization completed in 2138 ms
+2025-02-24 09:27:47 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-24 09:27:47 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-24 09:27:47 - HHH000026: Second-level cache disabled
+2025-02-24 09:27:48 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-24 09:27:48 - HikariPool-1 - Starting...
+2025-02-24 09:27:48 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@243c4346
+2025-02-24 09:27:48 - HikariPool-1 - Start completed.
+2025-02-24 09:27:48 - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.4
@@ -24,47 +24,33 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-02-21 08:27:20 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-02-21 08:27:20 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-02-21 08:27:21 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-21 08:27:22 - Tomcat started on port 8081 (http) with context path '/'
-2025-02-21 08:27:22 - Started EstadisticasAppApplication in 7.625 seconds (process running for 8.201)
-2025-02-21 08:29:06 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-02-21 08:29:06 - Initializing Servlet 'dispatcherServlet'
-2025-02-21 08:29:06 - Completed initialization in 1 ms
-2025-02-21 08:29:06 - Usuario registrado con éxito: osteologia2@gmail.com
-2025-02-21 08:29:31 - Solicitud de activación recibida para usuario ID: 57
-2025-02-21 08:29:31 - Intentando activar usuario con token: ed0fb922-df73-4fb6-b4a9-ad20f3ee61e3
-2025-02-21 08:29:31 - Cuenta activada con éxito para el usuario: osteologia2@gmail.com
-2025-02-21 08:29:31 - Cuenta activada correctamente. Redirigiendo a login.
-2025-02-21 08:31:27 - Usuario registrado con éxito: jahqeline@live.com.mx
-2025-02-21 08:32:59 - Solicitud de activación recibida para usuario ID: 58
-2025-02-21 08:32:59 - Intentando activar usuario con token: 5839208a-04ae-4816-8ba2-b50959de8e35
-2025-02-21 08:32:59 - Token expirado para el usuario: jahqeline@live.com.mx
-2025-02-21 08:32:59 - Error al activar cuenta: El token ha expirado.
-2025-02-21 08:34:13 - Solicitud de activación recibida para usuario ID: 58
-2025-02-21 08:34:13 - Intentando activar usuario con token: c842d67c-b3c6-45bb-8e5d-10a466e18651
-2025-02-21 08:34:13 - Cuenta activada con éxito para el usuario: jahqeline@live.com.mx
-2025-02-21 08:34:13 - Cuenta activada correctamente. Redirigiendo a login.
-2025-02-21 11:53:23 - Starting EstadisticasAppApplication using Java 23 with PID 6424 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
-2025-02-21 11:53:23 - Running with Spring Boot v3.4.1, Spring v6.2.1
-2025-02-21 11:53:23 - No active profile set, falling back to 1 default profile: "default"
-2025-02-21 11:53:24 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-02-21 11:53:24 - Finished Spring Data repository scanning in 72 ms. Found 1 JPA repository interface.
-2025-02-21 11:53:25 - Tomcat initialized with port 8081 (http)
-2025-02-21 11:53:25 - Arrancando servicio [Tomcat]
-2025-02-21 11:53:25 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
-2025-02-21 11:53:25 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
-2025-02-21 11:53:25 - Initializing Spring embedded WebApplicationContext
-2025-02-21 11:53:25 - Root WebApplicationContext: initialization completed in 1756 ms
-2025-02-21 11:53:25 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-02-21 11:53:25 - HHH000412: Hibernate ORM core version 6.6.4.Final
-2025-02-21 11:53:25 - HHH000026: Second-level cache disabled
-2025-02-21 11:53:26 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-02-21 11:53:26 - HikariPool-1 - Starting...
-2025-02-21 11:53:26 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@30eedaa4
-2025-02-21 11:53:26 - HikariPool-1 - Start completed.
-2025-02-21 11:53:26 - HHH10001005: Database info:
+2025-02-24 09:27:49 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-24 09:27:50 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 09:27:50 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-24 09:27:51 - Tomcat started on port 8081 (http) with context path '/'
+2025-02-24 09:27:51 - Started EstadisticasAppApplication in 6.83 seconds (process running for 7.403)
+2025-02-24 09:28:48 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-24 09:28:48 - Initializing Servlet 'dispatcherServlet'
+2025-02-24 09:28:48 - Completed initialization in 2 ms
+2025-02-24 09:31:55 - Starting EstadisticasAppApplication using Java 23 with PID 6176 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-02-24 09:31:55 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-24 09:31:55 - No active profile set, falling back to 1 default profile: "default"
+2025-02-24 09:31:56 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-24 09:31:56 - Finished Spring Data repository scanning in 63 ms. Found 1 JPA repository interface.
+2025-02-24 09:31:57 - Tomcat initialized with port 8081 (http)
+2025-02-24 09:31:57 - Arrancando servicio [Tomcat]
+2025-02-24 09:31:57 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-02-24 09:31:57 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-02-24 09:31:57 - Initializing Spring embedded WebApplicationContext
+2025-02-24 09:31:57 - Root WebApplicationContext: initialization completed in 1722 ms
+2025-02-24 09:31:57 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-24 09:31:57 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-24 09:31:58 - HHH000026: Second-level cache disabled
+2025-02-24 09:31:58 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-24 09:31:58 - HikariPool-1 - Starting...
+2025-02-24 09:31:58 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@697a92af
+2025-02-24 09:31:58 - HikariPool-1 - Start completed.
+2025-02-24 09:31:58 - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.4
@@ -72,33 +58,33 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-02-21 11:53:27 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-02-21 11:53:27 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-02-21 11:53:28 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-21 11:53:29 - Tomcat started on port 8081 (http) with context path '/'
-2025-02-21 11:53:29 - Started EstadisticasAppApplication in 5.803 seconds (process running for 6.302)
-2025-02-21 11:54:31 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-02-21 11:54:31 - Initializing Servlet 'dispatcherServlet'
-2025-02-21 11:54:31 - Completed initialization in 1 ms
-2025-02-21 12:28:56 - Starting EstadisticasAppApplication using Java 23 with PID 3744 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
-2025-02-21 12:28:56 - Running with Spring Boot v3.4.1, Spring v6.2.1
-2025-02-21 12:28:56 - No active profile set, falling back to 1 default profile: "default"
-2025-02-21 12:28:57 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-02-21 12:28:57 - Finished Spring Data repository scanning in 71 ms. Found 1 JPA repository interface.
-2025-02-21 12:28:58 - Tomcat initialized with port 8081 (http)
-2025-02-21 12:28:58 - Arrancando servicio [Tomcat]
-2025-02-21 12:28:58 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
-2025-02-21 12:28:58 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
-2025-02-21 12:28:58 - Initializing Spring embedded WebApplicationContext
-2025-02-21 12:28:58 - Root WebApplicationContext: initialization completed in 1723 ms
-2025-02-21 12:28:58 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-02-21 12:28:58 - HHH000412: Hibernate ORM core version 6.6.4.Final
-2025-02-21 12:28:58 - HHH000026: Second-level cache disabled
-2025-02-21 12:28:59 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-02-21 12:28:59 - HikariPool-1 - Starting...
-2025-02-21 12:28:59 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@46702c26
-2025-02-21 12:28:59 - HikariPool-1 - Start completed.
-2025-02-21 12:28:59 - HHH10001005: Database info:
+2025-02-24 09:31:59 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-24 09:32:00 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 09:32:00 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-24 09:32:00 - Tomcat started on port 8081 (http) with context path '/'
+2025-02-24 09:32:00 - Started EstadisticasAppApplication in 5.659 seconds (process running for 6.227)
+2025-02-24 09:32:48 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-24 09:32:48 - Initializing Servlet 'dispatcherServlet'
+2025-02-24 09:32:48 - Completed initialization in 2 ms
+2025-02-24 09:39:14 - Starting EstadisticasAppApplication using Java 23 with PID 11580 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-02-24 09:39:14 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-24 09:39:14 - No active profile set, falling back to 1 default profile: "default"
+2025-02-24 09:39:15 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-24 09:39:15 - Finished Spring Data repository scanning in 73 ms. Found 1 JPA repository interface.
+2025-02-24 09:39:16 - Tomcat initialized with port 8081 (http)
+2025-02-24 09:39:16 - Arrancando servicio [Tomcat]
+2025-02-24 09:39:16 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-02-24 09:39:16 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-02-24 09:39:16 - Initializing Spring embedded WebApplicationContext
+2025-02-24 09:39:16 - Root WebApplicationContext: initialization completed in 1910 ms
+2025-02-24 09:39:16 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-24 09:39:16 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-24 09:39:16 - HHH000026: Second-level cache disabled
+2025-02-24 09:39:17 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-24 09:39:17 - HikariPool-1 - Starting...
+2025-02-24 09:39:17 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@30eedaa4
+2025-02-24 09:39:17 - HikariPool-1 - Start completed.
+2025-02-24 09:39:17 - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.4
@@ -106,33 +92,43 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-02-21 12:29:00 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-02-21 12:29:00 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-02-21 12:29:01 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-21 12:29:01 - Tomcat started on port 8081 (http) with context path '/'
-2025-02-21 12:29:01 - Started EstadisticasAppApplication in 5.627 seconds (process running for 6.131)
-2025-02-21 12:30:48 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-02-21 12:30:48 - Initializing Servlet 'dispatcherServlet'
-2025-02-21 12:30:48 - Completed initialization in 1 ms
-2025-02-21 12:34:15 - Starting EstadisticasAppApplication using Java 23 with PID 7644 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
-2025-02-21 12:34:15 - Running with Spring Boot v3.4.1, Spring v6.2.1
-2025-02-21 12:34:15 - No active profile set, falling back to 1 default profile: "default"
-2025-02-21 12:34:16 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-02-21 12:34:16 - Finished Spring Data repository scanning in 71 ms. Found 1 JPA repository interface.
-2025-02-21 12:34:16 - Tomcat initialized with port 8081 (http)
-2025-02-21 12:34:16 - Arrancando servicio [Tomcat]
-2025-02-21 12:34:16 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
-2025-02-21 12:34:17 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
-2025-02-21 12:34:17 - Initializing Spring embedded WebApplicationContext
-2025-02-21 12:34:17 - Root WebApplicationContext: initialization completed in 1826 ms
-2025-02-21 12:34:17 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-02-21 12:34:17 - HHH000412: Hibernate ORM core version 6.6.4.Final
-2025-02-21 12:34:17 - HHH000026: Second-level cache disabled
-2025-02-21 12:34:17 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-02-21 12:34:17 - HikariPool-1 - Starting...
-2025-02-21 12:34:18 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@30eedaa4
-2025-02-21 12:34:18 - HikariPool-1 - Start completed.
-2025-02-21 12:34:18 - HHH10001005: Database info:
+2025-02-24 09:39:19 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-24 09:39:19 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 09:39:19 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-24 09:39:20 - Tomcat started on port 8081 (http) with context path '/'
+2025-02-24 09:39:20 - Started EstadisticasAppApplication in 6.09 seconds (process running for 6.586)
+2025-02-24 09:40:34 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-24 09:40:34 - Initializing Servlet 'dispatcherServlet'
+2025-02-24 09:40:34 - Completed initialization in 1 ms
+2025-02-24 09:40:35 - Usuario registrado con éxito: jahqeline@live.com.mx
+2025-02-24 09:40:53 - Solicitud de activación recibida para usuario ID: 65
+2025-02-24 09:40:53 - Intentando activar usuario con token: 2eee169e-8474-4c2f-aba1-c983aa1e2070
+2025-02-24 09:40:53 - Cuenta activada con éxito para el usuario: jahqeline@live.com.mx
+2025-02-24 09:40:53 - Cuenta activada correctamente. Redirigiendo a login.
+2025-02-24 09:41:59 - Usuario registrado con éxito: jahqeline@live.com.mx
+2025-02-24 09:42:16 - Solicitud de activación recibida para usuario ID: 66
+2025-02-24 09:42:16 - Intentando activar usuario con token: 0f8f46dd-58b5-4435-8345-2f33b369b435
+2025-02-24 09:42:16 - Cuenta activada con éxito para el usuario: jahqeline@live.com.mx
+2025-02-24 09:42:16 - Cuenta activada correctamente. Redirigiendo a login.
+2025-02-24 09:46:17 - Starting EstadisticasAppApplication using Java 23 with PID 7840 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-02-24 09:46:17 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-24 09:46:17 - No active profile set, falling back to 1 default profile: "default"
+2025-02-24 09:46:18 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-24 09:46:18 - Finished Spring Data repository scanning in 66 ms. Found 1 JPA repository interface.
+2025-02-24 09:46:18 - Tomcat initialized with port 8081 (http)
+2025-02-24 09:46:18 - Arrancando servicio [Tomcat]
+2025-02-24 09:46:18 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-02-24 09:46:19 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-02-24 09:46:19 - Initializing Spring embedded WebApplicationContext
+2025-02-24 09:46:19 - Root WebApplicationContext: initialization completed in 1846 ms
+2025-02-24 09:46:19 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-24 09:46:19 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-24 09:46:19 - HHH000026: Second-level cache disabled
+2025-02-24 09:46:19 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-24 09:46:19 - HikariPool-1 - Starting...
+2025-02-24 09:46:19 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@30eedaa4
+2025-02-24 09:46:19 - HikariPool-1 - Start completed.
+2025-02-24 09:46:20 - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.4
@@ -140,38 +136,38 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-02-21 12:34:19 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-02-21 12:34:19 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-02-21 12:34:20 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-21 12:34:20 - Tomcat started on port 8081 (http) with context path '/'
-2025-02-21 12:34:20 - Started EstadisticasAppApplication in 6.054 seconds (process running for 6.589)
-2025-02-21 12:35:37 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-02-21 12:35:37 - Initializing Servlet 'dispatcherServlet'
-2025-02-21 12:35:37 - Completed initialization in 2 ms
-2025-02-21 12:35:38 - Usuario registrado con éxito: osteologia2@gmail.com
-2025-02-21 12:35:52 - Solicitud de activación recibida para usuario ID: 59
-2025-02-21 12:35:52 - Intentando activar usuario con token: 04c3f865-b693-4242-acf7-672d90ab2840
-2025-02-21 12:35:52 - Cuenta activada con éxito para el usuario: osteologia2@gmail.com
-2025-02-21 12:35:52 - Cuenta activada correctamente. Redirigiendo a login.
-2025-02-21 12:52:43 - Starting EstadisticasAppApplication using Java 23 with PID 12944 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
-2025-02-21 12:52:43 - Running with Spring Boot v3.4.1, Spring v6.2.1
-2025-02-21 12:52:43 - No active profile set, falling back to 1 default profile: "default"
-2025-02-21 12:52:44 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-02-21 12:52:44 - Finished Spring Data repository scanning in 70 ms. Found 1 JPA repository interface.
-2025-02-21 12:52:45 - Tomcat initialized with port 8081 (http)
-2025-02-21 12:52:45 - Arrancando servicio [Tomcat]
-2025-02-21 12:52:45 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
-2025-02-21 12:52:45 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
-2025-02-21 12:52:45 - Initializing Spring embedded WebApplicationContext
-2025-02-21 12:52:45 - Root WebApplicationContext: initialization completed in 1996 ms
-2025-02-21 12:52:46 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-02-21 12:52:46 - HHH000412: Hibernate ORM core version 6.6.4.Final
-2025-02-21 12:52:46 - HHH000026: Second-level cache disabled
-2025-02-21 12:52:46 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-02-21 12:52:46 - HikariPool-1 - Starting...
-2025-02-21 12:52:46 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@30eedaa4
-2025-02-21 12:52:46 - HikariPool-1 - Start completed.
-2025-02-21 12:52:46 - HHH10001005: Database info:
+2025-02-24 09:46:21 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-24 09:46:21 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 09:46:22 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-24 09:46:22 - Tomcat started on port 8081 (http) with context path '/'
+2025-02-24 09:46:22 - Started EstadisticasAppApplication in 6.284 seconds (process running for 6.833)
+2025-02-24 09:46:52 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-24 09:46:52 - Initializing Servlet 'dispatcherServlet'
+2025-02-24 09:46:52 - Completed initialization in 1 ms
+2025-02-24 09:46:52 - Usuario registrado con éxito: jahqeline@live.com.mx
+2025-02-24 09:47:13 - Solicitud de activación recibida para usuario ID: 67
+2025-02-24 09:47:13 - Intentando activar usuario con token: 1e21717d-1f1e-45e7-b7d1-03f490cff078
+2025-02-24 09:47:13 - Cuenta activada con éxito para el usuario: jahqeline@live.com.mx
+2025-02-24 09:47:13 - Cuenta activada correctamente. Redirigiendo a login.
+2025-02-24 10:49:50 - Starting EstadisticasAppApplication using Java 23 with PID 12368 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-02-24 10:49:50 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-24 10:49:50 - No active profile set, falling back to 1 default profile: "default"
+2025-02-24 10:49:51 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-24 10:49:51 - Finished Spring Data repository scanning in 71 ms. Found 1 JPA repository interface.
+2025-02-24 10:49:52 - Tomcat initialized with port 8081 (http)
+2025-02-24 10:49:52 - Arrancando servicio [Tomcat]
+2025-02-24 10:49:52 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-02-24 10:49:52 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-02-24 10:49:52 - Initializing Spring embedded WebApplicationContext
+2025-02-24 10:49:52 - Root WebApplicationContext: initialization completed in 1758 ms
+2025-02-24 10:49:52 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-24 10:49:52 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-24 10:49:52 - HHH000026: Second-level cache disabled
+2025-02-24 10:49:53 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-24 10:49:53 - HikariPool-1 - Starting...
+2025-02-24 10:49:53 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5e51ec2e
+2025-02-24 10:49:53 - HikariPool-1 - Start completed.
+2025-02-24 10:49:53 - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.4
@@ -179,42 +175,34 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-02-21 12:52:48 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-02-21 12:52:48 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-02-21 12:52:48 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-21 12:52:49 - Tomcat started on port 8081 (http) with context path '/'
-2025-02-21 12:52:49 - Started EstadisticasAppApplication in 6.289 seconds (process running for 6.806)
-2025-02-21 12:53:31 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-02-21 12:53:31 - Initializing Servlet 'dispatcherServlet'
-2025-02-21 12:53:31 - Completed initialization in 1 ms
-2025-02-21 12:53:31 - Usuario registrado con éxito: osteologia2@gmail.com
-2025-02-21 12:53:38 - Solicitud de activación recibida para usuario ID: 60
-2025-02-21 12:53:38 - Intentando activar usuario con token: 489e6a7b-75fe-45bc-aead-4ae549b17d48
-2025-02-21 12:53:38 - Cuenta activada con éxito para el usuario: osteologia2@gmail.com
-2025-02-21 12:53:38 - Cuenta activada correctamente. Redirigiendo a login.
-2025-02-21 13:13:27 - Solicitud de activación recibida para usuario ID: 60
-2025-02-21 13:13:27 - Intentando activar usuario con token: 489e6a7b-75fe-45bc-aead-4ae549b17d48
-2025-02-21 13:13:27 - El usuario osteologia2@gmail.com ya está activado.
-2025-02-21 13:13:27 - Cuenta ya estaba activada. Redirigiendo a login.
-2025-02-21 13:32:28 - Starting EstadisticasAppApplication using Java 23 with PID 7756 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
-2025-02-21 13:32:28 - Running with Spring Boot v3.4.1, Spring v6.2.1
-2025-02-21 13:32:28 - No active profile set, falling back to 1 default profile: "default"
-2025-02-21 13:32:29 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-02-21 13:32:29 - Finished Spring Data repository scanning in 81 ms. Found 1 JPA repository interface.
-2025-02-21 13:32:30 - Tomcat initialized with port 8081 (http)
-2025-02-21 13:32:30 - Arrancando servicio [Tomcat]
-2025-02-21 13:32:30 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
-2025-02-21 13:32:31 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
-2025-02-21 13:32:31 - Initializing Spring embedded WebApplicationContext
-2025-02-21 13:32:31 - Root WebApplicationContext: initialization completed in 2417 ms
-2025-02-21 13:32:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-02-21 13:32:31 - HHH000412: Hibernate ORM core version 6.6.4.Final
-2025-02-21 13:32:31 - HHH000026: Second-level cache disabled
-2025-02-21 13:32:32 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-02-21 13:32:32 - HikariPool-1 - Starting...
-2025-02-21 13:32:32 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@74b97416
-2025-02-21 13:32:32 - HikariPool-1 - Start completed.
-2025-02-21 13:32:32 - HHH10001005: Database info:
+2025-02-24 10:49:54 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-24 10:49:54 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 10:49:55 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-24 10:49:56 - Tomcat started on port 8081 (http) with context path '/'
+2025-02-24 10:49:56 - Started EstadisticasAppApplication in 6.152 seconds (process running for 6.677)
+2025-02-24 10:50:29 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-24 10:50:29 - Initializing Servlet 'dispatcherServlet'
+2025-02-24 10:50:29 - Completed initialization in 1 ms
+2025-02-24 10:50:30 - Usuario registrado con éxito: jahqeline@live.com.mx
+2025-02-24 11:03:18 - Starting EstadisticasAppApplication using Java 23 with PID 5984 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-02-24 11:03:18 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-24 11:03:18 - No active profile set, falling back to 1 default profile: "default"
+2025-02-24 11:03:19 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-24 11:03:19 - Finished Spring Data repository scanning in 63 ms. Found 1 JPA repository interface.
+2025-02-24 11:03:20 - Tomcat initialized with port 8081 (http)
+2025-02-24 11:03:20 - Arrancando servicio [Tomcat]
+2025-02-24 11:03:20 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-02-24 11:03:20 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-02-24 11:03:20 - Initializing Spring embedded WebApplicationContext
+2025-02-24 11:03:20 - Root WebApplicationContext: initialization completed in 1849 ms
+2025-02-24 11:03:20 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-24 11:03:20 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-24 11:03:21 - HHH000026: Second-level cache disabled
+2025-02-24 11:03:21 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-24 11:03:21 - HikariPool-1 - Starting...
+2025-02-24 11:03:21 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4b343b6d
+2025-02-24 11:03:21 - HikariPool-1 - Start completed.
+2025-02-24 11:03:21 - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.4
@@ -222,38 +210,40 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-02-21 13:32:34 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-02-21 13:32:34 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-02-21 13:32:34 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-21 13:32:35 - Tomcat started on port 8081 (http) with context path '/'
-2025-02-21 13:32:35 - Started EstadisticasAppApplication in 7.322 seconds (process running for 7.829)
-2025-02-21 13:33:05 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-02-21 13:33:05 - Initializing Servlet 'dispatcherServlet'
-2025-02-21 13:33:05 - Completed initialization in 1 ms
-2025-02-21 13:36:26 - Usuario registrado con éxito: osteologia2@gmail.com
-2025-02-21 13:37:19 - Solicitud de activación recibida para usuario ID: 61
-2025-02-21 13:37:19 - Intentando activar usuario con token: e0d87b07-5aba-4339-87f0-7e0d8de0eda4
-2025-02-21 13:37:19 - Cuenta activada con éxito para el usuario: osteologia2@gmail.com
-2025-02-21 13:37:19 - Cuenta activada correctamente. Redirigiendo a login.
-2025-02-21 13:53:44 - Starting EstadisticasAppApplication using Java 23 with PID 14444 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
-2025-02-21 13:53:44 - Running with Spring Boot v3.4.1, Spring v6.2.1
-2025-02-21 13:53:44 - No active profile set, falling back to 1 default profile: "default"
-2025-02-21 13:53:45 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-02-21 13:53:45 - Finished Spring Data repository scanning in 77 ms. Found 1 JPA repository interface.
-2025-02-21 13:53:46 - Tomcat initialized with port 8081 (http)
-2025-02-21 13:53:46 - Arrancando servicio [Tomcat]
-2025-02-21 13:53:46 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
-2025-02-21 13:53:46 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
-2025-02-21 13:53:46 - Initializing Spring embedded WebApplicationContext
-2025-02-21 13:53:46 - Root WebApplicationContext: initialization completed in 1903 ms
-2025-02-21 13:53:46 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-02-21 13:53:46 - HHH000412: Hibernate ORM core version 6.6.4.Final
-2025-02-21 13:53:46 - HHH000026: Second-level cache disabled
-2025-02-21 13:53:46 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-02-21 13:53:46 - HikariPool-1 - Starting...
-2025-02-21 13:53:47 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@e3ed455
-2025-02-21 13:53:47 - HikariPool-1 - Start completed.
-2025-02-21 13:53:47 - HHH10001005: Database info:
+2025-02-24 11:03:23 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-24 11:03:23 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 11:03:24 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-24 11:03:24 - 
+
+Using generated security password: b78d014b-ae15-44af-8e44-a06931737dc5
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-24 11:03:24 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-24 11:03:24 - Tomcat started on port 8081 (http) with context path '/'
+2025-02-24 11:03:24 - Started EstadisticasAppApplication in 6.689 seconds (process running for 7.179)
+2025-02-24 11:03:58 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-24 11:03:58 - Initializing Servlet 'dispatcherServlet'
+2025-02-24 11:03:58 - Completed initialization in 1 ms
+2025-02-24 11:13:16 - Starting EstadisticasAppApplication using Java 23 with PID 5088 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-02-24 11:13:16 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-24 11:13:16 - No active profile set, falling back to 1 default profile: "default"
+2025-02-24 11:13:17 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-24 11:13:17 - Finished Spring Data repository scanning in 63 ms. Found 1 JPA repository interface.
+2025-02-24 11:13:18 - Tomcat initialized with port 8081 (http)
+2025-02-24 11:13:18 - Arrancando servicio [Tomcat]
+2025-02-24 11:13:18 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-02-24 11:13:18 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-02-24 11:13:18 - Initializing Spring embedded WebApplicationContext
+2025-02-24 11:13:18 - Root WebApplicationContext: initialization completed in 1826 ms
+2025-02-24 11:13:18 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-24 11:13:19 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-24 11:13:19 - HHH000026: Second-level cache disabled
+2025-02-24 11:13:19 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-24 11:13:19 - HikariPool-1 - Starting...
+2025-02-24 11:13:19 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@68a426c3
+2025-02-24 11:13:19 - HikariPool-1 - Start completed.
+2025-02-24 11:13:19 - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.4
@@ -261,38 +251,128 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-02-21 13:53:48 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-02-21 13:53:49 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-02-21 13:53:49 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-21 13:53:50 - Tomcat started on port 8081 (http) with context path '/'
-2025-02-21 13:53:50 - Started EstadisticasAppApplication in 6.611 seconds (process running for 7.134)
-2025-02-21 13:54:25 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-02-21 13:54:25 - Initializing Servlet 'dispatcherServlet'
-2025-02-21 13:54:25 - Completed initialization in 4 ms
-2025-02-21 13:54:25 - Usuario registrado con éxito: jahqeline@live.com.mx
-2025-02-21 13:54:45 - Solicitud de activación recibida para usuario ID: 62
-2025-02-21 13:54:45 - Intentando activar usuario con token: 6d9cc5b8-bc56-4da6-97f2-912449ace9c1
-2025-02-21 13:54:45 - Cuenta activada con éxito para el usuario: jahqeline@live.com.mx
-2025-02-21 13:54:45 - Cuenta activada correctamente. Redirigiendo a login.
-2025-02-21 14:17:37 - Starting EstadisticasAppApplication using Java 23 with PID 10768 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
-2025-02-21 14:17:37 - Running with Spring Boot v3.4.1, Spring v6.2.1
-2025-02-21 14:17:37 - No active profile set, falling back to 1 default profile: "default"
-2025-02-21 14:17:38 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-02-21 14:17:38 - Finished Spring Data repository scanning in 78 ms. Found 1 JPA repository interface.
-2025-02-21 14:17:39 - Tomcat initialized with port 8081 (http)
-2025-02-21 14:17:39 - Arrancando servicio [Tomcat]
-2025-02-21 14:17:39 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
-2025-02-21 14:17:39 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
-2025-02-21 14:17:39 - Initializing Spring embedded WebApplicationContext
-2025-02-21 14:17:39 - Root WebApplicationContext: initialization completed in 1902 ms
-2025-02-21 14:17:39 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-02-21 14:17:39 - HHH000412: Hibernate ORM core version 6.6.4.Final
-2025-02-21 14:17:39 - HHH000026: Second-level cache disabled
-2025-02-21 14:17:39 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-02-21 14:17:39 - HikariPool-1 - Starting...
-2025-02-21 14:17:40 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@30eedaa4
-2025-02-21 14:17:40 - HikariPool-1 - Start completed.
-2025-02-21 14:17:40 - HHH10001005: Database info:
+2025-02-24 11:13:21 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-24 11:13:21 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 11:13:21 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-24 11:13:21 - 
+
+Using generated security password: e34e8fe0-3d37-4ca1-a70b-5b7686299aea
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-24 11:13:21 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through field 'httpSecurity': Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration.httpSecurity' defined in class path resource [org/springframework/security/config/annotation/web/configuration/HttpSecurityConfiguration.class]: Failed to instantiate [org.springframework.security.config.annotation.web.builders.HttpSecurity]: Factory method 'httpSecurity' threw exception with message: Error creating bean with name 'inMemoryUserDetailsManager' defined in class path resource [org/springframework/boot/autoconfigure/security/servlet/UserDetailsServiceAutoConfiguration.class]: Failed to instantiate [org.springframework.security.provisioning.InMemoryUserDetailsManager]: Factory method 'inMemoryUserDetailsManager' threw exception with message: Cannot pass null or empty values to constructor
+2025-02-24 11:13:21 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 11:13:21 - HikariPool-1 - Shutdown initiated...
+2025-02-24 11:13:21 - HikariPool-1 - Shutdown completed.
+2025-02-24 11:13:21 - Parando servicio [Tomcat]
+2025-02-24 11:13:21 - Necesitas agregar "--add-opens=java.base/java.lang=ALL-UNNAMED" a los argumentos JVM en la línea de comandos, para habilitar la detección de fuga de memoria ThreadLocal. Alternativamente, puedes suprimir esta advertencia, deshabilitando la detección de fuga de memoria ThreadLocal.
+2025-02-24 11:13:21 - You need to add "--add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED" to the JVM command line arguments to enable RMI Target memory leak detection. Alternatively, you can suppress this warning by disabling RMI Target memory leak detection.
+2025-02-24 11:13:21 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-02-24 11:13:21 - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration': Unsatisfied dependency expressed through field 'httpSecurity': Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration.httpSecurity' defined in class path resource [org/springframework/security/config/annotation/web/configuration/HttpSecurityConfiguration.class]: Failed to instantiate [org.springframework.security.config.annotation.web.builders.HttpSecurity]: Factory method 'httpSecurity' threw exception with message: Error creating bean with name 'inMemoryUserDetailsManager' defined in class path resource [org/springframework/boot/autoconfigure/security/servlet/UserDetailsServiceAutoConfiguration.class]: Failed to instantiate [org.springframework.security.provisioning.InMemoryUserDetailsManager]: Factory method 'inMemoryUserDetailsManager' threw exception with message: Cannot pass null or empty values to constructor
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1441)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:289)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1122)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1093)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1030)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.estadisticas.estadisticas_app.EstadisticasAppApplication.main(EstadisticasAppApplication.java:12)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration.httpSecurity' defined in class path resource [org/springframework/security/config/annotation/web/configuration/HttpSecurityConfiguration.class]: Failed to instantiate [org.springframework.security.config.annotation.web.builders.HttpSecurity]: Factory method 'httpSecurity' threw exception with message: Error creating bean with name 'inMemoryUserDetailsManager' defined in class path resource [org/springframework/boot/autoconfigure/security/servlet/UserDetailsServiceAutoConfiguration.class]: Failed to instantiate [org.springframework.security.provisioning.InMemoryUserDetailsManager]: Factory method 'inMemoryUserDetailsManager' threw exception with message: Cannot pass null or empty values to constructor
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:489)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1357)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1187)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:354)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785)
+	... 22 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.config.annotation.web.builders.HttpSecurity]: Factory method 'httpSecurity' threw exception with message: Error creating bean with name 'inMemoryUserDetailsManager' defined in class path resource [org/springframework/boot/autoconfigure/security/servlet/UserDetailsServiceAutoConfiguration.class]: Failed to instantiate [org.springframework.security.provisioning.InMemoryUserDetailsManager]: Factory method 'inMemoryUserDetailsManager' threw exception with message: Cannot pass null or empty values to constructor
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:199)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 33 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'inMemoryUserDetailsManager' defined in class path resource [org/springframework/boot/autoconfigure/security/servlet/UserDetailsServiceAutoConfiguration.class]: Failed to instantiate [org.springframework.security.provisioning.InMemoryUserDetailsManager]: Factory method 'inMemoryUserDetailsManager' threw exception with message: Cannot pass null or empty values to constructor
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1357)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1187)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:289)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1278)
+	at org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer.configure(InitializeUserDetailsBeanManagerConfigurer.java:94)
+	at org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer.configure(InitializeUserDetailsBeanManagerConfigurer.java:63)
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.configure(AbstractConfiguredSecurityBuilder.java:398)
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:352)
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:38)
+	at org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration.getAuthenticationManager(AuthenticationConfiguration.java:121)
+	at org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration.authenticationManager(HttpSecurityConfiguration.java:141)
+	at org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration.httpSecurity(HttpSecurityConfiguration.java:110)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171)
+	... 36 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.provisioning.InMemoryUserDetailsManager]: Factory method 'inMemoryUserDetailsManager' threw exception with message: Cannot pass null or empty values to constructor
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:199)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 57 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Cannot pass null or empty values to constructor
+	at org.springframework.util.Assert.isTrue(Assert.java:116)
+	at org.springframework.security.core.userdetails.User.<init>(User.java:110)
+	at org.springframework.security.core.userdetails.User$UserBuilder.build(User.java:507)
+	at org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration.inMemoryUserDetailsManager(UserDetailsServiceAutoConfiguration.java:84)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171)
+	... 60 common frames omitted
+2025-02-24 11:15:39 - Starting EstadisticasAppApplication using Java 23 with PID 8572 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-02-24 11:15:39 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-24 11:15:39 - No active profile set, falling back to 1 default profile: "default"
+2025-02-24 11:15:40 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-24 11:15:40 - Finished Spring Data repository scanning in 66 ms. Found 1 JPA repository interface.
+2025-02-24 11:15:41 - Tomcat initialized with port 8081 (http)
+2025-02-24 11:15:41 - Arrancando servicio [Tomcat]
+2025-02-24 11:15:41 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-02-24 11:15:41 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-02-24 11:15:41 - Initializing Spring embedded WebApplicationContext
+2025-02-24 11:15:41 - Root WebApplicationContext: initialization completed in 1838 ms
+2025-02-24 11:15:41 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-24 11:15:41 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-24 11:15:42 - HHH000026: Second-level cache disabled
+2025-02-24 11:15:42 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-24 11:15:42 - HikariPool-1 - Starting...
+2025-02-24 11:15:42 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@12214f2f
+2025-02-24 11:15:42 - HikariPool-1 - Start completed.
+2025-02-24 11:15:42 - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.4
@@ -300,17 +380,579 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-02-21 14:17:41 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-02-21 14:17:41 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-02-21 14:17:42 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-21 14:17:42 - Tomcat started on port 8081 (http) with context path '/'
-2025-02-21 14:17:42 - Started EstadisticasAppApplication in 6.226 seconds (process running for 6.746)
-2025-02-21 14:17:48 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-02-21 14:17:48 - Initializing Servlet 'dispatcherServlet'
-2025-02-21 14:17:48 - Completed initialization in 2 ms
-2025-02-21 14:17:48 - Usuario registrado con éxito: jahqeline@live.com.mx
-2025-02-21 14:18:09 - Solicitud de activación recibida para usuario ID: 63
-2025-02-21 14:18:09 - Intentando activar usuario con token: d7e34e6d-3a5e-420b-901e-11b59d32afdc
-2025-02-21 14:18:09 - Cuenta activada con éxito para el usuario: jahqeline@live.com.mx
-2025-02-21 14:18:09 - Cuenta activada correctamente. Redirigiendo a login.
-2025-02-21 14:19:46 - Usuario registrado con éxito: jahqeline@live.com.mx
+2025-02-24 11:15:44 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-24 11:15:44 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 11:15:44 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-24 11:15:44 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-24 11:15:45 - Tomcat started on port 8081 (http) with context path '/'
+2025-02-24 11:15:45 - Started EstadisticasAppApplication in 6.105 seconds (process running for 6.621)
+2025-02-24 11:16:03 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-24 11:16:03 - Initializing Servlet 'dispatcherServlet'
+2025-02-24 11:16:03 - Completed initialization in 1 ms
+2025-02-24 11:22:23 - Starting EstadisticasAppApplication using Java 23 with PID 14892 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-02-24 11:22:23 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-24 11:22:23 - No active profile set, falling back to 1 default profile: "default"
+2025-02-24 11:22:24 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-24 11:22:24 - Finished Spring Data repository scanning in 64 ms. Found 1 JPA repository interface.
+2025-02-24 11:22:24 - Tomcat initialized with port 8081 (http)
+2025-02-24 11:22:24 - Arrancando servicio [Tomcat]
+2025-02-24 11:22:24 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-02-24 11:22:25 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-02-24 11:22:25 - Initializing Spring embedded WebApplicationContext
+2025-02-24 11:22:25 - Root WebApplicationContext: initialization completed in 1797 ms
+2025-02-24 11:22:25 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-24 11:22:25 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-24 11:22:25 - HHH000026: Second-level cache disabled
+2025-02-24 11:22:25 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-24 11:22:25 - HikariPool-1 - Starting...
+2025-02-24 11:22:25 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@315b5913
+2025-02-24 11:22:25 - HikariPool-1 - Start completed.
+2025-02-24 11:22:26 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-24 11:22:27 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-24 11:22:27 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 11:22:27 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-24 11:22:27 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-24 11:22:28 - Tomcat started on port 8081 (http) with context path '/'
+2025-02-24 11:22:28 - Started EstadisticasAppApplication in 6.031 seconds (process running for 6.537)
+2025-02-24 11:22:56 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-24 11:22:56 - Initializing Servlet 'dispatcherServlet'
+2025-02-24 11:22:56 - Completed initialization in 1 ms
+2025-02-24 11:25:05 - Starting EstadisticasAppApplication using Java 23 with PID 7140 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-02-24 11:25:05 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-24 11:25:05 - No active profile set, falling back to 1 default profile: "default"
+2025-02-24 11:25:06 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-24 11:25:06 - Finished Spring Data repository scanning in 60 ms. Found 1 JPA repository interface.
+2025-02-24 11:25:07 - Tomcat initialized with port 8081 (http)
+2025-02-24 11:25:07 - Arrancando servicio [Tomcat]
+2025-02-24 11:25:07 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-02-24 11:25:07 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-02-24 11:25:07 - Initializing Spring embedded WebApplicationContext
+2025-02-24 11:25:07 - Root WebApplicationContext: initialization completed in 1813 ms
+2025-02-24 11:25:07 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-24 11:25:07 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-24 11:25:07 - HHH000026: Second-level cache disabled
+2025-02-24 11:25:08 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-24 11:25:08 - HikariPool-1 - Starting...
+2025-02-24 11:25:08 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3f0c6b3c
+2025-02-24 11:25:08 - HikariPool-1 - Start completed.
+2025-02-24 11:25:08 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-24 11:25:09 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-24 11:25:09 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 11:25:10 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-24 11:25:10 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-24 11:25:11 - Tomcat started on port 8081 (http) with context path '/'
+2025-02-24 11:25:11 - Started EstadisticasAppApplication in 6.313 seconds (process running for 6.817)
+2025-02-24 11:25:25 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-24 11:25:25 - Initializing Servlet 'dispatcherServlet'
+2025-02-24 11:25:25 - Completed initialization in 1 ms
+2025-02-24 11:30:16 - Starting EstadisticasAppApplication using Java 23 with PID 10872 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-02-24 11:30:16 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-24 11:30:16 - No active profile set, falling back to 1 default profile: "default"
+2025-02-24 11:30:17 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-24 11:30:17 - Finished Spring Data repository scanning in 76 ms. Found 1 JPA repository interface.
+2025-02-24 11:30:18 - Tomcat initialized with port 8081 (http)
+2025-02-24 11:30:18 - Arrancando servicio [Tomcat]
+2025-02-24 11:30:18 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-02-24 11:30:18 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-02-24 11:30:18 - Initializing Spring embedded WebApplicationContext
+2025-02-24 11:30:18 - Root WebApplicationContext: initialization completed in 2204 ms
+2025-02-24 11:30:18 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-24 11:30:18 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-24 11:30:18 - HHH000026: Second-level cache disabled
+2025-02-24 11:30:19 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-24 11:30:19 - HikariPool-1 - Starting...
+2025-02-24 11:30:19 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@260d48f5
+2025-02-24 11:30:19 - HikariPool-1 - Start completed.
+2025-02-24 11:30:19 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-24 11:30:20 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-24 11:30:20 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 11:30:21 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-24 11:30:21 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-24 11:30:22 - Tomcat started on port 8081 (http) with context path '/'
+2025-02-24 11:30:22 - Started EstadisticasAppApplication in 6.943 seconds (process running for 7.512)
+2025-02-24 11:30:33 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-24 11:30:33 - Initializing Servlet 'dispatcherServlet'
+2025-02-24 11:30:33 - Completed initialization in 2 ms
+2025-02-24 11:32:25 - Starting EstadisticasAppApplication using Java 23 with PID 10204 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-02-24 11:32:25 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-24 11:32:25 - No active profile set, falling back to 1 default profile: "default"
+2025-02-24 11:32:26 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-24 11:32:26 - Finished Spring Data repository scanning in 67 ms. Found 1 JPA repository interface.
+2025-02-24 11:32:26 - Tomcat initialized with port 8081 (http)
+2025-02-24 11:32:26 - Arrancando servicio [Tomcat]
+2025-02-24 11:32:26 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-02-24 11:32:27 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-02-24 11:32:27 - Initializing Spring embedded WebApplicationContext
+2025-02-24 11:32:27 - Root WebApplicationContext: initialization completed in 1878 ms
+2025-02-24 11:32:27 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-24 11:32:27 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-24 11:32:27 - HHH000026: Second-level cache disabled
+2025-02-24 11:32:27 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-24 11:32:27 - HikariPool-1 - Starting...
+2025-02-24 11:32:28 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2e8b24a1
+2025-02-24 11:32:28 - HikariPool-1 - Start completed.
+2025-02-24 11:32:28 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-24 11:32:29 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-24 11:32:29 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 11:32:30 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-24 11:32:30 - 
+
+Using generated security password: fcf6d25d-98ba-46fb-86c4-8c244550c8a1
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-24 11:32:30 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-24 11:32:31 - Tomcat started on port 8081 (http) with context path '/'
+2025-02-24 11:32:31 - Started EstadisticasAppApplication in 6.534 seconds (process running for 7.075)
+2025-02-24 11:34:56 - Starting EstadisticasAppApplication using Java 23 with PID 12316 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-02-24 11:34:56 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-24 11:34:56 - No active profile set, falling back to 1 default profile: "default"
+2025-02-24 11:34:57 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-24 11:34:57 - Finished Spring Data repository scanning in 60 ms. Found 1 JPA repository interface.
+2025-02-24 11:34:58 - Tomcat initialized with port 8081 (http)
+2025-02-24 11:34:58 - Arrancando servicio [Tomcat]
+2025-02-24 11:34:58 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-02-24 11:34:58 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-02-24 11:34:58 - Initializing Spring embedded WebApplicationContext
+2025-02-24 11:34:58 - Root WebApplicationContext: initialization completed in 1870 ms
+2025-02-24 11:34:59 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-24 11:34:59 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-24 11:34:59 - HHH000026: Second-level cache disabled
+2025-02-24 11:34:59 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-24 11:34:59 - HikariPool-1 - Starting...
+2025-02-24 11:34:59 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@601d295
+2025-02-24 11:34:59 - HikariPool-1 - Start completed.
+2025-02-24 11:35:00 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-24 11:35:01 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-24 11:35:01 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 11:35:01 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-24 11:35:01 - 
+
+Using generated security password: 0e24ffbd-0281-405f-8511-af1eb39451b3
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-24 11:35:01 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-24 11:35:02 - Tomcat started on port 8081 (http) with context path '/'
+2025-02-24 11:35:02 - Started EstadisticasAppApplication in 6.168 seconds (process running for 6.662)
+2025-02-24 11:35:39 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-24 11:35:39 - Initializing Servlet 'dispatcherServlet'
+2025-02-24 11:35:39 - Completed initialization in 2 ms
+2025-02-24 11:37:40 - Starting EstadisticasAppApplication using Java 23 with PID 11152 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-02-24 11:37:40 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-24 11:37:40 - No active profile set, falling back to 1 default profile: "default"
+2025-02-24 11:37:41 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-24 11:37:41 - Finished Spring Data repository scanning in 62 ms. Found 1 JPA repository interface.
+2025-02-24 11:37:42 - Tomcat initialized with port 8081 (http)
+2025-02-24 11:37:42 - Arrancando servicio [Tomcat]
+2025-02-24 11:37:42 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-02-24 11:37:42 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-02-24 11:37:42 - Initializing Spring embedded WebApplicationContext
+2025-02-24 11:37:42 - Root WebApplicationContext: initialization completed in 1880 ms
+2025-02-24 11:37:42 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-24 11:37:42 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-24 11:37:42 - HHH000026: Second-level cache disabled
+2025-02-24 11:37:43 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-24 11:37:43 - HikariPool-1 - Starting...
+2025-02-24 11:37:43 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4403bff8
+2025-02-24 11:37:43 - HikariPool-1 - Start completed.
+2025-02-24 11:37:44 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-24 11:37:45 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-24 11:37:45 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 11:37:46 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-24 11:37:46 - 
+
+Using generated security password: 12c36178-e9a5-4dc9-97fe-df5242d13f37
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-24 11:37:46 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-24 11:37:46 - Tomcat started on port 8081 (http) with context path '/'
+2025-02-24 11:37:46 - Started EstadisticasAppApplication in 6.791 seconds (process running for 7.295)
+2025-02-24 11:39:21 - Starting EstadisticasAppApplication using Java 23 with PID 11908 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-02-24 11:39:21 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-24 11:39:21 - No active profile set, falling back to 1 default profile: "default"
+2025-02-24 11:39:22 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-24 11:39:22 - Finished Spring Data repository scanning in 72 ms. Found 1 JPA repository interface.
+2025-02-24 11:39:22 - Tomcat initialized with port 8081 (http)
+2025-02-24 11:39:22 - Arrancando servicio [Tomcat]
+2025-02-24 11:39:22 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-02-24 11:39:22 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-02-24 11:39:22 - Initializing Spring embedded WebApplicationContext
+2025-02-24 11:39:22 - Root WebApplicationContext: initialization completed in 1759 ms
+2025-02-24 11:39:23 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-24 11:39:23 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-24 11:39:23 - HHH000026: Second-level cache disabled
+2025-02-24 11:39:23 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-24 11:39:23 - HikariPool-1 - Starting...
+2025-02-24 11:39:23 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@30eedaa4
+2025-02-24 11:39:23 - HikariPool-1 - Start completed.
+2025-02-24 11:39:24 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-24 11:39:25 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-24 11:39:25 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 11:39:25 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-24 11:39:26 - Tomcat started on port 8081 (http) with context path '/'
+2025-02-24 11:39:26 - Started EstadisticasAppApplication in 6.297 seconds (process running for 6.804)
+2025-02-24 11:40:35 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-24 11:40:35 - Initializing Servlet 'dispatcherServlet'
+2025-02-24 11:40:35 - Completed initialization in 1 ms
+2025-02-24 11:40:35 - Usuario registrado con éxito: jahqeline@live.com.mx
+2025-02-24 11:41:01 - Solicitud de activación recibida para usuario ID: 69
+2025-02-24 11:41:01 - Intentando activar usuario con token: ea279b7d-b6d5-4b08-9c2b-50fc6862f95e
+2025-02-24 11:41:01 - Cuenta activada con éxito para el usuario: jahqeline@live.com.mx
+2025-02-24 11:41:01 - Cuenta activada correctamente. Redirigiendo a login.
+2025-02-24 11:50:11 - Starting EstadisticasAppApplication using Java 23 with PID 720 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-02-24 11:50:11 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-24 11:50:11 - No active profile set, falling back to 1 default profile: "default"
+2025-02-24 11:50:12 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-24 11:50:12 - Finished Spring Data repository scanning in 69 ms. Found 1 JPA repository interface.
+2025-02-24 11:50:13 - Tomcat initialized with port 8081 (http)
+2025-02-24 11:50:13 - Arrancando servicio [Tomcat]
+2025-02-24 11:50:13 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-02-24 11:50:13 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-02-24 11:50:13 - Initializing Spring embedded WebApplicationContext
+2025-02-24 11:50:13 - Root WebApplicationContext: initialization completed in 2049 ms
+2025-02-24 11:50:13 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-24 11:50:13 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-24 11:50:13 - HHH000026: Second-level cache disabled
+2025-02-24 11:50:14 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-24 11:50:14 - HikariPool-1 - Starting...
+2025-02-24 11:50:14 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@77ff14ce
+2025-02-24 11:50:14 - HikariPool-1 - Start completed.
+2025-02-24 11:50:14 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-24 11:50:15 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-24 11:50:16 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 11:50:16 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityFilterChain' defined in class path resource [com/estadisticas/estadisticas_app/Seguridad/SecurityConfig.class]: Unsatisfied dependency expressed through method 'securityFilterChain' parameter 0: No qualifying bean of type 'org.springframework.security.config.annotation.web.builders.HttpSecurity' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2025-02-24 11:50:16 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 11:50:16 - HikariPool-1 - Shutdown initiated...
+2025-02-24 11:50:16 - HikariPool-1 - Shutdown completed.
+2025-02-24 11:50:16 - Parando servicio [Tomcat]
+2025-02-24 11:50:16 - Necesitas agregar "--add-opens=java.base/java.lang=ALL-UNNAMED" a los argumentos JVM en la línea de comandos, para habilitar la detección de fuga de memoria ThreadLocal. Alternativamente, puedes suprimir esta advertencia, deshabilitando la detección de fuga de memoria ThreadLocal.
+2025-02-24 11:50:16 - You need to add "--add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED" to the JVM command line arguments to enable RMI Target memory leak detection. Alternatively, you can suppress this warning by disabling RMI Target memory leak detection.
+2025-02-24 11:50:16 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-02-24 11:50:16 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of method securityFilterChain in com.estadisticas.estadisticas_app.Seguridad.SecurityConfig required a bean of type 'org.springframework.security.config.annotation.web.builders.HttpSecurity' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.config.annotation.web.builders.HttpSecurity' in your configuration.
+
+2025-02-24 11:50:30 - Starting EstadisticasAppApplication using Java 23 with PID 14716 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-02-24 11:50:30 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-24 11:50:30 - No active profile set, falling back to 1 default profile: "default"
+2025-02-24 11:50:31 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-24 11:50:31 - Finished Spring Data repository scanning in 66 ms. Found 1 JPA repository interface.
+2025-02-24 11:50:32 - Tomcat initialized with port 8081 (http)
+2025-02-24 11:50:32 - Arrancando servicio [Tomcat]
+2025-02-24 11:50:32 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-02-24 11:50:32 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-02-24 11:50:32 - Initializing Spring embedded WebApplicationContext
+2025-02-24 11:50:32 - Root WebApplicationContext: initialization completed in 2107 ms
+2025-02-24 11:50:32 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-24 11:50:32 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-24 11:50:32 - HHH000026: Second-level cache disabled
+2025-02-24 11:50:33 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-24 11:50:33 - HikariPool-1 - Starting...
+2025-02-24 11:50:33 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6caa4dc5
+2025-02-24 11:50:33 - HikariPool-1 - Start completed.
+2025-02-24 11:50:33 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-24 11:50:34 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-24 11:50:34 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 11:50:35 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityFilterChain' defined in class path resource [com/estadisticas/estadisticas_app/Seguridad/SecurityConfig.class]: Unsatisfied dependency expressed through method 'securityFilterChain' parameter 0: No qualifying bean of type 'org.springframework.security.config.annotation.web.builders.HttpSecurity' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2025-02-24 11:50:35 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 11:50:35 - HikariPool-1 - Shutdown initiated...
+2025-02-24 11:50:35 - HikariPool-1 - Shutdown completed.
+2025-02-24 11:50:35 - Parando servicio [Tomcat]
+2025-02-24 11:50:35 - Necesitas agregar "--add-opens=java.base/java.lang=ALL-UNNAMED" a los argumentos JVM en la línea de comandos, para habilitar la detección de fuga de memoria ThreadLocal. Alternativamente, puedes suprimir esta advertencia, deshabilitando la detección de fuga de memoria ThreadLocal.
+2025-02-24 11:50:35 - You need to add "--add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED" to the JVM command line arguments to enable RMI Target memory leak detection. Alternatively, you can suppress this warning by disabling RMI Target memory leak detection.
+2025-02-24 11:50:35 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-02-24 11:50:35 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of method securityFilterChain in com.estadisticas.estadisticas_app.Seguridad.SecurityConfig required a bean of type 'org.springframework.security.config.annotation.web.builders.HttpSecurity' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.config.annotation.web.builders.HttpSecurity' in your configuration.
+
+2025-02-24 11:51:40 - Starting EstadisticasAppApplication using Java 23 with PID 12140 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-02-24 11:51:40 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-24 11:51:40 - No active profile set, falling back to 1 default profile: "default"
+2025-02-24 11:51:41 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-24 11:51:41 - Finished Spring Data repository scanning in 61 ms. Found 1 JPA repository interface.
+2025-02-24 11:51:42 - Tomcat initialized with port 8081 (http)
+2025-02-24 11:51:42 - Arrancando servicio [Tomcat]
+2025-02-24 11:51:42 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-02-24 11:51:42 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-02-24 11:51:42 - Initializing Spring embedded WebApplicationContext
+2025-02-24 11:51:42 - Root WebApplicationContext: initialization completed in 2198 ms
+2025-02-24 11:51:43 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-24 11:51:43 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-24 11:51:43 - HHH000026: Second-level cache disabled
+2025-02-24 11:51:43 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-24 11:51:43 - HikariPool-1 - Starting...
+2025-02-24 11:51:43 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@150f41b9
+2025-02-24 11:51:43 - HikariPool-1 - Start completed.
+2025-02-24 11:51:43 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-24 11:51:45 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-24 11:51:45 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 11:51:45 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-24 11:51:45 - 
+
+Using generated security password: e3e5abf8-06ca-4ec1-9b27-6f0dbfeecd73
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-24 11:51:45 - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-24 11:51:46 - Tomcat started on port 8081 (http) with context path '/'
+2025-02-24 11:51:46 - Started EstadisticasAppApplication in 6.453 seconds (process running for 6.963)
+2025-02-24 11:54:08 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-24 11:54:08 - Initializing Servlet 'dispatcherServlet'
+2025-02-24 11:54:08 - Completed initialization in 2 ms
+2025-02-24 11:54:08 - Usuario registrado con éxito: jahqeline@live.com.mx
+2025-02-24 12:07:46 - Starting EstadisticasAppApplication using Java 23 with PID 14868 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-02-24 12:07:46 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-24 12:07:46 - No active profile set, falling back to 1 default profile: "default"
+2025-02-24 12:07:47 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-24 12:07:47 - Finished Spring Data repository scanning in 74 ms. Found 1 JPA repository interface.
+2025-02-24 12:07:48 - Tomcat initialized with port 8081 (http)
+2025-02-24 12:07:48 - Arrancando servicio [Tomcat]
+2025-02-24 12:07:48 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-02-24 12:07:48 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-02-24 12:07:48 - Initializing Spring embedded WebApplicationContext
+2025-02-24 12:07:48 - Root WebApplicationContext: initialization completed in 1959 ms
+2025-02-24 12:07:48 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-24 12:07:48 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-24 12:07:48 - HHH000026: Second-level cache disabled
+2025-02-24 12:07:49 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-24 12:07:49 - HikariPool-1 - Starting...
+2025-02-24 12:07:49 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@52b32b70
+2025-02-24 12:07:49 - HikariPool-1 - Start completed.
+2025-02-24 12:07:49 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-24 12:07:50 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-24 12:07:50 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 12:07:51 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-24 12:07:51 - Tomcat started on port 8081 (http) with context path '/'
+2025-02-24 12:07:51 - Started EstadisticasAppApplication in 6.001 seconds (process running for 6.58)
+2025-02-24 12:09:16 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-24 12:09:16 - Initializing Servlet 'dispatcherServlet'
+2025-02-24 12:09:16 - Completed initialization in 1 ms
+2025-02-24 12:40:46 - Starting EstadisticasAppApplication using Java 23 with PID 15232 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-02-24 12:40:46 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-24 12:40:46 - No active profile set, falling back to 1 default profile: "default"
+2025-02-24 12:40:47 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-24 12:40:47 - Finished Spring Data repository scanning in 74 ms. Found 1 JPA repository interface.
+2025-02-24 12:40:48 - Tomcat initialized with port 8081 (http)
+2025-02-24 12:40:48 - Arrancando servicio [Tomcat]
+2025-02-24 12:40:48 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-02-24 12:40:48 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-02-24 12:40:48 - Initializing Spring embedded WebApplicationContext
+2025-02-24 12:40:48 - Root WebApplicationContext: initialization completed in 1825 ms
+2025-02-24 12:40:49 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-24 12:40:49 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-24 12:40:49 - HHH000026: Second-level cache disabled
+2025-02-24 12:40:49 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-24 12:40:49 - HikariPool-1 - Starting...
+2025-02-24 12:40:49 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7956f93a
+2025-02-24 12:40:49 - HikariPool-1 - Start completed.
+2025-02-24 12:40:49 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-24 12:40:51 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-24 12:40:51 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 12:40:52 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-24 12:40:52 - Tomcat started on port 8081 (http) with context path '/'
+2025-02-24 12:40:52 - Started EstadisticasAppApplication in 6.041 seconds (process running for 6.545)
+2025-02-24 12:41:20 - Starting EstadisticasAppApplication using Java 23 with PID 10716 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-02-24 12:41:20 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-24 12:41:20 - No active profile set, falling back to 1 default profile: "default"
+2025-02-24 12:41:21 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-24 12:41:21 - Finished Spring Data repository scanning in 73 ms. Found 1 JPA repository interface.
+2025-02-24 12:41:22 - Tomcat initialized with port 8081 (http)
+2025-02-24 12:41:22 - Arrancando servicio [Tomcat]
+2025-02-24 12:41:22 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-02-24 12:41:22 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-02-24 12:41:23 - Initializing Spring embedded WebApplicationContext
+2025-02-24 12:41:23 - Root WebApplicationContext: initialization completed in 2106 ms
+2025-02-24 12:41:23 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-24 12:41:23 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-24 12:41:23 - HHH000026: Second-level cache disabled
+2025-02-24 12:41:23 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-24 12:41:23 - HikariPool-1 - Starting...
+2025-02-24 12:41:23 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@30eedaa4
+2025-02-24 12:41:23 - HikariPool-1 - Start completed.
+2025-02-24 12:41:23 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-24 12:41:25 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-24 12:41:25 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 12:41:25 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-24 12:41:26 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-02-24 12:41:26 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 12:41:26 - HikariPool-1 - Shutdown initiated...
+2025-02-24 12:41:26 - HikariPool-1 - Shutdown completed.
+2025-02-24 12:41:26 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-02-24 12:41:26 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
+2025-02-24 12:42:01 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-24 12:42:01 - Initializing Servlet 'dispatcherServlet'
+2025-02-24 12:42:01 - Completed initialization in 1 ms
+2025-02-24 12:53:25 - Starting EstadisticasAppApplication using Java 23 with PID 2524 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-02-24 12:53:25 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-02-24 12:53:25 - No active profile set, falling back to 1 default profile: "default"
+2025-02-24 12:53:26 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-24 12:53:26 - Finished Spring Data repository scanning in 71 ms. Found 1 JPA repository interface.
+2025-02-24 12:53:27 - Tomcat initialized with port 8081 (http)
+2025-02-24 12:53:27 - Arrancando servicio [Tomcat]
+2025-02-24 12:53:27 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-02-24 12:53:27 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-02-24 12:53:27 - Initializing Spring embedded WebApplicationContext
+2025-02-24 12:53:27 - Root WebApplicationContext: initialization completed in 1819 ms
+2025-02-24 12:53:27 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-24 12:53:27 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-02-24 12:53:27 - HHH000026: Second-level cache disabled
+2025-02-24 12:53:28 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-24 12:53:28 - HikariPool-1 - Starting...
+2025-02-24 12:53:28 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@30eedaa4
+2025-02-24 12:53:28 - HikariPool-1 - Start completed.
+2025-02-24 12:53:28 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-24 12:53:29 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-24 12:53:29 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-24 12:53:30 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-24 12:53:30 - Tomcat started on port 8081 (http) with context path '/'
+2025-02-24 12:53:30 - Started EstadisticasAppApplication in 5.865 seconds (process running for 6.382)
+2025-02-24 12:54:06 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-24 12:54:06 - Initializing Servlet 'dispatcherServlet'
+2025-02-24 12:54:06 - Completed initialization in 1 ms
+2025-02-24 12:57:03 - Usuario registrado con éxito: jahqeline@live.com.mx
+2025-02-24 12:57:40 - Solicitud de activación recibida para usuario ID: 71
+2025-02-24 12:57:40 - Intentando activar usuario con token: 7250c804-9c88-4b7d-8c4b-16b4dad1599b
+2025-02-24 12:57:40 - El usuario jahqeline@live.com.mx ya está activado.
+2025-02-24 12:57:40 - Cuenta ya estaba activada. Redirigiendo a login.
+2025-02-24 13:59:21 - Usuario registrado con éxito: jahqeline@live.com.mx
