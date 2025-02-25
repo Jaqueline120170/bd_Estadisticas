@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.estadisticas.estadisticas_app.Dtos.LoginUsuarioDto;
 import com.estadisticas.estadisticas_app.Dtos.RegistroUsuarioDto;
@@ -69,11 +70,11 @@ public class UsuarioControlador {
             return ResponseEntity.status(HttpStatus.CREATED)
                 .body(Collections.singletonMap("message", "Usuario registrado exitosamente."));
         } catch (Exception e) {
-            e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(Collections.singletonMap("error", "Error interno del servidor."));
         }
     }
+
     /**
      * Activa la cuenta de un usuario utilizando un token de verificación enviado por correo.
      * 
@@ -100,17 +101,19 @@ public class UsuarioControlador {
         }
     }
 
-    // Endpoint para reenviar enlace de activacion de cuenta
+ // Endpoint para reenviar enlace de activación de cuenta
     @PostMapping("/reenviar-enlace-activacion")
-    public ResponseEntity<String> reenviarEnlaceActivacion(@RequestParam("email") String emailUsuario) {
+    public ResponseEntity<Map<String, String>> reenviarEnlaceActivacion(@RequestParam("email") String emailUsuario) {
+        Map<String, String> response = new HashMap<>();
         try {
             usuarioServicio.reenviarEnlaceActivacion(emailUsuario);
-            return ResponseEntity.ok("Se ha enviado un nuevo enlace de activación a tu correo.");
+            response.put("mensaje", "Se ha enviado un nuevo enlace de activación a tu correo.");
+            return ResponseEntity.ok(response);
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
+            response.put("error", e.getMessage());
+            return ResponseEntity.badRequest().body(response);
         }
     }
- 
 
     /**
      * Endpoint para solicitar el restablecimiento de la contraseña
@@ -119,18 +122,20 @@ public class UsuarioControlador {
      */
     @PostMapping("/solicitar-restablecimiento-contrasena")
     public ResponseEntity<Map<String, String>> solicitarRestablecimientoContraseña(@RequestParam String emailUsuario) {
-        System.out.println("Solicitud recibida para el correo: " + emailUsuario); // 🔴 Imprime el email recibido
         Map<String, String> response = new HashMap<>();
         try {
             usuarioServicio.solicitarRestablecimientoContraseña(emailUsuario);
             response.put("mensaje", "Se ha enviado un enlace para restablecer tu contraseña al correo.");
             return ResponseEntity.ok(response);
-        } catch (Exception e) {
-            System.err.println("Error al solicitar restablecimiento: " + e.getMessage()); // 🔴 Ver error exacto en el backend
+        } catch (IllegalArgumentException e) {  // Captura la excepción lanzada en el servicio
             response.put("error", e.getMessage());
-            return ResponseEntity.badRequest().body(response);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response); // Devuelve un 404
+        } catch (Exception e) {
+            response.put("error", "Error inesperado. Inténtalo más tarde.");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
     }
+
     /**
      * Restablece la contraseña de un usuario utilizando un token de restablecimiento enviado por correo.
      * 

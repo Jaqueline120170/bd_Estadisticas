@@ -161,21 +161,22 @@ public class UsuarioServicio {
      * @param emailUsuario el email del usuario que solicita el restablecimiento
      */
     public void solicitarRestablecimientoContraseña(String emailUsuario) {
-        // Buscar al usuario por el email proporcionado
+        // Buscar al usuario por email
         Usuario usuario = usuarioRepository.findByEmailUsuario(emailUsuario)
-                .orElseThrow(() -> new IllegalArgumentException("No se encontró un usuario con ese email."));
+            .orElseThrow(() -> new IllegalArgumentException("No existe un usuario con ese email.")); // Cambiado a IllegalArgumentException
 
-        // Generar un token de restablecimiento único
+        // Generar token de restablecimiento
         String resetToken = UUID.randomUUID().toString();
         usuario.setResetToken(resetToken);
-        usuario.setResetTokenExpiracion(LocalDateTime.now().plusMinutes(tokenExpirationMinutes));  // Token válido por 30 minutos
+        usuario.setResetTokenExpiracion(LocalDateTime.now().plusMinutes(tokenExpirationMinutes));
 
-        // Guardar el usuario con el nuevo token
+        // Guardar usuario con nuevo token
         usuarioRepository.save(usuario);
 
-        // Enviar el correo con el enlace de restablecimiento de la contraseña
+        // Enviar el correo con el enlace de restablecimiento
         emailServicio.enviarCorreoRestablecerContraseña(usuario.getEmailUsuario(), resetToken);
     }
+
     /**
      * Metod para Restablecer la contraseña del usuario usando el token de restablecimiento.
      * @param token Token de restablecimiento
