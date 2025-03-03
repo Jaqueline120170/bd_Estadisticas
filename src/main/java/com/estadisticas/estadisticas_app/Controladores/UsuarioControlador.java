@@ -1,9 +1,11 @@
 package com.estadisticas.estadisticas_app.Controladores;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,44 +44,49 @@ public class UsuarioControlador {
     private static final Logger logger = LoggerFactory.getLogger(UsuarioServicio.class);
 
     /**
-     * Endpoint para registrar un nuevo usuario.
+     * Registra un nuevo usuario en la plataforma.
      *
-     * @param usuarioDto Objeto que contiene la información del usuario a registrar.
-     * @return Una respuesta HTTP con el resultado del registro:
-     *         <ul>
-     *         <li>201 (CREATED): Usuario registrado exitosamente.</li>
-     *         <li>400 (BAD REQUEST): El email del usuario es obligatorio.</li>
-     *         <li>409 (CONFLICT): El email ya está registrado.</li>
-     *         <li>500 (INTERNAL SERVER ERROR): Error interno del servidor.</li>
-     *         </ul>
+     * @param usuarioDto Datos del usuario a registrar.
+     * @return Respuesta HTTP:
+     *         - 201 (CREATED): Usuario registrado exitosamente.
+     *         - 400 (BAD REQUEST): Falta el email del usuario.
+     *         - 409 (CONFLICT): Email ya registrado.
+     *         - 500 (INTERNAL SERVER ERROR): Error inesperado.
      */
     @PostMapping("/registro")
     public ResponseEntity<Map<String, String>> registroUsuario(@RequestBody RegistroUsuarioDto usuarioDto) {
+    	   logger.info("Intento de registro de usuario con email: {}", usuarioDto.getEmailUsuario());
         try {
             if (usuarioDto.getEmailUsuario() == null || usuarioDto.getEmailUsuario().isEmpty()) {
+            	logger.warn("Intento de registro fallido: email vacío");
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                     .body(Collections.singletonMap("error", "El email es obligatorio."));
             }
 
             if (usuarioServicio.emailExistsUsuario(usuarioDto.getEmailUsuario())) {
+            	logger.warn("Intento de registro fallido: email ya registrado {}", usuarioDto.getEmailUsuario());
                 return ResponseEntity.status(HttpStatus.CONFLICT)
                     .body(Collections.singletonMap("error", "El email ya está registrado."));
             }
 
             usuarioServicio.registroUsuario(usuarioDto);
+            logger.info("Usuario registrado exitosamente: {}", usuarioDto.getEmailUsuario());
             return ResponseEntity.status(HttpStatus.CREATED)
                 .body(Collections.singletonMap("message", "Usuario registrado exitosamente."));
         } catch (Exception e) {
+        	logger.error("Error al registrar usuario {}: {}", usuarioDto.getEmailUsuario(), e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(Collections.singletonMap("error", "Error interno del servidor."));
         }
     }
 
     /**
-     * Activa la cuenta de un usuario utilizando un token de verificación enviado por correo.
-     * 
-     * @param token Token único de activación
-     * @return ResponseEntity con un mensaje de éxito o error en formato JSON
+     * Activa la cuenta de un usuario con un token enviado por correo.
+     *
+     * @param idUsuario ID del usuario.
+     * @param token     Token de activación.
+     * @param response  Objeto para redireccionar al cliente.
+     * @throws IOException Si ocurre un error al redirigir.
      */
     @GetMapping("/activar")
     public void activarCuenta(@RequestParam("id") Long idUsuario, @RequestParam("token") String token, HttpServletResponse response) throws IOException {
@@ -101,15 +108,23 @@ public class UsuarioControlador {
         }
     }
 
- // Endpoint para reenviar enlace de activación de cuenta
+    /**
+     * Reenvía el enlace de activación de cuenta a un usuario.
+     *
+     * @param emailUsuario Email del usuario.
+     * @return Respuesta HTTP con mensaje de éxito o error.
+     */
     @PostMapping("/reenviar-enlace-activacion")
     public ResponseEntity<Map<String, String>> reenviarEnlaceActivacion(@RequestParam("email") String emailUsuario) {
+    	logger.info("Solicitud de reenvío de enlace de activación para: {}", emailUsuario);
         Map<String, String> response = new HashMap<>();
         try {
             usuarioServicio.reenviarEnlaceActivacion(emailUsuario);
+            logger.info("Enlace de activación reenviado con éxito a: {}", emailUsuario);
             response.put("mensaje", "Se ha enviado un nuevo enlace de activación a tu correo.");
             return ResponseEntity.ok(response);
         } catch (IllegalArgumentException e) {
+        	logger.warn("Error al reenviar enlace de activación: {}", e.getMessage());
             response.put("error", e.getMessage());
             return ResponseEntity.badRequest().body(response);
         }
@@ -122,15 +137,19 @@ public class UsuarioControlador {
      */
     @PostMapping("/solicitar-restablecimiento-contrasena")
     public ResponseEntity<Map<String, String>> solicitarRestablecimientoContraseña(@RequestParam String emailUsuario) {
+    	logger.info("Solicitud de restablecimiento de contraseña para: {}", emailUsuario);
         Map<String, String> response = new HashMap<>();
         try {
             usuarioServicio.solicitarRestablecimientoContraseña(emailUsuario);
+            logger.info("Correo de restablecimiento enviado a: {}", emailUsuario);
             response.put("mensaje", "Se ha enviado un enlace para restablecer tu contraseña al correo.");
             return ResponseEntity.ok(response);
-        } catch (IllegalArgumentException e) {  // Captura la excepción lanzada en el servicio
+        } catch (IllegalArgumentException e) {  
+        	logger.warn("Solicitud de restablecimiento fallida: {}", e.getMessage());
             response.put("error", e.getMessage());
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response); // Devuelve un 404
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response); 
         } catch (Exception e) {
+        	logger.error("Error inesperado en la solicitud de restablecimiento: {}", e.getMessage());
             response.put("error", "Error inesperado. Inténtalo más tarde.");
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
@@ -147,28 +166,56 @@ public class UsuarioControlador {
     public ResponseEntity<Map<String, String>> restablecerContrasena(@RequestBody Map<String, String> request) {
         String token = request.get("token"); // Obtenemos el token del cuerpo de la solicitud
         String nuevaContraseña = request.get("nuevaContraseña"); // Obtenemos la nueva contraseña
-
+        logger.info("Intento de restablecimiento de contraseña con token: {}", token);
         try {
             // Llamamos al servicio para restablecer la contraseña
             usuarioServicio.restablecerContraseña(token, nuevaContraseña);
+            logger.info("Contraseña restablecida con éxito para token: {}", token);
 
             // Retornar mensaje de éxito como JSON
             return ResponseEntity.ok(Map.of("mensaje", "Contraseña restablecida con éxito."));
         } catch (IllegalArgumentException e) {
+        	logger.warn("Restablecimiento de contraseña fallido: {}", e.getMessage());
             // Retornar mensaje de error como JSON
             return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
         }
     }
+    @GetMapping("/verificar-token")
+    public ResponseEntity<Map<String, String>> verificarToken(@RequestParam("token") String token) {
+        logger.info("Recibiendo solicitud de verificación de token: {}", token); // 👀 Log para depuración
 
- // Endpoint para loggin
+        Optional<Usuario> usuarioOptional = usuarioRepository.findByResetToken(token);
+
+        if (usuarioOptional.isEmpty()) {
+            logger.warn("Token inválido: {}", token); // 👀 Log de error
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", "Token inválido o no encontrado."));
+        }
+
+        Usuario usuario = usuarioOptional.get();
+        if (usuario.getResetTokenExpiracion().isBefore(LocalDateTime.now())) {
+            logger.warn("Token expirado: {}", token); // 👀 Log de expiración
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", "El token de restablecimiento ha expirado."));
+        }
+
+        logger.info("Token válido: {}", token); // 👀 Log de éxito
+        return ResponseEntity.ok(Map.of("mensaje", "Token válido."));
+    }
+
+    /**
+     * Inicia sesión en la plataforma.
+     *
+     * @param loginDto Datos del usuario (email y contraseña).
+     * @return Respuesta HTTP con información del usuario o error.
+     */
     @PostMapping("/login")
     public ResponseEntity<?> iniciarSesion(@RequestBody LoginUsuarioDto loginDto) {
+    	 logger.info("Intento de inicio de sesión para email: {}", loginDto.getEmailUsuario());
         try {
             Usuario usuario = usuarioServicio.login(loginDto);
 
             // Generar token de sesión (aquí podrías implementar JWT si quisieras)
             String token = UUID.randomUUID().toString(); // Simulación de token
-
+            logger.info("Inicio de sesión exitoso para usuario: {}", loginDto.getEmailUsuario());
             // Devolver datos esenciales para el frontend
             Map<String, Object> response = new HashMap<>();
             response.put("message", "Inicio de sesión exitoso.");
@@ -178,29 +225,73 @@ public class UsuarioControlador {
 
             return ResponseEntity.ok(response);
         } catch (IllegalStateException e) {
+        	logger.warn("Inicio de sesión fallido: {}", e.getMessage());
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Map.of("error", e.getMessage()));
         } catch (IllegalArgumentException e) {
+        	logger.warn("Intento de inicio de sesión inválido: {}", e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", e.getMessage()));
         }
     }
+    /**
+     * Actualiza el rol de un usuario a "Premier".
+     *
+     * @param request Contiene el email del usuario.
+     * @return Respuesta HTTP con mensaje de éxito o error.
+     */
     @PutMapping("/actualizar-rol-premier")
     public ResponseEntity<?> actualizarRolAPremier(@RequestBody Map<String, String> request) {
+        String email = request.get("email");
+        logger.info("Solicitud para actualizar a rol Premier: {}", email);
         try {
-            String email = request.get("email");
             usuarioServicio.actualizarRolAPremier(email);
+            logger.info("Rol actualizado a Premier para: {}", email);
             return ResponseEntity.ok(Map.of("message", "Rol actualizado a premier"));
         } catch (Exception e) {
+            logger.warn("Error al actualizar rol a Premier: {}", e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", e.getMessage()));
         }
     }
+
     @PostMapping("/{id}/suscripcion-premium")
     public ResponseEntity<?> activarSuscripcionPremium(@PathVariable Long id) {
+        logger.info("Intento de activación de suscripción premium para usuario ID: {}", id);
         try {
             usuarioServicio.activarSuscripcionPremium(id);
+            logger.info("Usuario ID {} ahora es premium.", id);
             return ResponseEntity.ok("El usuario ahora es premium.");
         } catch (IllegalArgumentException e) {
+            logger.warn("Error al activar suscripción premium para usuario ID {}: {}", id, e.getMessage());
             return ResponseEntity.badRequest().body(e.getMessage());
         }
+    }
+    @PostMapping("/logs")
+    public ResponseEntity<?> recibirLogDesdeFrontend(@RequestBody Map<String, String> request) {
+        String nivel = request.get("nivel");  // Puede ser INFO, DEBUG, WARN, ERROR
+        String mensaje = request.get("mensaje");
+
+        if (nivel == null || mensaje == null) {
+            return ResponseEntity.badRequest().body("Nivel y mensaje son obligatorios.");
+        }
+
+        // Dependiendo del nivel de log, lo enviamos al logger adecuado
+        switch (nivel.toUpperCase()) {
+            case "DEBUG":
+                logger.debug(mensaje);
+                break;
+            case "INFO":
+                logger.info(mensaje);
+                break;
+            case "WARN":
+                logger.warn(mensaje);
+                break;
+            case "ERROR":
+                logger.error(mensaje);
+                break;
+            default:
+                logger.info("Nivel desconocido: " + mensaje);
+        }
+
+        return ResponseEntity.ok("Log recibido y registrado.");
     }
 
 }

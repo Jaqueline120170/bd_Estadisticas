@@ -34,21 +34,25 @@ public class UsuarioServicio {
     private int tokenExpirationMinutes; // Configurable desde application.properties
 
     /**
-     * Método para verificar si un usuario con un email específico ya está registrado.
-     * @param emailUsuario el email del usuario a verificar
-     * @return true si el email ya está registrado, de lo contrario false
+     * Verifica si un usuario con el email dado ya está registrado.
+     *
+     * @param emailUsuario Email del usuario a verificar.
+     * @return true si el email ya está registrado, de lo contrario false.
      */
     public boolean emailExistsUsuario(String emailUsuario) {
         return usuarioRepository.existsByEmailUsuario(emailUsuario); // Retorna true si el email ya existe
     }
 
     /**
-     * Método para registrar un nuevo usuario en el sistema.
-     * Toma un DTO con los datos del usuario, encripta la contraseña y la guarda en la base de datos.
-     * @param usuarioDto el DTO con los datos del usuario a registrar
+     * Registra un nuevo usuario en la base de datos.
+     * Aplica validaciones y encripta la contraseña antes de guardar el usuario.
+     * 
+     * @param usuarioDto Datos del usuario a registrar.
+     * @throws RuntimeException Si ocurre un error durante el registro.
      */
     public void registroUsuario(RegistroUsuarioDto usuarioDto) {
         try {
+        	 logger.info("Validando datos para el registro de {}", usuarioDto.getEmailUsuario());
             // Validaciones
             ValidacionesUtil.validarNoVacio(usuarioDto.getNombreUsuario(), "Nombre de Usuario");
             ValidacionesUtil.validarEmail(usuarioDto.getEmailUsuario());
@@ -92,9 +96,11 @@ public class UsuarioServicio {
     }
 
     /**
-     * Método para activar un usuario mediante un token de verificación.
-     * @param token El token de verificación enviado por email.
-     * @return true si la activación fue exitosa, false en caso contrario.
+     * Activa la cuenta de un usuario verificando su token de activación.
+     *
+     * @param token Token de verificación enviado por email.
+     * @param idUsuario ID del usuario a activar.
+     * @return true si la activación fue exitosa, false si ya estaba activado.
      * @throws IllegalArgumentException Si el token es inválido o ha expirado.
      */
     @Transactional
@@ -129,10 +135,10 @@ public class UsuarioServicio {
     }
 
     /**
-     *Método para el Reenvio de enlace de verificacion al usuario, genera nuevo token de verificacion en caso de
-     *que el token enviado al principio, haya expirado (15 minutos) @Value("${token.expiration.minutes}")
-    private int tokenExpirationMinutes; // Configurable desde application.properties.
-     * @param token el token de verificación enviado por email
+     * Reenvía el enlace de activación generando un nuevo token.
+     *
+     * @param emailUsuario Email del usuario al que se le enviará el enlace.
+     * @throws IllegalArgumentException Si el usuario no existe o ya está activado.
      */
     public void reenviarEnlaceActivacion(String emailUsuario) {
         // Buscar el usuario por email, y si no existe, lanzar excepción
@@ -154,11 +160,13 @@ public class UsuarioServicio {
 
         // Enviar el nuevo correo de verificación
         emailServicio.enviarCorreoVerificacion(usuario.getEmailUsuario(), nuevoToken, usuario.getIdUsuario());
+        logger.info("Nuevo enlace de activación enviado a {}", emailUsuario);
     }
     /**
-     * Método para solicitar el restablecimiento de la contraseña.
-     * Genera un token de restablecimiento, lo asigna al usuario y envía un correo con el enlace para restablecerla.
-     * @param emailUsuario el email del usuario que solicita el restablecimiento
+     * Solicita el restablecimiento de contraseña y envía un correo con un enlace.
+     *
+     * @param emailUsuario Email del usuario.
+     * @throws IllegalArgumentException Si el usuario no existe.
      */
     public void solicitarRestablecimientoContraseña(String emailUsuario) {
         // Buscar al usuario por email
@@ -175,12 +183,15 @@ public class UsuarioServicio {
 
         // Enviar el correo con el enlace de restablecimiento
         emailServicio.enviarCorreoRestablecerContraseña(usuario.getEmailUsuario(), resetToken);
+        logger.info("Solicitud de restablecimiento enviada a {}", emailUsuario);
     }
 
     /**
-     * Metod para Restablecer la contraseña del usuario usando el token de restablecimiento.
-     * @param token Token de restablecimiento
-     * @param nuevaPassword Nueva contraseña que el usuario desea establecer
+     * Restablece la contraseña de un usuario usando un token de restablecimiento.
+     *
+     * @param token Token de restablecimiento.
+     * @param nuevaContraseña Nueva contraseña del usuario.
+     * @throws IllegalArgumentException Si el token es inválido o ha expirado.
      */
     public void restablecerContraseña(String token, String nuevaContraseña) {
         // Buscar al usuario por el token de restablecimiento
@@ -203,6 +214,7 @@ public class UsuarioServicio {
 
             // Guardar el usuario con la nueva contraseña
             usuarioRepository.save(usuario);
+            logger.info("Contraseña restablecida correctamente para {}", usuario.getEmailUsuario());
         } else {
             throw new IllegalArgumentException("Token de restablecimiento inválido.");
         }
@@ -214,6 +226,7 @@ public class UsuarioServicio {
      * @return Usuario autenticado
      */
     public Usuario login(LoginUsuarioDto loginDto) {
+    	 logger.info("Autenticando usuario {}", loginDto.getEmailUsuario());
         // Validaciones
         ValidacionesUtil.validarNoVacio(loginDto.getEmailUsuario(), "emailUsuario");
         ValidacionesUtil.validarEmail(loginDto.getEmailUsuario());
@@ -232,18 +245,20 @@ public class UsuarioServicio {
 
         // Verificar la contraseña
         if (!passwordEncoder.matches(loginDto.getPasswordUsuario(), usuario.getPasswordUsuario())) {
+        	logger.warn("Intento de login fallido para {}", loginDto.getEmailUsuario());
             throw new IllegalArgumentException("Contraseña incorrecta.");
         }
-
+        logger.info("Usuario {} autenticado correctamente", loginDto.getEmailUsuario());
         return usuario; // Si pasa todo, retorna el usuario autenticado
     }
- // En UsuarioServicio.java
+    
     public void actualizarRolAPremier(String email) {
         Usuario usuario = usuarioRepository
             .findByEmailUsuario(email)
             .orElseThrow(() -> new IllegalArgumentException("Usuario no encontrado"));
 
         usuario.setRolUsuario("premier");
+        
         usuarioRepository.save(usuario);
     }
 

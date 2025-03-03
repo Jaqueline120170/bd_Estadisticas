@@ -6,9 +6,7 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 
 @SpringBootApplication(exclude = SecurityAutoConfiguration.class)
 public class EstadisticasAppApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(EstadisticasAppApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(EstadisticasAppApplication.class, args);
+    }
 }

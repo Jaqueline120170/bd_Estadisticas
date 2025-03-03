@@ -53,10 +53,21 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
     Usuario findByVerificacionToken(String verificacionToken);
 
     Optional<Usuario> findByResetToken(String resetToken); 
-    //Optional<Usuario> findByVerificacionToken(String token);
+    
 
+ // Contar usuarios verificados y no verificados
     long countByVerificado(boolean verificado);
-
+    
+    // Contar usuarios por rol (ADMIN o USUARIO)
+    long countByRolUsuario(String rolUsuario);
+    
+    // Contar usuarios según su tipo de suscripción (FREE o PREMIUM)
+    long countByTipoSuscripcion(String tipoSuscripcion);
+    
+    // Contar usuarios con suscripción activa o inactiva
+    long countByEstadoSuscripcion(String estadoSuscripcion);
+    
+    Optional<Usuario> findById(Long id);
    
 }
 
