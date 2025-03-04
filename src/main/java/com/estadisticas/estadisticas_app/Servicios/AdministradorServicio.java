@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.estadisticas.estadisticas_app.Modelos.Usuario;
-import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepository;
+import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepositorio;
 
 @Service
 public class AdministradorServicio {
@@ -20,7 +20,7 @@ public class AdministradorServicio {
     private static final Logger logger = LoggerFactory.getLogger(AdministradorServicio.class);
 
     @Autowired
-    private UsuarioRepository usuarioRepository;
+    private UsuarioRepositorio usuarioRepository;
 
     /**
      * Lista todos los usuarios registrados en el sistema.

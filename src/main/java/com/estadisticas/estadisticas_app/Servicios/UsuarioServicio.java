@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 import com.estadisticas.estadisticas_app.Dtos.LoginUsuarioDto;
 import com.estadisticas.estadisticas_app.Dtos.RegistroUsuarioDto;
 import com.estadisticas.estadisticas_app.Modelos.Usuario;
-import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepository;
+import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepositorio;
 import com.estadisticas.estadisticas_app.Utils.ValidacionesUtil;
 
 import jakarta.transaction.Transactional;
@@ -25,7 +25,7 @@ public class UsuarioServicio {
 	
 	private static final Logger logger = LoggerFactory.getLogger(UsuarioServicio.class);
     @Autowired
-    private UsuarioRepository usuarioRepository; // Inyectamos el repositorio
+    private UsuarioRepositorio usuarioRepository; // Inyectamos el repositorio
     @Autowired
     private PasswordEncoder passwordEncoder; // Inyectamos el PasswordEncoder
     @Autowired

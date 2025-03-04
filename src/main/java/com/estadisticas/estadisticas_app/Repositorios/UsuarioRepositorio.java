@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import com.estadisticas.estadisticas_app.Modelos.Usuario;
 
 @Repository
-public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
+public interface UsuarioRepositorio extends JpaRepository<Usuario, Long> {
     
     /**
      * Busca un usuario por su nombre de usuario.

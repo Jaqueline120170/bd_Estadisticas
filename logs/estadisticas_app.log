@@ -1,350 +1,22 @@
-2025-03-02 13:28:36 - Starting EstadisticasAppApplication using Java 21.0.2 with PID 5936 (C:\Users\Usuario\DWS\target\classes started by Usuario in C:\Users\Usuario\DWS)
-2025-03-02 13:28:36 - Running with Spring Boot v3.4.1, Spring v6.2.1
-2025-03-02 13:28:36 - No active profile set, falling back to 1 default profile: "default"
-2025-03-02 13:28:37 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-02 13:28:37 - Finished Spring Data repository scanning in 72 ms. Found 1 JPA repository interface.
-2025-03-02 13:28:38 - Tomcat initialized with port 8081 (http)
-2025-03-02 13:28:38 - Starting service [Tomcat]
-2025-03-02 13:28:38 - Starting Servlet engine: [Apache Tomcat/10.1.34]
-2025-03-02 13:28:38 - Initializing Spring embedded WebApplicationContext
-2025-03-02 13:28:38 - Root WebApplicationContext: initialization completed in 1862 ms
-2025-03-02 13:28:38 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-02 13:28:38 - HHH000412: Hibernate ORM core version 6.6.4.Final
-2025-03-02 13:28:39 - HHH000026: Second-level cache disabled
-2025-03-02 13:28:39 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-03-02 13:28:39 - HikariPool-1 - Starting...
-2025-03-02 13:28:39 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7ea07516
-2025-03-02 13:28:39 - HikariPool-1 - Start completed.
-2025-03-02 13:28:39 - HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 17.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-03-02 13:28:40 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-03-02 13:28:41 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-03-02 13:28:41 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-03-02 13:28:41 - Tomcat started on port 8081 (http) with context path '/'
-2025-03-02 13:28:41 - Started EstadisticasAppApplication in 5.908 seconds (process running for 6.465)
-2025-03-02 13:29:02 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-02 13:29:02 - Initializing Servlet 'dispatcherServlet'
-2025-03-02 13:29:02 - Completed initialization in 3 ms
-2025-03-02 13:29:02 - Intento de inicio de sesión para email: osteologia2@gmail.com
-2025-03-02 13:29:02 - Autenticando usuario osteologia2@gmail.com
-2025-03-02 13:29:02 - Usuario osteologia2@gmail.com autenticado correctamente
-2025-03-02 13:29:02 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
-2025-03-02 13:29:02 - Inicio de sesión exitoso para osteologia2@gmail.com
-2025-03-02 13:29:04 - El administrador solicitó la lista de usuarios.
-2025-03-02 13:29:04 - Listando todos los usuarios...
-2025-03-02 13:29:04 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-02 13:29:04 - Obteniendo estadísticas de usuarios...
-2025-03-02 13:29:10 - El administrador está buscando el usuario con ID: 1
-2025-03-02 13:29:10 - Buscando usuario con ID: 1
-2025-03-02 13:29:10 - Usuario no encontrado con ID: 1
-2025-03-02 13:29:10 - Intento de búsqueda fallido. Usuario con ID 1 no encontrado.
-2025-03-02 13:29:22 - El administrador está buscando el usuario con ID: 22
-2025-03-02 13:29:22 - Buscando usuario con ID: 22
-2025-03-02 13:29:37 - El administrador está eliminando al usuario con ID: 34
-2025-03-02 13:29:37 - Usuario con ID 34 ha sido eliminado.
-2025-03-02 13:29:37 - El administrador solicitó la lista de usuarios.
-2025-03-02 13:29:37 - Listando todos los usuarios...
-2025-03-02 13:30:14 - Intento de registro de usuario con email: 1234rekhg@gmail.com
-2025-03-02 13:30:14 - Validando datos para el registro de 1234rekhg@gmail.com
-2025-03-02 13:30:14 - Usuario registrado con éxito: 1234rekhg@gmail.com
-2025-03-02 13:30:16 - Usuario registrado exitosamente: 1234rekhg@gmail.com
-2025-03-02 13:30:18 - El administrador solicitó la lista de usuarios.
-2025-03-02 13:30:18 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-02 13:30:18 - Listando todos los usuarios...
-2025-03-02 13:30:18 - Obteniendo estadísticas de usuarios...
-2025-03-02 13:30:40 - Intento de registro de usuario con email: paco95_sfc@hotmail.com
-2025-03-02 13:30:40 - Intento de registro fallido: email ya registrado paco95_sfc@hotmail.com
-2025-03-02 13:31:19 - El administrador solicitó la lista de usuarios.
-2025-03-02 13:31:19 - Listando todos los usuarios...
-2025-03-02 13:31:19 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-02 13:31:19 - Obteniendo estadísticas de usuarios...
-2025-03-02 13:31:35 - Solicitud de restablecimiento de contraseña para: jahqeline@live.com.mx
-2025-03-02 13:31:35 - Solicitud de restablecimiento fallida: No existe un usuario con ese email.
-2025-03-02 13:32:05 - Intento de registro de usuario con email: jahqeline@live.com.mx
-2025-03-02 13:32:05 - Validando datos para el registro de jahqeline@live.com.mx
-2025-03-02 13:32:06 - Usuario registrado con éxito: jahqeline@live.com.mx
-2025-03-02 13:32:07 - Usuario registrado exitosamente: jahqeline@live.com.mx
-2025-03-02 13:32:44 - Solicitud de activación recibida para usuario ID: 36
-2025-03-02 13:32:44 - Intentando activar usuario con token: 562b2768-9721-4398-936d-536debf726a6
-2025-03-02 13:32:44 - Token expirado para el usuario: jahqeline@live.com.mx
-2025-03-02 13:32:44 - Error al activar cuenta: El token ha expirado.
-2025-03-02 13:32:59 - Solicitud de reenvío de enlace de activación para: jahqeline@live.com.mx
-2025-03-02 13:33:01 - Nuevo enlace de activación enviado a jahqeline@live.com.mx
-2025-03-02 13:33:01 - Enlace de activación reenviado con éxito a: jahqeline@live.com.mx
-2025-03-02 13:33:12 - Solicitud de activación recibida para usuario ID: 36
-2025-03-02 13:33:12 - Intentando activar usuario con token: e14393f0-ad4b-4ed8-bf4a-1db2ddac5bf9
-2025-03-02 13:33:12 - Cuenta activada con éxito para el usuario: jahqeline@live.com.mx
-2025-03-02 13:33:12 - Cuenta activada correctamente. Redirigiendo a login.
-2025-03-02 13:33:22 - Intento de inicio de sesión para email: jahqeline@live.com.mx
-2025-03-02 13:33:22 - Autenticando usuario jahqeline@live.com.mx
-2025-03-02 13:33:22 - Usuario jahqeline@live.com.mx autenticado correctamente
-2025-03-02 13:33:22 - Inicio de sesión exitoso para usuario: jahqeline@live.com.mx
-2025-03-02 13:33:22 - Inicio de sesión exitoso para jahqeline@live.com.mx
-2025-03-02 13:33:30 - Solicitud de restablecimiento de contraseña para: jahqeline@live.com.mx
-2025-03-02 13:33:31 - Solicitud de restablecimiento enviada a jahqeline@live.com.mx
-2025-03-02 13:33:31 - Correo de restablecimiento enviado a: jahqeline@live.com.mx
-2025-03-02 13:34:10 - Intento de restablecimiento de contraseña con token: 0cf1e3c4-a0ea-4afe-a352-92a20d06bbb8
-2025-03-02 13:34:10 - Restablecimiento de contraseña fallido: El token de restablecimiento ha expirado.
-2025-03-02 13:34:33 - Intento de restablecimiento de contraseña con token: 0cf1e3c4-a0ea-4afe-a352-92a20d06bbb8
-2025-03-02 13:34:33 - Restablecimiento de contraseña fallido: El token de restablecimiento ha expirado.
-2025-03-02 13:41:54 - Intento de restablecimiento de contraseña con token: 0cf1e3c4-a0ea-4afe-a352-92a20d06bbb8
-2025-03-02 13:41:54 - Restablecimiento de contraseña fallido: El token de restablecimiento ha expirado.
-2025-03-02 14:31:37 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m26s471ms100µs100ns).
-2025-03-02 14:55:40 - Starting EstadisticasAppApplication using Java 21.0.2 with PID 13620 (C:\Users\Usuario\DWS\target\classes started by Usuario in C:\Users\Usuario\DWS)
-2025-03-02 14:55:40 - Running with Spring Boot v3.4.1, Spring v6.2.1
-2025-03-02 14:55:40 - No active profile set, falling back to 1 default profile: "default"
-2025-03-02 14:55:41 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-02 14:55:41 - Finished Spring Data repository scanning in 81 ms. Found 1 JPA repository interface.
-2025-03-02 14:55:42 - Tomcat initialized with port 8081 (http)
-2025-03-02 14:55:42 - Starting service [Tomcat]
-2025-03-02 14:55:42 - Starting Servlet engine: [Apache Tomcat/10.1.34]
-2025-03-02 14:55:42 - Initializing Spring embedded WebApplicationContext
-2025-03-02 14:55:42 - Root WebApplicationContext: initialization completed in 1883 ms
-2025-03-02 14:55:43 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-02 14:55:43 - HHH000412: Hibernate ORM core version 6.6.4.Final
-2025-03-02 14:55:43 - HHH000026: Second-level cache disabled
-2025-03-02 14:55:43 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-03-02 14:55:43 - HikariPool-1 - Starting...
-2025-03-02 14:55:44 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4756e5cc
-2025-03-02 14:55:44 - HikariPool-1 - Start completed.
-2025-03-02 14:55:44 - HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 17.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-03-02 14:55:45 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-03-02 14:55:45 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-03-02 14:55:46 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-03-02 14:55:46 - Tomcat started on port 8081 (http) with context path '/'
-2025-03-02 14:55:46 - Started EstadisticasAppApplication in 6.28 seconds (process running for 6.874)
-2025-03-02 14:56:20 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-02 14:56:20 - Initializing Servlet 'dispatcherServlet'
-2025-03-02 14:56:20 - Completed initialization in 1 ms
-2025-03-02 14:56:20 - Solicitud de restablecimiento de contraseña para: jahqeline@live.com.mx
-2025-03-02 14:56:22 - Solicitud de restablecimiento enviada a jahqeline@live.com.mx
-2025-03-02 14:56:22 - Correo de restablecimiento enviado a: jahqeline@live.com.mx
-2025-03-02 14:57:03 - Solicitud de restablecimiento de contraseña para: jahqeline@live.com.mx
-2025-03-02 14:57:04 - Solicitud de restablecimiento enviada a jahqeline@live.com.mx
-2025-03-02 14:57:04 - Correo de restablecimiento enviado a: jahqeline@live.com.mx
-2025-03-02 14:57:13 - Solicitud de restablecimiento de contraseña para: jahqeline@live.com.mx
-2025-03-02 14:57:15 - Solicitud de restablecimiento enviada a jahqeline@live.com.mx
-2025-03-02 14:57:15 - Correo de restablecimiento enviado a: jahqeline@live.com.mx
-2025-03-02 14:57:40 - Solicitud de restablecimiento de contraseña para: jahqeline@live.com.mx
-2025-03-02 14:57:42 - Solicitud de restablecimiento enviada a jahqeline@live.com.mx
-2025-03-02 14:57:42 - Correo de restablecimiento enviado a: jahqeline@live.com.mx
-2025-03-02 15:03:15 - Starting EstadisticasAppApplication using Java 21.0.2 with PID 15880 (C:\Users\Usuario\DWS\target\classes started by Usuario in C:\Users\Usuario\DWS)
-2025-03-02 15:03:15 - Running with Spring Boot v3.4.1, Spring v6.2.1
-2025-03-02 15:03:15 - No active profile set, falling back to 1 default profile: "default"
-2025-03-02 15:03:16 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-02 15:03:16 - Finished Spring Data repository scanning in 86 ms. Found 1 JPA repository interface.
-2025-03-02 15:03:17 - Tomcat initialized with port 8081 (http)
-2025-03-02 15:03:17 - Starting service [Tomcat]
-2025-03-02 15:03:17 - Starting Servlet engine: [Apache Tomcat/10.1.34]
-2025-03-02 15:03:17 - Initializing Spring embedded WebApplicationContext
-2025-03-02 15:03:17 - Root WebApplicationContext: initialization completed in 1725 ms
-2025-03-02 15:03:17 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-02 15:03:17 - HHH000412: Hibernate ORM core version 6.6.4.Final
-2025-03-02 15:03:18 - HHH000026: Second-level cache disabled
-2025-03-02 15:03:18 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-03-02 15:03:18 - HikariPool-1 - Starting...
-2025-03-02 15:03:18 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7c421952
-2025-03-02 15:03:18 - HikariPool-1 - Start completed.
-2025-03-02 15:03:18 - HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 17.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-03-02 15:03:19 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-03-02 15:03:19 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-03-02 15:03:20 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-03-02 15:03:21 - Tomcat started on port 8081 (http) with context path '/'
-2025-03-02 15:03:21 - Started EstadisticasAppApplication in 5.839 seconds (process running for 6.37)
-2025-03-02 15:03:57 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-02 15:03:57 - Initializing Servlet 'dispatcherServlet'
-2025-03-02 15:03:57 - Completed initialization in 1 ms
-2025-03-02 15:03:58 - Solicitud de restablecimiento de contraseña para: jahqeline@live.com.mx
-2025-03-02 15:04:00 - Solicitud de restablecimiento enviada a jahqeline@live.com.mx
-2025-03-02 15:04:00 - Correo de restablecimiento enviado a: jahqeline@live.com.mx
-2025-03-02 15:06:14 - Solicitud de restablecimiento de contraseña para: jahqeline@live.com.mx
-2025-03-02 15:06:16 - Solicitud de restablecimiento enviada a jahqeline@live.com.mx
-2025-03-02 15:06:16 - Correo de restablecimiento enviado a: jahqeline@live.com.mx
-2025-03-02 15:08:16 - Starting EstadisticasAppApplication using Java 21.0.2 with PID 1788 (C:\Users\Usuario\DWS\target\classes started by Usuario in C:\Users\Usuario\DWS)
-2025-03-02 15:08:16 - Running with Spring Boot v3.4.1, Spring v6.2.1
-2025-03-02 15:08:16 - No active profile set, falling back to 1 default profile: "default"
-2025-03-02 15:08:17 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-02 15:08:17 - Finished Spring Data repository scanning in 60 ms. Found 1 JPA repository interface.
-2025-03-02 15:08:18 - Tomcat initialized with port 8081 (http)
-2025-03-02 15:08:18 - Starting service [Tomcat]
-2025-03-02 15:08:18 - Starting Servlet engine: [Apache Tomcat/10.1.34]
-2025-03-02 15:08:18 - Initializing Spring embedded WebApplicationContext
-2025-03-02 15:08:18 - Root WebApplicationContext: initialization completed in 1613 ms
-2025-03-02 15:08:18 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-02 15:08:18 - HHH000412: Hibernate ORM core version 6.6.4.Final
-2025-03-02 15:08:18 - HHH000026: Second-level cache disabled
-2025-03-02 15:08:19 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-03-02 15:08:19 - HikariPool-1 - Starting...
-2025-03-02 15:08:19 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4afcae7
-2025-03-02 15:08:19 - HikariPool-1 - Start completed.
-2025-03-02 15:08:19 - HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 17.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-03-02 15:08:20 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-03-02 15:08:20 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-03-02 15:08:21 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-03-02 15:08:21 - Tomcat started on port 8081 (http) with context path '/'
-2025-03-02 15:08:21 - Started EstadisticasAppApplication in 5.923 seconds (process running for 6.472)
-2025-03-02 15:08:42 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-02 15:08:42 - Initializing Servlet 'dispatcherServlet'
-2025-03-02 15:08:42 - Completed initialization in 1 ms
-2025-03-02 15:08:42 - Solicitud de restablecimiento de contraseña para: jahqeline@live.com.mx
-2025-03-02 15:08:45 - Solicitud de restablecimiento de contraseña para: jahqeline@live.com.mx
-2025-03-02 15:08:45 - Solicitud de restablecimiento enviada a jahqeline@live.com.mx
-2025-03-02 15:08:45 - Correo de restablecimiento enviado a: jahqeline@live.com.mx
-2025-03-02 15:08:47 - Solicitud de restablecimiento enviada a jahqeline@live.com.mx
-2025-03-02 15:08:47 - Correo de restablecimiento enviado a: jahqeline@live.com.mx
-2025-03-02 15:12:36 - Recibiendo solicitud de verificación de token: 98cef75d-bdb7-4c94-b952-2c416a0f1c7b
-2025-03-02 15:12:36 - Token inválido: 98cef75d-bdb7-4c94-b952-2c416a0f1c7b
-2025-03-02 15:12:36 - Recibiendo solicitud de verificación de token: 98cef75d-bdb7-4c94-b952-2c416a0f1c7b
-2025-03-02 15:12:36 - Token inválido: 98cef75d-bdb7-4c94-b952-2c416a0f1c7b
-2025-03-02 15:12:37 - Recibiendo solicitud de verificación de token: 98cef75d-bdb7-4c94-b952-2c416a0f1c7b
-2025-03-02 15:12:37 - Token inválido: 98cef75d-bdb7-4c94-b952-2c416a0f1c7b
-2025-03-02 15:12:37 - Recibiendo solicitud de verificación de token: 98cef75d-bdb7-4c94-b952-2c416a0f1c7b
-2025-03-02 15:12:37 - Token inválido: 98cef75d-bdb7-4c94-b952-2c416a0f1c7b
-2025-03-02 15:12:56 - Starting EstadisticasAppApplication using Java 21.0.2 with PID 1900 (C:\Users\Usuario\DWS\target\classes started by Usuario in C:\Users\Usuario\DWS)
-2025-03-02 15:12:56 - Running with Spring Boot v3.4.1, Spring v6.2.1
-2025-03-02 15:12:56 - No active profile set, falling back to 1 default profile: "default"
-2025-03-02 15:12:56 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-02 15:12:56 - Finished Spring Data repository scanning in 70 ms. Found 1 JPA repository interface.
-2025-03-02 15:12:57 - Tomcat initialized with port 8081 (http)
-2025-03-02 15:12:57 - Starting service [Tomcat]
-2025-03-02 15:12:57 - Starting Servlet engine: [Apache Tomcat/10.1.34]
-2025-03-02 15:12:57 - Initializing Spring embedded WebApplicationContext
-2025-03-02 15:12:57 - Root WebApplicationContext: initialization completed in 1606 ms
-2025-03-02 15:12:57 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-02 15:12:58 - HHH000412: Hibernate ORM core version 6.6.4.Final
-2025-03-02 15:12:58 - HHH000026: Second-level cache disabled
-2025-03-02 15:12:58 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-03-02 15:12:58 - HikariPool-1 - Starting...
-2025-03-02 15:12:58 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3a2bb026
-2025-03-02 15:12:58 - HikariPool-1 - Start completed.
-2025-03-02 15:12:58 - HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 17.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-03-02 15:12:59 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-03-02 15:13:00 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-03-02 15:13:00 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-03-02 15:13:01 - Tomcat started on port 8081 (http) with context path '/'
-2025-03-02 15:13:01 - Started EstadisticasAppApplication in 5.673 seconds (process running for 6.188)
-2025-03-02 15:13:14 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-02 15:13:14 - Initializing Servlet 'dispatcherServlet'
-2025-03-02 15:13:14 - Completed initialization in 2 ms
-2025-03-02 15:13:14 - Recibiendo solicitud de verificación de token: 98cef75d-bdb7-4c94-b952-2c416a0f1c7b
-2025-03-02 15:13:14 - Token inválido: 98cef75d-bdb7-4c94-b952-2c416a0f1c7b
-2025-03-02 15:13:15 - Recibiendo solicitud de verificación de token: 98cef75d-bdb7-4c94-b952-2c416a0f1c7b
-2025-03-02 15:13:15 - Token inválido: 98cef75d-bdb7-4c94-b952-2c416a0f1c7b
-2025-03-02 15:13:31 - Solicitud de restablecimiento de contraseña para: jahqeline@live.com.mx
-2025-03-02 15:13:34 - Solicitud de restablecimiento enviada a jahqeline@live.com.mx
-2025-03-02 15:13:34 - Correo de restablecimiento enviado a: jahqeline@live.com.mx
-2025-03-02 15:13:43 - Recibiendo solicitud de verificación de token: 3593bda5-5d59-43e7-a39c-7338492b1397
-2025-03-02 15:13:43 - Token válido: 3593bda5-5d59-43e7-a39c-7338492b1397
-2025-03-02 15:13:44 - Recibiendo solicitud de verificación de token: 3593bda5-5d59-43e7-a39c-7338492b1397
-2025-03-02 15:13:44 - Token válido: 3593bda5-5d59-43e7-a39c-7338492b1397
-2025-03-02 15:13:55 - Intento de restablecimiento de contraseña con token: 3593bda5-5d59-43e7-a39c-7338492b1397
-2025-03-02 15:13:55 - Contraseña restablecida correctamente para jahqeline@live.com.mx
-2025-03-02 15:13:55 - Contraseña restablecida con éxito para token: 3593bda5-5d59-43e7-a39c-7338492b1397
-2025-03-02 15:14:01 - Solicitud de restablecimiento de contraseña para: jahqeline@live.com.mx
-2025-03-02 15:14:03 - Solicitud de restablecimiento enviada a jahqeline@live.com.mx
-2025-03-02 15:14:03 - Correo de restablecimiento enviado a: jahqeline@live.com.mx
-2025-03-02 15:14:38 - Recibiendo solicitud de verificación de token: eafcaad3-adb3-44d8-bf12-cfe16af4aa68
-2025-03-02 15:14:38 - Token expirado: eafcaad3-adb3-44d8-bf12-cfe16af4aa68
-2025-03-02 15:14:38 - Recibiendo solicitud de verificación de token: eafcaad3-adb3-44d8-bf12-cfe16af4aa68
-2025-03-02 15:14:38 - Token expirado: eafcaad3-adb3-44d8-bf12-cfe16af4aa68
-2025-03-02 15:22:05 - Solicitud de restablecimiento de contraseña para: jahqeline@live.com.mx
-2025-03-02 15:22:07 - Solicitud de restablecimiento enviada a jahqeline@live.com.mx
-2025-03-02 15:22:07 - Correo de restablecimiento enviado a: jahqeline@live.com.mx
-2025-03-02 15:22:22 - Recibiendo solicitud de verificación de token: 06eef9b7-06a6-46e1-9982-a2e3e08b42a6
-2025-03-02 15:22:22 - Token válido: 06eef9b7-06a6-46e1-9982-a2e3e08b42a6
-2025-03-02 15:22:22 - Recibiendo solicitud de verificación de token: 06eef9b7-06a6-46e1-9982-a2e3e08b42a6
-2025-03-02 15:22:22 - Token válido: 06eef9b7-06a6-46e1-9982-a2e3e08b42a6
-2025-03-02 15:22:37 - Intento de restablecimiento de contraseña con token: 06eef9b7-06a6-46e1-9982-a2e3e08b42a6
-2025-03-02 15:22:37 - Contraseña restablecida correctamente para jahqeline@live.com.mx
-2025-03-02 15:22:37 - Contraseña restablecida con éxito para token: 06eef9b7-06a6-46e1-9982-a2e3e08b42a6
-2025-03-02 15:23:00 - Solicitud de restablecimiento de contraseña para: jahqeline@live.com.mx
-2025-03-02 15:23:03 - Solicitud de restablecimiento enviada a jahqeline@live.com.mx
-2025-03-02 15:23:03 - Correo de restablecimiento enviado a: jahqeline@live.com.mx
-2025-03-02 15:23:37 - Recibiendo solicitud de verificación de token: fa0d2f8f-627a-4391-a99f-6a18788ae389
-2025-03-02 15:23:37 - Token expirado: fa0d2f8f-627a-4391-a99f-6a18788ae389
-2025-03-02 15:23:37 - Recibiendo solicitud de verificación de token: fa0d2f8f-627a-4391-a99f-6a18788ae389
-2025-03-02 15:23:37 - Token expirado: fa0d2f8f-627a-4391-a99f-6a18788ae389
-2025-03-02 15:23:45 - Solicitud de restablecimiento de contraseña para: jahqeline@live.com.mx
-2025-03-02 15:23:48 - Solicitud de restablecimiento enviada a jahqeline@live.com.mx
-2025-03-02 15:23:48 - Correo de restablecimiento enviado a: jahqeline@live.com.mx
-2025-03-02 15:37:51 - Solicitud de restablecimiento de contraseña para: jahqeline@live.com.mx
-2025-03-02 15:37:54 - Solicitud de restablecimiento enviada a jahqeline@live.com.mx
-2025-03-02 15:37:54 - Correo de restablecimiento enviado a: jahqeline@live.com.mx
-2025-03-02 15:42:26 - Intento de inicio de sesión para email: osteologia2@gmail.com
-2025-03-02 15:42:26 - Autenticando usuario osteologia2@gmail.com
-2025-03-02 15:42:26 - Usuario osteologia2@gmail.com autenticado correctamente
-2025-03-02 15:42:26 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
-2025-03-02 15:42:26 - Inicio de sesión exitoso para osteologia2@gmail.com
-2025-03-02 15:42:28 - El administrador solicitó la lista de usuarios.
-2025-03-02 15:42:28 - Listando todos los usuarios...
-2025-03-02 15:42:28 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-02 15:42:28 - Obteniendo estadísticas de usuarios...
-2025-03-02 15:42:40 - Intento de registro de usuario con email: jahqeline@live.com.mx
-2025-03-02 15:42:40 - Intento de registro fallido: email ya registrado jahqeline@live.com.mx
-2025-03-02 15:44:18 - Intento de inicio de sesión para email: osteologia2@gmail.com
-2025-03-02 15:44:18 - Autenticando usuario osteologia2@gmail.com
-2025-03-02 15:44:18 - Usuario osteologia2@gmail.com autenticado correctamente
-2025-03-02 15:44:18 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
-2025-03-02 15:44:18 - Inicio de sesión exitoso para osteologia2@gmail.com
-2025-03-02 15:44:19 - El administrador solicitó la lista de usuarios.
-2025-03-02 15:44:19 - Listando todos los usuarios...
-2025-03-02 15:44:19 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-02 15:44:19 - Obteniendo estadísticas de usuarios...
-2025-03-02 15:44:30 - Intento de registro de usuario con email: jahqeline@live.com.mx
-2025-03-02 15:44:30 - Intento de registro fallido: email ya registrado jahqeline@live.com.mx
-2025-03-03 09:26:32 - Starting EstadisticasAppApplication using Java 23 with PID 11084 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
-2025-03-03 09:26:32 - Running with Spring Boot v3.4.1, Spring v6.2.1
-2025-03-03 09:26:32 - No active profile set, falling back to 1 default profile: "default"
-2025-03-03 09:26:34 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-03 09:26:34 - Finished Spring Data repository scanning in 121 ms. Found 1 JPA repository interface.
-2025-03-03 09:26:35 - Tomcat initialized with port 8081 (http)
-2025-03-03 09:26:35 - Arrancando servicio [Tomcat]
-2025-03-03 09:26:35 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
-2025-03-03 09:26:35 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
-2025-03-03 09:26:35 - Initializing Spring embedded WebApplicationContext
-2025-03-03 09:26:35 - Root WebApplicationContext: initialization completed in 3148 ms
-2025-03-03 09:26:36 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-03 09:26:37 - HHH000412: Hibernate ORM core version 6.6.4.Final
-2025-03-03 09:26:37 - HHH000026: Second-level cache disabled
-2025-03-03 09:26:38 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-03-03 09:26:38 - HikariPool-1 - Starting...
-2025-03-03 09:26:38 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@52b32b70
-2025-03-03 09:26:38 - HikariPool-1 - Start completed.
-2025-03-03 09:26:38 - HHH10001005: Database info:
+2025-03-04 12:47:27 - Starting EstadisticasAppApplication using Java 23 with PID 11096 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-03-04 12:47:27 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-03-04 12:47:27 - No active profile set, falling back to 1 default profile: "default"
+2025-03-04 12:47:28 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-04 12:47:29 - Finished Spring Data repository scanning in 80 ms. Found 1 JPA repository interface.
+2025-03-04 12:47:29 - Tomcat initialized with port 8081 (http)
+2025-03-04 12:47:29 - Arrancando servicio [Tomcat]
+2025-03-04 12:47:29 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-03-04 12:47:30 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-03-04 12:47:30 - Initializing Spring embedded WebApplicationContext
+2025-03-04 12:47:30 - Root WebApplicationContext: initialization completed in 1982 ms
+2025-03-04 12:47:30 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-04 12:47:30 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-03-04 12:47:30 - HHH000026: Second-level cache disabled
+2025-03-04 12:47:30 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-04 12:47:30 - HikariPool-1 - Starting...
+2025-03-04 12:47:31 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1fee4278
+2025-03-04 12:47:31 - HikariPool-1 - Start completed.
+2025-03-04 12:47:31 - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.4
@@ -352,52 +24,25 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-03-03 09:26:40 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-03-03 09:26:40 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-03-03 09:26:41 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-03-03 09:26:41 - Tomcat started on port 8081 (http) with context path '/'
-2025-03-03 09:26:41 - Started EstadisticasAppApplication in 10.094 seconds (process running for 10.938)
-2025-03-03 09:28:29 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-03 09:28:29 - Initializing Servlet 'dispatcherServlet'
-2025-03-03 09:28:29 - Completed initialization in 2 ms
-2025-03-03 09:28:29 - Intento de registro de usuario con email: holwas@gmail.com
-2025-03-03 09:28:29 - Validando datos para el registro de holwas@gmail.com
-2025-03-03 09:28:29 - Usuario registrado con éxito: holwas@gmail.com
-2025-03-03 09:28:31 - Usuario registrado exitosamente: holwas@gmail.com
-2025-03-03 09:28:38 - Intento de inicio de sesión para email: osteologia2@gmail.com
-2025-03-03 09:28:38 - Autenticando usuario osteologia2@gmail.com
-2025-03-03 09:28:38 - Usuario osteologia2@gmail.com autenticado correctamente
-2025-03-03 09:28:38 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
-2025-03-03 09:28:38 - Inicio de sesión exitoso para osteologia2@gmail.com
-2025-03-03 09:28:39 - El administrador solicitó la lista de usuarios.
-2025-03-03 09:28:39 - Listando todos los usuarios...
-2025-03-03 09:28:39 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-03 09:28:39 - Obteniendo estadísticas de usuarios...
-2025-03-03 09:28:46 - El administrador está buscando el usuario con ID: 1
-2025-03-03 09:28:46 - Buscando usuario con ID: 1
-2025-03-03 09:28:46 - Usuario no encontrado con ID: 1
-2025-03-03 09:28:46 - Intento de búsqueda fallido. Usuario con ID 1 no encontrado.
-2025-03-03 09:28:53 - El administrador está buscando el usuario con ID: 61
-2025-03-03 09:28:53 - Buscando usuario con ID: 61
-2025-03-03 09:28:59 - El administrador solicitó la lista de usuarios.
-2025-03-03 09:28:59 - Listando todos los usuarios...
-2025-03-03 09:29:10 - El administrador está modificando el usuario con ID: 84
-2025-03-03 09:29:10 - Foto de perfil actualizada para el usuario ID: 84
-2025-03-03 09:29:10 - Usuario con ID 84 ha sido modificado.
-2025-03-03 09:29:12 - El administrador solicitó la lista de usuarios.
-2025-03-03 09:29:12 - Listando todos los usuarios...
-2025-03-03 09:29:12 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-03 09:29:12 - Obteniendo estadísticas de usuarios...
-2025-03-03 09:29:17 - El administrador está buscando el usuario con ID: 84
-2025-03-03 09:29:17 - Buscando usuario con ID: 84
-2025-03-03 09:29:43 - Intento de registro de usuario con email: holwas@gmail.com
-2025-03-03 09:29:43 - Intento de registro fallido: email ya registrado holwas@gmail.com
-2025-03-03 09:29:49 - El administrador solicitó la lista de usuarios.
-2025-03-03 09:29:49 - Listando todos los usuarios...
-2025-03-03 09:29:49 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-03 09:29:49 - Obteniendo estadísticas de usuarios...
-2025-03-03 09:30:01 - Intento de inicio de sesión para email: jahqeline@live.com.mx
-2025-03-03 09:30:01 - Autenticando usuario jahqeline@live.com.mx
-2025-03-03 09:30:01 - Usuario jahqeline@live.com.mx autenticado correctamente
-2025-03-03 09:30:01 - Inicio de sesión exitoso para usuario: jahqeline@live.com.mx
-2025-03-03 09:30:01 - Inicio de sesión exitoso para jahqeline@live.com.mx
+2025-03-04 12:47:32 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-04 12:47:32 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-04 12:47:33 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-04 12:47:34 - Tomcat started on port 8081 (http) with context path '/'
+2025-03-04 12:47:34 - Started EstadisticasAppApplication in 7.266 seconds (process running for 7.823)
+2025-03-04 14:33:45 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m42s790ms863µs).
+2025-03-04 15:25:08 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=49m23s345ms778µs600ns).
+2025-03-04 16:48:11 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-04 16:48:11 - Initializing Servlet 'dispatcherServlet'
+2025-03-04 16:48:11 - Completed initialization in 3 ms
+2025-03-04 16:48:11 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-04 16:48:11 - Obteniendo estadísticas de usuarios...
+2025-03-04 16:48:11 - El administrador solicitó la lista de usuarios.
+2025-03-04 16:48:11 - Listando todos los usuarios...
+2025-03-04 16:48:20 - El administrador solicitó la lista de usuarios.
+2025-03-04 16:48:20 - Listando todos los usuarios...
+2025-03-04 16:48:20 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-04 16:48:20 - Obteniendo estadísticas de usuarios...
+2025-03-04 16:50:41 - El administrador solicitó la lista de usuarios.
+2025-03-04 16:50:41 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-04 16:50:41 - Listando todos los usuarios...
+2025-03-04 16:50:41 - Obteniendo estadísticas de usuarios...

@@ -27,7 +27,7 @@ import org.springframework.web.server.ResponseStatusException;
 import com.estadisticas.estadisticas_app.Dtos.LoginUsuarioDto;
 import com.estadisticas.estadisticas_app.Dtos.RegistroUsuarioDto;
 import com.estadisticas.estadisticas_app.Modelos.Usuario;
-import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepository;
+import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepositorio;
 import com.estadisticas.estadisticas_app.Servicios.UsuarioServicio;
 
 import jakarta.servlet.http.HttpServletResponse;
@@ -40,7 +40,7 @@ public class UsuarioControlador {
     @Autowired
     private UsuarioServicio usuarioServicio;
     @Autowired
-    private UsuarioRepository usuarioRepository; // Inyectamos el repositorio
+    private UsuarioRepositorio usuarioRepository; // Inyectamos el repositorio
     private static final Logger logger = LoggerFactory.getLogger(UsuarioServicio.class);
 
     /**
