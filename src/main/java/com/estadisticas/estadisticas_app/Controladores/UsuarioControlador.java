@@ -232,6 +232,7 @@ public class UsuarioControlador {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", e.getMessage()));
         }
     }
+
     /**
      * Actualiza el rol de un usuario a "Premier".
      *
