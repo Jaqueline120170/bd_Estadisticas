@@ -17,6 +17,10 @@ import org.springframework.web.multipart.MultipartFile;
 import com.estadisticas.estadisticas_app.Modelos.Usuario;
 import com.estadisticas.estadisticas_app.Servicios.AdministradorServicio;
 
+/**
+ * Controlador que maneja las solicitudes HTTP relacionadas con la administración de usuarios.
+ * Solo los administradores pueden acceder a estas rutas, ya que están protegidas con seguridad basada en roles.
+ */
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/admin")
@@ -27,6 +31,11 @@ public class AdministradorControlador {
     @Autowired
     private AdministradorServicio administradorServicio;
 
+    /**
+     * Endpoint que lista todos los usuarios.
+     * Solo accesible para administradores.
+     * @return Lista de usuarios.
+     */
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/listar")
     public ResponseEntity<List<Usuario>> listarUsuarios() {
@@ -34,6 +43,15 @@ public class AdministradorControlador {
         return ResponseEntity.ok(administradorServicio.listarTodosLosUsuarios());
     }
 
+    /**
+     * Endpoint que permite modificar un usuario existente.
+     * Solo accesible para administradores.
+     * 
+     * @param id ID del usuario a modificar.
+     * @param usuarioActualizado Datos actualizados del usuario.
+     * @param foto Imagen del usuario (opcional).
+     * @return Usuario modificado o mensaje de error si ocurre un problema.
+     */
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping(value = "/modificar/{id}", consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })
     public ResponseEntity<?> modificarUsuario(@PathVariable Long id,
@@ -49,6 +67,13 @@ public class AdministradorControlador {
         }
     }
 
+    /**
+     * Endpoint que elimina un usuario.
+     * Solo accesible para administradores.
+     * 
+     * @param id ID del usuario a eliminar.
+     * @return Mensaje de éxito o error si ocurre un problema.
+     */
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<?> eliminarUsuario(@PathVariable Long id) {
@@ -61,8 +86,10 @@ public class AdministradorControlador {
             return ResponseEntity.badRequest().body("{\"error\": \"" + e.getMessage() + "\"}");
         }
     }
+
     /**
-     * Buscar un usuario por su ID.
+     * Endpoint para buscar un usuario por su ID.
+     * 
      * @param id ID del usuario a buscar.
      * @return Usuario encontrado o mensaje de error si no existe.
      */
@@ -78,10 +105,12 @@ public class AdministradorControlador {
                 .body("{\"error\": \"Usuario no encontrado\"}");
         }
     }
+
     /**
-     * Obtener estadísticas de usuarios.
-     * Solo los administradores pueden acceder.
-     * @return JSON con estadísticas de usuarios.
+     * Endpoint para obtener las estadísticas de usuarios.
+     * Solo accesible para administradores.
+     * 
+     * @return Estadísticas de los usuarios en formato JSON.
      */
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/estadisticas")
@@ -90,6 +119,4 @@ public class AdministradorControlador {
         Map<String, Long> estadisticas = administradorServicio.obtenerEstadisticasUsuarios();
         return ResponseEntity.ok(estadisticas);
     }
-
-
 }

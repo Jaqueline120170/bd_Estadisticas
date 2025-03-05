@@ -180,6 +180,12 @@ public class UsuarioControlador {
             return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
         }
     }
+    /**
+     * Verifica la validez de un token de restablecimiento de contraseña.
+     * 
+     * @param token El token a verificar.
+     * @return Respuesta HTTP con el estado del token.
+     */
     @GetMapping("/verificar-token")
     public ResponseEntity<Map<String, String>> verificarToken(@RequestParam("token") String token) {
         logger.info("Recibiendo solicitud de verificación de token: {}", token); // 👀 Log para depuración
@@ -232,6 +238,7 @@ public class UsuarioControlador {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", e.getMessage()));
         }
     }
+    
 
     /**
      * Actualiza el rol de un usuario a "Premier".
@@ -252,7 +259,12 @@ public class UsuarioControlador {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", e.getMessage()));
         }
     }
-
+    /**
+     * Activa la suscripción premium para un usuario.
+     *
+     * @param id ID del usuario.
+     * @return Respuesta HTTP con mensaje de éxito o error.
+     */
     @PostMapping("/{id}/suscripcion-premium")
     public ResponseEntity<?> activarSuscripcionPremium(@PathVariable Long id) {
         logger.info("Intento de activación de suscripción premium para usuario ID: {}", id);
@@ -265,13 +277,19 @@ public class UsuarioControlador {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+    /**
+     * Recibe logs desde el frontend y los registra con el nivel adecuado.
+     * 
+     * @param request Contiene el nivel y el mensaje del log.
+     * @return Respuesta con mensaje de éxito.
+     */
     @PostMapping("/logs")
     public ResponseEntity<?> recibirLogDesdeFrontend(@RequestBody Map<String, String> request) {
         String nivel = request.get("nivel");  // Puede ser INFO, DEBUG, WARN, ERROR
         String mensaje = request.get("mensaje");
 
         if (nivel == null || mensaje == null) {
-            return ResponseEntity.badRequest().body("Nivel y mensaje son obligatorios.");
+        	return ResponseEntity.badRequest().body(Map.of("error", "Nivel y mensaje son obligatorios."));
         }
 
         // Dependiendo del nivel de log, lo enviamos al logger adecuado
@@ -292,7 +310,8 @@ public class UsuarioControlador {
                 logger.info("Nivel desconocido: " + mensaje);
         }
 
-        return ResponseEntity.ok("Log recibido y registrado.");
+        return ResponseEntity.ok(Map.of("message", "Log recibido y registrado"));
+
     }
 
 }
