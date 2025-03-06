@@ -544,3 +544,111 @@ java.lang.IllegalArgumentException: El email tiene un formato inválido.
 2025-03-05 20:40:03 - El administrador ha solicitado las estadísticas de usuarios.
 2025-03-05 20:40:03 - Obteniendo estadísticas de usuarios...
 2025-03-05 20:40:03 - Listando todos los usuarios...
+2025-03-06 09:54:18 - Starting EstadisticasAppApplication using Java 23 with PID 9288 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-03-06 09:54:18 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-03-06 09:54:18 - No active profile set, falling back to 1 default profile: "default"
+2025-03-06 09:54:19 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-06 09:54:19 - Finished Spring Data repository scanning in 67 ms. Found 1 JPA repository interface.
+2025-03-06 09:54:20 - Tomcat initialized with port 8081 (http)
+2025-03-06 09:54:20 - Arrancando servicio [Tomcat]
+2025-03-06 09:54:20 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-03-06 09:54:21 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-03-06 09:54:21 - Initializing Spring embedded WebApplicationContext
+2025-03-06 09:54:21 - Root WebApplicationContext: initialization completed in 2327 ms
+2025-03-06 09:54:21 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-06 09:54:21 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-03-06 09:54:21 - HHH000026: Second-level cache disabled
+2025-03-06 09:54:21 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-06 09:54:22 - HikariPool-1 - Starting...
+2025-03-06 09:54:22 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@52b32b70
+2025-03-06 09:54:22 - HikariPool-1 - Start completed.
+2025-03-06 09:54:22 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-06 09:54:23 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-06 09:54:24 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-06 09:54:24 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-06 09:54:25 - Tomcat started on port 8081 (http) with context path '/'
+2025-03-06 09:54:25 - Started EstadisticasAppApplication in 7.405 seconds (process running for 8.245)
+2025-03-06 09:55:14 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-06 09:55:14 - Initializing Servlet 'dispatcherServlet'
+2025-03-06 09:55:14 - Completed initialization in 1 ms
+2025-03-06 09:55:14 - Intento de inicio de sesión para email: osteologia2@gmail.com
+2025-03-06 09:55:14 - Autenticando usuario osteologia2@gmail.com
+2025-03-06 09:55:15 - Usuario osteologia2@gmail.com autenticado correctamente
+2025-03-06 09:55:15 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
+2025-03-06 09:55:15 - Inicio de sesión exitoso para osteologia2@gmail.com
+2025-03-06 09:55:16 - El administrador solicitó la lista de usuarios.
+2025-03-06 09:55:16 - Listando todos los usuarios...
+2025-03-06 09:55:16 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-06 09:55:16 - Obteniendo estadísticas de usuarios...
+2025-03-06 09:57:23 - El administrador solicitó la lista de usuarios.
+2025-03-06 09:57:23 - Listando todos los usuarios...
+2025-03-06 09:57:23 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-06 09:57:23 - Obteniendo estadísticas de usuarios...
+2025-03-06 09:57:57 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-06 09:57:57 - Obteniendo estadísticas de usuarios...
+2025-03-06 09:57:57 - El administrador solicitó la lista de usuarios.
+2025-03-06 09:57:57 - Listando todos los usuarios...
+2025-03-06 10:01:22 - Intento de inicio de sesión para email: osteologia2@gmail.com
+2025-03-06 10:01:22 - Autenticando usuario osteologia2@gmail.com
+2025-03-06 10:01:22 - Usuario osteologia2@gmail.com autenticado correctamente
+2025-03-06 10:01:22 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
+2025-03-06 10:01:22 - Inicio de sesión exitoso para osteologia2@gmail.com
+2025-03-06 10:01:23 - El administrador solicitó la lista de usuarios.
+2025-03-06 10:01:23 - Listando todos los usuarios...
+2025-03-06 10:01:23 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-06 10:01:23 - Obteniendo estadísticas de usuarios...
+2025-03-06 10:02:23 - El administrador solicitó la lista de usuarios.
+2025-03-06 10:02:23 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-06 10:02:23 - Listando todos los usuarios...
+2025-03-06 10:02:23 - Obteniendo estadísticas de usuarios...
+2025-03-06 10:02:27 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-06 10:02:27 - Obteniendo estadísticas de usuarios...
+2025-03-06 10:02:27 - El administrador solicitó la lista de usuarios.
+2025-03-06 10:02:27 - Listando todos los usuarios...
+2025-03-06 10:02:34 - El administrador está buscando el usuario con ID: 73
+2025-03-06 10:02:34 - Buscando usuario con ID: 73
+2025-03-06 10:05:29 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-06 10:05:29 - El administrador solicitó la lista de usuarios.
+2025-03-06 10:05:29 - Obteniendo estadísticas de usuarios...
+2025-03-06 10:05:29 - Listando todos los usuarios...
+2025-03-06 10:05:38 - El administrador está buscando el usuario con ID: 73
+2025-03-06 10:05:38 - Buscando usuario con ID: 73
+2025-03-06 10:05:57 - El administrador está buscando el usuario con ID: 1
+2025-03-06 10:05:57 - Buscando usuario con ID: 1
+2025-03-06 10:05:57 - Usuario no encontrado con ID: 1
+2025-03-06 10:05:57 - Intento de búsqueda fallido. Usuario con ID 1 no encontrado.
+2025-03-06 10:06:05 - El administrador está buscando el usuario con ID: 82
+2025-03-06 10:06:05 - Buscando usuario con ID: 82
+2025-03-06 10:06:40 - El administrador solicitó la lista de usuarios.
+2025-03-06 10:06:40 - Listando todos los usuarios...
+2025-03-06 10:06:40 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-06 10:06:40 - Obteniendo estadísticas de usuarios...
+2025-03-06 10:06:45 - El administrador está buscando el usuario con ID: 73
+2025-03-06 10:06:45 - Buscando usuario con ID: 73
+2025-03-06 10:06:53 - El administrador está buscando el usuario con ID: 73
+2025-03-06 10:06:53 - Buscando usuario con ID: 73
+2025-03-06 10:06:54 - El administrador está buscando el usuario con ID: 73
+2025-03-06 10:06:54 - Buscando usuario con ID: 73
+2025-03-06 10:17:04 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m11s678ms37µs700ns).
+2025-03-06 10:21:09 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m5s439ms932µs500ns).
+2025-03-06 10:48:29 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=25m20s230ms663µs100ns).
+2025-03-06 12:26:18 - Intento de inicio de sesión para email: osteologia2@gmail.com
+2025-03-06 12:26:18 - Autenticando usuario osteologia2@gmail.com
+2025-03-06 12:26:18 - Usuario osteologia2@gmail.com autenticado correctamente
+2025-03-06 12:26:18 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
+2025-03-06 12:26:18 - Inicio de sesión exitoso para osteologia2@gmail.com
+2025-03-06 12:26:20 - El administrador solicitó la lista de usuarios.
+2025-03-06 12:26:20 - Listando todos los usuarios...
+2025-03-06 12:26:20 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-06 12:26:20 - Obteniendo estadísticas de usuarios...
+2025-03-06 12:41:22 - El administrador solicitó la lista de usuarios.
+2025-03-06 12:41:22 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-06 12:41:22 - Listando todos los usuarios...
+2025-03-06 12:41:22 - Obteniendo estadísticas de usuarios...
