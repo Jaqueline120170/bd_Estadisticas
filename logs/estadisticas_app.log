@@ -1,22 +1,22 @@
-2025-03-04 12:47:27 - Starting EstadisticasAppApplication using Java 23 with PID 11096 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
-2025-03-04 12:47:27 - Running with Spring Boot v3.4.1, Spring v6.2.1
-2025-03-04 12:47:27 - No active profile set, falling back to 1 default profile: "default"
-2025-03-04 12:47:28 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-04 12:47:29 - Finished Spring Data repository scanning in 80 ms. Found 1 JPA repository interface.
-2025-03-04 12:47:29 - Tomcat initialized with port 8081 (http)
-2025-03-04 12:47:29 - Arrancando servicio [Tomcat]
-2025-03-04 12:47:29 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
-2025-03-04 12:47:30 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
-2025-03-04 12:47:30 - Initializing Spring embedded WebApplicationContext
-2025-03-04 12:47:30 - Root WebApplicationContext: initialization completed in 1982 ms
-2025-03-04 12:47:30 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-04 12:47:30 - HHH000412: Hibernate ORM core version 6.6.4.Final
-2025-03-04 12:47:30 - HHH000026: Second-level cache disabled
-2025-03-04 12:47:30 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-03-04 12:47:30 - HikariPool-1 - Starting...
-2025-03-04 12:47:31 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1fee4278
-2025-03-04 12:47:31 - HikariPool-1 - Start completed.
-2025-03-04 12:47:31 - HHH10001005: Database info:
+2025-03-07 08:30:59 - Starting EstadisticasAppApplication using Java 23 with PID 4280 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-03-07 08:30:59 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-03-07 08:30:59 - No active profile set, falling back to 1 default profile: "default"
+2025-03-07 08:31:01 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-07 08:31:01 - Finished Spring Data repository scanning in 73 ms. Found 1 JPA repository interface.
+2025-03-07 08:31:02 - Tomcat initialized with port 8081 (http)
+2025-03-07 08:31:02 - Arrancando servicio [Tomcat]
+2025-03-07 08:31:02 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-03-07 08:31:02 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-03-07 08:31:02 - Initializing Spring embedded WebApplicationContext
+2025-03-07 08:31:02 - Root WebApplicationContext: initialization completed in 2744 ms
+2025-03-07 08:31:02 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-07 08:31:02 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-03-07 08:31:02 - HHH000026: Second-level cache disabled
+2025-03-07 08:31:03 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-07 08:31:03 - HikariPool-1 - Starting...
+2025-03-07 08:31:04 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@63553e9f
+2025-03-07 08:31:04 - HikariPool-1 - Start completed.
+2025-03-07 08:31:04 - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.4
@@ -24,545 +24,340 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-03-04 12:47:32 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-03-04 12:47:32 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-03-04 12:47:33 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-03-04 12:47:34 - Tomcat started on port 8081 (http) with context path '/'
-2025-03-04 12:47:34 - Started EstadisticasAppApplication in 7.266 seconds (process running for 7.823)
-2025-03-04 14:33:45 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m42s790ms863µs).
-2025-03-04 15:25:08 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=49m23s345ms778µs600ns).
-2025-03-04 16:48:11 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-04 16:48:11 - Initializing Servlet 'dispatcherServlet'
-2025-03-04 16:48:11 - Completed initialization in 3 ms
-2025-03-04 16:48:11 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-04 16:48:11 - Obteniendo estadísticas de usuarios...
-2025-03-04 16:48:11 - El administrador solicitó la lista de usuarios.
-2025-03-04 16:48:11 - Listando todos los usuarios...
-2025-03-04 16:48:20 - El administrador solicitó la lista de usuarios.
-2025-03-04 16:48:20 - Listando todos los usuarios...
-2025-03-04 16:48:20 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-04 16:48:20 - Obteniendo estadísticas de usuarios...
-2025-03-04 16:50:41 - El administrador solicitó la lista de usuarios.
-2025-03-04 16:50:41 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-04 16:50:41 - Listando todos los usuarios...
-2025-03-04 16:50:41 - Obteniendo estadísticas de usuarios...
-2025-03-05 18:53:24 - Starting EstadisticasAppApplication using Java 21.0.2 with PID 12996 (C:\Users\Usuario\DWS\target\classes started by Usuario in C:\Users\Usuario\DWS)
-2025-03-05 18:53:24 - Running with Spring Boot v3.4.1, Spring v6.2.1
-2025-03-05 18:53:24 - No active profile set, falling back to 1 default profile: "default"
-2025-03-05 18:53:25 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-05 18:53:26 - Finished Spring Data repository scanning in 106 ms. Found 1 JPA repository interface.
-2025-03-05 18:53:27 - Tomcat initialized with port 8081 (http)
-2025-03-05 18:53:27 - Starting service [Tomcat]
-2025-03-05 18:53:27 - Starting Servlet engine: [Apache Tomcat/10.1.34]
-2025-03-05 18:53:27 - Initializing Spring embedded WebApplicationContext
-2025-03-05 18:53:27 - Root WebApplicationContext: initialization completed in 2412 ms
-2025-03-05 18:53:27 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-05 18:53:27 - HHH000412: Hibernate ORM core version 6.6.4.Final
-2025-03-05 18:53:27 - HHH000026: Second-level cache disabled
-2025-03-05 18:53:28 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-03-05 18:53:28 - HikariPool-1 - Starting...
-2025-03-05 18:53:28 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7c0de229
-2025-03-05 18:53:28 - HikariPool-1 - Start completed.
-2025-03-05 18:53:28 - HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 17.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-03-05 18:53:30 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-03-05 18:53:30 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-03-05 18:53:31 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-03-05 18:53:32 - Tomcat started on port 8081 (http) with context path '/'
-2025-03-05 18:53:32 - Started EstadisticasAppApplication in 8.201 seconds (process running for 8.925)
-2025-03-05 18:54:30 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-05 18:54:30 - Initializing Servlet 'dispatcherServlet'
-2025-03-05 18:54:30 - Completed initialization in 3 ms
-2025-03-05 18:54:30 - Intento de inicio de sesión para email: osteologia2@gmail.com
-2025-03-05 18:54:30 - Autenticando usuario osteologia2@gmail.com
-2025-03-05 18:54:31 - Usuario osteologia2@gmail.com autenticado correctamente
-2025-03-05 18:54:31 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
-2025-03-05 18:54:31 - Inicio de sesión exitoso para osteologia2@gmail.com
-2025-03-05 18:54:32 - El administrador solicitó la lista de usuarios.
-2025-03-05 18:54:32 - Listando todos los usuarios...
-2025-03-05 18:54:33 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-05 18:54:33 - Obteniendo estadísticas de usuarios...
-2025-03-05 19:06:37 - Starting EstadisticasAppApplication using Java 21.0.2 with PID 7624 (C:\Users\Usuario\DWS\target\classes started by Usuario in C:\Users\Usuario\DWS)
-2025-03-05 19:06:37 - Running with Spring Boot v3.4.1, Spring v6.2.1
-2025-03-05 19:06:37 - No active profile set, falling back to 1 default profile: "default"
-2025-03-05 19:06:38 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-05 19:06:38 - Finished Spring Data repository scanning in 107 ms. Found 1 JPA repository interface.
-2025-03-05 19:06:39 - Tomcat initialized with port 8081 (http)
-2025-03-05 19:06:39 - Starting service [Tomcat]
-2025-03-05 19:06:39 - Starting Servlet engine: [Apache Tomcat/10.1.34]
-2025-03-05 19:06:39 - Initializing Spring embedded WebApplicationContext
-2025-03-05 19:06:39 - Root WebApplicationContext: initialization completed in 2555 ms
-2025-03-05 19:06:40 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-05 19:06:40 - HHH000412: Hibernate ORM core version 6.6.4.Final
-2025-03-05 19:06:40 - HHH000026: Second-level cache disabled
-2025-03-05 19:06:41 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-03-05 19:06:41 - HikariPool-1 - Starting...
-2025-03-05 19:06:41 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3dbb3fb7
-2025-03-05 19:06:41 - HikariPool-1 - Start completed.
-2025-03-05 19:06:41 - HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 17.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-03-05 19:06:43 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-03-05 19:06:43 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-03-05 19:06:44 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-03-05 19:06:44 - Tomcat started on port 8081 (http) with context path '/'
-2025-03-05 19:06:44 - Started EstadisticasAppApplication in 8.328 seconds (process running for 9.037)
-2025-03-05 19:07:54 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-05 19:07:54 - Initializing Servlet 'dispatcherServlet'
-2025-03-05 19:07:54 - Completed initialization in 3 ms
-2025-03-05 19:07:54 - Intento de inicio de sesión para email: osteologia2@gmail.com
-2025-03-05 19:07:54 - Autenticando usuario osteologia2@gmail.com
-2025-03-05 19:07:55 - Usuario osteologia2@gmail.com autenticado correctamente
-2025-03-05 19:07:55 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
-2025-03-05 19:07:55 - Inicio de sesión exitoso para osteologia2@gmail.com
-2025-03-05 19:07:56 - El administrador solicitó la lista de usuarios.
-2025-03-05 19:07:56 - Listando todos los usuarios...
-2025-03-05 19:07:56 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-05 19:07:56 - Obteniendo estadísticas de usuarios...
-2025-03-05 19:08:06 - Intento de inicio de sesión para email: jahqeline@live.com.mx
-2025-03-05 19:08:06 - Autenticando usuario jahqeline@live.com.mx
-2025-03-05 19:08:06 - Usuario jahqeline@live.com.mx autenticado correctamente
-2025-03-05 19:08:06 - Inicio de sesión exitoso para usuario: jahqeline@live.com.mx
-2025-03-05 19:08:06 - Inicio de sesión exitoso para jahqeline@live.com.mx
-2025-03-05 19:09:37 - Solicitud de restablecimiento de contraseña para: jahqeline@live.com.mx
-2025-03-05 19:09:40 - Solicitud de restablecimiento enviada a jahqeline@live.com.mx
-2025-03-05 19:09:40 - Correo de restablecimiento enviado a: jahqeline@live.com.mx
-2025-03-05 19:10:19 - Recibiendo solicitud de verificación de token: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:10:19 - Token válido: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:10:19 - Recibiendo solicitud de verificación de token: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:10:19 - Token válido: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:10:28 - Recibiendo solicitud de verificación de token: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:10:28 - Token válido: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:10:28 - Recibiendo solicitud de verificación de token: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:10:28 - Token válido: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:10:44 - Intento de restablecimiento de contraseña con token: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:10:44 - Contraseña restablecida correctamente para jahqeline@live.com.mx
-2025-03-05 19:10:44 - Contraseña restablecida con éxito para token: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:11:29 - Intento de registro de usuario con email: jaime@kjaime
-2025-03-05 19:11:29 - Validando datos para el registro de jaime@kjaime
-2025-03-05 19:11:29 - Error al registrar el usuario: El email tiene un formato inválido.
-java.lang.IllegalArgumentException: El email tiene un formato inválido.
-	at com.estadisticas.estadisticas_app.Utils.ValidacionesUtil.validarEmail(ValidacionesUtil.java:20)
-	at com.estadisticas.estadisticas_app.Servicios.UsuarioServicio.registroUsuario(UsuarioServicio.java:58)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:723)
-	at com.estadisticas.estadisticas_app.Servicios.UsuarioServicio$$SpringCGLIB$$0.registroUsuario(<generated>)
-	at com.estadisticas.estadisticas_app.Controladores.UsuarioControlador.registroUsuario(UsuarioControlador.java:72)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-2025-03-05 19:11:29 - Error al registrar usuario jaime@kjaime: Hubo un problema al registrar el usuario: El email tiene un formato inválido.
-2025-03-05 19:11:37 - Intento de registro de usuario con email: jaime@kjaime
-2025-03-05 19:11:37 - Validando datos para el registro de jaime@kjaime
-2025-03-05 19:11:37 - Error al registrar el usuario: El email tiene un formato inválido.
-java.lang.IllegalArgumentException: El email tiene un formato inválido.
-	at com.estadisticas.estadisticas_app.Utils.ValidacionesUtil.validarEmail(ValidacionesUtil.java:20)
-	at com.estadisticas.estadisticas_app.Servicios.UsuarioServicio.registroUsuario(UsuarioServicio.java:58)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:723)
-	at com.estadisticas.estadisticas_app.Servicios.UsuarioServicio$$SpringCGLIB$$0.registroUsuario(<generated>)
-	at com.estadisticas.estadisticas_app.Controladores.UsuarioControlador.registroUsuario(UsuarioControlador.java:72)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-2025-03-05 19:11:37 - Error al registrar usuario jaime@kjaime: Hubo un problema al registrar el usuario: El email tiene un formato inválido.
-2025-03-05 19:11:57 - Intento de inicio de sesión para email: osteologia2@gmail.com
-2025-03-05 19:11:57 - Autenticando usuario osteologia2@gmail.com
-2025-03-05 19:11:58 - Usuario osteologia2@gmail.com autenticado correctamente
-2025-03-05 19:11:58 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
-2025-03-05 19:11:58 - Inicio de sesión exitoso para osteologia2@gmail.com
-2025-03-05 19:11:59 - El administrador solicitó la lista de usuarios.
-2025-03-05 19:11:59 - Listando todos los usuarios...
-2025-03-05 19:11:59 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-05 19:11:59 - Obteniendo estadísticas de usuarios...
-2025-03-05 19:12:31 - Intento de registro de usuario con email: hola123@gmail.com
-2025-03-05 19:12:31 - Intento de registro fallido: email ya registrado hola123@gmail.com
-2025-03-05 19:12:39 - Intento de registro de usuario con email: hola123awegegh@gmail.com
-2025-03-05 19:12:39 - Validando datos para el registro de hola123awegegh@gmail.com
-2025-03-05 19:12:39 - Usuario registrado con éxito: hola123awegegh@gmail.com
-2025-03-05 19:12:40 - Usuario registrado exitosamente: hola123awegegh@gmail.com
-2025-03-05 19:14:35 - Intento de inicio de sesión para email: jahqeline@live.com.mx
-2025-03-05 19:14:35 - Autenticando usuario jahqeline@live.com.mx
-2025-03-05 19:14:35 - Usuario jahqeline@live.com.mx autenticado correctamente
-2025-03-05 19:14:35 - Inicio de sesión exitoso para usuario: jahqeline@live.com.mx
-2025-03-05 19:14:35 - Inicio de sesión exitoso para jahqeline@live.com.mx
-2025-03-05 19:15:52 - Intento de inicio de sesión para email: osteologia2@gmail.com
-2025-03-05 19:15:52 - Autenticando usuario osteologia2@gmail.com
-2025-03-05 19:15:53 - Usuario osteologia2@gmail.com autenticado correctamente
-2025-03-05 19:15:53 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
-2025-03-05 19:15:53 - Inicio de sesión exitoso para osteologia2@gmail.com
-2025-03-05 19:15:54 - El administrador solicitó la lista de usuarios.
-2025-03-05 19:15:54 - Listando todos los usuarios...
-2025-03-05 19:15:54 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-05 19:15:54 - Obteniendo estadísticas de usuarios...
-2025-03-05 19:15:58 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-05 19:15:58 - Obteniendo estadísticas de usuarios...
-2025-03-05 19:15:58 - El administrador solicitó la lista de usuarios.
-2025-03-05 19:15:58 - Listando todos los usuarios...
-2025-03-05 19:19:42 - Recibiendo solicitud de verificación de token: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:19:42 - Token inválido: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:19:42 - El administrador solicitó la lista de usuarios.
-2025-03-05 19:19:42 - Listando todos los usuarios...
-2025-03-05 19:19:42 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-05 19:19:42 - Obteniendo estadísticas de usuarios...
-2025-03-05 19:19:43 - Recibiendo solicitud de verificación de token: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:19:43 - Token inválido: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:19:50 - El administrador solicitó la lista de usuarios.
-2025-03-05 19:19:50 - Listando todos los usuarios...
-2025-03-05 19:19:50 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-05 19:19:50 - Obteniendo estadísticas de usuarios...
-2025-03-05 19:19:50 - Recibiendo solicitud de verificación de token: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:19:50 - Token inválido: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:19:50 - Recibiendo solicitud de verificación de token: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:19:50 - Token inválido: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:20:20 - Recibiendo solicitud de verificación de token: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:20:20 - Token inválido: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:20:20 - Recibiendo solicitud de verificación de token: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:20:20 - Token inválido: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:20:41 - Recibiendo solicitud de verificación de token: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:20:41 - Token inválido: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:20:41 - Recibiendo solicitud de verificación de token: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:20:41 - Token inválido: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:20:41 - Recibiendo solicitud de verificación de token: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:20:41 - Token inválido: ee604a5c-064b-456b-9c4c-ec5391f25723
-2025-03-05 19:20:53 - Intento de registro de usuario con email: jahqeline@live.com.mx
-2025-03-05 19:20:53 - Intento de registro fallido: email ya registrado jahqeline@live.com.mx
-2025-03-05 19:21:42 - Intento de inicio de sesión para email: osteologia2@gmail.com
-2025-03-05 19:21:42 - Autenticando usuario osteologia2@gmail.com
-2025-03-05 19:21:42 - Usuario osteologia2@gmail.com autenticado correctamente
-2025-03-05 19:21:42 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
-2025-03-05 19:21:42 - Inicio de sesión exitoso para osteologia2@gmail.com
-2025-03-05 19:21:43 - El administrador solicitó la lista de usuarios.
-2025-03-05 19:21:43 - Listando todos los usuarios...
-2025-03-05 19:21:43 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-05 19:21:43 - Obteniendo estadísticas de usuarios...
-2025-03-05 19:21:58 - Intento de registro de usuario con email: jaime@kjaime
-2025-03-05 19:21:58 - Validando datos para el registro de jaime@kjaime
-2025-03-05 19:21:58 - Error al registrar el usuario: El email tiene un formato inválido.
-java.lang.IllegalArgumentException: El email tiene un formato inválido.
-	at com.estadisticas.estadisticas_app.Utils.ValidacionesUtil.validarEmail(ValidacionesUtil.java:20)
-	at com.estadisticas.estadisticas_app.Servicios.UsuarioServicio.registroUsuario(UsuarioServicio.java:58)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:723)
-	at com.estadisticas.estadisticas_app.Servicios.UsuarioServicio$$SpringCGLIB$$0.registroUsuario(<generated>)
-	at com.estadisticas.estadisticas_app.Controladores.UsuarioControlador.registroUsuario(UsuarioControlador.java:72)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:257)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:190)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-2025-03-05 19:21:58 - Error al registrar usuario jaime@kjaime: Hubo un problema al registrar el usuario: El email tiene un formato inválido.
-2025-03-05 19:25:56 - Intento de inicio de sesión para email: osteologia2@gmail.com
-2025-03-05 19:25:56 - Autenticando usuario osteologia2@gmail.com
-2025-03-05 19:25:56 - Usuario osteologia2@gmail.com autenticado correctamente
-2025-03-05 19:25:56 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
-2025-03-05 19:25:56 - Inicio de sesión exitoso para osteologia2@gmail.com
-2025-03-05 19:25:58 - El administrador solicitó la lista de usuarios.
-2025-03-05 19:25:58 - Listando todos los usuarios...
-2025-03-05 19:25:58 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-05 19:25:58 - Obteniendo estadísticas de usuarios...
-2025-03-05 19:26:08 - El administrador está buscando el usuario con ID: 22
-2025-03-05 19:26:08 - Buscando usuario con ID: 22
-2025-03-05 19:26:17 - El administrador está eliminando al usuario con ID: 35
-2025-03-05 19:26:17 - Usuario con ID 35 ha sido eliminado.
-2025-03-05 19:26:17 - El administrador solicitó la lista de usuarios.
-2025-03-05 19:26:17 - Listando todos los usuarios...
-2025-03-05 19:26:28 - El administrador está eliminando al usuario con ID: 37
-2025-03-05 19:26:28 - Usuario con ID 37 ha sido eliminado.
-2025-03-05 19:26:28 - El administrador solicitó la lista de usuarios.
-2025-03-05 19:26:28 - Listando todos los usuarios...
-2025-03-05 19:26:31 - El administrador solicitó la lista de usuarios.
-2025-03-05 19:26:31 - Listando todos los usuarios...
-2025-03-05 19:26:35 - El administrador está modificando el usuario con ID: 33
-2025-03-05 19:26:35 - Usuario con ID 33 ha sido modificado.
-2025-03-05 19:26:36 - El administrador solicitó la lista de usuarios.
-2025-03-05 19:26:36 - Listando todos los usuarios...
-2025-03-05 19:26:36 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-05 19:26:36 - Obteniendo estadísticas de usuarios...
-2025-03-05 19:26:39 - El administrador solicitó la lista de usuarios.
-2025-03-05 19:26:39 - Listando todos los usuarios...
-2025-03-05 19:26:49 - El administrador está modificando el usuario con ID: 31
-2025-03-05 19:26:49 - Foto de perfil actualizada para el usuario ID: 31
-2025-03-05 19:26:49 - Usuario con ID 31 ha sido modificado.
-2025-03-05 19:26:50 - El administrador solicitó la lista de usuarios.
-2025-03-05 19:26:50 - Listando todos los usuarios...
-2025-03-05 19:26:50 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-05 19:26:50 - Obteniendo estadísticas de usuarios...
-2025-03-05 19:27:13 - Intento de inicio de sesión para email: osteologia2@gmail.com
-2025-03-05 19:27:13 - Autenticando usuario osteologia2@gmail.com
-2025-03-05 19:27:13 - Usuario osteologia2@gmail.com autenticado correctamente
-2025-03-05 19:27:13 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
-2025-03-05 19:27:13 - Inicio de sesión exitoso para osteologia2@gmail.com
-2025-03-05 19:27:15 - El administrador solicitó la lista de usuarios.
-2025-03-05 19:27:15 - Listando todos los usuarios...
-2025-03-05 19:27:15 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-05 19:27:15 - Obteniendo estadísticas de usuarios...
-2025-03-05 19:27:22 - El administrador está eliminando al usuario con ID: 36
-2025-03-05 19:27:22 - Usuario con ID 36 ha sido eliminado.
-2025-03-05 19:27:22 - El administrador solicitó la lista de usuarios.
-2025-03-05 19:27:22 - Listando todos los usuarios...
-2025-03-05 19:29:08 - Intento de registro de usuario con email: jahqeline@live.com.mx
-2025-03-05 19:29:08 - Validando datos para el registro de jahqeline@live.com.mx
-2025-03-05 19:29:08 - Usuario registrado con éxito: jahqeline@live.com.mx
-2025-03-05 19:29:11 - Usuario registrado exitosamente: jahqeline@live.com.mx
-2025-03-05 19:30:10 - Solicitud de activación recibida para usuario ID: 38
-2025-03-05 19:30:10 - Intentando activar usuario con token: b6cb4cf6-3733-440e-b98c-dc52793da54a
-2025-03-05 19:30:10 - Token expirado para el usuario: jahqeline@live.com.mx
-2025-03-05 19:30:10 - Error al activar cuenta: El token ha expirado.
-2025-03-05 19:30:21 - Solicitud de reenvío de enlace de activación para: jahqeline@live.com.mx
-2025-03-05 19:30:22 - Nuevo enlace de activación enviado a jahqeline@live.com.mx
-2025-03-05 19:30:22 - Enlace de activación reenviado con éxito a: jahqeline@live.com.mx
-2025-03-05 19:30:44 - Solicitud de activación recibida para usuario ID: 38
-2025-03-05 19:30:44 - Intentando activar usuario con token: 6435f8c9-4150-4638-ac24-acbc1605bf75
-2025-03-05 19:30:44 - Cuenta activada con éxito para el usuario: jahqeline@live.com.mx
-2025-03-05 19:30:44 - Cuenta activada correctamente. Redirigiendo a login.
-2025-03-05 19:30:53 - Solicitud de activación recibida para usuario ID: 38
-2025-03-05 19:30:53 - Intentando activar usuario con token: 6435f8c9-4150-4638-ac24-acbc1605bf75
-2025-03-05 19:30:53 - El usuario jahqeline@live.com.mx ya está activado.
-2025-03-05 19:30:53 - Cuenta ya estaba activada. Redirigiendo a login.
-2025-03-05 19:31:39 - El administrador solicitó la lista de usuarios.
-2025-03-05 19:31:39 - Listando todos los usuarios...
-2025-03-05 19:31:39 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-05 19:31:39 - Obteniendo estadísticas de usuarios...
-2025-03-05 19:31:50 - Intento de inicio de sesión para email: jahqeline@live.com.mx
-2025-03-05 19:31:50 - Autenticando usuario jahqeline@live.com.mx
-2025-03-05 19:31:50 - Usuario jahqeline@live.com.mx autenticado correctamente
-2025-03-05 19:31:50 - Inicio de sesión exitoso para usuario: jahqeline@live.com.mx
-2025-03-05 19:31:50 - Inicio de sesión exitoso para jahqeline@live.com.mx
-2025-03-05 19:44:45 - Intento de inicio de sesión para email: osteologia2@gmail.com
-2025-03-05 19:44:45 - Autenticando usuario osteologia2@gmail.com
-2025-03-05 19:44:45 - Usuario osteologia2@gmail.com autenticado correctamente
-2025-03-05 19:44:45 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
-2025-03-05 19:44:45 - Inicio de sesión exitoso para osteologia2@gmail.com
-2025-03-05 19:44:47 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-05 19:44:47 - Obteniendo estadísticas de usuarios...
-2025-03-05 19:44:47 - El administrador solicitó la lista de usuarios.
-2025-03-05 19:44:47 - Listando todos los usuarios...
-2025-03-05 19:58:50 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m7s957ms870µs400ns).
-2025-03-05 20:19:43 - Intento de inicio de sesión para email: jahqeline@live.com.mx
-2025-03-05 20:19:43 - Autenticando usuario jahqeline@live.com.mx
-2025-03-05 20:19:43 - Usuario jahqeline@live.com.mx autenticado correctamente
-2025-03-05 20:19:43 - Inicio de sesión exitoso para usuario: jahqeline@live.com.mx
-2025-03-05 20:19:43 - Inicio de sesión exitoso para jahqeline@live.com.mx
-2025-03-05 20:20:34 - Intento de inicio de sesión para email: osteologia2@gmail.com
-2025-03-05 20:20:34 - Autenticando usuario osteologia2@gmail.com
-2025-03-05 20:20:34 - Usuario osteologia2@gmail.com autenticado correctamente
-2025-03-05 20:20:34 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
-2025-03-05 20:20:34 - Inicio de sesión exitoso para osteologia2@gmail.com
-2025-03-05 20:20:36 - El administrador solicitó la lista de usuarios.
-2025-03-05 20:20:36 - Listando todos los usuarios...
-2025-03-05 20:20:36 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-05 20:20:36 - Obteniendo estadísticas de usuarios...
-2025-03-05 20:24:44 - El administrador solicitó la lista de usuarios.
-2025-03-05 20:24:44 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-05 20:24:44 - Listando todos los usuarios...
-2025-03-05 20:24:44 - Obteniendo estadísticas de usuarios...
-2025-03-05 20:25:34 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-05 20:25:34 - El administrador solicitó la lista de usuarios.
-2025-03-05 20:25:34 - Obteniendo estadísticas de usuarios...
-2025-03-05 20:25:34 - Listando todos los usuarios...
-2025-03-05 20:26:01 - El administrador solicitó la lista de usuarios.
-2025-03-05 20:26:01 - Listando todos los usuarios...
-2025-03-05 20:26:01 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-05 20:26:01 - Obteniendo estadísticas de usuarios...
-2025-03-05 20:26:09 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-05 20:26:09 - Obteniendo estadísticas de usuarios...
-2025-03-05 20:26:09 - El administrador solicitó la lista de usuarios.
-2025-03-05 20:26:09 - Listando todos los usuarios...
-2025-03-05 20:28:49 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m9s70ms40µs700ns).
-2025-03-05 20:29:14 - Intento de inicio de sesión para email: osteologia2@gmail.com
-2025-03-05 20:29:14 - Autenticando usuario osteologia2@gmail.com
-2025-03-05 20:29:14 - Usuario osteologia2@gmail.com autenticado correctamente
-2025-03-05 20:29:14 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
-2025-03-05 20:29:14 - Inicio de sesión exitoso para osteologia2@gmail.com
-2025-03-05 20:32:46 - Intento de inicio de sesión para email: osteologia2@gmail.com
-2025-03-05 20:32:46 - Autenticando usuario osteologia2@gmail.com
-2025-03-05 20:32:46 - Usuario osteologia2@gmail.com autenticado correctamente
-2025-03-05 20:32:46 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
-2025-03-05 20:32:46 - Inicio de sesión exitoso para osteologia2@gmail.com
-2025-03-05 20:39:52 - Intento de inicio de sesión para email: jahqeline@live.com.mx
-2025-03-05 20:39:52 - Autenticando usuario jahqeline@live.com.mx
-2025-03-05 20:39:52 - Usuario jahqeline@live.com.mx autenticado correctamente
-2025-03-05 20:39:52 - Inicio de sesión exitoso para usuario: jahqeline@live.com.mx
-2025-03-05 20:39:52 - Inicio de sesión exitoso para jahqeline@live.com.mx
-2025-03-05 20:40:01 - Intento de inicio de sesión para email: osteologia2@gmail.com
-2025-03-05 20:40:01 - Autenticando usuario osteologia2@gmail.com
-2025-03-05 20:40:01 - Usuario osteologia2@gmail.com autenticado correctamente
-2025-03-05 20:40:01 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
-2025-03-05 20:40:01 - Inicio de sesión exitoso para osteologia2@gmail.com
-2025-03-05 20:40:03 - El administrador solicitó la lista de usuarios.
-2025-03-05 20:40:03 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-05 20:40:03 - Obteniendo estadísticas de usuarios...
-2025-03-05 20:40:03 - Listando todos los usuarios...
-2025-03-06 09:54:18 - Starting EstadisticasAppApplication using Java 23 with PID 9288 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
-2025-03-06 09:54:18 - Running with Spring Boot v3.4.1, Spring v6.2.1
-2025-03-06 09:54:18 - No active profile set, falling back to 1 default profile: "default"
-2025-03-06 09:54:19 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-06 09:54:19 - Finished Spring Data repository scanning in 67 ms. Found 1 JPA repository interface.
-2025-03-06 09:54:20 - Tomcat initialized with port 8081 (http)
-2025-03-06 09:54:20 - Arrancando servicio [Tomcat]
-2025-03-06 09:54:20 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
-2025-03-06 09:54:21 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
-2025-03-06 09:54:21 - Initializing Spring embedded WebApplicationContext
-2025-03-06 09:54:21 - Root WebApplicationContext: initialization completed in 2327 ms
-2025-03-06 09:54:21 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-06 09:54:21 - HHH000412: Hibernate ORM core version 6.6.4.Final
-2025-03-06 09:54:21 - HHH000026: Second-level cache disabled
-2025-03-06 09:54:21 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-03-06 09:54:22 - HikariPool-1 - Starting...
-2025-03-06 09:54:22 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@52b32b70
-2025-03-06 09:54:22 - HikariPool-1 - Start completed.
-2025-03-06 09:54:22 - HHH10001005: Database info:
+2025-03-07 08:31:06 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-07 08:31:06 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-07 08:31:06 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-07 08:31:07 - Tomcat started on port 8081 (http) with context path '/'
+2025-03-07 08:31:07 - Started EstadisticasAppApplication in 9.119 seconds (process running for 9.722)
+2025-03-07 08:33:51 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-07 08:33:51 - Initializing Servlet 'dispatcherServlet'
+2025-03-07 08:33:51 - Completed initialization in 1 ms
+2025-03-07 08:33:51 - Intento de inicio de sesión para email: osteologia2@gmail.com
+2025-03-07 08:33:51 - Autenticando usuario osteologia2@gmail.com
+2025-03-07 08:33:51 - Usuario osteologia2@gmail.com autenticado correctamente
+2025-03-07 08:33:51 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
+2025-03-07 08:33:51 - Inicio de sesión exitoso para osteologia2@gmail.com
+2025-03-07 08:33:53 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:33:53 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:33:53 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:33:53 - Listando todos los usuarios...
+2025-03-07 08:34:38 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:34:38 - Listando todos los usuarios...
+2025-03-07 08:34:38 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:34:38 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:35:15 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:35:15 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:35:15 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:35:15 - Listando todos los usuarios...
+2025-03-07 08:35:43 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:35:43 - Listando todos los usuarios...
+2025-03-07 08:35:43 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:35:43 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:35:47 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:35:47 - Listando todos los usuarios...
+2025-03-07 08:35:51 - El administrador está modificando el usuario con ID: 83
+2025-03-07 08:35:51 - Usuario con ID 83 ha sido modificado.
+2025-03-07 08:35:56 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:35:56 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:35:56 - Listando todos los usuarios...
+2025-03-07 08:35:56 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:36:00 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:36:00 - Listando todos los usuarios...
+2025-03-07 08:36:09 - El administrador está modificando el usuario con ID: 77
+2025-03-07 08:36:09 - Foto de perfil actualizada para el usuario ID: 77
+2025-03-07 08:36:09 - Usuario con ID 77 ha sido modificado.
+2025-03-07 08:36:09 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:36:09 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:36:09 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:36:09 - Listando todos los usuarios...
+2025-03-07 08:36:12 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:36:12 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:36:12 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:36:12 - Listando todos los usuarios...
+2025-03-07 08:36:42 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:36:42 - Listando todos los usuarios...
+2025-03-07 08:36:42 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:36:42 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:40:44 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:40:44 - Listando todos los usuarios...
+2025-03-07 08:40:44 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:40:44 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:40:47 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:40:47 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:40:47 - Listando todos los usuarios...
+2025-03-07 08:40:47 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:41:04 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:41:04 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:41:04 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:41:04 - Listando todos los usuarios...
+2025-03-07 08:41:55 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:41:55 - Listando todos los usuarios...
+2025-03-07 08:41:55 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:41:55 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:41:57 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:41:57 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:41:57 - Listando todos los usuarios...
+2025-03-07 08:41:57 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:42:44 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:42:44 - Listando todos los usuarios...
+2025-03-07 08:42:44 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:42:44 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:42:47 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:42:47 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:42:47 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:42:47 - Listando todos los usuarios...
+2025-03-07 08:42:48 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:42:48 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:42:48 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:42:48 - Listando todos los usuarios...
+2025-03-07 08:42:59 - Intento de inicio de sesión para email: osteologia2@gmail.com
+2025-03-07 08:42:59 - Autenticando usuario osteologia2@gmail.com
+2025-03-07 08:42:59 - Usuario osteologia2@gmail.com autenticado correctamente
+2025-03-07 08:42:59 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
+2025-03-07 08:42:59 - Inicio de sesión exitoso para osteologia2@gmail.com
+2025-03-07 08:43:00 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:43:00 - Listando todos los usuarios...
+2025-03-07 08:43:00 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:43:00 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:45:14 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:45:14 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:45:14 - Listando todos los usuarios...
+2025-03-07 08:45:14 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:45:17 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:45:17 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:45:17 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:45:17 - Listando todos los usuarios...
+2025-03-07 08:49:24 - Intento de inicio de sesión para email: osteologia2@gmail.com
+2025-03-07 08:49:24 - Autenticando usuario osteologia2@gmail.com
+2025-03-07 08:49:25 - Usuario osteologia2@gmail.com autenticado correctamente
+2025-03-07 08:49:25 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
+2025-03-07 08:49:25 - Inicio de sesión exitoso para osteologia2@gmail.com
+2025-03-07 08:49:26 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:49:26 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:49:26 - Listando todos los usuarios...
+2025-03-07 08:49:26 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:49:47 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:49:47 - Listando todos los usuarios...
+2025-03-07 08:49:47 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:49:47 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:49:49 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:49:49 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:49:49 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:49:49 - Listando todos los usuarios...
+2025-03-07 08:56:44 - Intento de inicio de sesión para email: osteologia2@gmail.com
+2025-03-07 08:56:44 - Autenticando usuario osteologia2@gmail.com
+2025-03-07 08:56:45 - Usuario osteologia2@gmail.com autenticado correctamente
+2025-03-07 08:56:45 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
+2025-03-07 08:56:45 - Inicio de sesión exitoso para osteologia2@gmail.com
+2025-03-07 08:56:46 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:56:46 - Listando todos los usuarios...
+2025-03-07 08:56:46 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:56:46 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:56:51 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:56:51 - Listando todos los usuarios...
+2025-03-07 08:56:51 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:56:51 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:58:47 - Intento de inicio de sesión para email: osteologia2@gmail.com
+2025-03-07 08:58:47 - Autenticando usuario osteologia2@gmail.com
+2025-03-07 08:58:47 - Usuario osteologia2@gmail.com autenticado correctamente
+2025-03-07 08:58:47 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
+2025-03-07 08:58:47 - Inicio de sesión exitoso para osteologia2@gmail.com
+2025-03-07 08:58:49 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:58:49 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:58:49 - Listando todos los usuarios...
+2025-03-07 08:58:49 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:59:10 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:59:10 - Listando todos los usuarios...
+2025-03-07 08:59:10 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:59:10 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:59:43 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:59:43 - Listando todos los usuarios...
+2025-03-07 08:59:43 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 08:59:43 - Obteniendo estadísticas de usuarios...
+2025-03-07 08:59:59 - El administrador solicitó la lista de usuarios.
+2025-03-07 08:59:59 - Listando todos los usuarios...
+2025-03-07 09:00:09 - El administrador está modificando el usuario con ID: 76
+2025-03-07 09:00:09 - Foto de perfil actualizada para el usuario ID: 76
+2025-03-07 09:00:09 - Usuario con ID 76 ha sido modificado.
+2025-03-07 09:00:10 - El administrador solicitó la lista de usuarios.
+2025-03-07 09:00:10 - Listando todos los usuarios...
+2025-03-07 09:00:10 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 09:00:10 - Obteniendo estadísticas de usuarios...
+2025-03-07 09:00:15 - El administrador está buscando el usuario con ID: 76
+2025-03-07 09:00:15 - Buscando usuario con ID: 76
+2025-03-07 09:02:06 - El administrador solicitó la lista de usuarios.
+2025-03-07 09:02:06 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 09:02:06 - Listando todos los usuarios...
+2025-03-07 09:02:06 - Obteniendo estadísticas de usuarios...
+2025-03-07 09:02:10 - El administrador solicitó la lista de usuarios.
+2025-03-07 09:02:10 - Listando todos los usuarios...
+2025-03-07 09:02:10 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 09:02:10 - Obteniendo estadísticas de usuarios...
+2025-03-07 09:02:13 - El administrador solicitó la lista de usuarios.
+2025-03-07 09:02:13 - Listando todos los usuarios...
+2025-03-07 09:02:13 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 09:02:13 - Obteniendo estadísticas de usuarios...
+2025-03-07 09:02:32 - El administrador solicitó la lista de usuarios.
+2025-03-07 09:02:32 - Listando todos los usuarios...
+2025-03-07 09:02:32 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 09:02:32 - Obteniendo estadísticas de usuarios...
+2025-03-07 09:02:50 - Intento de inicio de sesión para email: osteologia2@gmail.com
+2025-03-07 09:02:50 - Autenticando usuario osteologia2@gmail.com
+2025-03-07 09:02:50 - Usuario osteologia2@gmail.com autenticado correctamente
+2025-03-07 09:02:50 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
+2025-03-07 09:02:51 - Inicio de sesión exitoso para osteologia2@gmail.com
+2025-03-07 09:02:52 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 09:02:52 - El administrador solicitó la lista de usuarios.
+2025-03-07 09:02:52 - Obteniendo estadísticas de usuarios...
+2025-03-07 09:02:52 - Listando todos los usuarios...
+2025-03-07 09:03:56 - El administrador solicitó la lista de usuarios.
+2025-03-07 09:03:56 - Listando todos los usuarios...
+2025-03-07 09:03:56 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 09:03:56 - Obteniendo estadísticas de usuarios...
+2025-03-07 09:04:31 - El administrador solicitó la lista de usuarios.
+2025-03-07 09:04:31 - Listando todos los usuarios...
+2025-03-07 09:04:31 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 09:04:31 - Obteniendo estadísticas de usuarios...
+2025-03-07 09:05:19 - El administrador solicitó la lista de usuarios.
+2025-03-07 09:05:19 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 09:05:19 - Listando todos los usuarios...
+2025-03-07 09:05:19 - Obteniendo estadísticas de usuarios...
+2025-03-07 09:05:19 - El administrador solicitó la lista de usuarios.
+2025-03-07 09:05:19 - Listando todos los usuarios...
+2025-03-07 09:05:19 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 09:05:19 - Obteniendo estadísticas de usuarios...
+2025-03-07 09:05:28 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 09:05:28 - Obteniendo estadísticas de usuarios...
+2025-03-07 09:05:28 - El administrador solicitó la lista de usuarios.
+2025-03-07 09:05:28 - Listando todos los usuarios...
+2025-03-07 09:05:30 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 09:05:30 - Obteniendo estadísticas de usuarios...
+2025-03-07 09:05:30 - El administrador solicitó la lista de usuarios.
+2025-03-07 09:05:30 - Listando todos los usuarios...
+2025-03-07 09:05:31 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 09:05:31 - El administrador solicitó la lista de usuarios.
+2025-03-07 09:05:31 - Obteniendo estadísticas de usuarios...
+2025-03-07 09:05:31 - Listando todos los usuarios...
+2025-03-07 09:06:07 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 09:06:07 - El administrador solicitó la lista de usuarios.
+2025-03-07 09:06:07 - Obteniendo estadísticas de usuarios...
+2025-03-07 09:06:07 - Listando todos los usuarios...
+2025-03-07 09:06:45 - El administrador solicitó la lista de usuarios.
+2025-03-07 09:06:45 - Listando todos los usuarios...
+2025-03-07 09:06:45 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 09:06:45 - Obteniendo estadísticas de usuarios...
+2025-03-07 09:21:28 - Intento de inicio de sesión para email: osteologia2@gmail.com
+2025-03-07 09:21:28 - Autenticando usuario osteologia2@gmail.com
+2025-03-07 09:21:28 - Usuario osteologia2@gmail.com autenticado correctamente
+2025-03-07 09:21:28 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
+2025-03-07 09:21:28 - Inicio de sesión exitoso para osteologia2@gmail.com
+2025-03-07 09:21:29 - El administrador solicitó la lista de usuarios.
+2025-03-07 09:21:29 - Listando todos los usuarios...
+2025-03-07 09:21:29 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 09:21:29 - Obteniendo estadísticas de usuarios...
+2025-03-07 09:34:35 - Intento de inicio de sesión para email: osteologia2@gmail.com
+2025-03-07 09:34:35 - Autenticando usuario osteologia2@gmail.com
+2025-03-07 09:34:35 - Usuario osteologia2@gmail.com autenticado correctamente
+2025-03-07 09:34:35 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
+2025-03-07 09:34:35 - Inicio de sesión exitoso para osteologia2@gmail.com
+2025-03-07 09:34:37 - El administrador solicitó la lista de usuarios.
+2025-03-07 09:34:37 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 09:34:37 - Listando todos los usuarios...
+2025-03-07 09:34:37 - Obteniendo estadísticas de usuarios...
+2025-03-07 09:38:39 - Intento de inicio de sesión para email: osteologia2@gmail.com
+2025-03-07 09:38:39 - Autenticando usuario osteologia2@gmail.com
+2025-03-07 09:38:39 - Usuario osteologia2@gmail.com autenticado correctamente
+2025-03-07 09:38:39 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
+2025-03-07 09:38:39 - Inicio de sesión exitoso para osteologia2@gmail.com
+2025-03-07 09:38:41 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 09:38:41 - Obteniendo estadísticas de usuarios...
+2025-03-07 09:38:41 - El administrador solicitó la lista de usuarios.
+2025-03-07 09:38:41 - Listando todos los usuarios...
+2025-03-07 09:39:07 - El administrador está buscando el usuario con ID: 76
+2025-03-07 09:39:07 - Buscando usuario con ID: 76
+2025-03-07 09:39:17 - El administrador está buscando el usuario con ID: 1
+2025-03-07 09:39:17 - Buscando usuario con ID: 1
+2025-03-07 09:39:17 - Usuario no encontrado con ID: 1
+2025-03-07 09:39:17 - Intento de búsqueda fallido. Usuario con ID 1 no encontrado.
+2025-03-07 09:39:23 - El administrador está eliminando al usuario con ID: 82
+2025-03-07 09:39:23 - Usuario con ID 82 ha sido eliminado.
+2025-03-07 09:39:23 - El administrador solicitó la lista de usuarios.
+2025-03-07 09:39:23 - Listando todos los usuarios...
+2025-03-07 09:39:44 - El administrador solicitó la lista de usuarios.
+2025-03-07 09:39:44 - Listando todos los usuarios...
+2025-03-07 09:40:12 - El administrador está modificando el usuario con ID: 83
+2025-03-07 09:40:12 - Foto de perfil actualizada para el usuario ID: 83
+2025-03-07 09:40:12 - Usuario con ID 83 ha sido modificado.
+2025-03-07 09:40:14 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 09:40:14 - El administrador solicitó la lista de usuarios.
+2025-03-07 09:40:14 - Listando todos los usuarios...
+2025-03-07 09:40:14 - Obteniendo estadísticas de usuarios...
+2025-03-07 09:40:22 - El administrador está buscando el usuario con ID: 77
+2025-03-07 09:40:22 - Buscando usuario con ID: 77
+2025-03-07 09:40:41 - Intento de inicio de sesión para email: osteologia2@gmail.com
+2025-03-07 09:40:41 - Autenticando usuario osteologia2@gmail.com
+2025-03-07 09:40:41 - Usuario osteologia2@gmail.com autenticado correctamente
+2025-03-07 09:40:41 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
+2025-03-07 09:40:41 - Inicio de sesión exitoso para osteologia2@gmail.com
+2025-03-07 09:40:42 - El administrador solicitó la lista de usuarios.
+2025-03-07 09:40:42 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 09:40:42 - Listando todos los usuarios...
+2025-03-07 09:40:42 - Obteniendo estadísticas de usuarios...
+2025-03-07 09:41:04 - Intento de registro de usuario con email: jahqeline@live.com.mx
+2025-03-07 09:41:04 - Validando datos para el registro de jahqeline@live.com.mx
+2025-03-07 09:41:04 - Usuario registrado con éxito: jahqeline@live.com.mx
+2025-03-07 09:41:06 - Usuario registrado exitosamente: jahqeline@live.com.mx
+2025-03-07 09:41:08 - El administrador solicitó la lista de usuarios.
+2025-03-07 09:41:08 - Listando todos los usuarios...
+2025-03-07 09:41:08 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 09:41:08 - Obteniendo estadísticas de usuarios...
+2025-03-07 09:41:59 - Intento de inicio de sesión para email: jahqeline@live.com.mx
+2025-03-07 09:41:59 - Autenticando usuario jahqeline@live.com.mx
+2025-03-07 09:41:59 - Inicio de sesión fallido: La cuenta no ha sido verificada. Por favor revisa tu email.
+2025-03-07 09:41:59 - Intento de inicio de sesión fallido para jahqeline@live.com.mx
+2025-03-07 09:43:11 - Solicitud de activación recibida para usuario ID: 86
+2025-03-07 09:43:11 - Intentando activar usuario con token: 19db9ca8-682a-4382-87e9-ec47866bcf35
+2025-03-07 09:43:11 - Token expirado para el usuario: jahqeline@live.com.mx
+2025-03-07 09:43:11 - Error al activar cuenta: El token ha expirado.
+2025-03-07 09:43:18 - Solicitud de reenvío de enlace de activación para: jahqeline@live.com.mx
+2025-03-07 09:43:20 - Nuevo enlace de activación enviado a jahqeline@live.com.mx
+2025-03-07 09:43:20 - Enlace de activación reenviado con éxito a: jahqeline@live.com.mx
+2025-03-07 09:43:32 - Solicitud de activación recibida para usuario ID: 86
+2025-03-07 09:43:32 - Intentando activar usuario con token: cd1d8dec-b390-4f12-8cdf-a7e7a5bcefb4
+2025-03-07 09:43:32 - Cuenta activada con éxito para el usuario: jahqeline@live.com.mx
+2025-03-07 09:43:32 - Cuenta activada correctamente. Redirigiendo a login.
+2025-03-07 09:43:38 - Intento de inicio de sesión para email: jahqeline@live.com.mx
+2025-03-07 09:43:38 - Autenticando usuario jahqeline@live.com.mx
+2025-03-07 09:43:38 - Usuario jahqeline@live.com.mx autenticado correctamente
+2025-03-07 09:43:38 - Inicio de sesión exitoso para usuario: jahqeline@live.com.mx
+2025-03-07 09:43:38 - Inicio de sesión exitoso para jahqeline@live.com.mx
+2025-03-07 09:44:21 - Intento de inicio de sesión para email: jahqeline@live.com.mx
+2025-03-07 09:44:21 - Autenticando usuario jahqeline@live.com.mx
+2025-03-07 09:44:21 - Usuario jahqeline@live.com.mx autenticado correctamente
+2025-03-07 09:44:21 - Inicio de sesión exitoso para usuario: jahqeline@live.com.mx
+2025-03-07 09:44:34 - El administrador solicitó la lista de usuarios.
+2025-03-07 09:44:34 - Listando todos los usuarios...
+2025-03-07 09:44:34 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 09:44:34 - Obteniendo estadísticas de usuarios...
+2025-03-07 10:48:34 - Starting EstadisticasAppApplication using Java 23 with PID 8768 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-03-07 10:48:34 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-03-07 10:48:34 - No active profile set, falling back to 1 default profile: "default"
+2025-03-07 10:48:35 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-07 10:48:35 - Finished Spring Data repository scanning in 67 ms. Found 1 JPA repository interface.
+2025-03-07 10:48:36 - Tomcat initialized with port 8081 (http)
+2025-03-07 10:48:36 - Arrancando servicio [Tomcat]
+2025-03-07 10:48:36 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-03-07 10:48:36 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-03-07 10:48:36 - Initializing Spring embedded WebApplicationContext
+2025-03-07 10:48:36 - Root WebApplicationContext: initialization completed in 1894 ms
+2025-03-07 10:48:36 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-07 10:48:36 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-03-07 10:48:36 - HHH000026: Second-level cache disabled
+2025-03-07 10:48:37 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-07 10:48:37 - HikariPool-1 - Starting...
+2025-03-07 10:48:37 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@74b97416
+2025-03-07 10:48:37 - HikariPool-1 - Start completed.
+2025-03-07 10:48:37 - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.4
@@ -570,85 +365,126 @@ java.lang.IllegalArgumentException: El email tiene un formato inválido.
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-03-06 09:54:23 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-03-06 09:54:24 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-03-06 09:54:24 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-03-06 09:54:25 - Tomcat started on port 8081 (http) with context path '/'
-2025-03-06 09:54:25 - Started EstadisticasAppApplication in 7.405 seconds (process running for 8.245)
-2025-03-06 09:55:14 - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-06 09:55:14 - Initializing Servlet 'dispatcherServlet'
-2025-03-06 09:55:14 - Completed initialization in 1 ms
-2025-03-06 09:55:14 - Intento de inicio de sesión para email: osteologia2@gmail.com
-2025-03-06 09:55:14 - Autenticando usuario osteologia2@gmail.com
-2025-03-06 09:55:15 - Usuario osteologia2@gmail.com autenticado correctamente
-2025-03-06 09:55:15 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
-2025-03-06 09:55:15 - Inicio de sesión exitoso para osteologia2@gmail.com
-2025-03-06 09:55:16 - El administrador solicitó la lista de usuarios.
-2025-03-06 09:55:16 - Listando todos los usuarios...
-2025-03-06 09:55:16 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-06 09:55:16 - Obteniendo estadísticas de usuarios...
-2025-03-06 09:57:23 - El administrador solicitó la lista de usuarios.
-2025-03-06 09:57:23 - Listando todos los usuarios...
-2025-03-06 09:57:23 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-06 09:57:23 - Obteniendo estadísticas de usuarios...
-2025-03-06 09:57:57 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-06 09:57:57 - Obteniendo estadísticas de usuarios...
-2025-03-06 09:57:57 - El administrador solicitó la lista de usuarios.
-2025-03-06 09:57:57 - Listando todos los usuarios...
-2025-03-06 10:01:22 - Intento de inicio de sesión para email: osteologia2@gmail.com
-2025-03-06 10:01:22 - Autenticando usuario osteologia2@gmail.com
-2025-03-06 10:01:22 - Usuario osteologia2@gmail.com autenticado correctamente
-2025-03-06 10:01:22 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
-2025-03-06 10:01:22 - Inicio de sesión exitoso para osteologia2@gmail.com
-2025-03-06 10:01:23 - El administrador solicitó la lista de usuarios.
-2025-03-06 10:01:23 - Listando todos los usuarios...
-2025-03-06 10:01:23 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-06 10:01:23 - Obteniendo estadísticas de usuarios...
-2025-03-06 10:02:23 - El administrador solicitó la lista de usuarios.
-2025-03-06 10:02:23 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-06 10:02:23 - Listando todos los usuarios...
-2025-03-06 10:02:23 - Obteniendo estadísticas de usuarios...
-2025-03-06 10:02:27 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-06 10:02:27 - Obteniendo estadísticas de usuarios...
-2025-03-06 10:02:27 - El administrador solicitó la lista de usuarios.
-2025-03-06 10:02:27 - Listando todos los usuarios...
-2025-03-06 10:02:34 - El administrador está buscando el usuario con ID: 73
-2025-03-06 10:02:34 - Buscando usuario con ID: 73
-2025-03-06 10:05:29 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-06 10:05:29 - El administrador solicitó la lista de usuarios.
-2025-03-06 10:05:29 - Obteniendo estadísticas de usuarios...
-2025-03-06 10:05:29 - Listando todos los usuarios...
-2025-03-06 10:05:38 - El administrador está buscando el usuario con ID: 73
-2025-03-06 10:05:38 - Buscando usuario con ID: 73
-2025-03-06 10:05:57 - El administrador está buscando el usuario con ID: 1
-2025-03-06 10:05:57 - Buscando usuario con ID: 1
-2025-03-06 10:05:57 - Usuario no encontrado con ID: 1
-2025-03-06 10:05:57 - Intento de búsqueda fallido. Usuario con ID 1 no encontrado.
-2025-03-06 10:06:05 - El administrador está buscando el usuario con ID: 82
-2025-03-06 10:06:05 - Buscando usuario con ID: 82
-2025-03-06 10:06:40 - El administrador solicitó la lista de usuarios.
-2025-03-06 10:06:40 - Listando todos los usuarios...
-2025-03-06 10:06:40 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-06 10:06:40 - Obteniendo estadísticas de usuarios...
-2025-03-06 10:06:45 - El administrador está buscando el usuario con ID: 73
-2025-03-06 10:06:45 - Buscando usuario con ID: 73
-2025-03-06 10:06:53 - El administrador está buscando el usuario con ID: 73
-2025-03-06 10:06:53 - Buscando usuario con ID: 73
-2025-03-06 10:06:54 - El administrador está buscando el usuario con ID: 73
-2025-03-06 10:06:54 - Buscando usuario con ID: 73
-2025-03-06 10:17:04 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m11s678ms37µs700ns).
-2025-03-06 10:21:09 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m5s439ms932µs500ns).
-2025-03-06 10:48:29 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=25m20s230ms663µs100ns).
-2025-03-06 12:26:18 - Intento de inicio de sesión para email: osteologia2@gmail.com
-2025-03-06 12:26:18 - Autenticando usuario osteologia2@gmail.com
-2025-03-06 12:26:18 - Usuario osteologia2@gmail.com autenticado correctamente
-2025-03-06 12:26:18 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
-2025-03-06 12:26:18 - Inicio de sesión exitoso para osteologia2@gmail.com
-2025-03-06 12:26:20 - El administrador solicitó la lista de usuarios.
-2025-03-06 12:26:20 - Listando todos los usuarios...
-2025-03-06 12:26:20 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-06 12:26:20 - Obteniendo estadísticas de usuarios...
-2025-03-06 12:41:22 - El administrador solicitó la lista de usuarios.
-2025-03-06 12:41:22 - El administrador ha solicitado las estadísticas de usuarios.
-2025-03-06 12:41:22 - Listando todos los usuarios...
-2025-03-06 12:41:22 - Obteniendo estadísticas de usuarios...
+2025-03-07 10:48:38 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-07 10:48:39 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-07 10:48:39 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-07 10:48:39 - Tomcat started on port 8081 (http) with context path '/'
+2025-03-07 10:48:39 - Started EstadisticasAppApplication in 5.902 seconds (process running for 6.408)
+2025-03-07 10:48:53 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-07 10:48:53 - Initializing Servlet 'dispatcherServlet'
+2025-03-07 10:48:53 - Completed initialization in 2 ms
+2025-03-07 10:48:53 - Intento de inicio de sesión para email: osteologia2@gmail.com
+2025-03-07 10:48:53 - Autenticando usuario osteologia2@gmail.com
+2025-03-07 10:48:53 - Usuario osteologia2@gmail.com autenticado correctamente
+2025-03-07 10:48:53 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
+2025-03-07 10:48:53 - Inicio de sesión exitoso para osteologia2@gmail.com
+2025-03-07 10:48:55 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 10:48:55 - Obteniendo estadísticas de usuarios...
+2025-03-07 10:48:55 - El administrador solicitó la lista de usuarios.
+2025-03-07 10:48:55 - Listando todos los usuarios...
+2025-03-07 10:49:06 - El administrador está buscando el usuario con ID: 86
+2025-03-07 10:49:06 - Buscando usuario con ID: 86
+2025-03-07 10:49:13 - El administrador está buscando el usuario con ID: 77
+2025-03-07 10:49:13 - Buscando usuario con ID: 77
+2025-03-07 10:49:19 - El administrador solicitó la lista de usuarios.
+2025-03-07 10:49:19 - Listando todos los usuarios...
+2025-03-07 10:49:29 - El administrador solicitó la lista de usuarios.
+2025-03-07 10:49:29 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 10:49:29 - Listando todos los usuarios...
+2025-03-07 10:49:29 - Obteniendo estadísticas de usuarios...
+2025-03-07 10:49:48 - El administrador solicitó la lista de usuarios.
+2025-03-07 10:49:48 - Listando todos los usuarios...
+2025-03-07 10:49:48 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 10:49:48 - Obteniendo estadísticas de usuarios...
+2025-03-07 10:50:05 - El administrador solicitó la lista de usuarios.
+2025-03-07 10:50:05 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 10:50:05 - Listando todos los usuarios...
+2025-03-07 10:50:05 - Obteniendo estadísticas de usuarios...
+2025-03-07 11:58:43 - Starting EstadisticasAppApplication using Java 23 with PID 7888 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
+2025-03-07 11:58:43 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-03-07 11:58:43 - No active profile set, falling back to 1 default profile: "default"
+2025-03-07 11:58:44 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-07 11:58:44 - Finished Spring Data repository scanning in 92 ms. Found 1 JPA repository interface.
+2025-03-07 11:58:46 - Tomcat initialized with port 8081 (http)
+2025-03-07 11:58:46 - Arrancando servicio [Tomcat]
+2025-03-07 11:58:46 - Starting Servlet engine: [Apache Tomcat/11.0.0-M22]
+2025-03-07 11:58:46 - Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+2025-03-07 11:58:46 - Initializing Spring embedded WebApplicationContext
+2025-03-07 11:58:46 - Root WebApplicationContext: initialization completed in 2244 ms
+2025-03-07 11:58:46 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-07 11:58:46 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-03-07 11:58:46 - HHH000026: Second-level cache disabled
+2025-03-07 11:58:47 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-07 11:58:47 - HikariPool-1 - Starting...
+2025-03-07 11:58:47 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@52b32b70
+2025-03-07 11:58:47 - HikariPool-1 - Start completed.
+2025-03-07 11:58:47 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-07 11:58:49 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-07 11:58:49 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-07 11:58:49 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-07 11:58:50 - Tomcat started on port 8081 (http) with context path '/'
+2025-03-07 11:58:50 - Started EstadisticasAppApplication in 6.823 seconds (process running for 7.346)
+2025-03-07 11:59:26 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-07 11:59:26 - Initializing Servlet 'dispatcherServlet'
+2025-03-07 11:59:26 - Completed initialization in 1 ms
+2025-03-07 11:59:26 - Intento de inicio de sesión para email: osteologia2@gmail.com
+2025-03-07 11:59:26 - Autenticando usuario osteologia2@gmail.com
+2025-03-07 11:59:27 - Usuario osteologia2@gmail.com autenticado correctamente
+2025-03-07 11:59:27 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
+2025-03-07 11:59:27 - Inicio de sesión exitoso para osteologia2@gmail.com
+2025-03-07 11:59:28 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 11:59:28 - Obteniendo estadísticas de usuarios...
+2025-03-07 11:59:28 - El administrador solicitó la lista de usuarios.
+2025-03-07 11:59:28 - Listando todos los usuarios...
+2025-03-07 12:00:23 - Intento de inicio de sesión para email: osteologia2@gmail.com
+2025-03-07 12:00:23 - Autenticando usuario osteologia2@gmail.com
+2025-03-07 12:00:23 - Usuario osteologia2@gmail.com autenticado correctamente
+2025-03-07 12:00:23 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
+2025-03-07 12:00:23 - Inicio de sesión exitoso para osteologia2@gmail.com
+2025-03-07 12:00:24 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 12:00:24 - Obteniendo estadísticas de usuarios...
+2025-03-07 12:00:24 - El administrador solicitó la lista de usuarios.
+2025-03-07 12:00:24 - Listando todos los usuarios...
+2025-03-07 12:01:10 - Intento de inicio de sesión para email: osteologia2@gmail.com
+2025-03-07 12:01:10 - Autenticando usuario osteologia2@gmail.com
+2025-03-07 12:01:10 - Usuario osteologia2@gmail.com autenticado correctamente
+2025-03-07 12:01:10 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
+2025-03-07 12:01:10 - Inicio de sesión exitoso para osteologia2@gmail.com
+2025-03-07 12:01:12 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 12:01:12 - Obteniendo estadísticas de usuarios...
+2025-03-07 12:01:12 - El administrador solicitó la lista de usuarios.
+2025-03-07 12:01:12 - Listando todos los usuarios...
+2025-03-07 12:06:41 - Intento de inicio de sesión para email: osteologia2@gmail.com
+2025-03-07 12:06:41 - Autenticando usuario osteologia2@gmail.com
+2025-03-07 12:06:41 - Usuario osteologia2@gmail.com autenticado correctamente
+2025-03-07 12:06:41 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
+2025-03-07 12:06:41 - Inicio de sesión exitoso para osteologia2@gmail.com
+2025-03-07 12:06:42 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 12:06:42 - Obteniendo estadísticas de usuarios...
+2025-03-07 12:06:42 - El administrador solicitó la lista de usuarios.
+2025-03-07 12:06:42 - Listando todos los usuarios...
+2025-03-07 12:07:54 - Intento de inicio de sesión para email: osteologia2@gmail.com
+2025-03-07 12:07:54 - Autenticando usuario osteologia2@gmail.com
+2025-03-07 12:07:54 - Usuario osteologia2@gmail.com autenticado correctamente
+2025-03-07 12:07:54 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
+2025-03-07 12:07:54 - Inicio de sesión exitoso para osteologia2@gmail.com
+2025-03-07 12:07:55 - El administrador solicitó la lista de usuarios.
+2025-03-07 12:07:55 - Listando todos los usuarios...
+2025-03-07 12:07:55 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 12:07:55 - Obteniendo estadísticas de usuarios...
+2025-03-07 12:09:09 - Intento de inicio de sesión para email: osteologia2@gmail.com
+2025-03-07 12:09:09 - Autenticando usuario osteologia2@gmail.com
+2025-03-07 12:09:09 - Usuario osteologia2@gmail.com autenticado correctamente
+2025-03-07 12:09:09 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
+2025-03-07 12:09:09 - Inicio de sesión exitoso para osteologia2@gmail.com
+2025-03-07 12:09:11 - El administrador solicitó la lista de usuarios.
+2025-03-07 12:09:11 - Listando todos los usuarios...
+2025-03-07 12:09:11 - El administrador ha solicitado las estadísticas de usuarios.
+2025-03-07 12:09:11 - Obteniendo estadísticas de usuarios...
