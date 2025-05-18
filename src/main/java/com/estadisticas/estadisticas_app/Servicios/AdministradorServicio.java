@@ -1,6 +1,7 @@
 package com.estadisticas.estadisticas_app.Servicios;
 
 import java.io.IOException;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -8,19 +9,23 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+
 import com.estadisticas.estadisticas_app.Modelos.Usuario;
 import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepositorio;
+
 
 @Service
 public class AdministradorServicio {
 
     private static final Logger logger = LoggerFactory.getLogger(AdministradorServicio.class);
-
+   
     @Autowired
     private UsuarioRepositorio usuarioRepository;
+    
 
     /**
      * Lista todos los usuarios registrados en el sistema.
@@ -45,10 +50,6 @@ public class AdministradorServicio {
                 usuario.setTelefonoUsuario(usuarioActualizado.getTelefonoUsuario());
                 usuario.setRolUsuario(usuarioActualizado.getRolUsuario());
                 usuario.setVerificado(usuarioActualizado.isVerificado());
-                usuario.setTipoSuscripcion(usuarioActualizado.getTipoSuscripcion());
-                usuario.setEstadoSuscripcion(usuarioActualizado.getEstadoSuscripcion());
-                usuario.setFechaInicioSuscripcion(usuarioActualizado.getFechaInicioSuscripcion());
-                usuario.setFechaFinSuscripcion(usuarioActualizado.getFechaFinSuscripcion());
 
                 if (foto != null && !foto.isEmpty()) {
                     try {
@@ -75,9 +76,14 @@ public class AdministradorServicio {
      * @param id ID del usuario a eliminar.
      */
     public void eliminarUsuario(Long id) {
+    	final Long ID_ADMIN = (long) 20; // Asumes que el admin tiene este ID fijo
         if (!usuarioRepository.existsById(id)) {
             logger.warn("Intento de eliminar usuario no encontrado con ID: {}", id);
             throw new IllegalArgumentException("Usuario no encontrado con el ID: " + id);
+        }
+        if (id.equals(ID_ADMIN)) {
+            logger.warn("Intento de eliminar al administrador con ID: {}", id);
+            throw new IllegalArgumentException("No se puede eliminar al administrador.");
         }
         usuarioRepository.deleteById(id);
         logger.info("Usuario con ID {} ha sido eliminado.", id);
@@ -96,22 +102,14 @@ public class AdministradorServicio {
         long admins = usuarioRepository.countByRolUsuario("ADMIN");
         long usuarios = usuarioRepository.countByRolUsuario("USUARIO");
 
-        long suscripcionesFree = usuarioRepository.countByTipoSuscripcion("FREE");
-        long suscripcionesPremium = usuarioRepository.countByTipoSuscripcion("PREMIUM");
-        long suscripcionesActivas = usuarioRepository.countByEstadoSuscripcion("ACTIVA");
-        long suscripcionesInactivas = usuarioRepository.countByEstadoSuscripcion("INACTIVA");
-
+        
         Map<String, Long> estadisticas = new HashMap<>();
         estadisticas.put("Total de Usuarios", totalUsuarios);
         estadisticas.put("Usuarios Verificados", usuariosVerificados);
         estadisticas.put("Usuarios No Verificados", usuariosNoVerificados);
         estadisticas.put("Administradores", admins);
         estadisticas.put("Usuarios", usuarios);
-        estadisticas.put("Suscripciones Free", suscripcionesFree);
-        estadisticas.put("Suscripciones Premium", suscripcionesPremium);
-        estadisticas.put("Suscripciones Activas", suscripcionesActivas);
-        estadisticas.put("Suscripciones Inactivas", suscripcionesInactivas);
-
+      
         return estadisticas;
     }
 
@@ -128,6 +126,8 @@ public class AdministradorServicio {
                 return new IllegalArgumentException("Usuario no encontrado con ID: " + id);
             });
     }
+    
+   
 }
 
 

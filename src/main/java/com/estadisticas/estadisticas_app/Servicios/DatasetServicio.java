@@ -1,5 +1,225 @@
 package com.estadisticas.estadisticas_app.Servicios;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+import java.util.stream.Collectors;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.estadisticas.estadisticas_app.Dtos.DatasetDto;
+import com.estadisticas.estadisticas_app.Dtos.DatasetMetadataDto;
+import com.estadisticas.estadisticas_app.Modelos.Categoria;
+import com.estadisticas.estadisticas_app.Modelos.Dataset;
+import com.estadisticas.estadisticas_app.Modelos.Usuario;
+import com.estadisticas.estadisticas_app.Repositorios.CategoriaRepositorio;
+import com.estadisticas.estadisticas_app.Repositorios.DatasetRepositorio;
+import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepositorio;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.transaction.Transactional;
+
+@Service
 public class DatasetServicio {
+	
+	 private static final Logger logger = LoggerFactory.getLogger(AdministradorServicio.class);
+	    
+
+	    @Value("${dataset.upload.dir}")
+	    private String uploadDir;
+
+	    @PostConstruct
+	    public void init() {
+	        // Convierte a ruta absoluta si hace falta
+	        uploadDir = Paths.get(System.getProperty("user.dir"), uploadDir).toString();
+	    }
+
+	    @Autowired
+	    private UsuarioRepositorio usuarioRepository;
+	    @Autowired
+	    private CategoriaRepositorio categoriaRepository;
+	    @Autowired
+	    private DatasetRepositorio datasetRepository;
+
+	
+	   @Transactional
+	    /**
+	     * Método para subir un nuevo dataset por parte del admin
+	     */
+	    public Dataset subirDataset(DatasetMetadataDto metadata, MultipartFile archivo, Long idAdmin) throws IOException {
+
+	        // 1. Verifica que el usuario exista
+	        Usuario admin = usuarioRepository.findById(idAdmin)
+	                .orElseThrow(() -> new IllegalArgumentException("Usuario administrador no encontrado."));
+
+	        // 2. Verifica que la categoría exista
+	        Categoria categoria = categoriaRepository.findById(metadata.getIdCategoria())
+	                .orElseThrow(() -> new IllegalArgumentException("Categoría no encontrada."));
+	        
+	        // 3. Validar que la extensión del archivo coincida con el formato declarado
+	        String formatoEsperado = metadata.getFormatoDataset().toLowerCase();
+	        String extensionArchivo = obtenerExtensionArchivo(archivo.getOriginalFilename()).toLowerCase();
+
+	        Map<String, List<String>> formatosValidos = Map.of(
+	            "csv", List.of("csv"),
+	            "json", List.of("json"),
+	            "xlsx", List.of("xlsx")
+	        );
+
+	        if (!formatosValidos.getOrDefault(formatoEsperado, List.of()).contains(extensionArchivo)) {
+	            throw new IllegalArgumentException("El archivo no corresponde al formato declarado: " + metadata.getFormatoDataset());
+	        }
+
+	        // 4. Genera nombre único para el archivo
+	        String nombreArchivo = UUID.randomUUID() + "_" + archivo.getOriginalFilename();
+
+	        // 5. Asegura que el directorio exista
+	        java.nio.file.Path uploadPath = Paths.get(uploadDir);
+	        if (!Files.exists(uploadPath)) {
+	            Files.createDirectories(uploadPath);
+	            logger.info("Directorio creado: {}", uploadPath.toAbsolutePath());
+	        }
+
+	        // 6. Guarda el archivo físicamente en disco
+	        java.nio.file.Path rutaArchivo = uploadPath.resolve(nombreArchivo);
+	        Files.copy(archivo.getInputStream(), rutaArchivo, StandardCopyOption.REPLACE_EXISTING);
+	        logger.info("Archivo guardado en: {}", rutaArchivo.toAbsolutePath());
+
+	        // 7. Crea y guarda el dataset
+	        Dataset dataset = new Dataset();
+	        dataset.setNombreDataset(metadata.getNombreDataset());
+	        dataset.setFuenteDataset(metadata.getFuenteDataset());
+	        dataset.setDescripcionDataset(metadata.getDescripcionDataset());
+	        dataset.setFormatoDataset(metadata.getFormatoDataset());
+	        dataset.setFechaActualizacionDataset(LocalDate.now());
+	        dataset.setArchivoDataset(nombreArchivo); // Solo guardamos el nombre del archivo
+	        dataset.setCategoria(categoria);
+	        dataset.setSubidoPor(admin);
+
+	        // 8. Guardar en BD
+	        return datasetRepository.save(dataset);
+	    }
+	   @Transactional
+	   	/**
+	     * Método para listar los datasets llamado para el controlador de consultas(usuarios) y dataset controlador (administrador).
+	     */
+	    public List<DatasetDto> listarTodosLosDatasets() {
+	        List<Dataset> datasets = datasetRepository.findAll();
+
+	        return datasets.stream().map(dataset -> {
+	            DatasetDto dto = new DatasetDto();
+	            dto.setId(dataset.getIdDataset());
+	            dto.setNombreDataset(dataset.getNombreDataset());
+	            dto.setFuenteDataset(dataset.getFuenteDataset());
+	            dto.setDescripcionDataset(dataset.getDescripcionDataset());
+	            dto.setFormatoDataset(dataset.getFormatoDataset());
+	            dto.setFechaActualizacionDataset(dataset.getFechaActualizacionDataset());
+
+	            // Accedemos con precaución a relaciones que podrían ser lazy
+	            if (dataset.getCategoria() != null) {
+	                dto.setNombreCategoria(dataset.getCategoria().getNombreCategoria());
+	            }
+
+	            if (dataset.getSubidoPor() != null) {
+	                dto.setSubidoPorNombre(dataset.getSubidoPor().getNombreUsuario());
+	            }
+
+	            return dto;
+	        }).collect(Collectors.toList());
+	    }
+	 // Método auxiliar para obtener la extensión del archivo
+	    private String obtenerExtensionArchivo(String nombreArchivo) {
+	        if (nombreArchivo == null || !nombreArchivo.contains(".")) return "";
+	        return nombreArchivo.substring(nombreArchivo.lastIndexOf('.') + 1);
+	    }
+	    @Transactional
+	    /**
+	     * Método para filtrar los datasets llamado desde el contraolador de consultas y el controlador de datasets.
+	     */
+	    public List<DatasetDto> filtrarDatasets(String nombre, String formato, Long idCategoria) {
+	        List<Dataset> resultados;
+
+	        if (nombre == null && formato == null && idCategoria == null) {
+	            resultados = datasetRepository.findAll(); // sin filtros
+	        } else {
+	            resultados = datasetRepository.findByFiltros(
+	                    nombre != null ? "%" + nombre + "%" : null,
+	                    formato,
+	                    idCategoria
+	            );
+	        }
+
+	        return resultados.stream()
+	                .map(this::convertirADto)
+	                .toList();
+	    }
+
+	    private DatasetDto convertirADto(Dataset dataset) {
+	        DatasetDto dto = new DatasetDto();
+	        dto.setId(dataset.getIdDataset());
+	        dto.setNombreDataset(dataset.getNombreDataset());
+	        dto.setFuenteDataset(dataset.getFuenteDataset());
+	        dto.setDescripcionDataset(dataset.getDescripcionDataset());
+	        dto.setFormatoDataset(dataset.getFormatoDataset());
+	        dto.setFechaActualizacionDataset(dataset.getFechaActualizacionDataset());
+
+	        if (dataset.getCategoria() != null) {
+	            dto.setNombreCategoria(dataset.getCategoria().getNombreCategoria());
+	        }
+
+	        if (dataset.getSubidoPor() != null) {
+	            dto.setSubidoPorNombre(dataset.getSubidoPor().getNombreUsuario());
+	        }
+
+	        return dto;
+	    }
+	    /**
+	     * Método para eliminar un dataset por parte del admin
+	     */
+	    @Transactional
+	    public boolean eliminarDataset(Long id) {
+	        return datasetRepository.findById(id).map(dataset -> {
+	            // Eliminar el archivo físico del disco
+	            Path archivoPath = Paths.get(uploadDir).resolve(dataset.getArchivoDataset());
+	            try {
+	                Files.deleteIfExists(archivoPath);  // 🔥 Elimina el archivo físico si existe
+	            } catch (IOException e) {
+	                logger.error("Error al eliminar el archivo del dataset: {}", archivoPath, e);
+	            }
+
+	            // Eliminar el dataset de la base de datos
+	            datasetRepository.deleteById(id);
+	            return true;
+	        }).orElse(false);
+	    }
+
+	    
+	    @Transactional
+	    public Resource obtenerArchivoDataset(Long id) throws Exception {
+	        Dataset dataset = datasetRepository.findById(id)
+	            .orElseThrow(() -> new Exception("Dataset no encontrado"));
+
+	        Path path = Paths.get(uploadDir).resolve(dataset.getArchivoDataset());
+	        Resource resource = new UrlResource(path.toUri());
+
+	        if (resource.exists() || resource.isReadable()) {
+	            return resource;
+	        } else {
+	            throw new Exception("No se puede leer el archivo");
+	        }
+	    }
 
 }

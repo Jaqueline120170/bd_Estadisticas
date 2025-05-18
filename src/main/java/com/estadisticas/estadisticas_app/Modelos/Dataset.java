@@ -1,57 +1,73 @@
 package com.estadisticas.estadisticas_app.Modelos;
 
-import java.time.LocalDate;
-import java.util.List;
 import jakarta.persistence.*;
+import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "datasets", schema = "gestion")
+@JsonIgnoreProperties({"categoria"})  // Ignora la propiedad 'categoria' durante la serialización
 public class Dataset {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_dataset")
-    private Long id;
+    private Long idDataset;
 
     @Column(name = "nombre_dataset", nullable = false)
     private String nombreDataset;
 
-    @Column(name = "fuente_dataset", nullable = true)
+    @Column(name = "fuente_dataset")
     private String fuenteDataset;
 
-    @Column(name = "descripcion_dataset", nullable = true)
+    @Column(name = "descripcion_dataset")
     private String descripcionDataset;
 
-    @Column(name = "archivo_dataset", nullable = true)
-    private String archivoUrl;
+    @Column(name = "archivo_dataset")
+    private String archivoDataset;
+
+    @Column(name = "formato_dataset", columnDefinition = "varchar")
+    private String formatoDataset;
 
     @Column(name = "fecha_actualizacion_dataset", nullable = false)
     private LocalDate fechaActualizacionDataset;
 
-    // Relación 1:n con Indicadores
-    @OneToMany(mappedBy = "dataset", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Indicador> indicadores;
+    // Relación con Usuario que lo subió
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "subido_por")
+    private Usuario subidoPor;
 
-    // Constructores
+    // Relación con Categoría
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_categoria")
+    private Categoria categoria;
+
+    // Constructor vacío
     public Dataset() {}
 
-    public Dataset(Long id, String nombreDataset, String fuenteDataset, String descripcionDataset, 
-                   String archivoUrl, LocalDate fechaActualizacionDataset) {
-        this.id = id;
+    // Constructor completo
+    public Dataset(Long idDataset, String nombreDataset, String fuenteDataset, String descripcionDataset,
+                   String archivoDataset, String formatoDataset, LocalDate fechaActualizacionDataset,
+                   Usuario subidoPor, Categoria categoria) {
+        this.idDataset = idDataset;
         this.nombreDataset = nombreDataset;
         this.fuenteDataset = fuenteDataset;
         this.descripcionDataset = descripcionDataset;
-        this.archivoUrl = archivoUrl;
+        this.archivoDataset = archivoDataset;
+        this.formatoDataset = formatoDataset;
         this.fechaActualizacionDataset = fechaActualizacionDataset;
+        this.subidoPor = subidoPor;
+        this.categoria = categoria;
     }
 
-    // Getters y Setters
-    public Long getId() {
-        return id;
+    // Getters y setters
+    public Long getIdDataset() {
+        return idDataset;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdDataset(Long idDataset) {
+        this.idDataset = idDataset;
     }
 
     public String getNombreDataset() {
@@ -78,12 +94,20 @@ public class Dataset {
         this.descripcionDataset = descripcionDataset;
     }
 
-    public String getArchivoUrl() {
-        return archivoUrl;
+    public String getArchivoDataset() {
+        return archivoDataset;
     }
 
-    public void setArchivoUrl(String archivoUrl) {
-        this.archivoUrl = archivoUrl;
+    public void setArchivoDataset(String archivoDataset) {
+        this.archivoDataset = archivoDataset;
+    }
+
+    public String getFormatoDataset() {
+        return formatoDataset;
+    }
+
+    public void setFormatoDataset(String formatoDataset) {
+        this.formatoDataset = formatoDataset;
     }
 
     public LocalDate getFechaActualizacionDataset() {
@@ -94,18 +118,33 @@ public class Dataset {
         this.fechaActualizacionDataset = fechaActualizacionDataset;
     }
 
-    public List<Indicador> getIndicadores() {
-        return indicadores;
+    public Usuario getSubidoPor() {
+        return subidoPor;
     }
 
-    public void setIndicadores(List<Indicador> indicadores) {
-        this.indicadores = indicadores;
+    public void setSubidoPor(Usuario subidoPor) {
+        this.subidoPor = subidoPor;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
     @Override
     public String toString() {
-        return "Dataset [id=" + id + ", nombreDataset=" + nombreDataset + ", fuenteDataset=" + fuenteDataset
-                + ", descripcionDataset=" + descripcionDataset + ", archivoUrl=" + archivoUrl
-                + ", fechaActualizacionDataset=" + fechaActualizacionDataset + "]";
+        return "Dataset{" +
+                "idDataset=" + idDataset +
+                ", nombreDataset='" + nombreDataset + '\'' +
+                ", fuenteDataset='" + fuenteDataset + '\'' +
+                ", descripcionDataset='" + descripcionDataset + '\'' +
+                ", archivoDataset='" + archivoDataset + '\'' +
+                ", formatoDataset='" + formatoDataset + '\'' +
+                ", fechaActualizacionDataset=" + fechaActualizacionDataset +
+                '}';
     }
 }
+

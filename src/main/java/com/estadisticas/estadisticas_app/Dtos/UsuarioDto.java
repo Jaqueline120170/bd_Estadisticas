@@ -32,15 +32,7 @@ public class UsuarioDto {
     /** Estado de verificación del usuario (si ha sido verificado o no). */
     private boolean verificado;
 
-    /** Fecha de inicio de la suscripción del usuario. */
-    private LocalDateTime fechaInicioSuscripcion;
-
-    /** Estado de la suscripción del usuario (activa, caducada o pendiente). */
-    private EstadoSuscripcion estadoSuscripcion;
-
-    /** Fecha de finalización de la suscripción del usuario. */
-    private LocalDateTime fechaFinSuscripcion;
-
+    
     /**
      * Obtiene el ID del usuario.
      *
@@ -185,66 +177,7 @@ public class UsuarioDto {
         this.verificado = verificado;
     }
 
-    /**
-     * Obtiene la fecha de inicio de la suscripción del usuario.
-     *
-     * @return la fecha de inicio de la suscripción.
-     */
-    public LocalDateTime getFechaInicioSuscripcion() {
-        return fechaInicioSuscripcion;
-    }
+    
 
-    /**
-     * Establece la fecha de inicio de la suscripción del usuario.
-     *
-     * @param fechaInicioSuscripcion la fecha de inicio de la suscripción.
-     */
-    public void setFechaInicioSuscripcion(LocalDateTime fechaInicioSuscripcion) {
-        this.fechaInicioSuscripcion = fechaInicioSuscripcion;
-    }
-
-    /**
-     * Obtiene el estado de la suscripción del usuario.
-     *
-     * @return el estado de la suscripción (ACTIVA, CADUCADA, PENDIENTE).
-     */
-    public EstadoSuscripcion getEstadoSuscripcion() {
-        return estadoSuscripcion;
-    }
-
-    /**
-     * Establece el estado de la suscripción del usuario.
-     *
-     * @param estadoSuscripcion el estado de la suscripción.
-     */
-    public void setEstadoSuscripcion(EstadoSuscripcion estadoSuscripcion) {
-        this.estadoSuscripcion = estadoSuscripcion;
-    }
-
-    /**
-     * Obtiene la fecha de finalización de la suscripción del usuario.
-     *
-     * @return la fecha de finalización de la suscripción.
-     */
-    public LocalDateTime getFechaFinSuscripcion() {
-        return fechaFinSuscripcion;
-    }
-
-    /**
-     * Establece la fecha de finalización de la suscripción del usuario.
-     *
-     * @param fechaFinSuscripcion la fecha de finalización de la suscripción.
-     */
-    public void setFechaFinSuscripcion(LocalDateTime fechaFinSuscripcion) {
-        this.fechaFinSuscripcion = fechaFinSuscripcion;
-    }
-
-    /**
-     * Enum que representa los posibles estados de la suscripción del usuario.
-     */
-    public enum EstadoSuscripcion {
-        ACTIVA,    // Suscripción activa
-        CADUCADA,  // Suscripción caducada
-        PENDIENTE  // Suscripción pendiente
-    }
+   
 }

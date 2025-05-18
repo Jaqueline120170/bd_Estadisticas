@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
@@ -12,7 +13,9 @@ import org.slf4j.LoggerFactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,15 +24,22 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.estadisticas.estadisticas_app.Dtos.ConsultaDto;
+import com.estadisticas.estadisticas_app.Dtos.DescargaDto;
 import com.estadisticas.estadisticas_app.Dtos.LoginUsuarioDto;
 import com.estadisticas.estadisticas_app.Dtos.RegistroUsuarioDto;
 import com.estadisticas.estadisticas_app.Modelos.Usuario;
 import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepositorio;
+import com.estadisticas.estadisticas_app.Servicios.AdministradorServicio;
+import com.estadisticas.estadisticas_app.Servicios.ConsultaServicio;
 import com.estadisticas.estadisticas_app.Servicios.UsuarioServicio;
 
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.servlet.http.HttpServletResponse;
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -39,6 +49,7 @@ public class UsuarioControlador {
 
     @Autowired
     private UsuarioServicio usuarioServicio;
+    
     @Autowired
     private UsuarioRepositorio usuarioRepository; // Inyectamos el repositorio
     private static final Logger logger = LoggerFactory.getLogger(UsuarioServicio.class);
@@ -228,6 +239,8 @@ public class UsuarioControlador {
             response.put("nombre", usuario.getNombreUsuario());
             response.put("rol", usuario.getRolUsuario());  // Puede ser "ADMIN" o "USUARIO"
             response.put("token", token);
+            response.put("id", usuario.getIdUsuario()); // <--- Esto es lo importante
+
 
             return ResponseEntity.ok(response);
         } catch (IllegalStateException e) {
@@ -238,45 +251,30 @@ public class UsuarioControlador {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", e.getMessage()));
         }
     }
+    // Endpoint para obtener los datos del perfil del usuario autenticado
+    @GetMapping("/{id}")
+    public ResponseEntity<Usuario> obtenerPorId(@PathVariable Long id) {
+        Optional<Usuario> usuario = usuarioRepository.findById(id);
+        return usuario.map(ResponseEntity::ok)
+                      .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+    @PutMapping("/{id}")
+    public ResponseEntity<?> actualizarPerfil(
+            @PathVariable Long id,
+            @RequestParam(required = false) String nombreUsuario,
+            @RequestParam(required = false) String telefonoUsuario,
+            @RequestParam(required = false) MultipartFile fotoUsuario) {
+        try {
+            usuarioServicio.actualizarUsuarioParcial(id, nombreUsuario, telefonoUsuario, fotoUsuario);
+            return ResponseEntity.ok(Map.of("mensaje", "Perfil actualizado correctamente"));
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al procesar la imagen");
+        }
+    }
     
 
-    /**
-     * Actualiza el rol de un usuario a "Premier".
-     *
-     * @param request Contiene el email del usuario.
-     * @return Respuesta HTTP con mensaje de éxito o error.
-     */
-    @PutMapping("/actualizar-rol-premier")
-    public ResponseEntity<?> actualizarRolAPremier(@RequestBody Map<String, String> request) {
-        String email = request.get("email");
-        logger.info("Solicitud para actualizar a rol Premier: {}", email);
-        try {
-            usuarioServicio.actualizarRolAPremier(email);
-            logger.info("Rol actualizado a Premier para: {}", email);
-            return ResponseEntity.ok(Map.of("message", "Rol actualizado a premier"));
-        } catch (Exception e) {
-            logger.warn("Error al actualizar rol a Premier: {}", e.getMessage());
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", e.getMessage()));
-        }
-    }
-    /**
-     * Activa la suscripción premium para un usuario.
-     *
-     * @param id ID del usuario.
-     * @return Respuesta HTTP con mensaje de éxito o error.
-     */
-    @PostMapping("/{id}/suscripcion-premium")
-    public ResponseEntity<?> activarSuscripcionPremium(@PathVariable Long id) {
-        logger.info("Intento de activación de suscripción premium para usuario ID: {}", id);
-        try {
-            usuarioServicio.activarSuscripcionPremium(id);
-            logger.info("Usuario ID {} ahora es premium.", id);
-            return ResponseEntity.ok("El usuario ahora es premium.");
-        } catch (IllegalArgumentException e) {
-            logger.warn("Error al activar suscripción premium para usuario ID {}: {}", id, e.getMessage());
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
-    }
     /**
      * Recibe logs desde el frontend y los registra con el nivel adecuado.
      * 

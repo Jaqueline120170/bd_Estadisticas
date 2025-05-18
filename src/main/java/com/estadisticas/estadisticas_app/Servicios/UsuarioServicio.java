@@ -1,5 +1,6 @@
 package com.estadisticas.estadisticas_app.Servicios;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.estadisticas.estadisticas_app.Dtos.LoginUsuarioDto;
 import com.estadisticas.estadisticas_app.Dtos.RegistroUsuarioDto;
@@ -18,6 +20,7 @@ import com.estadisticas.estadisticas_app.Modelos.Usuario;
 import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepositorio;
 import com.estadisticas.estadisticas_app.Utils.ValidacionesUtil;
 
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 
 @Service
@@ -251,18 +254,26 @@ public class UsuarioServicio {
         logger.info("Usuario {} autenticado correctamente", loginDto.getEmailUsuario());
         return usuario; // Si pasa todo, retorna el usuario autenticado
     }
-    
-    public void actualizarRolAPremier(String email) {
-        Usuario usuario = usuarioRepository
-            .findByEmailUsuario(email)
-            .orElseThrow(() -> new IllegalArgumentException("Usuario no encontrado"));
+   
 
-        usuario.setRolUsuario("premier");
-        
-        usuarioRepository.save(usuario);
+    public Usuario actualizarUsuarioParcial(Long id, String nombreUsuario, String telefonoUsuario, MultipartFile fotoUsuario) throws IOException {
+        Usuario usuario = usuarioRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+
+        if (nombreUsuario != null && !nombreUsuario.isBlank()) {
+            usuario.setNombreUsuario(nombreUsuario);
+        }
+
+        if (telefonoUsuario != null && !telefonoUsuario.isBlank()) {
+            usuario.setTelefonoUsuario(telefonoUsuario);
+        }
+
+        if (fotoUsuario != null && !fotoUsuario.isEmpty()) {
+            usuario.setFotoUsuario(fotoUsuario.getBytes());
+        }
+
+        return usuarioRepository.save(usuario);
     }
-
-
     /**
      * Método que Genera un token de verificación único.
      * @return token único generado
@@ -271,8 +282,5 @@ public class UsuarioServicio {
         return UUID.randomUUID().toString();
     }
 
-	public void activarSuscripcionPremium(Long id) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }

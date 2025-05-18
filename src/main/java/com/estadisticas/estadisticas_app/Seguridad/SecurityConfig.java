@@ -1,5 +1,6 @@
 package com.estadisticas.estadisticas_app.Seguridad;
 
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
@@ -26,7 +27,5 @@ public class SecurityConfig {
         // Se retorna una instancia de BCryptPasswordEncoder que proporcionará un hashing seguro de contraseñas
         return new BCryptPasswordEncoder();
     }
-    
-    
- 
+  
 }

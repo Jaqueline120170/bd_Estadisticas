@@ -2,30 +2,18 @@ package com.estadisticas.estadisticas_app.Dtos;
 
 import java.time.LocalDate;
 
-//Este DTO se usa en las respuestas para que los usuarios consulten o visualicen datasets en una tabla, gráfica o lista.
-public class DatasetDto {
-
-    private Long idDataset;
+//Este es el DTO que recibirás desde el frontend cuando el admin sube un dataset manualmente:
+public class DatasetMetadataDto {
 
     private String nombreDataset;
     private String fuenteDataset;
     private String descripcionDataset;
-    private String formatoDataset;
+    private String formatoDataset;         // CSV, JSON, XLS, etc.
     private LocalDate fechaActualizacionDataset;
-
-    private String nombreCategoria;   // Nombre legible de la categoría
-    private String subidoPorNombre;   // Nombre del usuario/admin que lo subió
+    private Long idCategoria;              // Relación con la categoría seleccionada
+    private Long idSubidoPor;              // ID del admin que lo sube (opcional si ya lo tienes del contexto)
 
     // Getters y Setters
-
-    public Long getIdDataset() {
-        return idDataset;
-    }
-
-    public void setId(Long idDataset) {
-        this.idDataset = idDataset;
-    }
-
     public String getNombreDataset() {
         return nombreDataset;
     }
@@ -66,19 +54,19 @@ public class DatasetDto {
         this.fechaActualizacionDataset = fechaActualizacionDataset;
     }
 
-    public String getNombreCategoria() {
-        return nombreCategoria;
+    public Long getIdCategoria() {
+        return idCategoria;
     }
 
-    public void setNombreCategoria(String nombreCategoria) {
-        this.nombreCategoria = nombreCategoria;
+    public void setIdCategoria(Long idCategoria) {
+        this.idCategoria = idCategoria;
     }
 
-    public String getSubidoPorNombre() {
-        return subidoPorNombre;
+    public Long getIdSubidoPor() {
+        return idSubidoPor;
     }
 
-    public void setSubidoPorNombre(String subidoPorNombre) {
-        this.subidoPorNombre = subidoPorNombre;
+    public void setIdSubidoPor(Long idSubidoPor) {
+        this.idSubidoPor = idSubidoPor;
     }
 }

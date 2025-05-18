@@ -90,21 +90,7 @@ public interface UsuarioRepositorio extends JpaRepository<Usuario, Long> {
      */
     long countByRolUsuario(String rolUsuario);
 
-    /**
-     * Cuenta cuántos usuarios existen con un tipo de suscripción específico.
-     * 
-     * @param tipoSuscripcion el tipo de suscripción (por ejemplo, "FREE" o "PREMIUM").
-     * @return la cantidad de usuarios con ese tipo de suscripción.
-     */
-    long countByTipoSuscripcion(String tipoSuscripcion);
-
-    /**
-     * Cuenta cuántos usuarios existen con un estado de suscripción específico.
-     * 
-     * @param estadoSuscripcion el estado de la suscripción (por ejemplo, "ACTIVA" o "INACTIVA").
-     * @return la cantidad de usuarios con ese estado de suscripción.
-     */
-    long countByEstadoSuscripcion(String estadoSuscripcion);
+    
 
     /**
      * Busca un usuario por su ID único.

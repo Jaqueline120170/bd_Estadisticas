@@ -1,8 +1,8 @@
 package com.estadisticas.estadisticas_app.Modelos;
 
+import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
-import jakarta.persistence.*;
 
 @Entity
 @Table(name = "consultas", schema = "gestion")
@@ -13,41 +13,36 @@ public class Consulta {
     @Column(name = "id_consulta", updatable = false)
     private Long idConsulta;
 
-    // Relación n:1 con Usuario
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_usuario", nullable = false)
     private Usuario usuario;
 
-    // Relación n:m con Indicadores
-    @ManyToMany
-    @JoinTable(
-        name = "consulta_indicador",
-        schema = "gestion",
-        joinColumns = @JoinColumn(name = "id_consulta"),
-        inverseJoinColumns = @JoinColumn(name = "id_indicador")
-    )
-    private List<Indicador> indicadores;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_dataset", nullable = false)
+    private Dataset dataset;
 
-    // Parámetros adicionales para la consulta
-    @Column(name = "parametros_consulta", nullable = true)
-    private String parametros;
+    @Column(name = "filtros")
+    private String filtros;
 
-    // Fecha en la que se realizó la consulta
     @Column(name = "fecha_consulta", nullable = false)
     private LocalDate fechaConsulta;
 
-    // Constructores
+    // NUEVO: Relación con Descargas
+    @OneToMany(mappedBy = "consulta", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Descarga> descargas;
+
     public Consulta() {}
 
-    public Consulta(Long idConsulta, Usuario usuario, List<Indicador> indicadores, String parametros, LocalDate fechaConsulta) {
+    public Consulta(Long idConsulta, Usuario usuario, Dataset dataset, String filtros, LocalDate fechaConsulta) {
         this.idConsulta = idConsulta;
         this.usuario = usuario;
-        this.indicadores = indicadores;
-        this.parametros = parametros;
+        this.dataset = dataset;
+        this.filtros = filtros;
         this.fechaConsulta = fechaConsulta;
     }
 
-    // Getters y Setters
+    // getters y setters de todos los atributos incluyendo descargas
+
     public Long getIdConsulta() {
         return idConsulta;
     }
@@ -64,20 +59,20 @@ public class Consulta {
         this.usuario = usuario;
     }
 
-    public List<Indicador> getIndicadores() {
-        return indicadores;
+    public Dataset getDataset() {
+        return dataset;
     }
 
-    public void setIndicadores(List<Indicador> indicadores) {
-        this.indicadores = indicadores;
+    public void setDataset(Dataset dataset) {
+        this.dataset = dataset;
     }
 
-    public String getParametros() {
-        return parametros;
+    public String getFiltros() {
+        return filtros;
     }
 
-    public void setParametros(String parametros) {
-        this.parametros = parametros;
+    public void setFiltros(String filtros) {
+        this.filtros = filtros;
     }
 
     public LocalDate getFechaConsulta() {
@@ -88,10 +83,23 @@ public class Consulta {
         this.fechaConsulta = fechaConsulta;
     }
 
+    public List<Descarga> getDescargas() {
+        return descargas;
+    }
+
+    public void setDescargas(List<Descarga> descargas) {
+        this.descargas = descargas;
+    }
+
     @Override
     public String toString() {
-        return "Consulta [idConsulta=" + idConsulta + ", usuario=" + usuario + ", indicadores=" + indicadores + ", parametros="
-                + parametros + ", fechaConsulta=" + fechaConsulta + "]";
+        return "Consulta{" +
+                "idConsulta=" + idConsulta +
+                ", usuario=" + (usuario != null ? usuario.getIdUsuario() : null) +
+                ", dataset=" + (dataset != null ? dataset.getIdDataset() : null) +
+                ", filtros='" + filtros + '\'' +
+                ", fechaConsulta=" + fechaConsulta +
+                '}';
     }
 }
 

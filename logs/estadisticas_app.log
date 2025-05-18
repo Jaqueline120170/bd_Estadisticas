@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2025-03-07 08:30:59 - Starting EstadisticasAppApplication using Java 23 with PID 4280 (C:\Users\PC\eclipse-workspace\estadisticas-app\target\classes started by PC in C:\Users\PC\eclipse-workspace\estadisticas-app)
 2025-03-07 08:30:59 - Running with Spring Boot v3.4.1, Spring v6.2.1
 2025-03-07 08:30:59 - No active profile set, falling back to 1 default profile: "default"
@@ -20,10 +21,34 @@
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.4
+=======
+2025-05-19 00:04:08 - Starting EstadisticasAppApplication using Java 21.0.6 with PID 10352 (C:\Users\Usuario\DWS\target\classes started by Usuario in C:\Users\Usuario\DWS)
+2025-05-19 00:04:08 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-05-19 00:04:08 - No active profile set, falling back to 1 default profile: "default"
+2025-05-19 00:04:09 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-19 00:04:09 - Finished Spring Data repository scanning in 73 ms. Found 5 JPA repository interfaces.
+2025-05-19 00:04:09 - Tomcat initialized with port 8081 (http)
+2025-05-19 00:04:09 - Starting service [Tomcat]
+2025-05-19 00:04:09 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-05-19 00:04:09 - Initializing Spring embedded WebApplicationContext
+2025-05-19 00:04:09 - Root WebApplicationContext: initialization completed in 1559 ms
+2025-05-19 00:04:10 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-19 00:04:10 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-05-19 00:04:10 - HHH000026: Second-level cache disabled
+2025-05-19 00:04:10 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-19 00:04:10 - HikariPool-1 - Starting...
+2025-05-19 00:04:10 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@368424db
+2025-05-19 00:04:10 - HikariPool-1 - Start completed.
+2025-05-19 00:04:11 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.0
+>>>>>>> 1f4f6a3 (cambios para despliegue en servidor)
 	Autocommit mode: undefined/unknown
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
+<<<<<<< HEAD
 2025-03-07 08:31:06 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 2025-03-07 08:31:06 - Initialized JPA EntityManagerFactory for persistence unit 'default'
 2025-03-07 08:31:06 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
@@ -361,10 +386,45 @@
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.4
+=======
+2025-05-19 00:04:12 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-19 00:04:12 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 00:04:12 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-19 00:04:13 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-19 00:04:14 - Tomcat started on port 8081 (http) with context path '/'
+2025-05-19 00:04:14 - Started EstadisticasAppApplication in 6.436 seconds (process running for 6.872)
+2025-05-19 00:04:19 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-19 00:04:19 - Initializing Servlet 'dispatcherServlet'
+2025-05-19 00:04:19 - Completed initialization in 1 ms
+2025-05-19 00:04:49 - Archivo guardado en: C:\Users\Usuario\DWS\uploads\datasets\8bc75929-83b5-4a33-9d21-a3b663b3b129_archivo.csv
+2025-05-19 00:05:29 - Archivo guardado en: C:\Users\Usuario\DWS\uploads\datasets\abe551a3-1b09-4804-a4ce-1057ed4f4039_archivo.csv
+2025-05-19 00:08:42 - Starting EstadisticasAppApplication using Java 21.0.6 with PID 17140 (C:\Users\Usuario\DWS\target\classes started by Usuario in C:\Users\Usuario\DWS)
+2025-05-19 00:08:42 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-05-19 00:08:42 - No active profile set, falling back to 1 default profile: "default"
+2025-05-19 00:08:43 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-19 00:08:43 - Finished Spring Data repository scanning in 70 ms. Found 5 JPA repository interfaces.
+2025-05-19 00:08:44 - Tomcat initialized with port 8081 (http)
+2025-05-19 00:08:44 - Starting service [Tomcat]
+2025-05-19 00:08:44 - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-05-19 00:08:44 - Initializing Spring embedded WebApplicationContext
+2025-05-19 00:08:44 - Root WebApplicationContext: initialization completed in 1607 ms
+2025-05-19 00:08:44 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-19 00:08:44 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-05-19 00:08:44 - HHH000026: Second-level cache disabled
+2025-05-19 00:08:44 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-19 00:08:44 - HikariPool-1 - Starting...
+2025-05-19 00:08:45 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7e2bc2f4
+2025-05-19 00:08:45 - HikariPool-1 - Start completed.
+2025-05-19 00:08:45 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.0
+>>>>>>> 1f4f6a3 (cambios para despliegue en servidor)
 	Autocommit mode: undefined/unknown
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
+<<<<<<< HEAD
 2025-03-07 10:48:38 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 2025-03-07 10:48:39 - Initialized JPA EntityManagerFactory for persistence unit 'default'
 2025-03-07 10:48:39 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
@@ -488,3 +548,79 @@
 2025-03-07 12:09:11 - Listando todos los usuarios...
 2025-03-07 12:09:11 - El administrador ha solicitado las estadísticas de usuarios.
 2025-03-07 12:09:11 - Obteniendo estadísticas de usuarios...
+=======
+2025-05-19 00:08:46 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-19 00:08:46 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-19 00:08:47 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-19 00:08:48 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-19 00:08:48 - Tomcat started on port 8081 (http) with context path '/'
+2025-05-19 00:08:48 - Started EstadisticasAppApplication in 6.715 seconds (process running for 7.124)
+2025-05-19 00:08:52 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-19 00:08:52 - Initializing Servlet 'dispatcherServlet'
+2025-05-19 00:08:52 - Completed initialization in 2 ms
+2025-05-19 00:10:17 - Archivo guardado en: C:\Users\Usuario\DWS\uploads\datasets\44d5c6bf-2f99-4c04-8e84-1856c2b4ca6e_archivo.csv
+2025-05-19 00:11:15 - Archivo guardado en: C:\Users\Usuario\DWS\uploads\datasets\c2bd222c-b253-4d45-9ead-15ce39d5621b_GastosJaqueline.xlsx
+2025-05-19 00:12:14 - Archivo guardado en: C:\Users\Usuario\DWS\uploads\datasets\6ecd0607-57ff-449c-a87c-5699ee842928_VSWorkspaceState.json
+2025-05-19 00:17:04 - Intento de inicio de sesión para email: jahqeline@live.com
+2025-05-19 00:17:04 - Autenticando usuario jahqeline@live.com
+2025-05-19 00:17:04 - Intento de inicio de sesión inválido: Usuario no encontrado con ese email.
+2025-05-19 00:17:04 - Intento de inicio de sesión fallido para jahqeline@live.com
+2025-05-19 00:17:21 - Intento de inicio de sesión para email: jahqeline@live.com
+2025-05-19 00:17:21 - Autenticando usuario jahqeline@live.com
+2025-05-19 00:17:21 - Intento de inicio de sesión inválido: Usuario no encontrado con ese email.
+2025-05-19 00:17:21 - Intento de inicio de sesión fallido para jahqeline@live.com
+2025-05-19 00:17:43 - Intento de inicio de sesión para email: jahqeline@live.com.mx
+2025-05-19 00:17:43 - Autenticando usuario jahqeline@live.com.mx
+2025-05-19 00:17:43 - Usuario jahqeline@live.com.mx autenticado correctamente
+2025-05-19 00:17:43 - Inicio de sesión exitoso para usuario: jahqeline@live.com.mx
+2025-05-19 00:17:43 - Inicio de sesión exitoso para jahqeline@live.com.mx
+2025-05-19 00:47:44 - Intento de inicio de sesión para email: osteologia2@gmail.com
+2025-05-19 00:47:44 - Autenticando usuario osteologia2@gmail.com
+2025-05-19 00:47:45 - Usuario osteologia2@gmail.com autenticado correctamente
+2025-05-19 00:47:45 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
+2025-05-19 00:47:45 - Inicio de sesión exitoso para osteologia2@gmail.com
+2025-05-19 00:47:46 - El administrador ha solicitado las estadísticas de usuarios.
+2025-05-19 00:47:46 - El administrador solicitó la lista de usuarios.
+2025-05-19 00:47:46 - Obteniendo estadísticas de usuarios...
+2025-05-19 00:47:46 - Listando todos los usuarios...
+2025-05-19 00:47:54 - El administrador solicitó la lista de usuarios.
+2025-05-19 00:47:54 - Listando todos los usuarios...
+2025-05-19 00:47:54 - El administrador ha solicitado las estadísticas de usuarios.
+2025-05-19 00:47:54 - Obteniendo estadísticas de usuarios...
+2025-05-19 00:48:01 - El administrador ha solicitado las estadísticas de usuarios.
+2025-05-19 00:48:01 - El administrador solicitó la lista de usuarios.
+2025-05-19 00:48:01 - Obteniendo estadísticas de usuarios...
+2025-05-19 00:48:01 - Listando todos los usuarios...
+2025-05-19 00:48:16 - Intento de inicio de sesión para email: jahqeline@live.com.mx
+2025-05-19 00:48:16 - Autenticando usuario jahqeline@live.com.mx
+2025-05-19 00:48:16 - Usuario jahqeline@live.com.mx autenticado correctamente
+2025-05-19 00:48:16 - Inicio de sesión exitoso para usuario: jahqeline@live.com.mx
+2025-05-19 00:48:16 - Inicio de sesión exitoso para jahqeline@live.com.mx
+2025-05-19 00:48:32 - Intento de inicio de sesión para email: osteologia2@gmail.com
+2025-05-19 00:48:32 - Autenticando usuario osteologia2@gmail.com
+2025-05-19 00:48:32 - Usuario osteologia2@gmail.com autenticado correctamente
+2025-05-19 00:48:32 - Inicio de sesión exitoso para usuario: osteologia2@gmail.com
+2025-05-19 00:48:32 - Inicio de sesión exitoso para osteologia2@gmail.com
+2025-05-19 00:48:34 - El administrador ha solicitado las estadísticas de usuarios.
+2025-05-19 00:48:34 - El administrador solicitó la lista de usuarios.
+2025-05-19 00:48:34 - Obteniendo estadísticas de usuarios...
+2025-05-19 00:48:34 - Listando todos los usuarios...
+2025-05-19 00:58:54 - Intento de inicio de sesión para email: jahqeline@live.com.mx
+2025-05-19 00:58:54 - Autenticando usuario jahqeline@live.com.mx
+2025-05-19 00:58:55 - Usuario jahqeline@live.com.mx autenticado correctamente
+2025-05-19 00:58:55 - Inicio de sesión exitoso para usuario: jahqeline@live.com.mx
+2025-05-19 00:58:55 - Inicio de sesión exitoso para jahqeline@live.com.mx
+2025-05-19 01:05:08 - Intento de inicio de sesión para email: jahqeline@live.com
+2025-05-19 01:05:08 - Autenticando usuario jahqeline@live.com
+2025-05-19 01:05:08 - Intento de inicio de sesión inválido: Usuario no encontrado con ese email.
+2025-05-19 01:05:08 - Intento de inicio de sesión fallido para jahqeline@live.com
+2025-05-19 01:05:23 - Intento de inicio de sesión para email: jahqeline@live.com
+2025-05-19 01:05:23 - Autenticando usuario jahqeline@live.com
+2025-05-19 01:05:23 - Intento de inicio de sesión inválido: Usuario no encontrado con ese email.
+2025-05-19 01:05:23 - Intento de inicio de sesión fallido para jahqeline@live.com
+2025-05-19 01:05:54 - Intento de inicio de sesión para email: jahqeline@live.com.mx
+2025-05-19 01:05:54 - Autenticando usuario jahqeline@live.com.mx
+2025-05-19 01:05:54 - Usuario jahqeline@live.com.mx autenticado correctamente
+2025-05-19 01:05:54 - Inicio de sesión exitoso para usuario: jahqeline@live.com.mx
+2025-05-19 01:05:54 - Inicio de sesión exitoso para jahqeline@live.com.mx
+>>>>>>> 1f4f6a3 (cambios para despliegue en servidor)
