@@ -33,6 +33,7 @@ import com.estadisticas.estadisticas_app.Dtos.ConsultaDto;
 import com.estadisticas.estadisticas_app.Dtos.DescargaDto;
 import com.estadisticas.estadisticas_app.Dtos.LoginUsuarioDto;
 import com.estadisticas.estadisticas_app.Dtos.RegistroUsuarioDto;
+import com.estadisticas.estadisticas_app.Dtos.UsuarioDto;
 import com.estadisticas.estadisticas_app.Modelos.Usuario;
 import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepositorio;
 import com.estadisticas.estadisticas_app.Servicios.AdministradorServicio;
@@ -253,11 +254,17 @@ public class UsuarioControlador {
     }
     // Endpoint para obtener los datos del perfil del usuario autenticado
     @GetMapping("/{id}")
-    public ResponseEntity<Usuario> obtenerPorId(@PathVariable Long id) {
-        Optional<Usuario> usuario = usuarioRepository.findById(id);
-        return usuario.map(ResponseEntity::ok)
-                      .orElseGet(() -> ResponseEntity.notFound().build());
+    public ResponseEntity<?> obtenerPorId(@PathVariable Long id) {
+        try {
+            Usuario usuario = usuarioRepository.findById(id)
+                                    .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+            UsuarioDto dto = new UsuarioDto(usuario);
+            return ResponseEntity.ok(dto);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No encontrado");
+        }
     }
+
     @PutMapping("/{id}")
     public ResponseEntity<?> actualizarPerfil(
             @PathVariable Long id,

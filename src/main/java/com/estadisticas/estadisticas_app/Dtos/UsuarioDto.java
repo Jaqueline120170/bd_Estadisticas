@@ -1,6 +1,9 @@
 package com.estadisticas.estadisticas_app.Dtos;
 
 import java.time.LocalDateTime;
+import java.util.Base64;
+
+import com.estadisticas.estadisticas_app.Modelos.Usuario;
 
 /**
  * DTO (Data Transfer Object) que representa los datos de un usuario en el sistema.
@@ -24,7 +27,7 @@ public class UsuarioDto {
     private String telefonoUsuario;
 
     /** Foto del usuario en forma de array de bytes (puede cambiar a String si solo almacenamos la URL de la foto). */
-    private byte[] fotoUsuario;
+    private String fotoUsuario;
 
     /** Contraseña del usuario. */
     private String passwordUsuario;
@@ -33,7 +36,23 @@ public class UsuarioDto {
     private boolean verificado;
 
     
-    /**
+    public UsuarioDto(Usuario usuario) {
+        this.id = usuario.getIdUsuario();
+        this.nombreUsuario = usuario.getNombreUsuario();
+        this.emailUsuario = usuario.getEmailUsuario();
+        this.rolUsuario = usuario.getRolUsuario();
+        this.telefonoUsuario = usuario.getTelefonoUsuario();
+        this.verificado = usuario.isVerificado();
+
+        if (usuario.getFotoUsuario() != null) {
+            this.fotoUsuario = Base64.getEncoder().encodeToString(usuario.getFotoUsuario());
+        } else {
+            this.fotoUsuario = null;
+        }
+    }
+
+
+	/**
      * Obtiene el ID del usuario.
      *
      * @return el ID del usuario.
@@ -128,7 +147,7 @@ public class UsuarioDto {
      *
      * @return la foto del usuario.
      */
-    public byte[] getFotoUsuario() {
+    public String getFotoUsuario() {
         return fotoUsuario;
     }
 
@@ -137,9 +156,11 @@ public class UsuarioDto {
      *
      * @param fotoUsuario la foto del usuario.
      */
-    public void setFotoUsuario(byte[] fotoUsuario) {
+
+    public void setFotoUsuario(String fotoUsuario) {
         this.fotoUsuario = fotoUsuario;
     }
+
 
     /**
      * Obtiene la contraseña del usuario.
@@ -158,7 +179,7 @@ public class UsuarioDto {
     public void setPasswordUsuario(String passwordUsuario) {
         this.passwordUsuario = passwordUsuario;
     }
-
+    
     /**
      * Obtiene el estado de verificación del usuario.
      *

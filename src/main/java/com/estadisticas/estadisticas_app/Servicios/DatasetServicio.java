@@ -221,5 +221,12 @@ public class DatasetServicio {
 	            throw new Exception("No se puede leer el archivo");
 	        }
 	    }
+	    @Transactional
+	    public Categoria crearCategoria(Categoria categoria) {
+	        categoria.setIdCategoria(null); // forzar a que se genere nuevo id
+	        return categoriaRepository.save(categoria);
+	    }
+
+
 
 }

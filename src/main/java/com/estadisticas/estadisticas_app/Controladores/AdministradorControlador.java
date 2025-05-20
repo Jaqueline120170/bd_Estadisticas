@@ -17,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.estadisticas.estadisticas_app.Dtos.DatasetDto;
 import com.estadisticas.estadisticas_app.Dtos.DatasetMetadataDto;
+import com.estadisticas.estadisticas_app.Dtos.UsuarioDto;
 import com.estadisticas.estadisticas_app.Modelos.Categoria;
 import com.estadisticas.estadisticas_app.Modelos.Dataset;
 import com.estadisticas.estadisticas_app.Modelos.Usuario;
@@ -110,13 +111,15 @@ public class AdministradorControlador {
         try {
             logger.info("El administrador está buscando el usuario con ID: {}", id);
             Usuario usuario = administradorServicio.buscarUsuarioPorId(id);
-            return ResponseEntity.ok(usuario);
+            UsuarioDto dto = new UsuarioDto(usuario);
+            return ResponseEntity.ok(dto);  // Envía el DTO al frontend
         } catch (IllegalArgumentException e) {
             logger.warn("Intento de búsqueda fallido. Usuario con ID {} no encontrado.", id);
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                 .body("{\"error\": \"Usuario no encontrado\"}");
         }
     }
+
 
     /**
      * Endpoint para obtener las estadísticas de usuarios.

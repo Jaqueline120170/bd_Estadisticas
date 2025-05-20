@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
@@ -125,6 +126,16 @@ public class DatasetControlador {
     public ResponseEntity<List<Categoria>> listarCategorias() {
         List<Categoria> categorias = categoriaRepository.findAll();
         return ResponseEntity.ok(categorias);  // Devuelve la lista de categorías
+    }
+    @PostMapping("/categorias")
+    public ResponseEntity<?> crearCategoria(@RequestBody Categoria categoria) {
+        try {
+            categoria.setIdCategoria(null);  // Por si acaso, para evitar que venga con id
+            Categoria nuevaCategoria = datasetServicio.crearCategoria(categoria);
+            return ResponseEntity.ok(nuevaCategoria);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
     }
 
 

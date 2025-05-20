@@ -13,9 +13,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-
+import com.estadisticas.estadisticas_app.Modelos.Categoria;
 import com.estadisticas.estadisticas_app.Modelos.Usuario;
+import com.estadisticas.estadisticas_app.Repositorios.CategoriaRepositorio;
 import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepositorio;
+
+import jakarta.transaction.Transactional;
 
 
 @Service
@@ -118,6 +121,7 @@ public class AdministradorServicio {
      * @param id ID del usuario a buscar.
      * @return Usuario encontrado.
      */
+    @Transactional
     public Usuario buscarUsuarioPorId(Long id) {
         logger.info("Buscando usuario con ID: {}", id);
         return usuarioRepository.findById(id)
@@ -127,7 +131,6 @@ public class AdministradorServicio {
             });
     }
     
-   
 }
 
 

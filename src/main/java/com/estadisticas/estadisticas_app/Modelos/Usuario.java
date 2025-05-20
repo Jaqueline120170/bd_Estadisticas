@@ -69,133 +69,7 @@ public class Usuario {
 
     // Getters y Setters
 
-    public Long getIdUsuario() {
-        return idUsuario;
-    }
-
-    public void setIdUsuario(Long idUsuario) {
-        this.idUsuario = idUsuario;
-    }
-
-    public String getNombreUsuario() {
-        return nombreUsuario;
-    }
-
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
-    }
-
-    public String getEmailUsuario() {
-        return emailUsuario;
-    }
-
-    public void setEmailUsuario(String emailUsuario) {
-        this.emailUsuario = emailUsuario;
-    }
-
-    public String getTelefonoUsuario() {
-        return telefonoUsuario;
-    }
-
-    public void setTelefonoUsuario(String telefonoUsuario) {
-        this.telefonoUsuario = telefonoUsuario;
-    }
-
-    public String getRolUsuario() {
-        return rolUsuario;
-    }
-
-    public void setRolUsuario(String rolUsuario) {
-        this.rolUsuario = rolUsuario;
-    }
-
-    public byte[] getFotoUsuario() {
-        return fotoUsuario;
-    }
-
-    public void setFotoUsuario(byte[] fotoUsuario) {
-        this.fotoUsuario = fotoUsuario;
-    }
-
-    public String getPasswordUsuario() {
-        return passwordUsuario;
-    }
-
-    public void setPasswordUsuario(String passwordUsuario) {
-        this.passwordUsuario = passwordUsuario;
-    }
-
-    public boolean isVerificado() {
-        return verificado;
-    }
-
-    public void setVerificado(boolean verificado) {
-        this.verificado = verificado;
-    }
-
-    public String getVerificacionToken() {
-        return verificacionToken;
-    }
-
-    public void setVerificacionToken(String verificacionToken) {
-        this.verificacionToken = verificacionToken;
-    }
-
-    public LocalDateTime getTokenExpiracion() {
-        return tokenExpiracion;
-    }
-
-    public void setTokenExpiracion(LocalDateTime tokenExpiracion) {
-        this.tokenExpiracion = tokenExpiracion;
-    }
-
-    public String getResetToken() {
-        return resetToken;
-    }
-
-    public void setResetToken(String resetToken) {
-        this.resetToken = resetToken;
-    }
-
-    public LocalDateTime getResetTokenExpiracion() {
-        return resetTokenExpiracion;
-    }
-
-    public void setResetTokenExpiracion(LocalDateTime resetTokenExpiracion) {
-        this.resetTokenExpiracion = resetTokenExpiracion;
-    }
-
-    public List<Consulta> getConsultas() {
-        return consultas;
-    }
-
-    public void setConsultas(List<Consulta> consultas) {
-        this.consultas = consultas;
-    }
-
-    public List<Graficos> getGraficos() {
-        return graficos;
-    }
-
-    public void setGraficos(List<Graficos> graficos) {
-        this.graficos = graficos;
-    }
-
-    public List<Descarga> getDescargas() {
-        return descargas;
-    }
-
-    public void setDescargas(List<Descarga> descargas) {
-        this.descargas = descargas;
-    }
-
-    public List<LogActividad> getLogs() {
-        return logs;
-    }
-
-    public void setLogs(List<LogActividad> logs) {
-        this.logs = logs;
-    }
+    
 
     @Override
     public String toString() {
@@ -212,5 +86,133 @@ public class Usuario {
                 ", resetTokenExpiracion=" + resetTokenExpiracion +
                 '}';
     }
+
+	public Long getIdUsuario() {
+		return idUsuario;
+	}
+
+	public void setIdUsuario(Long idUsuario) {
+		this.idUsuario = idUsuario;
+	}
+
+	public String getNombreUsuario() {
+		return nombreUsuario;
+	}
+
+	public void setNombreUsuario(String nombreUsuario) {
+		this.nombreUsuario = nombreUsuario;
+	}
+
+	public String getEmailUsuario() {
+		return emailUsuario;
+	}
+
+	public void setEmailUsuario(String emailUsuario) {
+		this.emailUsuario = emailUsuario;
+	}
+
+	public String getTelefonoUsuario() {
+		return telefonoUsuario;
+	}
+
+	public void setTelefonoUsuario(String telefonoUsuario) {
+		this.telefonoUsuario = telefonoUsuario;
+	}
+
+	public String getRolUsuario() {
+		return rolUsuario;
+	}
+
+	public void setRolUsuario(String rolUsuario) {
+		this.rolUsuario = rolUsuario;
+	}
+
+	public byte[] getFotoUsuario() {
+		return fotoUsuario;
+	}
+
+	public void setFotoUsuario(byte[] fotoUsuario) {
+		this.fotoUsuario = fotoUsuario;
+	}
+
+	public String getPasswordUsuario() {
+		return passwordUsuario;
+	}
+
+	public void setPasswordUsuario(String passwordUsuario) {
+		this.passwordUsuario = passwordUsuario;
+	}
+	public boolean isVerificado() {
+		return verificado;
+	}
+
+	public void setVerificado(boolean verificado) {
+		this.verificado = verificado;
+	}
+
+	public String getVerificacionToken() {
+		return verificacionToken;
+	}
+
+	public void setVerificacionToken(String verificacionToken) {
+		this.verificacionToken = verificacionToken;
+	}
+
+	public LocalDateTime getTokenExpiracion() {
+		return tokenExpiracion;
+	}
+
+	public void setTokenExpiracion(LocalDateTime tokenExpiracion) {
+		this.tokenExpiracion = tokenExpiracion;
+	}
+
+	public String getResetToken() {
+		return resetToken;
+	}
+
+	public void setResetToken(String resetToken) {
+		this.resetToken = resetToken;
+	}
+
+	public LocalDateTime getResetTokenExpiracion() {
+		return resetTokenExpiracion;
+	}
+
+	public void setResetTokenExpiracion(LocalDateTime resetTokenExpiracion) {
+		this.resetTokenExpiracion = resetTokenExpiracion;
+	}
+
+	public List<Consulta> getConsultas() {
+		return consultas;
+	}
+
+	public void setConsultas(List<Consulta> consultas) {
+		this.consultas = consultas;
+	}
+
+	public List<Graficos> getGraficos() {
+		return graficos;
+	}
+
+	public void setGraficos(List<Graficos> graficos) {
+		this.graficos = graficos;
+	}
+
+	public List<Descarga> getDescargas() {
+		return descargas;
+	}
+
+	public void setDescargas(List<Descarga> descargas) {
+		this.descargas = descargas;
+	}
+
+	public List<LogActividad> getLogs() {
+		return logs;
+	}
+
+	public void setLogs(List<LogActividad> logs) {
+		this.logs = logs;
+	}
+    
 }
 
