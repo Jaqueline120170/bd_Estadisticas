@@ -55,10 +55,7 @@ public class UsuarioControlador {
 	  // 🔁 Inyectamos la URL del frontend desde application.properties
 	@Value("${frontend.url}")
 	private String frontendUrl;
-	
 
-	@Value("${backend.url}")
-	private String backendUrl;
 
     @Autowired
     private UsuarioServicio usuarioServicio;
