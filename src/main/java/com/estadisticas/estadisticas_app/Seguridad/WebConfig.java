@@ -1,5 +1,6 @@
 package com.estadisticas.estadisticas_app.Seguridad;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -23,16 +24,17 @@ public class WebConfig implements WebMvcConfigurer {
      *
      * @param registry el registro de CORS, que se utiliza para definir las reglas de CORS.
      */
-	 @Override
-	    public void addCorsMappings(CorsRegistry registry) {
-
-	        registry.addMapping("/**")
-	                .allowedOrigins(
-	                    "http://localhost:4200",
-	                    "https://jaquedev.es",
-	                    "https://fascinating-entremet-32af4c.netlify.app"
-	                )
-	                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-	                .allowedHeaders("*");
+	 @Bean
+	    public WebMvcConfigurer corsConfigurer() {
+	        return new WebMvcConfigurer() {
+	            @Override
+	            public void addCorsMappings(CorsRegistry registry) {
+	                registry.addMapping("/**")
+	                    .allowedOrigins("http://localhost:4200", "https://jaquedev.es")
+	                    .allowedMethods("*")
+	                    .allowedHeaders("*")
+	                    .allowCredentials(true);
+	            }
+	        };
 	    }
 	}
