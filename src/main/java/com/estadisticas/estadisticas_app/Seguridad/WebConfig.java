@@ -28,9 +28,10 @@ public class WebConfig implements WebMvcConfigurer {
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
 	    registry.addMapping("/**")
-	        .allowedOrigins("https://jaquedev.es", "http://localhost:4200")  // pon los dominios que necesites
+	        .allowedOrigins("https://jaquedev.es") // solo dominio real de producción
 	        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
 	        .allowedHeaders("*")
-	        .allowCredentials(true);
+	        .allowCredentials(false); // tokens no usan cookies, no necesita true
 	}
+
 	}
