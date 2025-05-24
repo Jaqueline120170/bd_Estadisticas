@@ -1,5 +1,7 @@
 package com.estadisticas.estadisticas_app;
 
+import java.util.Collections;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
@@ -17,8 +19,13 @@ public class EstadisticasAppApplication {
      * 
      * @param args Argumentos de línea de comandos
      */
-    public static void main(String[] args) {
-        // Arranca la aplicación Spring Boot
-        SpringApplication.run(EstadisticasAppApplication.class, args);
-    }
+	public static void main(String[] args) {
+	    SpringApplication app = new SpringApplication(EstadisticasAppApplication.class);
+	    String port = System.getenv("PORT");
+	    if (port != null) {
+	        app.setDefaultProperties(Collections.singletonMap("server.port", port));
+	    }
+	    app.run(args);
+	}
+
 }
