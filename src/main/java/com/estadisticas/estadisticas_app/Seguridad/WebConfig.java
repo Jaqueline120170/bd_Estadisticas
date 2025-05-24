@@ -23,14 +23,16 @@ public class WebConfig implements WebMvcConfigurer {
      *
      * @param registry el registro de CORS, que se utiliza para definir las reglas de CORS.
      */
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
+	 @Override
+	    public void addCorsMappings(CorsRegistry registry) {
 
-        registry.addMapping("/**")  // Permite CORS para todos los endpoints de la API.
-                .allowedOrigins("http://localhost:4200")  // Permite solicitudes solo desde el frontend en localhost:4200.
-                .allowedMethods("GET", "POST", "PUT", "DELETE")  // Permite los métodos HTTP GET, POST, PUT y DELETE.
-                .allowedHeaders("*");  // Permite todos los encabezados en las solicitudes.
-
-    }
-
-}
+	        registry.addMapping("/**")
+	                .allowedOrigins(
+	                    "http://localhost:4200",
+	                    "https://jaquedev.es",
+	                    "https://fascinating-entremet-32af4c.netlify.app"
+	                )
+	                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+	                .allowedHeaders("*");
+	    }
+	}

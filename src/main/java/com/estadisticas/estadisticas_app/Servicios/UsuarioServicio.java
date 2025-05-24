@@ -22,6 +22,21 @@ import com.estadisticas.estadisticas_app.Utils.ValidacionesUtil;
 
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
+/**
+ * Servicio para gestionar las operaciones relacionadas con los usuarios, como:
+ * - Registro
+ * - Activación de cuenta
+ * - Autenticación (login)
+ * - Actualización de perfil
+ * - Restablecimiento y cambio de contraseña
+ *
+ * Utiliza validaciones y lógica de seguridad (como encriptación de contraseñas y tokens).
+ * También gestiona el envío de correos electrónicos de verificación y restablecimiento.
+ * 
+ * @author [Jaqueline R]
+ * @version 1.0
+ * @since 2025-05-22
+ */
 
 @Service
 public class UsuarioServicio {
@@ -255,6 +270,17 @@ public class UsuarioServicio {
         return usuario; // Si pasa todo, retorna el usuario autenticado
     }
    
+    /**
+     * Actualiza parcialmente los datos del perfil de un usuario (nombre, teléfono o foto).
+     *
+     * @param id ID del usuario a actualizar.
+     * @param nombreUsuario Nuevo nombre del usuario (puede ser null o vacío para no actualizar).
+     * @param telefonoUsuario Nuevo teléfono del usuario (puede ser null o vacío).
+     * @param fotoUsuario Nueva foto de perfil (puede ser null).
+     * @return El usuario actualizado.
+     * @throws IOException Si ocurre un error al procesar la foto.
+     * @throws RuntimeException Si el usuario no existe.
+     */
 
     public Usuario actualizarUsuarioParcial(Long id, String nombreUsuario, String telefonoUsuario, MultipartFile fotoUsuario) throws IOException {
         Usuario usuario = usuarioRepository.findById(id)
@@ -262,18 +288,53 @@ public class UsuarioServicio {
 
         if (nombreUsuario != null && !nombreUsuario.isBlank()) {
             usuario.setNombreUsuario(nombreUsuario);
+            logger.info("Nombre actualizado para usuario con ID {}: {}", id, nombreUsuario);
         }
 
         if (telefonoUsuario != null && !telefonoUsuario.isBlank()) {
             usuario.setTelefonoUsuario(telefonoUsuario);
+            logger.info("Teléfono actualizado para usuario con ID {}: {}", id, telefonoUsuario);
         }
 
         if (fotoUsuario != null && !fotoUsuario.isEmpty()) {
             usuario.setFotoUsuario(fotoUsuario.getBytes());
+            logger.info("Foto de usuario actualizada para ID {}", id);
+        }
+        logger.info("Usuario con ID {} actualizado parcialmente", id);
+        return usuarioRepository.save(usuario);
+        
+    }
+    /**
+     * Cambia la contraseña de un usuario autenticado verificando primero su contraseña actual.
+     *
+     * @param idUsuario ID del usuario autenticado.
+     * @param contraseñaActual Contraseña actual ingresada por el usuario.
+     * @param nuevaContraseña Nueva contraseña que se desea establecer.
+     * @throws IllegalArgumentException Si la contraseña actual no es válida o el usuario no se encuentra.
+     */
+
+    @Transactional
+    public void cambiarContraseñaAutenticado(Long idUsuario, String contraseñaActual, String nuevaContraseña) {
+        Usuario usuario = usuarioRepository.findById(idUsuario)
+            .orElseThrow(() -> new IllegalArgumentException("Usuario no encontrado"));
+
+        // Verificar contraseña actual
+        if (!passwordEncoder.matches(contraseñaActual, usuario.getPasswordUsuario())) {
+        	logger.warn("Intento de cambio de contraseña fallido para usuario ID {}: contraseña actual incorrecta", idUsuario);
+            throw new IllegalArgumentException("La contraseña actual es incorrecta.");
         }
 
-        return usuarioRepository.save(usuario);
+        // Validar nueva contraseña
+        ValidacionesUtil.validarPassword(nuevaContraseña);
+
+        // Actualizar
+        usuario.setPasswordUsuario(passwordEncoder.encode(nuevaContraseña));
+        logger.info("Contraseña actualizada para el usuario con ID {}", idUsuario);
+        usuarioRepository.save(usuario);
+
+        logger.info("Contraseña cambiada correctamente para {}", usuario.getEmailUsuario());
     }
+
     /**
      * Método que Genera un token de verificación único.
      * @return token único generado

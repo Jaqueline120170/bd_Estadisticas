@@ -7,7 +7,8 @@ import com.estadisticas.estadisticas_app.Repositorios.ConsultaRepositorio;
 import com.estadisticas.estadisticas_app.Repositorios.DatasetRepositorio;
 import com.estadisticas.estadisticas_app.Repositorios.DescargaRepositorio;
 import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepositorio;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,16 +16,17 @@ import java.util.stream.Collectors;
 import java.util.List;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Optional;
 
 @Service
 @Transactional
 public class ConsultaServicio {
-
+	
     private final ConsultaRepositorio consultaRepository;
     private final UsuarioRepositorio usuarioRepository;
     private final DatasetRepositorio datasetRepository;
     private final DescargaRepositorio descargaRepository;
+    private static final Logger logger = LoggerFactory.getLogger(ConsultaServicio.class);
+
 
     public ConsultaServicio(ConsultaRepositorio consultaRepository,
                            UsuarioRepositorio usuarioRepository,
@@ -36,7 +38,13 @@ public class ConsultaServicio {
         this.descargaRepository = descargaRepository;
     }
 
-    // Convierte Consulta -> ConsultaDTO
+    /**
+     * Convierte una entidad Consulta a su representación ConsultaDto.
+     * 
+     * @param consulta La entidad Consulta a convertir.
+     * @return El objeto ConsultaDto resultante.
+     */
+
     public ConsultaDto toDTO(Consulta consulta) {
         ConsultaDto dto = new ConsultaDto();
         dto.setIdConsulta(consulta.getIdConsulta());
@@ -56,7 +64,13 @@ public class ConsultaServicio {
         return dto;
     }
 
-    // Convierte Descarga -> DescargaDTO
+    /**
+     * Convierte una entidad Descarga a su representación DescargaDto.
+     * 
+     * @param descarga La entidad Descarga a convertir.
+     * @return El objeto DescargaDto resultante.
+     */
+
     public DescargaDto toDTO(Descarga descarga) {
         DescargaDto dto = new DescargaDto();
         dto.setId(descarga.getId());
@@ -68,14 +82,27 @@ public class ConsultaServicio {
         return dto;
     }
 
-    // Crear una nueva Consulta a partir de DTO (simplificado)
+    /**
+     * Crea una nueva consulta a partir del DTO recibido.
+     * 
+     * @param dto Datos de la consulta.
+     * @return La consulta creada como ConsultaDto.
+     * @throws Exception Si el usuario o dataset no existen.
+     */
+
     public ConsultaDto crearConsulta(ConsultaDto dto) throws Exception {
-        // Busca Usuario y Dataset para asignar
+        logger.info("Creando consulta para usuario ID: {} y dataset ID: {}", dto.getIdUsuario(), dto.getIdDataset());
         var usuario = usuarioRepository.findById(dto.getIdUsuario())
-            .orElseThrow(() -> new Exception("Usuario no encontrado"));
+            .orElseThrow(() -> {
+                logger.error("Usuario no encontrado con ID: {}", dto.getIdUsuario());
+                return new Exception("Usuario no encontrado con ID: " + dto.getIdUsuario());
+            });
 
         var dataset = datasetRepository.findById(dto.getIdDataset())
-            .orElseThrow(() -> new Exception("Dataset no encontrado"));
+            .orElseThrow(() -> {
+                logger.error("Dataset no encontrado con ID: {}", dto.getIdDataset());
+                return new Exception("Dataset no encontrado con ID: " + dto.getIdDataset());
+            });
 
         Consulta consulta = new Consulta();
         consulta.setUsuario(usuario);
@@ -84,29 +111,58 @@ public class ConsultaServicio {
         consulta.setFechaConsulta(dto.getFechaConsulta() != null ? dto.getFechaConsulta() : LocalDate.now());
 
         Consulta guardada = consultaRepository.save(consulta);
+        logger.info("Consulta creada con ID: {}", guardada.getIdConsulta());
 
         return toDTO(guardada);
     }
-
-    // Obtener Consulta por id
+    /**
+     * Obtiene una consulta por su ID.
+     * 
+     * @param id ID de la consulta.
+     * @return El objeto ConsultaDto correspondiente.
+     * @throws Exception Si no se encuentra la consulta.
+     */
     public ConsultaDto obtenerConsulta(Long id) throws Exception {
+        logger.info("Obteniendo consulta con ID: {}", id);
         Consulta consulta = consultaRepository.findById(id)
-            .orElseThrow(() -> new Exception("Consulta no encontrada"));
+            .orElseThrow(() -> {
+                logger.error("Consulta no encontrada con ID: {}", id);
+                return new Exception("Consulta no encontrada con ID: " + id);
+            });
         return toDTO(consulta);
     }
 
-    // Crear una nueva Descarga a partir de DTO
+    /**
+     * Crea una nueva descarga asociada a un usuario, dataset y opcionalmente una consulta.
+     * 
+     * @param dto Datos de la descarga.
+     * @return DescargaDto creado.
+     * @throws Exception Si usuario, dataset o consulta (si aplica) no se encuentran.
+     */
+
     public DescargaDto crearDescarga(DescargaDto dto) throws Exception {
+        logger.info("Creando descarga para usuario ID: {}, dataset ID: {}, consulta ID: {}", 
+            dto.getIdUsuario(), dto.getIdDataset(), dto.getIdConsulta());
+
         var usuario = usuarioRepository.findById(dto.getIdUsuario())
-            .orElseThrow(() -> new Exception("Usuario no encontrado"));
+            .orElseThrow(() -> {
+                logger.error("Usuario no encontrado con ID: {}", dto.getIdUsuario());
+                return new Exception("Usuario no encontrado con ID: " + dto.getIdUsuario());
+            });
 
         var dataset = datasetRepository.findById(dto.getIdDataset())
-            .orElseThrow(() -> new Exception("Dataset no encontrado"));
+            .orElseThrow(() -> {
+                logger.error("Dataset no encontrado con ID: {}", dto.getIdDataset());
+                return new Exception("Dataset no encontrado con ID: " + dto.getIdDataset());
+            });
 
         Consulta consulta = null;
-        if(dto.getIdConsulta() != null) {
+        if (dto.getIdConsulta() != null) {
             consulta = consultaRepository.findById(dto.getIdConsulta())
-                .orElseThrow(() -> new Exception("Consulta no encontrada"));
+                .orElseThrow(() -> {
+                    logger.error("Consulta no encontrada con ID: {}", dto.getIdConsulta());
+                    return new Exception("Consulta no encontrada con ID: " + dto.getIdConsulta());
+                });
         }
 
         Descarga descarga = new Descarga();
@@ -117,29 +173,49 @@ public class ConsultaServicio {
         descarga.setFechaDescarga(dto.getFechaDescarga() != null ? dto.getFechaDescarga() : LocalDateTime.now());
 
         Descarga guardada = descargaRepository.save(descarga);
+        logger.info("Descarga creada con ID: {}", guardada.getId());
 
         return toDTO(guardada);
     }
 
-    // Obtener Descarga por id
+    /**
+     * Obtiene una descarga por su ID.
+     * 
+     * @param id ID de la descarga.
+     * @return DescargaDto correspondiente.
+     * @throws Exception Si no se encuentra la descarga.
+     */
     public DescargaDto obtenerDescarga(Long id) throws Exception {
+        logger.info("Obteniendo descarga con ID: {}", id);
         Descarga descarga = descargaRepository.findById(id)
-            .orElseThrow(() -> new Exception("Descarga no encontrada"));
+            .orElseThrow(() -> {
+                logger.error("Descarga no encontrada con ID: {}", id);
+                return new Exception("Descarga no encontrada con ID: " + id);
+            });
         return toDTO(descarga);
     }
 
-    // Listar todas las consultas (opcional)
+    /**
+     * Lista todas las consultas registradas en el sistema.
+     * 
+     * @return Lista de objetos ConsultaDto.
+     */
     public List<ConsultaDto> listarConsultas() {
+        logger.info("Listando todas las consultas.");
         return consultaRepository.findAll().stream()
             .map(this::toDTO)
             .collect(Collectors.toList());
     }
+    /**
+     * Lista todas las descargas registradas en el sistema.
+     * 
+     * @return Lista de objetos DescargaDto.
+     */
 
-    // Listar todas las descargas (opcional)
     public List<DescargaDto> listarDescargas() {
+        logger.info("Listando todas las descargas.");
         return descargaRepository.findAll().stream()
             .map(this::toDTO)
             .collect(Collectors.toList());
     }
-    
 }

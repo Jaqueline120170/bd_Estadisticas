@@ -22,7 +22,7 @@ public class DatasetDto {
         return idDataset;
     }
 
-    public void setId(Long idDataset) {
+    public void setIdDataset(Long idDataset) {
         this.idDataset = idDataset;
     }
 

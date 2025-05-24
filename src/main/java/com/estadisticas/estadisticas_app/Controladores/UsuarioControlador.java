@@ -16,6 +16,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,9 +40,11 @@ import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepositorio;
 import com.estadisticas.estadisticas_app.Servicios.AdministradorServicio;
 import com.estadisticas.estadisticas_app.Servicios.ConsultaServicio;
 import com.estadisticas.estadisticas_app.Servicios.UsuarioServicio;
+import com.estadisticas.estadisticas_app.Utils.ValidacionesUtil;
 
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.transaction.Transactional;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
@@ -50,10 +53,9 @@ public class UsuarioControlador {
 
     @Autowired
     private UsuarioServicio usuarioServicio;
-    
     @Autowired
     private UsuarioRepositorio usuarioRepository; // Inyectamos el repositorio
-    private static final Logger logger = LoggerFactory.getLogger(UsuarioServicio.class);
+    private static final Logger logger = LoggerFactory.getLogger(UsuarioControlador.class);
 
     /**
      * Registra un nuevo usuario en la plataforma.
@@ -255,12 +257,14 @@ public class UsuarioControlador {
     // Endpoint para obtener los datos del perfil del usuario autenticado
     @GetMapping("/{id}")
     public ResponseEntity<?> obtenerPorId(@PathVariable Long id) {
+    	 logger.info("Solicitud para obtener usuario por ID: {}", id); 
         try {
             Usuario usuario = usuarioRepository.findById(id)
                                     .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
             UsuarioDto dto = new UsuarioDto(usuario);
             return ResponseEntity.ok(dto);
         } catch (Exception e) {
+        	 logger.error("Error al obtener usuario por ID {}: {}", id, e.getMessage()); 
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No encontrado");
         }
     }
@@ -271,16 +275,52 @@ public class UsuarioControlador {
             @RequestParam(required = false) String nombreUsuario,
             @RequestParam(required = false) String telefonoUsuario,
             @RequestParam(required = false) MultipartFile fotoUsuario) {
+    	logger.info("Solicitud de actualización de perfil para ID: {}", id);
         try {
             usuarioServicio.actualizarUsuarioParcial(id, nombreUsuario, telefonoUsuario, fotoUsuario);
+            logger.info("Perfil actualizado correctamente para ID: {}", id); 
             return ResponseEntity.ok(Map.of("mensaje", "Perfil actualizado correctamente"));
         } catch (RuntimeException e) {
+        	logger.warn("No se encontró el usuario con ID {}: {}", id, e.getMessage());
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
         } catch (IOException e) {
+        	logger.error("Error procesando imagen para ID {}: {}", id, e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al procesar la imagen");
         }
     }
-    
+    /**
+     * Permite a un usuario autenticado cambiar su contraseña desde su perfil.
+     * 
+     * @param idUsuario       ID del usuario autenticado.
+     * @param request         Map con las claves: "contrasenaActual" y "nuevaContrasena".
+     * @return ResponseEntity con mensaje de éxito o error.
+     */
+    @PutMapping("/{id}/cambiar-contrasena")
+    public ResponseEntity<Map<String, String>> cambiarContrasenaDesdePerfil(
+            @PathVariable("id") Long idUsuario,
+            @RequestBody Map<String, String> request) {
+    	logger.info("Intento de cambio de contraseña desde perfil para ID: {}", idUsuario); 
+        String contrasenaActual = request.get("contrasenaActual");
+        String nuevaContrasena = request.get("nuevaContrasena");
+
+        if (contrasenaActual == null || nuevaContrasena == null) {
+        	logger.warn("Faltan campos para cambiar contraseña del ID: {}", idUsuario);
+            return ResponseEntity.badRequest().body(Map.of("error", "Ambas contraseñas son obligatorias."));
+        }
+
+        try {
+            usuarioServicio.cambiarContraseñaAutenticado(idUsuario, contrasenaActual, nuevaContrasena);
+            logger.info("Contraseña actualizada exitosamente para ID: {}", idUsuario);
+            return ResponseEntity.ok(Map.of("mensaje", "Contraseña actualizada correctamente."));
+        } catch (IllegalArgumentException e) {
+        	 logger.warn("Error de validación en cambio de contraseña para ID {}: {}", idUsuario, e.getMessage());  // 👈 NUEVO
+            return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+        } catch (Exception e) {
+        	 logger.error("Error inesperado cambiando contraseña para ID {}: {}", idUsuario, e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(Map.of("error", "Error al cambiar la contraseña."));
+        }
+    }
 
     /**
      * Recibe logs desde el frontend y los registra con el nivel adecuado.

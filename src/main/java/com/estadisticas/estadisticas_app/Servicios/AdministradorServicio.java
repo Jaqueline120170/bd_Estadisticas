@@ -13,9 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.estadisticas.estadisticas_app.Modelos.Categoria;
 import com.estadisticas.estadisticas_app.Modelos.Usuario;
-import com.estadisticas.estadisticas_app.Repositorios.CategoriaRepositorio;
 import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepositorio;
 
 import jakarta.transaction.Transactional;
@@ -77,6 +75,7 @@ public class AdministradorServicio {
     /**
      * Elimina un usuario por su ID.
      * @param id ID del usuario a eliminar.
+     * Este método lanza IllegalArgumentException si el ID no existe o corresponde al administrador.
      */
     public void eliminarUsuario(Long id) {
     	final Long ID_ADMIN = (long) 20; // Asumes que el admin tiene este ID fijo
@@ -98,7 +97,7 @@ public class AdministradorServicio {
      */
     public Map<String, Long> obtenerEstadisticasUsuarios() {
         logger.info("Obteniendo estadísticas de usuarios...");
-
+        try {
         long totalUsuarios = usuarioRepository.count();
         long usuariosVerificados = usuarioRepository.countByVerificado(true);
         long usuariosNoVerificados = totalUsuarios - usuariosVerificados;
@@ -112,8 +111,13 @@ public class AdministradorServicio {
         estadisticas.put("Usuarios No Verificados", usuariosNoVerificados);
         estadisticas.put("Administradores", admins);
         estadisticas.put("Usuarios", usuarios);
-      
+        logger.info("Estadísticas generadas exitosamente.");
         return estadisticas;
+        }
+        catch (Exception e) {
+            logger.error("Error al obtener estadísticas de usuarios: {}", e.getMessage());
+            throw new RuntimeException("Error al obtener estadísticas de usuarios", e);
+        }
     }
 
     /**

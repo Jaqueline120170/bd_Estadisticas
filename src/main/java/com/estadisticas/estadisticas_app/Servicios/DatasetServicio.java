@@ -31,13 +31,18 @@ import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepositorio;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.transaction.Transactional;
+/**
+ * Servicio que contiene la lógica de negocio para la gestión de datasets,
+ * incluyendo subida, listado, filtrado, eliminación y descarga de archivos,
+ * así como la administración de categorías.
+ */
 
 @Service
 public class DatasetServicio {
 	
 	 private static final Logger logger = LoggerFactory.getLogger(AdministradorServicio.class);
 	    
-
+	 	
 	    @Value("${dataset.upload.dir}")
 	    private String uploadDir;
 
@@ -56,9 +61,17 @@ public class DatasetServicio {
 
 	
 	   @Transactional
-	    /**
-	     * Método para subir un nuevo dataset por parte del admin
-	     */
+	   /**
+	    * Sube un nuevo dataset proporcionado por un administrador.
+	    *
+	    * @param metadata Metadatos del dataset (nombre, formato, descripción, etc.).
+	    * @param archivo Archivo físico del dataset.
+	    * @param idAdmin ID del administrador que sube el archivo.
+	    * @return Dataset creado y almacenado.
+	    * @throws IOException Si ocurre un error al guardar el archivo.
+	    * @throws ExcepcionNegocio Si el usuario o la categoría no existen, o el formato es inválido.
+	    */
+
 	    public Dataset subirDataset(DatasetMetadataDto metadata, MultipartFile archivo, Long idAdmin) throws IOException {
 
 	        // 1. Verifica que el usuario exista
@@ -112,16 +125,20 @@ public class DatasetServicio {
 	        // 8. Guardar en BD
 	        return datasetRepository.save(dataset);
 	    }
+	   
 	   @Transactional
-	   	/**
-	     * Método para listar los datasets llamado para el controlador de consultas(usuarios) y dataset controlador (administrador).
-	     */
+	   /**
+	    * Lista todos los datasets disponibles en el sistema, convertidos a DTO.
+	    *
+	    * @return Lista de objetos DatasetDto con datos resumidos.
+	    */
+
 	    public List<DatasetDto> listarTodosLosDatasets() {
 	        List<Dataset> datasets = datasetRepository.findAll();
 
 	        return datasets.stream().map(dataset -> {
 	            DatasetDto dto = new DatasetDto();
-	            dto.setId(dataset.getIdDataset());
+	            dto.setIdDataset(dataset.getIdDataset());
 	            dto.setNombreDataset(dataset.getNombreDataset());
 	            dto.setFuenteDataset(dataset.getFuenteDataset());
 	            dto.setDescripcionDataset(dataset.getDescripcionDataset());
@@ -147,8 +164,14 @@ public class DatasetServicio {
 	    }
 	    @Transactional
 	    /**
-	     * Método para filtrar los datasets llamado desde el contraolador de consultas y el controlador de datasets.
+	     * Filtra datasets en base a nombre, formato o categoría.
+	     *
+	     * @param nombre Nombre parcial o completo del dataset.
+	     * @param formato Formato del dataset (csv, json, xlsx).
+	     * @param idCategoria ID de la categoría deseada.
+	     * @return Lista de datasets que cumplen con los filtros.
 	     */
+
 	    public List<DatasetDto> filtrarDatasets(String nombre, String formato, Long idCategoria) {
 	        List<Dataset> resultados;
 
@@ -169,7 +192,7 @@ public class DatasetServicio {
 
 	    private DatasetDto convertirADto(Dataset dataset) {
 	        DatasetDto dto = new DatasetDto();
-	        dto.setId(dataset.getIdDataset());
+	        dto.setIdDataset(dataset.getIdDataset());
 	        dto.setNombreDataset(dataset.getNombreDataset());
 	        dto.setFuenteDataset(dataset.getFuenteDataset());
 	        dto.setDescripcionDataset(dataset.getDescripcionDataset());
@@ -186,8 +209,12 @@ public class DatasetServicio {
 
 	        return dto;
 	    }
+	    
 	    /**
-	     * Método para eliminar un dataset por parte del admin
+	     * Elimina un dataset, tanto de la base de datos como del sistema de archivos.
+	     *
+	     * @param id ID del dataset a eliminar.
+	     * @return true si el dataset fue eliminado, false si no se encontró.
 	     */
 	    @Transactional
 	    public boolean eliminarDataset(Long id) {
@@ -195,6 +222,7 @@ public class DatasetServicio {
 	            // Eliminar el archivo físico del disco
 	            Path archivoPath = Paths.get(uploadDir).resolve(dataset.getArchivoDataset());
 	            try {
+	            	logger.info("Intentando eliminar dataset con ID: {}", id);
 	                Files.deleteIfExists(archivoPath);  // 🔥 Elimina el archivo físico si existe
 	            } catch (IOException e) {
 	                logger.error("Error al eliminar el archivo del dataset: {}", archivoPath, e);
@@ -206,9 +234,16 @@ public class DatasetServicio {
 	        }).orElse(false);
 	    }
 
-	    
+	    /**
+	     * Obtiene el archivo físico de un dataset para descarga.
+	     *
+	     * @param id ID del dataset.
+	     * @return Archivo como recurso si existe y es legible.
+	     * @throws Exception Si el dataset no existe o el archivo no es legible.
+	     */
 	    @Transactional
 	    public Resource obtenerArchivoDataset(Long id) throws Exception {
+	    	
 	        Dataset dataset = datasetRepository.findById(id)
 	            .orElseThrow(() -> new Exception("Dataset no encontrado"));
 
@@ -221,12 +256,28 @@ public class DatasetServicio {
 	            throw new Exception("No se puede leer el archivo");
 	        }
 	    }
+	    /**
+	     * Crea una nueva categoría si no existe ya una con el mismo nombre.
+	     *
+	     * @param categoria Objeto con el nombre de la categoría.
+	     * @return Categoría guardada.
+	     * @throws ExcepcionNegocio Si el nombre está vacío o ya existe la categoría.
+	     */
+
 	    @Transactional
 	    public Categoria crearCategoria(Categoria categoria) {
-	        categoria.setIdCategoria(null); // forzar a que se genere nuevo id
+	    	logger.info("Intentando crear categoría: {}", categoria.getNombreCategoria());
+	        if (categoria.getNombreCategoria() == null || categoria.getNombreCategoria().trim().isEmpty()) {
+	        	logger.warn("Nombre de categoría vacío o nulo");
+	            throw new IllegalArgumentException("El nombre de la categoría es obligatorio.");
+	        }
+
+	        if (categoriaRepository.existsByNombreCategoria(categoria.getNombreCategoria())) {
+	        	logger.warn("Ya existe una categoría con el nombre: {}", categoria.getNombreCategoria());
+	            throw new IllegalArgumentException("Ya existe una categoría con ese nombre.");
+	        }
+
+	        categoria.setIdCategoria(null); // fuerza creación de nuevo ID
 	        return categoriaRepository.save(categoria);
 	    }
-
-
-
 }

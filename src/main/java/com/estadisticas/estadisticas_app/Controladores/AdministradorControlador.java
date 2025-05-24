@@ -51,10 +51,18 @@ public class AdministradorControlador {
      */
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/listar")
-    public ResponseEntity<List<Usuario>> listarUsuarios() {
-        logger.info("El administrador solicitó la lista de usuarios.");
-        return ResponseEntity.ok(administradorServicio.listarTodosLosUsuarios());
+    public ResponseEntity<?> listarUsuarios() {
+        try {
+            logger.info("El administrador solicitó la lista de usuarios.");
+            List<Usuario> usuarios = administradorServicio.listarTodosLosUsuarios();
+            return ResponseEntity.ok(usuarios);
+        } catch (Exception e) {
+            logger.error("Error al listar usuarios: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                                 .body("{\"error\": \"Error al obtener usuarios\"}");
+        }
     }
+
 
     /**
      * Endpoint que permite modificar un usuario existente.
@@ -97,6 +105,10 @@ public class AdministradorControlador {
         } catch (IllegalArgumentException e) {
             logger.warn("Error al eliminar usuario con ID {}: {}", id, e.getMessage());
             return ResponseEntity.badRequest().body("{\"error\": \"" + e.getMessage() + "\"}");
+        }catch (Exception e) {
+            logger.error("Error inesperado al eliminar usuario con ID {}: {}", id, e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body("{\"error\": \"Error al eliminar usuario\"}");
         }
     }
 
@@ -113,6 +125,7 @@ public class AdministradorControlador {
             Usuario usuario = administradorServicio.buscarUsuarioPorId(id);
             UsuarioDto dto = new UsuarioDto(usuario);
             return ResponseEntity.ok(dto);  // Envía el DTO al frontend
+            
         } catch (IllegalArgumentException e) {
             logger.warn("Intento de búsqueda fallido. Usuario con ID {} no encontrado.", id);
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
@@ -130,9 +143,15 @@ public class AdministradorControlador {
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/estadisticas")
     public ResponseEntity<?> obtenerEstadisticasUsuarios() {
+    	try {
         logger.info("El administrador ha solicitado las estadísticas de usuarios.");
         Map<String, Long> estadisticas = administradorServicio.obtenerEstadisticasUsuarios();
         return ResponseEntity.ok(estadisticas);
+    } catch (Exception e) {
+        logger.error("Error al obtener estadísticas de usuarios: {}", e.getMessage());
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                             .body("{\"error\": \"Error al obtener estadísticas\"}");
+    }
     }
     
 

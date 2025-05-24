@@ -40,7 +40,7 @@ public class Dataset {
 
     // Relación con Categoría
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_categoria")
+    @JoinColumn(name = "id_categoria", nullable = false)
     private Categoria categoria;
 
     // Constructor vacío

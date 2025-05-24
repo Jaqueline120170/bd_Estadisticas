@@ -42,22 +42,21 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @RequestMapping("/api/admin/datasets")
 public class DatasetControlador {
 	
-	private static final Logger logger = LoggerFactory.getLogger(AdministradorControlador.class);
-	
+	 private static final Logger logger = LoggerFactory.getLogger(DatasetControlador.class);
 	 @Autowired
 	    private DatasetServicio datasetServicio;
-	 @Autowired
-	    private DatasetRepositorio datasetRepository;
 	 @Autowired
 	    private CategoriaRepositorio categoriaRepository;
 	 
 	 
-	/**
-     * Endpoint para subir un dataset de forma manual por el administrador.
-     * Solo accesible para administradores.
-     * 
-     * .
-     */
+	 /**
+	     * Sube un nuevo dataset al sistema, enviando archivo y metadatos como formulario multipart.
+	     *
+	     * @param metadataJson JSON con los metadatos del dataset.
+	     * @param archivo      Archivo CSV o similar que contiene los datos.
+	     * @param adminId      ID del administrador que realiza la carga.
+	     * @return El dataset creado o un error detallado si ocurre una excepción.
+	 */
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping(value = "/subir", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<?> subirDataset(
@@ -65,15 +64,17 @@ public class DatasetControlador {
         @RequestPart("archivo") MultipartFile archivo,
         @RequestParam("adminId") Long adminId
     ) {
+    	 logger.info("Intentando subir dataset por el administrador ID: {}", adminId);
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             DatasetMetadataDto metadata = objectMapper.readValue(metadataJson, DatasetMetadataDto.class);
-
             Dataset nuevoDataset = datasetServicio.subirDataset(metadata, archivo, adminId);
+            logger.info("Dataset subido correctamente: {}", nuevoDataset.getNombreDataset());
             return ResponseEntity.ok(nuevoDataset);
 
         } catch (Exception e) {
-        	  e.printStackTrace(); // Esto imprime el error completo en consola
+        	 logger.error("Error al subir el dataset: {}", e.getMessage(), e);
+        	
             Map<String, String> error = new HashMap<>();
             error.put("error", "Error al subir el dataset: " + e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
@@ -82,58 +83,77 @@ public class DatasetControlador {
     }
     
     /**
-     * Endpoint para filtrar datasets en vista adminnistrador.
-     * 
-     * .
+     * Filtra datasets por nombre, formato o categoría.
+     *
+     * @param nombre     Nombre parcial o completo del dataset.
+     * @param formato    Formato del dataset (por ejemplo, CSV, JSON).
+     * @param idCategoria ID de la categoría a filtrar.
+     * @return Lista de datasets filtrados según los parámetros.
      */
     @GetMapping("/filtrar")
     public List<DatasetDto> filtrarDatasets(
             @RequestParam(required = false) String nombre,
             @RequestParam(required = false) String formato,
             @RequestParam(required = false) Long idCategoria) {
+    	logger.info("Filtrando datasets por nombre: {}, formato: {}, categoría ID: {}", nombre, formato, idCategoria);
         return datasetServicio.filtrarDatasets(nombre, formato, idCategoria);
     }
 
     /**
-     * Endpoint para listar datasets en vista administrador.
-     * 
-     * .
+     * Lista todos los datasets registrados en el sistema.
+     *
+     * @return Lista de objetos DatasetDto.
      */
     @GetMapping("/listarDataset")
     public ResponseEntity<List<DatasetDto>> listarTodos() {
+    	logger.info("Listando todos los datasets (vista administrador)");
         List<DatasetDto> datasets = datasetServicio.listarTodosLosDatasets();
         return ResponseEntity.ok(datasets);
     }
     /**
-     * Endpoint para eliminar datasets solo disponible para administrador.
-     * 
-     * .
+     * Elimina un dataset por su ID.
+     *
+     * @param id ID del dataset a eliminar.
+     * @return Respuesta vacía si se elimina correctamente, o error si no se encuentra.
      */
     @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<?> eliminarDataset(@PathVariable Long id) {
+    	 logger.info("Eliminando dataset con ID: {}", id);
         boolean eliminado = datasetServicio.eliminarDataset(id);
         if (!eliminado) {
+        	 logger.warn("Intento de eliminar dataset no existente con ID: {}", id);
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Dataset no encontrado.");
         }
+        logger.info("Dataset eliminado con éxito.");
         return ResponseEntity.noContent().build();
     }
     /**
-     * Endpoint para listar categorias  en vista administrador.
-     * 
-     * .
+     * Lista todas las categorías disponibles para clasificación de datasets.
+     *
+     * @return Lista de entidades Categoria.
      */
     @GetMapping("/listarCategorias")
     public ResponseEntity<List<Categoria>> listarCategorias() {
+    	logger.info("Listando todas las categorías.");
         List<Categoria> categorias = categoriaRepository.findAll();
         return ResponseEntity.ok(categorias);  // Devuelve la lista de categorías
     }
+    /**
+     * Crea una nueva categoría para los datasets.
+     *
+     * @param categoria Objeto de categoría a crear.
+     * @return Categoría creada o error en caso de fallo.
+     */
     @PostMapping("/categorias")
     public ResponseEntity<?> crearCategoria(@RequestBody Categoria categoria) {
+    	 logger.info("Creando nueva categoría: {}", categoria.getNombreCategoria());
         try {
             categoria.setIdCategoria(null);  // Por si acaso, para evitar que venga con id
             Categoria nuevaCategoria = datasetServicio.crearCategoria(categoria);
+            logger.info("Categoría creada con éxito: {}", nuevaCategoria.getNombreCategoria());
             return ResponseEntity.ok(nuevaCategoria);
         } catch (Exception e) {
+        	logger.error("Error al crear categoría: {}", e.getMessage(), e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
     }

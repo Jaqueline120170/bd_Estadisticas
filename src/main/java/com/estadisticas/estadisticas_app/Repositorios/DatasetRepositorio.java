@@ -13,13 +13,12 @@ import com.estadisticas.estadisticas_app.Modelos.Dataset;
 	@Repository
 	public interface DatasetRepositorio extends JpaRepository<Dataset, Long> {
 		@Query("SELECT d FROM Dataset d " +
-			       "WHERE (:nombre IS NULL OR LOWER(d.nombreDataset) LIKE LOWER(:nombre)) " +
+			       "WHERE (:nombre IS NULL OR d.nombreDataset LIKE :nombre) " +
 			       "AND (:formato IS NULL OR d.formatoDataset = :formato) " +
 			       "AND (:idCategoria IS NULL OR d.categoria.idCategoria = :idCategoria)")
-			List<Dataset> findByFiltros(
-			        @Param("nombre") String nombre,
-			        @Param("formato") String formato,
-			        @Param("idCategoria") Long idCategoria);
+			List<Dataset> findByFiltros(@Param("nombre") String nombre,
+			                            @Param("formato") String formato,
+			                            @Param("idCategoria") Long idCategoria);
 
 	}
 

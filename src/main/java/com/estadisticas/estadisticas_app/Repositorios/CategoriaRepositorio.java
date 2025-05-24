@@ -7,5 +7,7 @@ import com.estadisticas.estadisticas_app.Modelos.Categoria;
 
 @Repository
 public interface CategoriaRepositorio extends JpaRepository<Categoria, Long> {
-    // Puedes agregar métodos como: findByNombre(String nombre) si lo necesitas más adelante
+
+	boolean existsByNombreCategoria(String nombre);
+   
 }
