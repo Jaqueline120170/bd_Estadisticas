@@ -37,7 +37,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * Controlador que maneja las solicitudes HTTP relacionadas con la administración de usuarios.
  * Solo los administradores pueden acceder a estas rutas, ya que están protegidas con seguridad basada en roles.
  */
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/admin/datasets")
 public class DatasetControlador {

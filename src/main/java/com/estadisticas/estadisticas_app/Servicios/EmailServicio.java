@@ -3,6 +3,7 @@ package com.estadisticas.estadisticas_app.Servicios;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -19,7 +20,10 @@ import jakarta.mail.internet.MimeMessage;
  */
 @Service
 public class EmailServicio {
+	  // 🔁 Variables de entorno inyectadas desde application.properties o Railway
 
+    @Value("${frontend.url}")
+    private String frontendUrl;
     @Autowired
     private JavaMailSender mailSender;  // Servicio de envío de correos electrónicos
 
@@ -35,7 +39,8 @@ public class EmailServicio {
      */
     public void enviarCorreoVerificacion(String emailUsuario, String token, Long idUsuario) {
         // Construcción del enlace de verificación
-        String enlaceVerificacion = "http://localhost:8081/api/usuarios/activar?id=" + idUsuario + "&token=" + token;
+        //String enlaceVerificacion = "http://localhost:8081/api/usuarios/activar?id=" + idUsuario + "&token=" + token;
+    	 String enlaceVerificacion = "https://bdestadisticas-production.up.railway.app/api/usuarios/activar?id=" + idUsuario + "&token=" + token;
 
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom("osteologia2@gmail.com");  // Correo del remitente
@@ -58,8 +63,9 @@ public class EmailServicio {
      */
     public void enviarCorreoRestablecerContraseña(String emailUsuario, String resetToken) {
         // Construcción del enlace para restablecer la contraseña
-        String enlaceRestablecer = "http://localhost:4200/restablecer-contrasena/" + resetToken;
-
+        //String enlaceRestablecer = "http://localhost:4200/restablecer-contrasena/" + resetToken;
+    	String enlaceRestablecer = frontendUrl + "/restablecer-contrasena/" + resetToken;
+    	
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom("osteologia2@gmail.com");  // Correo del remitente
         message.setTo(emailUsuario);  // Correo del destinatario

@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -46,10 +47,18 @@ import jakarta.persistence.EntityNotFoundException;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.transaction.Transactional;
 
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/usuarios")
 public class UsuarioControlador {
+	
+	  // 🔁 Inyectamos la URL del frontend desde application.properties
+	@Value("${frontend.url}")
+	private String frontendUrl;
+	
+
+	@Value("${backend.url}")
+	private String backendUrl;
 
     @Autowired
     private UsuarioServicio usuarioServicio;
@@ -111,14 +120,17 @@ public class UsuarioControlador {
             
             if (activado) {
                 logger.info("Cuenta activada correctamente. Redirigiendo a login.");
-                response.sendRedirect("http://localhost:4200/login?mensaje=activacion_exitosa");
+                response.sendRedirect(frontendUrl + "/login?mensaje=activacion_exitosa");
+                //response.sendRedirect("http://localhost:4200/login?mensaje=activacion_exitosa");
             } else {
                 logger.info("Cuenta ya estaba activada. Redirigiendo a login.");
-                response.sendRedirect("http://localhost:4200/login?mensaje=ya_activada");
+                response.sendRedirect(frontendUrl + "/login?mensaje=ya_activada");
+                //response.sendRedirect("http://localhost:4200/login?mensaje=ya_activada");
             }
         } catch (IllegalArgumentException e) {
             logger.error("Error al activar cuenta: " + e.getMessage());
-            response.sendRedirect("http://localhost:4200/error-activacion?error=" + e.getMessage());
+            response.sendRedirect(frontendUrl + "/error-activacion?error=" + e.getMessage());
+            //response.sendRedirect("http://localhost:4200/error-activacion?error=" + e.getMessage());
         }
     }
 
