@@ -9,7 +9,8 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
  * Excluye la configuración de seguridad predeterminada de Spring Security.
  * Esta clase es el punto de entrada de la aplicación.
  */
-@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
+@SpringBootApplication
+//(exclude = SecurityAutoConfiguration.class)
 public class EstadisticasAppApplication {
 
     /**

@@ -32,7 +32,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-            .allowedOrigins(frontendUrl, "https://jaquedev.es")
+            .allowedOrigins("http://localhost:4200", "https://jaquedev.es")
             .allowedMethods("*")
             .allowedHeaders("*")
             .allowCredentials(true);
