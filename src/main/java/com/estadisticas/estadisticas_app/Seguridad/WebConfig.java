@@ -25,16 +25,12 @@ public class WebConfig implements WebMvcConfigurer {
      *
      * @param registry el registro de CORS, que se utiliza para definir las reglas de CORS.
      */
-
-    @Value("${frontend.url}")
-    private String frontendUrl;
-
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")
-            .allowedOrigins("*")   // permite todos los orígenes
-            .allowedMethods("*")
-            .allowedHeaders("*")
-            .allowCredentials(true);
-    }
+	@Override
+	public void addCorsMappings(CorsRegistry registry) {
+	    registry.addMapping("/**")
+	        .allowedOrigins("https://jaquedev.es", "http://localhost:4200")  // pon los dominios que necesites
+	        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+	        .allowedHeaders("*")
+	        .allowCredentials(true);
+	}
 	}
