@@ -47,7 +47,7 @@ import jakarta.persistence.EntityNotFoundException;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.transaction.Transactional;
 
-//@CrossOrigin(origins = "http://localhost:4200")
+
 @RestController
 @RequestMapping("/api/usuarios")
 public class UsuarioControlador {
