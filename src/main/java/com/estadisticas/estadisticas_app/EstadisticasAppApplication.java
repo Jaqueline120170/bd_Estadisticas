@@ -22,7 +22,8 @@ public class EstadisticasAppApplication {
     public static void main(String[] args) {
         // Arranca la aplicación Spring Boot
         SpringApplication.run(EstadisticasAppApplication.class, args);
-        
+        System.out.println("Valor de la variable PORT: " + System.getenv("PORT"));
+
     }
     @PostConstruct
     public void logDatabaseEnv() {
