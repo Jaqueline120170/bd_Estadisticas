@@ -1,4 +1,4 @@
-package com.estadisticas.estadisticas_app.Controladores;
+package com.estadisticas.estadisticas_app;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
