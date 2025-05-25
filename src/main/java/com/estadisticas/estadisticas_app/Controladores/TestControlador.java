@@ -21,5 +21,9 @@ public class TestControlador {
 	  public void init() {
 	      logger.info("Aplicación corriendo en puerto: {}", System.getenv("PORT"));
 	  }
+	  @GetMapping("/")
+	    public ResponseEntity<String> healthCheck() {
+	        return ResponseEntity.ok("Aplicación en funcionamiento");
+	    }
 
 }

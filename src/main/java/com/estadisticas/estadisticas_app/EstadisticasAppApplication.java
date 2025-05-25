@@ -17,20 +17,8 @@ public class EstadisticasAppApplication {
      * 
      * @param args Argumentos de línea de comandos
      */
-    //(public static void main(String[] args) {
+    public static void main(String[] args) {
         // Arranca la aplicación Spring Boot
-       // SpringApplication.run(EstadisticasAppApplication.class, args);
-    //}
-	 public static void main(String[] args) {
-	        String port = System.getenv("PORT");
-	        if (port != null) {
-	            System.setProperty("server.port", port);
-	            System.out.println("Usando puerto de Railway: " + port);
-	        } else {
-	            System.out.println("No se encontró la variable PORT. Usando puerto por defecto 8080");
-	        }
-
-	        SpringApplication.run(EstadisticasAppApplication.class, args);
-	    }
-
+        SpringApplication.run(EstadisticasAppApplication.class, args);
+    }
 }
