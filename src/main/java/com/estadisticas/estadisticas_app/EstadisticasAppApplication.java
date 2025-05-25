@@ -31,5 +31,5 @@ public class EstadisticasAppApplication {
         System.out.println("USER: " + System.getenv("PGUSER"));
         System.out.println("PASS: " + System.getenv("PGPASSWORD"));
     }
-
+    
 }

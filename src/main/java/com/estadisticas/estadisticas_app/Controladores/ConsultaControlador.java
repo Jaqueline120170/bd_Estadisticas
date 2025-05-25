@@ -24,7 +24,7 @@ import com.estadisticas.estadisticas_app.Repositorios.CategoriaRepositorio;
 import com.estadisticas.estadisticas_app.Servicios.ConsultaServicio;
 import com.estadisticas.estadisticas_app.Servicios.DatasetServicio;
 
-//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://jaquedev.es")
 @RestController
 @RequestMapping("/api/consultas")
 public class ConsultaControlador {
