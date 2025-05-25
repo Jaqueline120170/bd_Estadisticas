@@ -17,8 +17,16 @@ public class EstadisticasAppApplication {
      * 
      * @param args Argumentos de línea de comandos
      */
-    public static void main(String[] args) {
+    //(public static void main(String[] args) {
         // Arranca la aplicación Spring Boot
-        SpringApplication.run(EstadisticasAppApplication.class, args);
-    }
+       // SpringApplication.run(EstadisticasAppApplication.class, args);
+    //}
+	public static void main(String[] args) {
+	    String port = System.getenv("PORT");
+	    if (port != null) {
+	        System.setProperty("server.port", port);
+	    }
+	    SpringApplication.run(EstadisticasAppApplication.class, args);
+	}
+
 }
