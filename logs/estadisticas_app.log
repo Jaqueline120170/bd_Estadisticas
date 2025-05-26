@@ -1735,3 +1735,73 @@ Caused by: java.lang.RuntimeException: Driver org.postgresql.Driver claims to no
 2025-05-26 11:06:48 - Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-05-26 11:06:48 - HikariPool-1 - Shutdown initiated...
 2025-05-26 11:06:48 - HikariPool-1 - Shutdown completed.
+2025-05-26 14:15:30 - Starting EstadisticasAppApplicationTests using Java 21.0.2 with PID 21448 (started by Usuario in C:\Users\Usuario\DWS)
+2025-05-26 14:15:30 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-05-26 14:15:30 - No active profile set, falling back to 1 default profile: "default"
+2025-05-26 14:15:30 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7e46d648
+2025-05-26 14:15:31 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-26 14:15:31 - Finished Spring Data repository scanning in 73 ms. Found 5 JPA repository interfaces.
+2025-05-26 14:15:32 - HikariPool-1 - Starting...
+2025-05-26 14:15:33 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@101330ad
+2025-05-26 14:15:33 - HikariPool-1 - Start completed.
+2025-05-26 14:15:33 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-26 14:15:33 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-05-26 14:15:33 - HHH000026: Second-level cache disabled
+2025-05-26 14:15:34 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-26 14:15:34 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.8
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-26 14:15:35 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-26 14:15:35 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-26 14:15:35 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-26 14:15:36 - Aplicación corriendo en puerto: null
+2025-05-26 14:15:37 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-26 14:15:37 - 36 mappings in 'requestMappingHandlerMapping'
+2025-05-26 14:15:37 - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-05-26 14:15:37 - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-05-26 14:15:37 - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-05-26 14:15:37 - Started EstadisticasAppApplicationTests in 7.525 seconds (process running for 9.243)
+2025-05-26 14:15:38 - Closing org.springframework.web.context.support.GenericWebApplicationContext@7e46d648, started on Mon May 26 14:15:30 CEST 2025
+2025-05-26 14:15:38 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-26 14:15:38 - HikariPool-1 - Shutdown initiated...
+2025-05-26 14:15:38 - HikariPool-1 - Shutdown completed.
+2025-05-26 14:16:25 - Starting EstadisticasAppApplicationTests using Java 21.0.2 with PID 18676 (started by Usuario in C:\Users\Usuario\DWS)
+2025-05-26 14:16:25 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-05-26 14:16:25 - No active profile set, falling back to 1 default profile: "default"
+2025-05-26 14:16:25 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7e46d648
+2025-05-26 14:16:26 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-26 14:16:26 - Finished Spring Data repository scanning in 66 ms. Found 5 JPA repository interfaces.
+2025-05-26 14:16:26 - HikariPool-1 - Starting...
+2025-05-26 14:16:27 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@101330ad
+2025-05-26 14:16:27 - HikariPool-1 - Start completed.
+2025-05-26 14:16:28 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-26 14:16:28 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-05-26 14:16:28 - HHH000026: Second-level cache disabled
+2025-05-26 14:16:28 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-26 14:16:28 - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.8
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-26 14:16:30 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-26 14:16:30 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-26 14:16:30 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-26 14:16:31 - Aplicación corriendo en puerto: null
+2025-05-26 14:16:31 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-26 14:16:31 - 36 mappings in 'requestMappingHandlerMapping'
+2025-05-26 14:16:31 - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-05-26 14:16:32 - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-05-26 14:16:32 - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-05-26 14:16:32 - Started EstadisticasAppApplicationTests in 7.134 seconds (process running for 8.517)
+2025-05-26 14:16:32 - Closing org.springframework.web.context.support.GenericWebApplicationContext@7e46d648, started on Mon May 26 14:16:25 CEST 2025
+2025-05-26 14:16:32 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-26 14:16:32 - HikariPool-1 - Shutdown initiated...
+2025-05-26 14:16:33 - HikariPool-1 - Shutdown completed.
