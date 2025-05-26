@@ -25,13 +25,13 @@ public class WebConfig implements WebMvcConfigurer {
      *
      * @param registry el registro de CORS, que se utiliza para definir las reglas de CORS.
      */
-	 @Override
+	  @Override
 	    public void addCorsMappings(CorsRegistry registry) {
 	        registry.addMapping("/**")
-	            .allowedOrigins("*")  // Permitir cualquier origen (solo para pruebas)
+	            .allowedOrigins("*")  // Solo para prueba, luego restringes
 	            .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
 	            .allowedHeaders("*")
-	            .allowCredentials(false);  // No permitir cookies / credenciales
+	            .allowCredentials(false);
 	    }
 
 	}
