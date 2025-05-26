@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["openjdk17", "maven"]
+
+[phases.build]
+cmds = ["mvn clean install -DskipTests"]
+
+[phases.start]
+cmd = "java -jar -Dserver.port=$PORT target/estadisticas-app-0.0.1-SNAPSHOT.jar"
