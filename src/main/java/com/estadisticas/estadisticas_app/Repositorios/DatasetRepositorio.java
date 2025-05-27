@@ -23,9 +23,8 @@ import com.estadisticas.estadisticas_app.Modelos.Dataset;
 	    long count();
 
 	    // Conteo por categoría - retorna lista de objetos Object[] con [nombreCategoria, conteo]
-	    @Query("SELECT d.categoria.nombreCategoria, COUNT(d) FROM Dataset d GROUP BY d.categoria.nombreCategoria")
-	    List<Object[]> contarPorCategoria();
-
+	    @Query("SELECT d.categoria.nombreCategoria AS categoria, COUNT(d) AS total FROM Dataset d GROUP BY d.categoria.nombreCategoria")
+	    List<Object[]> contarDatasetsPorCategoria();
 	}
 
 

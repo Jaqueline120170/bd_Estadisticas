@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.time.LocalDate;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -281,32 +282,16 @@ public class DatasetServicio {
 	        categoria.setIdCategoria(null); // fuerza creación de nuevo ID
 	        return categoriaRepository.save(categoria);
 	    }
-	    public Map<String, Object> obtenerEstadisticasDatasets() {
-	        logger.info("Obteniendo estadísticas de datasets...");
-	        Map<String, Object> estadisticas = new HashMap<>();
+	    public Map<String, Long> obtenerConteoDatasetsPorCategoria() {
+	        List<Object[]> resultados = datasetRepository.contarDatasetsPorCategoria();
+	        Map<String, Long> conteoPorCategoria = new LinkedHashMap<>();
 
-	        try {
-	            long totalDatasets = datasetRepository.count();
-	            estadisticas.put("TotalDatasets", totalDatasets);
-
-	            List<Object[]> conteosPorCategoria = datasetRepository.contarPorCategoria();
-
-	            // Convertir la lista a un mapa de categoria -> conteo
-	            Map<String, Long> datasetsPorCategoria = conteosPorCategoria.stream()
-	                .collect(Collectors.toMap(
-	                    row -> (String) row[0],
-	                    row -> (Long) row[1]
-	                ));
-
-	            estadisticas.put("DatasetsPorCategoria", datasetsPorCategoria);
-
-	            logger.info("Estadísticas de datasets generadas exitosamente.");
-	            return estadisticas;
-
-	        } catch (Exception e) {
-	            logger.error("Error al obtener estadísticas de datasets: {}", e.getMessage());
-	            throw new RuntimeException("Error al obtener estadísticas de datasets", e);
+	        for (Object[] fila : resultados) {
+	            String categoria = (String) fila[0];
+	            Long total = (Long) fila[1];
+	            conteoPorCategoria.put(categoria, total);
 	        }
+	        return conteoPorCategoria;
 	    }
 
 }
