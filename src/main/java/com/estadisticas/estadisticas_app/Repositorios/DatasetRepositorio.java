@@ -19,6 +19,12 @@ import com.estadisticas.estadisticas_app.Modelos.Dataset;
 			List<Dataset> findByFiltros(@Param("nombre") String nombre,
 			                            @Param("formato") String formato,
 			                            @Param("idCategoria") Long idCategoria);
+		// Conteo total
+	    long count();
+
+	    // Conteo por categoría - retorna lista de objetos Object[] con [nombreCategoria, conteo]
+	    @Query("SELECT d.categoria.nombreCategoria, COUNT(d) FROM Dataset d GROUP BY d.categoria.nombreCategoria")
+	    List<Object[]> contarPorCategoria();
 
 	}
 

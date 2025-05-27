@@ -158,5 +158,17 @@ public class DatasetControlador {
         }
     }
 
-
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/estadisticas/datasets")
+    public ResponseEntity<?> obtenerEstadisticasDatasets() {
+        try {
+            logger.info("El administrador ha solicitado las estadísticas de datasets.");
+            Map<String, Object> estadisticas = datasetServicio.obtenerEstadisticasDatasets();
+            return ResponseEntity.ok(estadisticas);
+        } catch (Exception e) {
+            logger.error("Error al obtener estadísticas de datasets: {}", e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                                 .body("{\"error\": \"Error al obtener estadísticas de datasets\"}");
+        }
+    }
 }
