@@ -24,7 +24,6 @@ public class Categoria {
 
     // Relación con datasets
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnore
     private List<Dataset> datasets;
 
     // Constructor vacío
