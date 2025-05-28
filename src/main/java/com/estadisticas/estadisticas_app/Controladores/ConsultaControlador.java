@@ -20,6 +20,8 @@ import com.estadisticas.estadisticas_app.Dtos.ConsultaDto;
 import com.estadisticas.estadisticas_app.Dtos.DatasetDto;
 import com.estadisticas.estadisticas_app.Dtos.DescargaDto;
 import com.estadisticas.estadisticas_app.Modelos.Categoria;
+import com.estadisticas.estadisticas_app.Modelos.Consulta;
+import com.estadisticas.estadisticas_app.Modelos.Descarga;
 import com.estadisticas.estadisticas_app.Repositorios.CategoriaRepositorio;
 import com.estadisticas.estadisticas_app.Servicios.ConsultaServicio;
 import com.estadisticas.estadisticas_app.Servicios.DatasetServicio;
@@ -37,111 +39,7 @@ public class ConsultaControlador {
 	@Autowired
     private CategoriaRepositorio categoriaRepository;
 	
-	/**
-     * Endpoint para crear una consulta.
-     * 
-     * .
-     */
-    @PostMapping("/consultas")
-    public ResponseEntity<ConsultaDto> crearConsulta(@RequestBody ConsultaDto consultaDTO) {
-    	 logger.info("Creando nueva consulta: {}", consultaDTO);
-        try {
-            ConsultaDto creado = consultaServicio.crearConsulta(consultaDTO);
-            logger.info("Consulta creada con ID: {}", creado.getIdUsuario());
-            return ResponseEntity.ok(creado);
-        } catch (Exception e) {
-        	 logger.error("Error al crear consulta: {}", e.getMessage(), e);
-            return ResponseEntity.badRequest().build();
-        }
-    }
-
-    /**
-     * Endpoint para obtener consulta por id.
-     * 
-     * .
-     */
-    @GetMapping("/consultas/{id}")
-    public ResponseEntity<ConsultaDto> obtenerConsulta(@PathVariable Long id) {
-    	 logger.info("Obteniendo consulta con ID: {}", id);
-        try {
-            ConsultaDto consultaDTO = consultaServicio.obtenerConsulta(id);
-            return ResponseEntity.ok(consultaDTO);
-        } catch (Exception e) {
-        	logger.error("Consulta con ID {} no encontrada: {}", id, e.getMessage());
-            return ResponseEntity.notFound().build();
-        }
-    }
-
-    /**
-     * Endpoint para listar consultas.
-     * 
-     * .
-     */
-    @GetMapping("/consultas")
-    public ResponseEntity<List<ConsultaDto>> listarConsultas() {
-        logger.info("Listando todas las consultas...");
-        try {
-            List<ConsultaDto> consultas = consultaServicio.listarConsultas();
-            logger.info("Se encontraron {} consultas", consultas.size());
-            return ResponseEntity.ok(consultas);
-        } catch (Exception e) {
-            logger.error("Error al listar consultas: {}", e.getMessage(), e);
-            return ResponseEntity.internalServerError().build();
-        }
-    }
-
-
-    /**
-     * Endpoint para crear descarga.
-     * 
-     * .
-     */
-    @PostMapping("/descargas")
-    public ResponseEntity<DescargaDto> crearDescarga(@RequestBody DescargaDto descargaDTO) {
-        logger.info("Creando nueva descarga: {}", descargaDTO);
-        try {
-            DescargaDto creado = consultaServicio.crearDescarga(descargaDTO);
-            logger.info("Descarga creada con ID: {}", creado.getId());
-            return ResponseEntity.ok(creado);
-        } catch (Exception e) {
-            logger.error("Error al crear descarga: {}", e.getMessage(), e);
-            return ResponseEntity.badRequest().build();
-        }
-    }
-
-
-    /**
-     * Endpoint para obtener descarga por id.
-     * 
-     * .
-     */
-    @GetMapping("/descargas/{id}")
-    public ResponseEntity<DescargaDto> obtenerDescarga(@PathVariable Long id) {
-        try {
-            DescargaDto descargaDTO = consultaServicio.obtenerDescarga(id);
-            return ResponseEntity.ok(descargaDTO);
-        } catch (Exception e) {
-            return ResponseEntity.notFound().build();
-        }
-    }
-
-    /**
-     * Endpoint para listar descargas.
-     * 
-     * .
-     */
-    @GetMapping("/descargas")
-    public ResponseEntity<List<DescargaDto>> listarDescargas() {
-        logger.info("Listando todas las descargas...");
-        try {
-            List<DescargaDto> descargas = consultaServicio.listarDescargas();
-            logger.info("Se encontraron {} descargas", descargas.size());
-            return ResponseEntity.ok(descargas);
-        } catch (Exception e) {
-            logger.error("Error al listar descargas: {}", e.getMessage(), e);
-            return ResponseEntity.internalServerError().build();
-        }
-    }
+	
 
     /**
      * Endpoint para filtrar datasets en vista usuario.
@@ -197,6 +95,15 @@ public class ConsultaControlador {
             return ResponseEntity.notFound().build();
         }
     }
-
+    @PostMapping("/registrto-consulta")
+    public ResponseEntity<?> registrarConsulta(@RequestBody ConsultaDto dto) {
+        Consulta nuevaConsulta = consultaServicio.registrarConsulta(dto);
+        return ResponseEntity.ok(nuevaConsulta);
+    }
+    @PostMapping("/registro-descarga")
+    public ResponseEntity<Descarga> registrarDescarga(@RequestBody DescargaDto dto) {
+        Descarga descarga = datasetServicio.registrarDescarga(dto);
+        return ResponseEntity.ok(descarga);
+    }
 
 }

@@ -26,23 +26,18 @@ public class Descarga {
     @JoinColumn(name = "id_dataset")
     private Dataset dataset;
 
-    // NUEVO: relación a Consulta
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_consulta")
-    private Consulta consulta;
-
     public Descarga() {
         super();
     }
 
-    public Descarga(Long id, String formato, LocalDateTime fechaDescarga, Usuario usuario, Dataset dataset, Consulta consulta) {
+    public Descarga(Long id, String formato, LocalDateTime fechaDescarga, Usuario usuario, Dataset dataset) {
         super();
         this.id = id;
         this.formato = formato;
         this.fechaDescarga = fechaDescarga;
         this.usuario = usuario;
         this.dataset = dataset;
-        this.consulta = consulta;
+       
     }
 
     // getters y setters incluyendo consulta
@@ -87,12 +82,5 @@ public class Descarga {
         this.dataset = dataset;
     }
 
-    public Consulta getConsulta() {
-        return consulta;
-    }
-
-    public void setConsulta(Consulta consulta) {
-        this.consulta = consulta;
-    }
 }
 

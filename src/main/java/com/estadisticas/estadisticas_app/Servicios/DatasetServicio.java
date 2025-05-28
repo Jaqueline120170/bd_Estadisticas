@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -24,11 +25,15 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.estadisticas.estadisticas_app.Dtos.DatasetDto;
 import com.estadisticas.estadisticas_app.Dtos.DatasetMetadataDto;
+import com.estadisticas.estadisticas_app.Dtos.DescargaDto;
 import com.estadisticas.estadisticas_app.Modelos.Categoria;
+import com.estadisticas.estadisticas_app.Modelos.Consulta;
 import com.estadisticas.estadisticas_app.Modelos.Dataset;
+import com.estadisticas.estadisticas_app.Modelos.Descarga;
 import com.estadisticas.estadisticas_app.Modelos.Usuario;
 import com.estadisticas.estadisticas_app.Repositorios.CategoriaRepositorio;
 import com.estadisticas.estadisticas_app.Repositorios.DatasetRepositorio;
+import com.estadisticas.estadisticas_app.Repositorios.DescargaRepositorio;
 import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepositorio;
 
 import jakarta.annotation.PostConstruct;
@@ -60,6 +65,8 @@ public class DatasetServicio {
 	    private CategoriaRepositorio categoriaRepository;
 	    @Autowired
 	    private DatasetRepositorio datasetRepository;
+	    @Autowired
+	    private DescargaRepositorio descargaRepository;
 
 	
 	   @Transactional
@@ -282,6 +289,8 @@ public class DatasetServicio {
 	        categoria.setIdCategoria(null); // fuerza creación de nuevo ID
 	        return categoriaRepository.save(categoria);
 	    }
+	    
+	    @Transactional
 	    public Map<String, Long> obtenerConteoDatasetsPorCategoria() {
 	        List<Object[]> resultados = datasetRepository.contarDatasetsPorCategoria();
 	        Map<String, Long> conteoPorCategoria = new LinkedHashMap<>();
@@ -292,6 +301,24 @@ public class DatasetServicio {
 	            conteoPorCategoria.put(categoria, total);
 	        }
 	        return conteoPorCategoria;
+	    }
+	    
+	    @Transactional
+	    public Descarga registrarDescarga(DescargaDto dto) {
+	        Usuario usuario = usuarioRepository.findById(dto.idUsuario)
+	                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+
+	        Dataset dataset = datasetRepository.findById(dto.idDataset)
+	                .orElseThrow(() -> new RuntimeException("Dataset no encontrado"));
+
+	        Descarga descarga = new Descarga();
+	        descarga.setUsuario(usuario);
+	        descarga.setDataset(dataset);
+	        descarga.setFormato(dto.formato);
+	        descarga.setFechaDescarga(LocalDateTime.now());
+
+
+	        return descargaRepository.save(descarga);
 	    }
 
 }
