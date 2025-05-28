@@ -73,11 +73,13 @@ public class ConsultaControlador {
      * llamado de dataset servicio
      * .
      */
-    @GetMapping("datasets/listarCategorias")
+    @GetMapping("/datasets/listarCategorias")
     public ResponseEntity<List<Categoria>> listarCategorias() {
         List<Categoria> categorias = categoriaRepository.findAll();
+        logger.info("Listando todas las categorías.");
         return ResponseEntity.ok(categorias);  // Devuelve la lista de categorías
     }
+    
     /**
      * Endpoint para descargar datasets en vista usuario.
      * llamado de dataset servicio

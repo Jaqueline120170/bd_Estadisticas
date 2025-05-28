@@ -28,6 +28,7 @@ import com.estadisticas.estadisticas_app.Dtos.DatasetMetadataDto;
 import com.estadisticas.estadisticas_app.Modelos.Categoria;
 import com.estadisticas.estadisticas_app.Modelos.Dataset;
 import com.estadisticas.estadisticas_app.Repositorios.CategoriaRepositorio;
+import com.estadisticas.estadisticas_app.Repositorios.DatasetRepositorio;
 import com.estadisticas.estadisticas_app.Servicios.DatasetServicio;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -162,6 +163,4 @@ public class DatasetControlador {
     public Map<String, Long> obtenerConteoPorCategoria() {
         return datasetServicio.obtenerConteoDatasetsPorCategoria();
     }
-    
-    
 }
