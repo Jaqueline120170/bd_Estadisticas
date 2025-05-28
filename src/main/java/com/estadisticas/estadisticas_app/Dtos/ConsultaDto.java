@@ -7,8 +7,7 @@ import java.util.Map;
 
 public class ConsultaDto {
     
-	public class ConsultaDTO {
-		
+	
 		
 
 	public Long idUsuario;
@@ -30,21 +29,4 @@ public class ConsultaDto {
 		return filtros;
 	}
 
-	
-}
-
-	public Object getFiltros() {
-		// TODO Auto-generated method stub
-		return null;
 	}
-
-	public Long getIdUsuario() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public Long getIdDataset() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-}
