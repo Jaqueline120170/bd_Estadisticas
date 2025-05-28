@@ -39,45 +39,42 @@ public class Dataset {
     @JoinColumn(name = "subido_por")
     private Usuario subidoPor;
 
-    public List<Descarga> getDescargas() {
-		return descargas;
-	}
-
-	public void setDescargas(List<Descarga> descargas) {
-		this.descargas = descargas;
-	}
-
-	// Relación con Categoría
+    // Relación con Categoría
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_categoria", nullable = false)
     private Categoria categoria;
+    
+ // ✅ Relación con Descargas (nuevo bloque)
     @OneToMany(mappedBy = "dataset", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<Descarga> descargas;
-
+    
     // Constructor vacío
     public Dataset() {}
 
     // Constructor completo
     public Dataset(Long idDataset, String nombreDataset, String fuenteDataset, String descripcionDataset,
-                   String archivoDataset, String formatoDataset, LocalDate fechaActualizacionDataset,
-                   Usuario subidoPor, Categoria categoria) {
-        this.idDataset = idDataset;
-        this.nombreDataset = nombreDataset;
-        this.fuenteDataset = fuenteDataset;
-        this.descripcionDataset = descripcionDataset;
-        this.archivoDataset = archivoDataset;
-        this.formatoDataset = formatoDataset;
-        this.fechaActualizacionDataset = fechaActualizacionDataset;
-        this.subidoPor = subidoPor;
-        this.categoria = categoria;
-    }
+			String archivoDataset, String formatoDataset, LocalDate fechaActualizacionDataset, Usuario subidoPor,
+			List<Descarga> descargas, Categoria categoria) {
+		super();
+		this.idDataset = idDataset;
+		this.nombreDataset = nombreDataset;
+		this.fuenteDataset = fuenteDataset;
+		this.descripcionDataset = descripcionDataset;
+		this.archivoDataset = archivoDataset;
+		this.formatoDataset = formatoDataset;
+		this.fechaActualizacionDataset = fechaActualizacionDataset;
+		this.subidoPor = subidoPor;
+		this.descargas = descargas;
+		this.categoria = categoria;
+	}
 
     // Getters y setters
     public Long getIdDataset() {
         return idDataset;
     }
 
-    public void setIdDataset(Long idDataset) {
+   
+	public void setIdDataset(Long idDataset) {
         this.idDataset = idDataset;
     }
 
@@ -144,8 +141,17 @@ public class Dataset {
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
+    
 
-    @Override
+    public List<Descarga> getDescargas() {
+		return descargas;
+	}
+
+	public void setDescargas(List<Descarga> descargas) {
+		this.descargas = descargas;
+	}
+
+	@Override
     public String toString() {
         return "Dataset{" +
                 "idDataset=" + idDataset +
