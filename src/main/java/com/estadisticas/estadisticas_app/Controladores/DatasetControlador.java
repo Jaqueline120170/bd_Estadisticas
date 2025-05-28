@@ -164,7 +164,10 @@ public class DatasetControlador {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
     }
-
+    /**
+     *Realiza el contedo de datasets por categoria 
+     *
+     */
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/conteo-por-categoria")
     public Map<String, Long> obtenerConteoPorCategoria() {

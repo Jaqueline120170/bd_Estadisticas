@@ -289,7 +289,11 @@ public class DatasetServicio {
 	        categoria.setIdCategoria(null); // fuerza creación de nuevo ID
 	        return categoriaRepository.save(categoria);
 	    }
-	    
+	    /**
+	     *Obtiene el conteo de datasets por categoría 
+	     *
+	     */
+
 	    @Transactional
 	    public Map<String, Long> obtenerConteoDatasetsPorCategoria() {
 	        List<Object[]> resultados = datasetRepository.contarDatasetsPorCategoria();
@@ -302,7 +306,11 @@ public class DatasetServicio {
 	        }
 	        return conteoPorCategoria;
 	    }
-	    
+	    /**
+	     *Registra una descarga en la BBDD
+	     *
+	     */
+
 	    @Transactional
 	    public Descarga registrarDescarga(DescargaDto dto) {
 	        Usuario usuario = usuarioRepository.findById(dto.idUsuario)

@@ -7,6 +7,9 @@ import com.estadisticas.estadisticas_app.Repositorios.ConsultaRepositorio;
 import com.estadisticas.estadisticas_app.Repositorios.DatasetRepositorio;
 import com.estadisticas.estadisticas_app.Repositorios.DescargaRepositorio;
 import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepositorio;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,21 +37,31 @@ public class ConsultaServicio {
     private static final Logger logger = LoggerFactory.getLogger(ConsultaServicio.class);
 
 
+    /**
+     * Registra una consulta realizada en el front y la guarda en la BBDD
+     */
     public Consulta registrarConsulta(ConsultaDto dto) {
-        Usuario usuario = usuarioRepository.findById(dto.idUsuario)
+        Usuario usuario = usuarioRepository.findById(dto.getIdUsuario())
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
 
-        Dataset dataset = datasetRepository.findById(dto.idDataset)
+        Dataset dataset = datasetRepository.findById(dto.getIdDataset())
                 .orElseThrow(() -> new RuntimeException("Dataset no encontrado"));
 
         Consulta consulta = new Consulta();
         consulta.setUsuario(usuario);
         consulta.setDataset(dataset);
         consulta.setFechaConsulta(LocalDate.now());
-        consulta.setFiltros(dto.filtros);
+
+        // Convertir el Map en JSON string
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            consulta.setFiltros(objectMapper.writeValueAsString(dto.getFiltros()));
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException("Error al convertir filtros a JSON", e);
+        }
 
         return consultaRepository.save(consulta);
-        
     }
+
    
 }

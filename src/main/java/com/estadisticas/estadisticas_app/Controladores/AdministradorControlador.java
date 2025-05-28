@@ -33,8 +33,7 @@ public class AdministradorControlador {
 
     @Autowired
     private AdministradorServicio administradorServicio;
-    @Autowired
-    private UsuarioRepositorio usuarioRepository;
+   
     
 
     /**

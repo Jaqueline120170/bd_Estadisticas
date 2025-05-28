@@ -104,11 +104,19 @@ public class ConsultaControlador {
             return ResponseEntity.notFound().build();
         }
     }
+    /**
+     * Endpoint para registrar las cconsultas recibidas desde el front en la BD 
+     * .
+     */
     @PostMapping("/registro-consulta")
     public ResponseEntity<?> registrarConsulta(@RequestBody ConsultaDto dto) {
         Consulta nuevaConsulta = consultaServicio.registrarConsulta(dto);
         return ResponseEntity.ok(nuevaConsulta);
     }
+    /**
+     * Endpoint para registrar las DESCARGAS recibidas desde el front en la BD 
+     * .
+     */
     @PostMapping("/registro-descarga")
     public ResponseEntity<Descarga> registrarDescarga(@RequestBody DescargaDto dto) {
         Descarga descarga = datasetServicio.registrarDescarga(dto);
