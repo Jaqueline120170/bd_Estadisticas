@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
@@ -14,10 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,26 +22,16 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.server.ResponseStatusException;
 
-import com.estadisticas.estadisticas_app.Dtos.ConsultaDto;
-import com.estadisticas.estadisticas_app.Dtos.DescargaDto;
 import com.estadisticas.estadisticas_app.Dtos.LoginUsuarioDto;
 import com.estadisticas.estadisticas_app.Dtos.RegistroUsuarioDto;
 import com.estadisticas.estadisticas_app.Dtos.UsuarioDto;
 import com.estadisticas.estadisticas_app.Modelos.Usuario;
 import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepositorio;
-import com.estadisticas.estadisticas_app.Servicios.AdministradorServicio;
-import com.estadisticas.estadisticas_app.Servicios.ConsultaServicio;
 import com.estadisticas.estadisticas_app.Servicios.UsuarioServicio;
-import com.estadisticas.estadisticas_app.Utils.ValidacionesUtil;
-
-import jakarta.persistence.EntityNotFoundException;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.transaction.Transactional;
 
 @CrossOrigin(origins = "https://jaquedev.es")
 @RestController

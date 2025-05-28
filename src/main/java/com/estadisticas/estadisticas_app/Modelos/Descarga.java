@@ -23,8 +23,9 @@ public class Descarga {
     private Usuario usuario;
 
     @ManyToOne
-    @JoinColumn(name = "id_dataset")
+    @JoinColumn(name = "id_dataset", nullable = false)
     private Dataset dataset;
+
 
     public Descarga() {
         super();

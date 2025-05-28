@@ -25,12 +25,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.estadisticas.estadisticas_app.Dtos.DatasetDto;
 import com.estadisticas.estadisticas_app.Dtos.DatasetMetadataDto;
-import com.estadisticas.estadisticas_app.Dtos.DescargaDto;
 import com.estadisticas.estadisticas_app.Modelos.Categoria;
 import com.estadisticas.estadisticas_app.Modelos.Dataset;
-import com.estadisticas.estadisticas_app.Modelos.Descarga;
 import com.estadisticas.estadisticas_app.Repositorios.CategoriaRepositorio;
-import com.estadisticas.estadisticas_app.Repositorios.DatasetRepositorio;
 import com.estadisticas.estadisticas_app.Servicios.DatasetServicio;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

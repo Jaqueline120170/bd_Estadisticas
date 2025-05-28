@@ -2,6 +2,7 @@ package com.estadisticas.estadisticas_app.Modelos;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -38,10 +39,20 @@ public class Dataset {
     @JoinColumn(name = "subido_por")
     private Usuario subidoPor;
 
-    // Relación con Categoría
+    public List<Descarga> getDescargas() {
+		return descargas;
+	}
+
+	public void setDescargas(List<Descarga> descargas) {
+		this.descargas = descargas;
+	}
+
+	// Relación con Categoría
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_categoria", nullable = false)
     private Categoria categoria;
+    @OneToMany(mappedBy = "dataset", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<Descarga> descargas;
 
     // Constructor vacío
     public Dataset() {}

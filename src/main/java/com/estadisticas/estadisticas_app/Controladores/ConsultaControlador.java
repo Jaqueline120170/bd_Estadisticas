@@ -2,6 +2,7 @@ package com.estadisticas.estadisticas_app.Controladores;
 
 import java.util.List;
 
+import java.util.Map;
 import org.springframework.core.io.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -103,7 +104,8 @@ public class ConsultaControlador {
     @PostMapping("/registro-descarga")
     public ResponseEntity<Descarga> registrarDescarga(@RequestBody DescargaDto dto) {
         Descarga descarga = datasetServicio.registrarDescarga(dto);
-        return ResponseEntity.ok(descarga);
+        return ResponseEntity.ok(descarga); // si el frontend no necesita texto, puede dejarlo así
+
     }
 
 }

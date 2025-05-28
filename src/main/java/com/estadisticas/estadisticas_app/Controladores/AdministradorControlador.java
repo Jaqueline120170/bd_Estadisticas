@@ -1,6 +1,5 @@
 package com.estadisticas.estadisticas_app.Controladores;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -15,17 +14,10 @@ import org.springframework.web.bind.annotation.*;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import com.estadisticas.estadisticas_app.Dtos.DatasetDto;
-import com.estadisticas.estadisticas_app.Dtos.DatasetMetadataDto;
 import com.estadisticas.estadisticas_app.Dtos.UsuarioDto;
-import com.estadisticas.estadisticas_app.Modelos.Categoria;
-import com.estadisticas.estadisticas_app.Modelos.Dataset;
 import com.estadisticas.estadisticas_app.Modelos.Usuario;
-import com.estadisticas.estadisticas_app.Repositorios.CategoriaRepositorio;
-import com.estadisticas.estadisticas_app.Repositorios.DatasetRepositorio;
 import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepositorio;
 import com.estadisticas.estadisticas_app.Servicios.AdministradorServicio;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * Controlador que maneja las solicitudes HTTP relacionadas con la administración de usuarios.
