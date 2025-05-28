@@ -3,6 +3,7 @@ package com.estadisticas.estadisticas_app.Modelos;
 import jakarta.persistence.*;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -23,6 +24,7 @@ public class Categoria {
 
     // Relación con datasets
     @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Dataset> datasets;
 
     // Constructor vacío

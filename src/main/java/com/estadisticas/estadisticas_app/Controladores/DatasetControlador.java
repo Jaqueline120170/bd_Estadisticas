@@ -3,6 +3,7 @@ package com.estadisticas.estadisticas_app.Controladores;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.estadisticas.estadisticas_app.Dtos.CategoriaDto;
 import com.estadisticas.estadisticas_app.Dtos.DatasetDto;
 import com.estadisticas.estadisticas_app.Dtos.DatasetMetadataDto;
 import com.estadisticas.estadisticas_app.Modelos.Categoria;
@@ -133,11 +135,16 @@ public class DatasetControlador {
      * @return Lista de entidades Categoria.
      */
     @GetMapping("/listarCategorias")
-    public ResponseEntity<List<Categoria>> listarCategorias() {
-    	logger.info("Listando todas las categorías.");
+    public ResponseEntity<List<CategoriaDto>> listarCategorias() {
         List<Categoria> categorias = categoriaRepository.findAll();
-        return ResponseEntity.ok(categorias);  // Devuelve la lista de categorías
+        List<CategoriaDto> categoriasDTO = categorias.stream()
+            .map(CategoriaDto::new)
+            .collect(Collectors.toList());
+        logger.info("Listando todas las categorías.");
+        return ResponseEntity.ok(categoriasDTO);
     }
+
+    
     /**
      * Crea una nueva categoría para los datasets.
      *

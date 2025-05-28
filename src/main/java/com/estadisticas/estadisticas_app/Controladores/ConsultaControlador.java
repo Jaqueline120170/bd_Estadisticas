@@ -3,6 +3,8 @@ package com.estadisticas.estadisticas_app.Controladores;
 import java.util.List;
 
 import java.util.Map;
+import java.util.stream.Collectors;
+
 import org.springframework.core.io.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.estadisticas.estadisticas_app.Dtos.CategoriaDto;
 import com.estadisticas.estadisticas_app.Dtos.ConsultaDto;
 import com.estadisticas.estadisticas_app.Dtos.DatasetDto;
 import com.estadisticas.estadisticas_app.Dtos.DescargaDto;
@@ -73,13 +76,16 @@ public class ConsultaControlador {
      * llamado de dataset servicio
      * .
      */
-    @GetMapping("/datasets/listarCategorias")
-    public ResponseEntity<List<Categoria>> listarCategorias() {
+    @GetMapping("/listarCategorias")
+    public ResponseEntity<List<CategoriaDto>> listarCategorias() {
         List<Categoria> categorias = categoriaRepository.findAll();
+        List<CategoriaDto> categoriasDTO = categorias.stream()
+            .map(CategoriaDto::new)
+            .collect(Collectors.toList());
         logger.info("Listando todas las categorías.");
-        return ResponseEntity.ok(categorias);  // Devuelve la lista de categorías
+        return ResponseEntity.ok(categoriasDTO);
     }
-    
+
     /**
      * Endpoint para descargar datasets en vista usuario.
      * llamado de dataset servicio
