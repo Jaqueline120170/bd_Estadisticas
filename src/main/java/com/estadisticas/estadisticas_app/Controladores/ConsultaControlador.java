@@ -95,7 +95,7 @@ public class ConsultaControlador {
             return ResponseEntity.notFound().build();
         }
     }
-    @PostMapping("/registrto-consulta")
+    @PostMapping("/registro-consulta")
     public ResponseEntity<?> registrarConsulta(@RequestBody ConsultaDto dto) {
         Consulta nuevaConsulta = consultaServicio.registrarConsulta(dto);
         return ResponseEntity.ok(nuevaConsulta);
