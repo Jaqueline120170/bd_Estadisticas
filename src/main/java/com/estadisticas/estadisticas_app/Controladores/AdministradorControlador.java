@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import com.estadisticas.estadisticas_app.Dtos.ListarUsuarioDto;
 import com.estadisticas.estadisticas_app.Dtos.UsuarioDto;
 import com.estadisticas.estadisticas_app.Modelos.Usuario;
 import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepositorio;
@@ -43,18 +44,17 @@ public class AdministradorControlador {
      */
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/listar")
-    public ResponseEntity<?> listarUsuarios() {
+    public ResponseEntity<List<ListarUsuarioDto>> listarUsuarios() {
         try {
             logger.info("El administrador solicitó la lista de usuarios.");
-            List<Usuario> usuarios = administradorServicio.listarTodosLosUsuarios();
+            List<ListarUsuarioDto> usuarios = administradorServicio.listarTodosLosUsuarios();
             return ResponseEntity.ok(usuarios);
         } catch (Exception e) {
             logger.error("Error al listar usuarios: {}", e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                                 .body("{\"error\": \"Error al obtener usuarios\"}");
+                                 .build(); // Error 500 sin body o puedes crear un body con mensaje si usas Map o DTO de error
         }
     }
-
 
     /**
      * Endpoint que permite modificar un usuario existente.

@@ -60,7 +60,7 @@ public class Usuario {
     private List<Graficos> graficos;
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnore
+    
     private List<Descarga> descargas;
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.estadisticas.estadisticas_app.Dtos.ListarUsuarioDto;
 import com.estadisticas.estadisticas_app.Modelos.Usuario;
 import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepositorio;
 
@@ -32,10 +34,18 @@ public class AdministradorServicio {
      * Lista todos los usuarios registrados en el sistema.
      * @return Lista de usuarios.
      */
-    public List<Usuario> listarTodosLosUsuarios() {
-        logger.info("Listando todos los usuarios...");
-        return usuarioRepository.findAll();
+    public List<ListarUsuarioDto> listarTodosLosUsuarios() {
+        List<Usuario> usuarios = usuarioRepository.findAll();
+        return usuarios.stream()
+                .map(usuario -> new ListarUsuarioDto(
+                        usuario.getIdUsuario(),
+                        usuario.getNombreUsuario(),
+                        usuario.getEmailUsuario(),
+                        usuario.getRolUsuario()
+                ))
+                .collect(Collectors.toList());
     }
+
 
     /**
      * Modifica los datos de un usuario existente.
