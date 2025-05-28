@@ -111,7 +111,8 @@ public class ConsultaControlador {
     @PostMapping("/registro-consulta")
     public ResponseEntity<?> registrarConsulta(@RequestBody ConsultaDto dto) {
         Consulta nuevaConsulta = consultaServicio.registrarConsulta(dto);
-        return ResponseEntity.ok(nuevaConsulta);
+        return ResponseEntity.ok().build(); // sin cuerpo
+
     }
     /**
      * Endpoint para registrar las DESCARGAS recibidas desde el front en la BD 
