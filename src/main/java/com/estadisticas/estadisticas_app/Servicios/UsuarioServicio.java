@@ -27,6 +27,7 @@ import jakarta.transaction.Transactional;
  * - Autenticación (login)
  * - Actualización de perfil
  * - Restablecimiento y cambio de contraseña
+ * -Cambio de contraseña
  *
  * Utiliza validaciones y lógica de seguridad (como encriptación de contraseñas y tokens).
  * También gestiona el envío de correos electrónicos de verificación y restablecimiento.

@@ -33,6 +33,10 @@ import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepositorio;
 import com.estadisticas.estadisticas_app.Servicios.UsuarioServicio;
 import jakarta.servlet.http.HttpServletResponse;
 
+/**
+ * Controlador que maneja las solicitudes HTTP relacionadas con las funciones de los usuarios.
+ * Solo los usuarios normales pueden acceder a estas rutas, ya que están protegidas con seguridad basada en roles.
+ */
 @CrossOrigin(origins = "https://jaquedev.es")
 @RestController
 @RequestMapping("/api/usuarios")

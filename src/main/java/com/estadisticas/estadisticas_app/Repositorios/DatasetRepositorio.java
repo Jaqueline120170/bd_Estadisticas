@@ -10,6 +10,11 @@ import org.springframework.stereotype.Repository;
 import com.estadisticas.estadisticas_app.Modelos.Dataset;
 
 
+/**
+ * Repositorio para la entidad `Dataset`.
+ * Extiende de `JpaRepository` para proporcionar acceso a las operaciones CRUD básicas sobre la tabla "descargas".
+ * Además, contiene métodos personalizados para filtrado y conteo de datasets.
+ */
 	@Repository
 	public interface DatasetRepositorio extends JpaRepository<Dataset, Long> {
 		@Query("SELECT d FROM Dataset d " +

@@ -30,6 +30,10 @@ import com.estadisticas.estadisticas_app.Repositorios.CategoriaRepositorio;
 import com.estadisticas.estadisticas_app.Servicios.ConsultaServicio;
 import com.estadisticas.estadisticas_app.Servicios.DatasetServicio;
 
+/**
+ * Controlador que maneja las solicitudes HTTP relacionadas con consultas que hacen los usuarios aplicando filtros.
+ * Solo los usuarios normales pueden acceder a estas rutas, ya que están protegidas con seguridad basada en roles.
+ */
 @CrossOrigin(origins = "https://jaquedev.es")
 @RestController
 @RequestMapping("/api/consultas")

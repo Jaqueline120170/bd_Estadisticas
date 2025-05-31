@@ -1,1 +1,8 @@
+com.estadisticas.estadisticas_app
+com.estadisticas.estadisticas_app.Controladores
 com.estadisticas.estadisticas_app.Dtos
+com.estadisticas.estadisticas_app.Modelos
+com.estadisticas.estadisticas_app.Repositorios
+com.estadisticas.estadisticas_app.Seguridad
+com.estadisticas.estadisticas_app.Servicios
+com.estadisticas.estadisticas_app.Utils

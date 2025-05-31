@@ -20,7 +20,11 @@ import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepositorio;
 
 import jakarta.transaction.Transactional;
 
-
+/**
+ * Servicio que contiene la lógica de negocio para laS funciones de usuarios loggeados como ADMIN ,
+ * incluyendo registro, listado, búsqueda, eliminación y modificación de datos de perfil,
+ * así como la administración de categorías.
+ */
 @Service
 public class AdministradorServicio {
 

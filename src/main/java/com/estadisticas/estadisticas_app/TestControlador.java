@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.annotation.PostConstruct;
 
+/**
+ * Controlador que maneja las solicitudes HTTP relacionadas pruebas para el despliegue en Railway.
+
+ */
 @CrossOrigin(origins = "https://jaquedev.es")
 @RestController
 @RequestMapping("/api/test")

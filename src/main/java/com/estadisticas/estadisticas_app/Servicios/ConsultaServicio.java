@@ -16,6 +16,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 import java.time.LocalDate;
+
+/**
+ * Servicio que contiene la lógica de negocio para las consultas de datasets por parte de los usuarios,
+ * se registran consultas realizadas por usuarios aplartir de filtros aplicados en la BBDD.
+ */
 @Service
 @Transactional
 public class ConsultaServicio {
