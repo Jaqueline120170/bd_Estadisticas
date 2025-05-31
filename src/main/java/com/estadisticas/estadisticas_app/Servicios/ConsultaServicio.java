@@ -1,11 +1,9 @@
 package com.estadisticas.estadisticas_app.Servicios;
 
 import com.estadisticas.estadisticas_app.Dtos.ConsultaDto;
-import com.estadisticas.estadisticas_app.Dtos.DescargaDto;
 import com.estadisticas.estadisticas_app.Modelos.*;
 import com.estadisticas.estadisticas_app.Repositorios.ConsultaRepositorio;
 import com.estadisticas.estadisticas_app.Repositorios.DatasetRepositorio;
-import com.estadisticas.estadisticas_app.Repositorios.DescargaRepositorio;
 import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepositorio;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,11 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.stream.Collectors;
-import java.util.List;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 
+import java.time.LocalDate;
 @Service
 @Transactional
 public class ConsultaServicio {

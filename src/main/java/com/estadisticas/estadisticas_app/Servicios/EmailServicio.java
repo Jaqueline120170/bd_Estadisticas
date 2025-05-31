@@ -1,16 +1,12 @@
 package com.estadisticas.estadisticas_app.Servicios;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
-import jakarta.mail.MessagingException;
-import jakarta.mail.internet.MimeMessage;
+
 
 /**
  * Servicio para gestionar el envío de correos electrónicos en la aplicación.
@@ -27,7 +23,7 @@ public class EmailServicio {
     @Autowired
     private JavaMailSender mailSender;  // Servicio de envío de correos electrónicos
 
-    private static final Logger logger = LoggerFactory.getLogger(UsuarioServicio.class); // Logger para registrar mensajes de error o información
+   
 
     /**
      * Método para enviar un correo de verificación de cuenta.
@@ -80,24 +76,5 @@ public class EmailServicio {
         }
     }
     
-    /**
-     * Método privado para enviar correos con soporte HTML.
-     * 
-     * @param destinatario el correo del destinatario.
-     * @param asunto el asunto del correo.
-     * @param cuerpo el cuerpo del correo en formato HTML.
-     */
-    private void enviarEmail(String destinatario, String asunto, String cuerpo) {
-        MimeMessage mensaje = mailSender.createMimeMessage();  // Creación de un mensaje MIME (que permite HTML)
-
-        try {
-            MimeMessageHelper helper = new MimeMessageHelper(mensaje, true);  // Habilitar soporte para mensajes con HTML
-            helper.setTo(destinatario);  // Definir destinatario
-            helper.setSubject(asunto);  // Definir asunto
-            helper.setText(cuerpo, true);  // Definir cuerpo como HTML
-            mailSender.send(mensaje);  // Envío del correo
-        } catch (MessagingException e) {
-            throw new RuntimeException("Error al enviar el correo", e);  // Manejo de errores en el envío del correo HTML
-        }
-    }
+   
 }

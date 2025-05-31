@@ -2,7 +2,7 @@ package com.estadisticas.estadisticas_app.Controladores;
 
 import java.util.List;
 
-import java.util.Map;
+
 import java.util.stream.Collectors;
 
 import org.springframework.core.io.Resource;
@@ -91,7 +91,7 @@ public class ConsultaControlador {
      * llamado de dataset servicio
      * .
      */
-    @GetMapping("/datasets/download/{id}")
+    @GetMapping("/datasets/descarga/{id}")
     public ResponseEntity<Resource> descargarDataset(@PathVariable Long id) {
         logger.info("Descargando dataset con ID: {}", id);
         try {
@@ -121,7 +121,7 @@ public class ConsultaControlador {
     @PostMapping("/registro-descarga")
     public ResponseEntity<Descarga> registrarDescarga(@RequestBody DescargaDto dto) {
         Descarga descarga = datasetServicio.registrarDescarga(dto);
-        return ResponseEntity.ok(descarga); // si el frontend no necesita texto, puede dejarlo así
+        return ResponseEntity.ok(descarga); 
 
     }
 

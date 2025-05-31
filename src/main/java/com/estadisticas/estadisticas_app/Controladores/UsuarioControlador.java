@@ -38,7 +38,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @RequestMapping("/api/usuarios")
 public class UsuarioControlador {
 	
-	  // 🔁 Inyectamos la URL del frontend desde application.properties
+	  
 	@Value("${frontend.url}")
 	private String frontendUrl;
 
@@ -46,7 +46,7 @@ public class UsuarioControlador {
     @Autowired
     private UsuarioServicio usuarioServicio;
     @Autowired
-    private UsuarioRepositorio usuarioRepository; // Inyectamos el repositorio
+    private UsuarioRepositorio usuarioRepository; 
     private static final Logger logger = LoggerFactory.getLogger(UsuarioControlador.class);
 
     /**
@@ -228,7 +228,7 @@ public class UsuarioControlador {
         try {
             Usuario usuario = usuarioServicio.login(loginDto);
 
-            // Generar token de sesión (aquí podrías implementar JWT si quisieras)
+            // Generar token de sesión 
             String token = UUID.randomUUID().toString(); // Simulación de token
             logger.info("Inicio de sesión exitoso para usuario: {}", loginDto.getEmailUsuario());
             // Devolver datos esenciales para el frontend
@@ -237,7 +237,7 @@ public class UsuarioControlador {
             response.put("nombre", usuario.getNombreUsuario());
             response.put("rol", usuario.getRolUsuario());  // Puede ser "ADMIN" o "USUARIO"
             response.put("token", token);
-            response.put("id", usuario.getIdUsuario()); // <--- Esto es lo importante
+            response.put("id", usuario.getIdUsuario()); 
 
 
             return ResponseEntity.ok(response);
@@ -249,7 +249,11 @@ public class UsuarioControlador {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", e.getMessage()));
         }
     }
-    // Endpoint para obtener los datos del perfil del usuario autenticado
+    /**
+     * Endpoint para obtener los datos del usuario autenticado
+     *
+     * 
+     */
     @GetMapping("/{id}")
     public ResponseEntity<?> obtenerPorId(@PathVariable Long id) {
     	 logger.info("Solicitud para obtener usuario por ID: {}", id); 
@@ -263,7 +267,11 @@ public class UsuarioControlador {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No encontrado");
         }
     }
-
+    /**
+     * Endpoint para actualizar perfil de usuario
+     *
+     * 
+     */
     @PutMapping("/{id}")
     public ResponseEntity<?> actualizarPerfil(
             @PathVariable Long id,

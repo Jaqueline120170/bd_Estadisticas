@@ -1,8 +1,6 @@
 package com.estadisticas.estadisticas_app.Dtos;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.List;
+
 import java.util.Map;
 
 public class ConsultaDto {

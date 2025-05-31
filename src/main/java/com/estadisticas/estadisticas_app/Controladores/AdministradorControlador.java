@@ -17,7 +17,6 @@ import org.springframework.web.multipart.MultipartFile;
 import com.estadisticas.estadisticas_app.Dtos.ListarUsuarioDto;
 import com.estadisticas.estadisticas_app.Dtos.UsuarioDto;
 import com.estadisticas.estadisticas_app.Modelos.Usuario;
-import com.estadisticas.estadisticas_app.Repositorios.UsuarioRepositorio;
 import com.estadisticas.estadisticas_app.Servicios.AdministradorServicio;
 
 /**

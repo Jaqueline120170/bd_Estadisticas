@@ -1,17 +1,17 @@
-2025-05-27 17:06:14 - Starting EstadisticasAppApplicationTests using Java 21.0.2 with PID 14216 (started by Usuario in C:\Users\Usuario\DWS)
-2025-05-27 17:06:14 - Running with Spring Boot v3.4.1, Spring v6.2.1
-2025-05-27 17:06:14 - No active profile set, falling back to 1 default profile: "default"
-2025-05-27 17:06:14 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7e46d648
-2025-05-27 17:06:15 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-05-27 17:06:15 - Finished Spring Data repository scanning in 86 ms. Found 5 JPA repository interfaces.
-2025-05-27 17:06:16 - HikariPool-1 - Starting...
-2025-05-27 17:06:17 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@40a1b6d4
-2025-05-27 17:06:17 - HikariPool-1 - Start completed.
-2025-05-27 17:06:17 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-27 17:06:17 - HHH000412: Hibernate ORM core version 6.6.4.Final
-2025-05-27 17:06:17 - HHH000026: Second-level cache disabled
-2025-05-27 17:06:17 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-05-27 17:06:18 - HHH10001005: Database info:
+2025-05-31 12:31:24 - Starting EstadisticasAppApplicationTests using Java 21.0.2 with PID 14584 (started by Usuario in C:\Users\Usuario\DWS)
+2025-05-31 12:31:24 - Running with Spring Boot v3.4.1, Spring v6.2.1
+2025-05-31 12:31:24 - No active profile set, falling back to 1 default profile: "default"
+2025-05-31 12:31:24 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7e46d648
+2025-05-31 12:31:26 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-31 12:31:27 - Finished Spring Data repository scanning in 164 ms. Found 5 JPA repository interfaces.
+2025-05-31 12:31:28 - HikariPool-1 - Starting...
+2025-05-31 12:31:30 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@103c97ff
+2025-05-31 12:31:30 - HikariPool-1 - Start completed.
+2025-05-31 12:31:30 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-31 12:31:31 - HHH000412: Hibernate ORM core version 6.6.4.Final
+2025-05-31 12:31:31 - HHH000026: Second-level cache disabled
+2025-05-31 12:31:32 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-31 12:31:33 - HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 16.8
@@ -19,52 +19,17 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-05-27 17:06:19 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-27 17:06:19 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-27 17:06:20 - Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-05-27 17:06:21 - Aplicación corriendo en puerto: null
-2025-05-27 17:06:21 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-05-27 17:06:21 - 37 mappings in 'requestMappingHandlerMapping'
-2025-05-27 17:06:21 - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2025-05-27 17:06:21 - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2025-05-27 17:06:21 - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2025-05-27 17:06:21 - Started EstadisticasAppApplicationTests in 7.662 seconds (process running for 9.414)
-2025-05-27 17:06:22 - Closing org.springframework.web.context.support.GenericWebApplicationContext@7e46d648, started on Tue May 27 17:06:14 CEST 2025
-2025-05-27 17:06:22 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-05-27 17:06:22 - HikariPool-1 - Shutdown initiated...
-2025-05-27 17:06:22 - HikariPool-1 - Shutdown completed.
-2025-05-27 17:59:52 - Starting EstadisticasAppApplicationTests using Java 21.0.2 with PID 9516 (started by Usuario in C:\Users\Usuario\DWS)
-2025-05-27 17:59:52 - Running with Spring Boot v3.4.1, Spring v6.2.1
-2025-05-27 17:59:52 - No active profile set, falling back to 1 default profile: "default"
-2025-05-27 17:59:52 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7e46d648
-2025-05-27 17:59:53 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-05-27 17:59:53 - Finished Spring Data repository scanning in 74 ms. Found 5 JPA repository interfaces.
-2025-05-27 17:59:53 - HikariPool-1 - Starting...
-2025-05-27 17:59:54 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@27da994b
-2025-05-27 17:59:54 - HikariPool-1 - Start completed.
-2025-05-27 17:59:54 - HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-27 17:59:54 - HHH000412: Hibernate ORM core version 6.6.4.Final
-2025-05-27 17:59:54 - HHH000026: Second-level cache disabled
-2025-05-27 17:59:55 - No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-05-27 17:59:55 - HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 16.8
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-05-27 17:59:56 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-27 17:59:56 - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-27 17:59:57 - Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-05-27 17:59:58 - Aplicación corriendo en puerto: null
-2025-05-27 17:59:58 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-05-27 17:59:58 - 37 mappings in 'requestMappingHandlerMapping'
-2025-05-27 17:59:58 - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2025-05-27 17:59:58 - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2025-05-27 17:59:58 - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2025-05-27 17:59:58 - Started EstadisticasAppApplicationTests in 6.999 seconds (process running for 8.346)
-2025-05-27 17:59:59 - Closing org.springframework.web.context.support.GenericWebApplicationContext@7e46d648, started on Tue May 27 17:59:52 CEST 2025
-2025-05-27 17:59:59 - Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-05-27 17:59:59 - HikariPool-1 - Shutdown initiated...
-2025-05-27 17:59:59 - HikariPool-1 - Shutdown completed.
+2025-05-31 12:31:36 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-31 12:31:36 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-31 12:31:38 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-31 12:31:42 - Aplicación corriendo en puerto: null
+2025-05-31 12:31:42 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-31 12:31:42 - 33 mappings in 'requestMappingHandlerMapping'
+2025-05-31 12:31:43 - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2025-05-31 12:31:43 - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-05-31 12:31:43 - ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-05-31 12:31:44 - Started EstadisticasAppApplicationTests in 20.043 seconds (process running for 23.393)
+2025-05-31 12:31:45 - Closing org.springframework.web.context.support.GenericWebApplicationContext@7e46d648, started on Sat May 31 12:31:24 CEST 2025
+2025-05-31 12:31:45 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-31 12:31:45 - HikariPool-1 - Shutdown initiated...
+2025-05-31 12:31:45 - HikariPool-1 - Shutdown completed.

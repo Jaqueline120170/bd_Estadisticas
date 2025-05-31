@@ -1,10 +1,8 @@
 package com.estadisticas.estadisticas_app.Modelos;
 
 import java.time.LocalDateTime;
-import java.util.Arrays;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.*;
@@ -56,14 +54,12 @@ public class Usuario {
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Consulta> consultas;
 
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Graficos> graficos;
+    
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Descarga> descargas;
 
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<LogActividad> logs;
+    
 
     // Constructor vacío
     public Usuario() {}
@@ -191,13 +187,6 @@ public class Usuario {
 		this.consultas = consultas;
 	}
 
-	public List<Graficos> getGraficos() {
-		return graficos;
-	}
-
-	public void setGraficos(List<Graficos> graficos) {
-		this.graficos = graficos;
-	}
 
 	public List<Descarga> getDescargas() {
 		return descargas;
@@ -207,13 +196,7 @@ public class Usuario {
 		this.descargas = descargas;
 	}
 
-	public List<LogActividad> getLogs() {
-		return logs;
-	}
-
-	public void setLogs(List<LogActividad> logs) {
-		this.logs = logs;
-	}
+	
     
 }
 

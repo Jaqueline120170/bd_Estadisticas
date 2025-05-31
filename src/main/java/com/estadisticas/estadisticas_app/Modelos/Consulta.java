@@ -2,7 +2,6 @@ package com.estadisticas.estadisticas_app.Modelos;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Table(name = "consultas", schema = "gestion")
